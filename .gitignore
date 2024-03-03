@@ -75,5 +75,5 @@ crashlytics-build.properties
 /[Bb]uilded/
 
 # Environment Ignore Test
-/[Aa]ssets/Models/Origin/Envirornment/
-/[Aa]ssets/Effects
+/[Aa]ssets/Models/Origin/Envirornment/_DLNK/
+/[Aa]ssets/Effects/Origin/Mirza Beig/
