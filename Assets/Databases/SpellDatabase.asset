@@ -1,0 +1,1501 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463bd98b212747138a6ebd0242af839f, type: 3}
+  m_Name: SpellDatabase
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 4689855619822940728, guid: dd6d9817207d39749adb3fd15642acf7, type: 3}
+    - {fileID: 21300000, guid: b3c0a1760ea2ab24b8b17c70e82b7dca, type: 3}
+    - {fileID: 4047645741896833891, guid: 97cfe99312f36154992d3ba74b49b6a7, type: 3}
+    - {fileID: 21300000, guid: 3954febeb65ffa549823b3a809ae0ddc, type: 3}
+    - {fileID: 7719843552145132806, guid: 3bd50f831b493f8448f806b5bfcb2f96, type: 3}
+    - {fileID: 21300000, guid: ebda9cef77364904f997ff1007e387a5, type: 3}
+    - {fileID: 1811864090832986915, guid: 037f963cb892f1f479872b004926fab5, type: 3}
+    - {fileID: 21300000, guid: a56a08f9ef2cc044a8446f35ce11574a, type: 3}
+    - {fileID: 3745427717357840417, guid: 4d31a1a77e9b91445bedb3c224588671, type: 3}
+    - {fileID: 21300000, guid: 55aec9f3c85eeef4b9818031d224b2f3, type: 3}
+    - {fileID: -5225779500869726298, guid: ebfa831a33235d9459080992b2496489, type: 3}
+    - {fileID: 21300000, guid: e71c2b9294711b14d9f0930e74d97264, type: 3}
+    - {fileID: 5053310292412947563, guid: 0f525662ec9a55742a88475bf8e0ba2e, type: 3}
+    - {fileID: 21300000, guid: 3388c727be156e24ebf5b0db36ce656f, type: 3}
+    - {fileID: 6720694445727759868, guid: 933a2a8088e525d44b73617e4e4f2ad3, type: 3}
+    - {fileID: 21300000, guid: 4ea42cc2fd08f7346b8807a5df2505e0, type: 3}
+    - {fileID: 21300000, guid: 55148aea781d3b743b9977768ba40162, type: 3}
+    - {fileID: 21300000, guid: 1dabb119a91000f4abbe8fb60ececf62, type: 3}
+    - {fileID: 3317572528348825291, guid: a05bea7c065e0064692afb3ca9fafece, type: 3}
+    - {fileID: 21300000, guid: d78b4080ffe5bf04897b358ceefb12ac, type: 3}
+    - {fileID: 7338374349914126961, guid: 119288c494fc0e141a7a7f8728b2cbf4, type: 3}
+    - {fileID: 21300000, guid: 138651a40d7b0b54a93eb2a17f5b6a53, type: 3}
+    - {fileID: 5214873802397676660, guid: db4e06974b61fb248a8ef633b22cfdf7, type: 3}
+    - {fileID: 21300000, guid: 958bbee8bc01f0c4cb96771b5987a039, type: 3}
+    - {fileID: 21300000, guid: 20e54d3813cccb74791f1d79a8163eea, type: 3}
+    - {fileID: 2748363094476559069, guid: df143485737b4d346a9faef05e61d278, type: 3}
+    - {fileID: 21300000, guid: 7f07e2f7438784446b0d22291ac38aa8, type: 3}
+    - {fileID: 21300000, guid: a575fa6cb1b76d74f806ef4c21ed3d22, type: 3}
+    - {fileID: 7236124037966821928, guid: 21272bd567651cb4b9c1e2832fb83aa2, type: 3}
+    - {fileID: 21300000, guid: 1be05a3478e5d1a4abdc8879143bcb3e, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _spellDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Battle.PlayerSpell.SpellData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 34
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FireShotGun3
+    - Name: $v
+      Entry: 7
+      Data: 2|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FireShotGun3
+    - Name: name
+      Entry: 1
+      Data: "\u30D5\u30A1\u30A4\u30A2\u30FC\u30AF\u30E9\u30C3\u30AB\u30FC"
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30BF\u30FC\u30B2\u30C3\u30C8\u306B\u5411\u3051\u30663\u767A\u306E\u5F3E\u3092\u6247\u72B6\u306B\u540C\u6642\u306B\u767A\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 0
+    - Name: spellIcon
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FireShotGun5
+    - Name: $v
+      Entry: 7
+      Data: 3|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FireShotGun5
+    - Name: name
+      Entry: 1
+      Data: "\u30D5\u30A1\u30A4\u30A2\u30FC\u30AF\u30E9\u30C3\u30AB\u30FC"
+    - Name: manaCost
+      Entry: 3
+      Data: 40
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30BF\u30FC\u30B2\u30C3\u30C8\u306B\u5411\u3051\u30665\u767A\u306E\u5F3E\u3092\u6247\u72B6\u306B\u540C\u6642\u306B\u767A\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FireShotGun7
+    - Name: $v
+      Entry: 7
+      Data: 4|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FireShotGun7
+    - Name: name
+      Entry: 1
+      Data: "\u30D5\u30A1\u30A4\u30A2\u30FC\u30AF\u30E9\u30C3\u30AB\u30FC"
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30BF\u30FC\u30B2\u30C3\u30C8\u306B\u5411\u3051\u30667\u767A\u306E\u5F3E\u3092\u6247\u72B6\u306B\u540C\u6642\u306B\u767A\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IceMissile2
+    - Name: $v
+      Entry: 7
+      Data: 5|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: IceMissile2
+    - Name: name
+      Entry: 1
+      Data: "\u30A2\u30A4\u30B9\u30DF\u30B5\u30A4\u30EB"
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30DB\u30FC\u30DF\u30F3\u30B0\u5F3E\u30922\u767A\u767A\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IceMissile4
+    - Name: $v
+      Entry: 7
+      Data: 6|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: IceMissile4
+    - Name: name
+      Entry: 1
+      Data: "\u30A2\u30A4\u30B9\u30DF\u30B5\u30A4\u30EB"
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30DB\u30FC\u30DF\u30F3\u30B0\u5F3E\u30924\u767A\u767A\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 2
+    - Name: spellIcon
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IceMissile6
+    - Name: $v
+      Entry: 7
+      Data: 7|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: IceMissile6
+    - Name: name
+      Entry: 1
+      Data: "\u30A2\u30A4\u30B9\u30DF\u30B5\u30A4\u30EB"
+    - Name: manaCost
+      Entry: 3
+      Data: 40
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30DB\u30FC\u30DF\u30F3\u30B0\u5F3E\u30924\u767A\u767A\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SingleLaser
+    - Name: $v
+      Entry: 7
+      Data: 8|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SingleLaser
+    - Name: name
+      Entry: 1
+      Data: "\u30AF\u30A4\u30C3\u30AF\u30EC\u30FC\u30B6\u30FC"
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u524D\u65B9\u306B\u5358\u767A\u30D2\u30C3\u30C8\u3059\u308B\u30EC\u30FC\u30B6\u30FC\u3092\u653E\u3064\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 4
+    - Name: spellIcon
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BigMultiLaser
+    - Name: $v
+      Entry: 7
+      Data: 9|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BigMultiLaser
+    - Name: name
+      Entry: 1
+      Data: "\u30D8\u30F4\u30A3\u30EC\u30FC\u30B6\u30FC"
+    - Name: manaCost
+      Entry: 3
+      Data: 35
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u524D\u65B9\u306B\u591A\u6BB5\u30D2\u30C3\u30C8\u3059\u308B\u30EC\u30FC\u30B6\u30FC\u3092\u653E\u3064\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 6
+    - Name: spellIcon
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SmallMultiLaser
+    - Name: $v
+      Entry: 7
+      Data: 10|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SmallMultiLaser
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Explosion
+    - Name: $v
+      Entry: 7
+      Data: 11|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Explosion
+    - Name: name
+      Entry: 1
+      Data: "\u30A8\u30AF\u30B9\u30D7\u30ED\u30FC\u30B8\u30E7\u30F3"
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u524D\u65B9\u306B\u5927\u7206\u767A\u3092\u8D77\u3053\u3059\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 8
+    - Name: spellIcon
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Gatling3
+    - Name: $v
+      Entry: 7
+      Data: 12|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Gatling3
+    - Name: name
+      Entry: 1
+      Data: "\u30D5\u30A1\u30A4\u30A2\u30FC\u30DC\u30FC\u30EB"
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30BF\u30FC\u30B2\u30C3\u30C8\u306B\u5411\u3051\u3066\u8A083\u767A\u306E\u5F3E\u3092\u9023\u5C04\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 10
+    - Name: spellIcon
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Gatling5
+    - Name: $v
+      Entry: 7
+      Data: 13|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Gatling5
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FlowerCyclone
+    - Name: $v
+      Entry: 7
+      Data: 14|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FlowerCyclone
+    - Name: name
+      Entry: 1
+      Data: "\u30B5\u30A4\u30AF\u30ED\u30F3"
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u81EA\u6A5F\u5468\u308A\u306B\u65CB\u56DE\u3059\u308B\u5F3E\u3092\u914D\u7F6E\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 12
+    - Name: spellIcon
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: VerticalThunder
+    - Name: $v
+      Entry: 7
+      Data: 15|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: VerticalThunder
+    - Name: name
+      Entry: 1
+      Data: "\u96F7\u6483"
+    - Name: manaCost
+      Entry: 3
+      Data: 35
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u81EA\u6A5F\u306E\u4F4D\u7F6E\u306B\u7E26\u306B\u9577\u3044\u96F7\u3092\u843D\u3068\u3059\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 14
+    - Name: spellIcon
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IceSword
+    - Name: $v
+      Entry: 7
+      Data: 16|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: IceSword
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FlowerBarrage
+    - Name: $v
+      Entry: 7
+      Data: 17|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FlowerBarrage
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SmallHeal
+    - Name: $v
+      Entry: 7
+      Data: 18|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SmallHeal
+    - Name: name
+      Entry: 1
+      Data: "\u5C0F\u56DE\u5FA9"
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u4F53\u529B\u3092\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 18
+    - Name: spellIcon
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: MidHeal
+    - Name: $v
+      Entry: 7
+      Data: 19|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: MidHeal
+    - Name: name
+      Entry: 1
+      Data: "\u4E2D\u56DE\u5FA9"
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u4F53\u529B\u3092\u56DE\u5FA9\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 20
+    - Name: spellIcon
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BigHeal
+    - Name: $v
+      Entry: 7
+      Data: 20|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BigHeal
+    - Name: name
+      Entry: 1
+      Data: "\u5927\u56DE\u5FA9"
+    - Name: manaCost
+      Entry: 3
+      Data: 40
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u4F53\u529B\u3092\u5927\u304D\u304F\u56DE\u5FA9\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 22
+    - Name: spellIcon
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ManaFullCharge
+    - Name: $v
+      Entry: 7
+      Data: 21|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: ManaFullCharge
+    - Name: name
+      Entry: 1
+      Data: "\u30DE\u30CA\u30D5\u30EB\u30C1\u30E3\u30FC\u30B8"
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u30DE\u30CA\u3092\u6700\u5927\u307E\u3067\u56DE\u5FA9\u3059\u308B"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BulletDelete
+    - Name: $v
+      Entry: 7
+      Data: 22|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BulletDelete
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: AxisWarp
+    - Name: $v
+      Entry: 7
+      Data: 23|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: AxisWarp
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: WarpToRear
+    - Name: $v
+      Entry: 7
+      Data: 24|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: WarpToRear
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BuffQucikManaCharge
+    - Name: $v
+      Entry: 7
+      Data: 25|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BuffQucikManaCharge
+    - Name: name
+      Entry: 1
+      Data: "\u30DE\u30CA\u56DE\u5FA9\u5F37\u5316"
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 10
+    - Name: description
+      Entry: 1
+      Data: "\u30DE\u30CA\u56DE\u5FA9\u529B\u3092\u5F37\u5316\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 25
+    - Name: spellIcon
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ReduceCost
+    - Name: $v
+      Entry: 7
+      Data: 26|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: ReduceCost
+    - Name: name
+      Entry: 1
+      Data: "\u30B3\u30B9\u30C8\u534A\u6E1B"
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 10
+    - Name: description
+      Entry: 1
+      Data: "\u9B54\u6CD5\u306B\u4F7F\u7528\u3059\u308B\u30DE\u30CA\u306E\u6D88\u8CBB\u91CF\u3092\u534A\u5206\u306B\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: AttachHoming
+    - Name: $v
+      Entry: 7
+      Data: 27|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: AttachHoming
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: AutoHeal
+    - Name: $v
+      Entry: 7
+      Data: 28|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: AutoHeal
+    - Name: name
+      Entry: 1
+      Data: "\u81EA\u52D5\u56DE\u5FA9"
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 10
+    - Name: description
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u4F53\u529B\u304C\u81EA\u52D5\u3067\u5C11\u91CF\u56DE\u5FA9\u3057\u7D9A\u3051\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SuperInvicible
+    - Name: $v
+      Entry: 7
+      Data: 29|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SuperInvicible
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: RaijinStep
+    - Name: $v
+      Entry: 7
+      Data: 30|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: RaijinStep
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Acceleration
+    - Name: $v
+      Entry: 7
+      Data: 31|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Acceleration
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BuffMultiply
+    - Name: $v
+      Entry: 7
+      Data: 32|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BuffMultiply
+    - Name: name
+      Entry: 1
+      Data: "\u706B\u529B\u5F37\u5316"
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 10
+    - Name: description
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u653B\u6483\u529B\u304C1.2\u500D\u306B\u306A\u308B\u3002"
+    - Name: spellBase
+      Entry: 10
+      Data: 28
+    - Name: spellIcon
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BuffAdditive
+    - Name: $v
+      Entry: 7
+      Data: 33|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BuffAdditive
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: AggroBoost
+    - Name: $v
+      Entry: 7
+      Data: 34|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: AggroBoost
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u91CD\u306D\u639B\u3051\u53EF\u80FD\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Stone
+    - Name: $v
+      Entry: 7
+      Data: 35|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Stone
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: "\u767A\u52D5\u5F8C\uFF13\u56DE\u307E\u3067\u306B\u4F7F\u7528\u3059\u308B\u9B54\u6CD5\u3092\u306E\u30B3\u30B9\u30C8\u3092\uFF10\u306B\u3059\u308B\u3002"
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8439814167405083671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4453080053322836879}
+  - component: {fileID: 7064035074245464704}
+  m_Layer: 0
+  m_Name: RootLifetimeScope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4453080053322836879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439814167405083671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1984.8137, y: 1297.3354, z: 10.664798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7064035074245464704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439814167405083671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1a6f0da2aa4f6ca4a3c4db5b5dcb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: 
+  autoRun: 1
+  autoInjectGameObjects: []
+  spellDatabase: {fileID: 11400000, guid: 1cc3e99a037e86c4f9237cb745a77415, type: 2}
+  spellColorPalette: {fileID: 11400000, guid: 3142e12309e78504f8e510c5901ab378, type: 2}
+  attackDatabase: {fileID: 11400000, guid: 803bd3eaa60d0cb42885800f0a1c231e, type: 2}
+  characterDatabase: {fileID: 11400000, guid: 5283d8522c66a8a4fa6340a044fdfecd, type: 2}
+  playerConstData: {fileID: 11400000, guid: c9627ccae04c7044182290bbc8b1904e, type: 2}
+  sceneChanger: {fileID: 8871167273828595762, guid: b599d48483d48264fb50304d39b710fc,
+    type: 3}
+  audioManager: {fileID: 8668005862352214212, guid: b78547fd5245dcd4d9e639e0f5995338,
+    type: 3}

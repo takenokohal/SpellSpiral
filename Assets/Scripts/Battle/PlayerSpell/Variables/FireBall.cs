@@ -1,0 +1,54 @@
+﻿using System.Linq;
+using Battle.Character;
+using Battle.Character.Enemy;
+using Battle.CommonObject.Bullet;
+using Battle.CommonObject.MagicCircle;
+using Cysharp.Threading.Tasks;
+using UniRx;
+using UnityEngine;
+
+namespace Battle.PlayerSpell.Variables
+{
+    public class FireBall : SpellBase
+    {
+        [SerializeField] private DirectionalBullet directionalBullet;
+
+        [SerializeField] private float bulletSpeed;
+
+        [SerializeField] private int howMany;
+        [SerializeField] private float magicCircleOffset;
+        [SerializeField] private float coolTime;
+
+
+        protected override async UniTaskVoid Init()
+        {
+            var target = AllEnemyManager.EnemyCores
+                .OrderBy(value => Vector3.Distance(value.Center.position, PlayerCore.Center.position)).First();
+            for (int i = 0; i < howMany; i++)
+            {
+                Shoot(target, i).Forget();
+                await MyDelay(coolTime);
+            }
+
+            await MyDelay(1f);
+            Destroy(gameObject);
+        }
+
+        private async UniTaskVoid Shoot(EnemyCore target, int i)
+        {
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white, 1,
+                () => CalcPos(target, i)));
+
+            var pos = (Vector3)CalcPos(target, i);
+
+            var velocity = (target.Center.position - pos).normalized * bulletSpeed;
+            var instance = directionalBullet.CreateFromPrefab();
+            instance.Activate(pos, velocity);
+        }
+
+        private Vector2 CalcPos(EnemyCore target, int i)
+        {
+            return PlayerCore.Center.position + (Vector3)GetDirectionToEnemy(target) * (1f + i * magicCircleOffset);
+        }
+    }
+}
