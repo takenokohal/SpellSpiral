@@ -1,4 +1,4 @@
-﻿using UniRx;
+﻿/*using UniRx;
 using UnityEngine.Pool;
 
 namespace Battle.CommonObject.Bullet
@@ -33,4 +33,4 @@ namespace Battle.CommonObject.Bullet
             v.Activate(parameter);
         }
     }
-}
+}*/

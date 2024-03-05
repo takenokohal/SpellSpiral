@@ -1,4 +1,4 @@
-﻿using UniRx;
+﻿/*using UniRx;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -34,4 +34,4 @@ namespace Battle.CommonObject.Bullet
             v.Activate(pos, velocity);
         }
     }
-}
+}*/

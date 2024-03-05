@@ -4,22 +4,27 @@ using System.Linq;
 using Others;
 using Others.Utils;
 using UniRx;
+using UnityEngine;
+using VContainer;
 
 namespace Battle.Character.Player.Deck
 {
     public class BattleDeck : IDisposable
     {
-        private readonly IDeckPresenter _deckPresenter;
-        private readonly IReadOnlyList<string> _originDeck;
+        [Inject] private readonly IDeckPresenter _deckPresenter;
+
+
+        private readonly List<string> _originDeck = new();
         private readonly List<string> _currentDeck = new();
 
         private readonly Subject<Unit> _onDraw = new();
-        public IObservable<Unit> OnDraw => _onDraw;
+        public IObservable<Unit> OnDraw => _onDraw.AddTo(new List<IDisposable> { this });
 
-        public BattleDeck(IDeckPresenter deckPresenter)
+
+        public void Init()
         {
-            _deckPresenter = deckPresenter;
-            _originDeck = _deckPresenter.LoadDeck();
+            Debug.Log(_deckPresenter);
+            _originDeck.AddRange(_deckPresenter.LoadDeck());
             ResetDeck();
         }
 

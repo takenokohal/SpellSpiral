@@ -17,7 +17,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         //   [SerializeField] private float tackleDuration;
 
         [SerializeField] private DirectionalBullet directionalBulletPrefab;
-        private DirectionalBulletFactory _directionalBulletFactory;
         [SerializeField] private int howManyShoot;
         [SerializeField] private float shootArc;
         [SerializeField] private float shootDuration;
@@ -41,8 +40,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
                 transform.SetParent(Parent.Center);
                 transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-
-                _directionalBulletFactory = new DirectionalBulletFactory(directionalBulletPrefab);
             });
         }
 
@@ -119,7 +116,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia, Color.red, 1,
                 () => CalcPos(i, currentArc)));
 
-            _directionalBulletFactory.Create(CalcPos(i, currentArc), CalcDir(i, currentArc) * shootSpeed);
+            directionalBulletPrefab.CreateFromPrefab(CalcPos(i, currentArc), CalcDir(i, currentArc) * shootSpeed);
         }
 
 

@@ -11,7 +11,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         //  [SerializeField] private HomingBullet homingBullet;
 
         [SerializeField] private HomingBullet homingBullet;
-        private HomingBulletFactory _homingBulletFactory;
 
 
         [SerializeField] private float moveSpeed;
@@ -33,10 +32,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float recoveryTime;
 
 
-        private void Start()
-        {
-            _homingBulletFactory = new HomingBulletFactory(homingBullet);
-        }
 
         protected override async UniTask Sequence()
         {
@@ -81,7 +76,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia, Color.magenta, 1,
                 () => CalcPos(i, j)));
 
-            _homingBulletFactory.Create(new HomingBullet.Parameter()
+            homingBullet.CreateFromPrefab(new HomingBullet.Parameter()
             {
                 FirstPos = CalcPos(i, j),
                 Duration = bulletDuration,

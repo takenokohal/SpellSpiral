@@ -19,7 +19,6 @@ namespace DeckEdit.SaveData
             
             var json = ES3.Load<string>(key);
 
-            Debug.Log(json);
             return JsonUtility.FromJson<T>(json);
         }
     }

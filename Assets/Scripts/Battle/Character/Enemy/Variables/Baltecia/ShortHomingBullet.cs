@@ -11,7 +11,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float drag;
 
         [SerializeField] private HomingBullet homingBullet;
-        private HomingBulletFactory _homingBulletFactory;
         [SerializeField] private float recovery;
 
         [SerializeField] private float bulletFirstSpeed;
@@ -19,11 +18,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float changeSpeedValue;
         [SerializeField] private float bulletDuration;
 
-
-        private void Start()
-        {
-            _homingBulletFactory = new HomingBulletFactory(homingBullet);
-        }
 
         protected override async UniTask Sequence()
         {
@@ -43,7 +37,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                     await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia,
                         Color.red, 1, () => Parent.Center.position + CalcDir(i1)));
 
-                    _homingBulletFactory.Create(new HomingBullet.Parameter()
+                    homingBullet.CreateFromPrefab(new HomingBullet.Parameter()
                     {
                         ChangeSpeedValue = changeSpeedValue,
                         MaxSpeed = bulletSpeed,

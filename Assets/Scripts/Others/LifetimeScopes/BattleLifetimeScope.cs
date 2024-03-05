@@ -39,7 +39,7 @@ namespace Others.LifetimeScopes
             builder.RegisterComponentInHierarchy<WinController>();
 
             builder.Register<BattleDeck>(Lifetime.Singleton);
-            builder.Register<TestDeckPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<DeckPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
 
           //  builder.RegisterComponentInHierarchy<SEController>();
         }

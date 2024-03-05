@@ -34,6 +34,8 @@ namespace Battle.Character.Player
 
         protected override void Init()
         {
+            _battleDeck.Init();
+            
             foreach (var spellSlot in EnumUtil<SpellSlot>.GetValues())
             {
                 _battleDeck.Draw(out var spell);

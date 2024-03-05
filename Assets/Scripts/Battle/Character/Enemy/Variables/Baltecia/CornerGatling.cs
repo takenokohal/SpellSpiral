@@ -19,12 +19,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float recovery;
 
         [SerializeField] private DirectionalBullet directionalBullet;
-        private DirectionalBulletFactory _directionalBulletFactory;
 
-        private void Start()
-        {
-            _directionalBulletFactory = new DirectionalBulletFactory(directionalBullet);
-        }
 
         protected override async UniTask Sequence()
         {
@@ -77,7 +72,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 () => CalcPos(i, j, dir));
             await MagicCircleFactory.CreateAndWait(mcp);
 
-            _directionalBulletFactory.Create(CalcPos(i, j, dir), dir * bulletSpeed);
+           directionalBullet.CreateFromPrefab(CalcPos(i, j, dir), dir * bulletSpeed);
         }
 
         private Vector2 CalcPos(int i, int j, Vector2 dir)

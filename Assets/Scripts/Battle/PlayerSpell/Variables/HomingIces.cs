@@ -43,8 +43,7 @@ namespace Battle.PlayerSpell.Variables
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white, 1f,
                 () => CalcPos(target, i)));
 
-            var instance = homingBullet.CreateFromPrefab();
-            instance.Activate(new HomingBullet.Parameter()
+            homingBullet.CreateFromPrefab(new HomingBullet.Parameter()
             {
                 ChangeSpeedValue = changeSpeedValue,
                 MaxSpeed = maxSpeed,

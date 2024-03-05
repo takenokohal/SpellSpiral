@@ -4987,6 +4987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72e04760c714dd5b413d3a41c826f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 2838650211137381744}
+  attackHitController: {fileID: 5243778756491171229}
 --- !u!135 &6919244083957649213
 SphereCollider:
   m_ObjectHideFlags: 0

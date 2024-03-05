@@ -22,13 +22,11 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float recovery;
 
 
-        [SerializeField] private DirectionalBullet directionalBullet;
-        private DirectionalBulletFactory _directionalBulletFactory;
+        [SerializeField] private DirectionalBullet directionalBulletPrefab;
 
 
         private void Start()
         {
-            _directionalBulletFactory = new DirectionalBulletFactory(directionalBullet);
             transform.SetParent(Parent.Center);
             transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
@@ -42,8 +40,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             Parent.ToAnimationVelocity = -GetDirectionToPlayer();
             await MyDelay(backStepDuration);
 
-            
-            Parent.ToAnimationVelocity= Vector2.zero;
+
+            Parent.ToAnimationVelocity = Vector2.zero;
 
             //射撃
             for (int i = 0; i < howManyIn1Side; i++)
@@ -60,7 +58,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                             () => CalcPos(i1, j1));
                         await MagicCircleFactory.CreateAndWait(mcp);
 
-                        _directionalBulletFactory.Create(CalcPos(i1, j1),
+                        directionalBulletPrefab.CreateFromPrefab(CalcPos(i1, j1),
                             ((Vector2)PlayerCore.Center.position - CalcPos(i1, j1)).normalized * bulletSpeed);
                     });
                 }

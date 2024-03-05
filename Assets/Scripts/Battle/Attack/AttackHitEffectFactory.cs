@@ -26,7 +26,7 @@ namespace Battle.Attack
             t.position = position;
             t.rotation = rotation;
 
-            await UniTask.WaitWhile(() => v.isPlaying, cancellationToken: v.GetCancellationTokenOnDestroy());
+            await UniTask.Delay(5000);
 
             _objectPool.Release(v);
         }

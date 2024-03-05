@@ -48,8 +48,7 @@ namespace Battle.PlayerSpell.Variables
             var pos = (Vector3)CalcPos(target, i, currentArc);
 
             var velocity = CalcDir(target, i, currentArc) * bulletSpeed;
-            var instance = directionalBullet.CreateFromPrefab();
-            instance.Activate(pos, velocity);
+            directionalBullet.CreateFromPrefab(pos, velocity);
         }
 
         private Vector2 CalcPos(EnemyCore target, int i, float currentArc)

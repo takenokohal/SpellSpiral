@@ -3,12 +3,11 @@ using System.Linq;
 using Battle.Character.Player.Deck;
 using Databases;
 using DeckEdit.Model;
-using UnityEngine;
 using VContainer;
 
 namespace Test
 {
-    public class TestDeckPresenter : MonoBehaviour, BattleDeck.IDeckPresenter
+    public class DeckPresenter : BattleDeck.IDeckPresenter
     {
         [Inject] private readonly IDeckSaveDataPresenter _deckSaveDataPresenter;
 

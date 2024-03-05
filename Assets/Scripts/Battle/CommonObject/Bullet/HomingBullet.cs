@@ -11,8 +11,8 @@ namespace Battle.CommonObject.Bullet
 {
     public class HomingBullet : MonoBehaviour
     {
-        private Rigidbody _rb;
-        private AttackHitController _attackHitController;
+        [SerializeField] private Rigidbody rb;
+        [SerializeField] private AttackHitController attackHitController;
 
 
         private Parameter _parameter;
@@ -20,10 +20,15 @@ namespace Battle.CommonObject.Bullet
 
         private float _elapsedTime;
 
-        private readonly Subject<Unit> _onKill = new();
-        public IObservable<Unit> OnKill => _onKill.TakeUntilDestroy(this);
+        private readonly ReactiveProperty<bool> _isDead = new();
 
-        private CancellationTokenSource _autoKillTokenSource;
+        public bool IsDead
+        {
+            get => _isDead.Value;
+            private set => _isDead.Value = value;
+        }
+
+        public IObservable<bool> IsDeadObservable => _isDead.TakeUntilDestroy(this);
 
         public class Parameter
         {
@@ -40,37 +45,29 @@ namespace Battle.CommonObject.Bullet
         }
 
 
-        public HomingBullet CreateFromPrefab()
+        public HomingBullet CreateFromPrefab(Parameter parameter)
         {
             var v = Instantiate(this);
-            v.Init();
+            v.Activate(parameter);
 
             return v;
         }
 
 
-        private void Init()
-        {
-            _rb = GetComponent<Rigidbody>();
-            _attackHitController = GetComponent<AttackHitController>();
-
-
-            _attackHitController.OnAttackHit.Subscribe(_ => Kill().Forget());
-        }
-
-        public void Activate(Parameter parameter)
+        private void Activate(Parameter parameter)
         {
             AudioManager.PlaySe("MagicShot");
 
-            _autoKillTokenSource = new CancellationTokenSource();
             gameObject.SetActive(true);
             _parameter = parameter;
 
             _elapsedTime = 0f;
 
             transform.position = _parameter.FirstPos;
-            _rb.velocity = _parameter.FirstVelocity;
+            rb.velocity = _parameter.FirstVelocity;
             AutoKill().Forget();
+
+            attackHitController.OnAttackHit.Subscribe(_ => Kill().Forget());
         }
 
         private void FixedUpdate()
@@ -82,18 +79,19 @@ namespace Battle.CommonObject.Bullet
 
             var to = _elapsedTime <= _parameter.Duration
                 ? (_parameter.Target.position - transform.position).normalized * _parameter.MaxSpeed
-                : _rb.velocity.normalized * _parameter.MaxSpeed;
+                : rb.velocity.normalized * _parameter.MaxSpeed;
 
 
-            _rb.velocity = Vector3.MoveTowards(_rb.velocity, to, _parameter.ChangeSpeedValue);
+            rb.velocity = Vector3.MoveTowards(rb.velocity, to, _parameter.ChangeSpeedValue);
         }
 
 
         public async UniTaskVoid Kill()
         {
-            _autoKillTokenSource?.Cancel();
-            _autoKillTokenSource = null;
-            _onKill.OnNext(Unit.Default);
+            if (IsDead)
+                return;
+            
+            IsDead = true;
 
             await transform.DOScale(0, 0.5f);
 
@@ -102,7 +100,7 @@ namespace Battle.CommonObject.Bullet
 
         private async UniTaskVoid AutoKill()
         {
-            await UniTask.Delay(10000, cancellationToken: _autoKillTokenSource.Token);
+            await UniTask.Delay(10000);
             Kill().Forget();
         }
     }
