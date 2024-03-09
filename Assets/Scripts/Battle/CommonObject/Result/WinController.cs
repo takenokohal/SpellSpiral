@@ -3,6 +3,7 @@ using Battle.Character.Enemy;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Others;
+using Others.Scene;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,14 +21,16 @@ namespace Battle.CommonObject.Result
         [SerializeField] private ParticleSystem effect;
 
         [SerializeField] private CanvasGroup mainCanvas;
-      //  [SerializeField] private CanvasGroup loseCanvas;
+
+        //  [SerializeField] private CanvasGroup loseCanvas;
         [SerializeField] private Image whiteOut;
 
         [SerializeField] private PlayerInput input;
 
         [SerializeField] private GameObject winCamera;
-        
-        
+
+        [Inject] private readonly MySceneManager _mySceneManager;
+
         private void Start()
         {
             _gameLoop.Event
@@ -39,7 +42,7 @@ namespace Battle.CommonObject.Result
         private async UniTaskVoid OnWin()
         {
             Time.timeScale = 0.5f;
-            
+
             winCamera.SetActive(true);
 
             await UniTask.Delay(1000);
@@ -71,7 +74,7 @@ namespace Battle.CommonObject.Result
 
             Time.timeScale = 1;
 
-            await SceneManager.LoadSceneAsync("Stage2D");
+            _mySceneManager.ChangeSceneAsync("Home").Forget();
         }
     }
 }

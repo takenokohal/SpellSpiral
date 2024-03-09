@@ -2,11 +2,13 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Others;
+using Others.Scene;
 using Others.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using VContainer;
 
 namespace Battle.CommonObject.Result
 {
@@ -23,6 +25,8 @@ namespace Battle.CommonObject.Result
         [SerializeField] private Color selectedColor;
         [SerializeField] private Color unselectedColor;
 
+
+        [Inject] private readonly MySceneManager _mySceneManager;
 
         [Serializable]
         private class IconAndTitle
@@ -49,7 +53,7 @@ namespace Battle.CommonObject.Result
         {
             if (!_isActive)
                 return;
-            if (SceneChanger.Fading)
+            if (_mySceneManager.Changing)
                 return;
 
             MovePointer();
@@ -83,13 +87,13 @@ namespace Battle.CommonObject.Result
 
             var nextScene = _currentChoice switch
             {
-                Choice.Retry => SceneChanger.CurrentSceneName,
+                Choice.Retry => MySceneManager.CurrentSceneName,
                 Choice.EditDeck => "EditDeck",
                 Choice.Home => "Home",
                 _ => throw new ArgumentOutOfRangeException()
             };
 
-            SceneChanger.ChangeSceneAsync(nextScene);
+            _mySceneManager.ChangeSceneAsync(nextScene).Forget();
         }
 
         private void UpdateView()

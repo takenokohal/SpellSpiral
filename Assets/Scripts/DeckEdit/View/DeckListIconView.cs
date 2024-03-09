@@ -20,10 +20,10 @@ namespace DeckEdit.View
         
 
         private readonly Subject<Unit> _onRightClick = new();
-        public IObservable<Unit> OnRightClick => _onRightClick;
+        public IObservable<Unit> OnRightClick => _onRightClick.TakeUntilDestroy(this);
 
         private readonly Subject<Unit> _onMouseEnter = new();
-        public IObservable<Unit> OnMouseEnter => _onMouseEnter;
+        public IObservable<Unit> OnMouseEnter => _onMouseEnter.TakeUntilDestroy(this);
 
         public void OnPointerClick(PointerEventData eventData)
         {

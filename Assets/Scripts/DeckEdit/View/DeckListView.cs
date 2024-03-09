@@ -21,6 +21,7 @@ namespace DeckEdit.View
         [Inject] private readonly CurrentSelectedSpell _currentSelectedSpell;
 
         private readonly Dictionary<SpellKey, DeckListIconView> _iconDictionary = new();
+        public IReadOnlyDictionary<SpellKey, DeckListIconView> IconDictionary => _iconDictionary;
 
         private void Start()
         {

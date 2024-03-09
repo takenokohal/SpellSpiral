@@ -1,15 +1,17 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Others;
+using Others.Scene;
 using Others.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using VContainer;
 
-namespace Battle.CommonObject.Result
+namespace HomeScene
 {
-    public class MenuScene : MonoBehaviour
+    public class HomeController : MonoBehaviour
     {
         private PlayerInput _playerInput;
 
@@ -21,6 +23,7 @@ namespace Battle.CommonObject.Result
         [SerializeField] private Color selectedColor;
         [SerializeField] private Color unselectedColor;
 
+        [Inject] private readonly MySceneManager _mySceneManager;
 
         [Serializable]
         private class IconAndTitle
@@ -38,7 +41,7 @@ namespace Battle.CommonObject.Result
 
         private void Update()
         {
-            if (SceneChanger.Fading)
+            if (_mySceneManager.Changing)
                 return;
 
             MovePointer();
@@ -87,7 +90,7 @@ namespace Battle.CommonObject.Result
                 _ => throw new ArgumentOutOfRangeException()
             };
 
-            SceneChanger.ChangeSceneAsync(nextScene);
+            _mySceneManager.ChangeSceneAsync(nextScene).Forget();
         }
 
         private void UpdateView()

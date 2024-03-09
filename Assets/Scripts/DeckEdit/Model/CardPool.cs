@@ -8,7 +8,7 @@ using VContainer;
 
 namespace DeckEdit.Model
 {
-    public class CardPool
+    public class CardPool: IDisposable
     {
         [Inject] private readonly SpellDatabase _spellDatabase;
 
@@ -26,6 +26,11 @@ namespace DeckEdit.Model
 
         public void Sort()
         {
+        }
+
+        public void Dispose()
+        {
+            _currentCardPool?.Dispose();
         }
     }
 }

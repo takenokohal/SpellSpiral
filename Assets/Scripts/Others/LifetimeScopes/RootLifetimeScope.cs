@@ -1,6 +1,7 @@
 ﻿using Audio;
 using Databases;
 using DeckEdit.SaveData;
+using Others.Scene;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -15,8 +16,9 @@ namespace Others.LifetimeScopes
         [SerializeField] private CharacterDatabase characterDatabase;
         [SerializeField] private PlayerConstData playerConstData;
 
-        [SerializeField] private SceneChanger sceneChanger;
         [SerializeField] private AudioManager audioManager;
+
+        [SerializeField] private SceneFadePanelView sceneFadePanelView;
         
         
         protected override void Configure(IContainerBuilder builder)
@@ -32,8 +34,11 @@ namespace Others.LifetimeScopes
             builder.RegisterInstance(playerConstData);
 
             builder.Register<DeckSaveDataPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<MySceneManager>(Lifetime.Singleton);
 
-            Instantiate(sceneChanger);
+            var panelInstance = Instantiate(sceneFadePanelView);
+            builder.RegisterInstance(panelInstance);
+            
             Instantiate(audioManager);
         }
     }

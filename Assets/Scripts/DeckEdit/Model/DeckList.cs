@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace DeckEdit.Model
 {
-    public class DeckList : IInitializable
+    public class DeckList : IInitializable ,IDisposable
     {
         [Inject] private readonly SpellDatabase _spellDatabase;
         [Inject] private readonly IDeckSaveDataPresenter _deckSaveDataPresenter;
@@ -70,6 +70,13 @@ namespace DeckEdit.Model
             var saveData = _deckSaveDataPresenter.LoadDeck() ?? new List<string>();
 
             _currentDeckList.AddRange(saveData.Select(value => new SpellKey(value)));
+        }
+
+        public void Dispose()
+        {
+            _onAdd?.Dispose();
+            _onRemove?.Dispose();
+            _onSort?.Dispose();
         }
     }
 }

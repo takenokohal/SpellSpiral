@@ -87,9 +87,9 @@ GameObject:
   - component: {fileID: 3743432350947165776}
   - component: {fileID: 6410471800142320750}
   - component: {fileID: 3188664110960374943}
-  - component: {fileID: 8871167273828595762}
+  - component: {fileID: 6080814512602597102}
   m_Layer: 5
-  m_Name: SceneChanger
+  m_Name: SceneFadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 503
---- !u!114 &8871167273828595762
+--- !u!114 &6080814512602597102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +187,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6175100283402916690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 093cfccddf7944ec8caa4e1bb898f409, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b65241ca7d74d448be8b836ec4616b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 2022069217113649456}
+  duration: 1

@@ -13,7 +13,7 @@ namespace DeckEdit.View
 
         private void Start()
         {
-            button.OnClickAsObservable().Subscribe(_ => _deckList.Save());
+            button.OnClickAsObservable().Subscribe(_ => _deckList.Save()).AddTo(this);
         }
     }
 }

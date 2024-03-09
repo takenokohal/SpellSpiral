@@ -25,7 +25,7 @@ namespace DeckEdit.View
 
         private void Start()
         {
-            _currentSelectedSpell.OnSpellChanged().Subscribe(OnSpellChanged);
+            _currentSelectedSpell.OnSpellChanged().TakeUntilDestroy(this).Subscribe(OnSpellChanged);
         }
 
         private void OnSpellChanged(SpellData spellData)

@@ -21,10 +21,10 @@ namespace DeckEdit.View
         public void SetColor(Color color) => colorImage.color = color;
 
         private readonly Subject<Unit> _onRightClick = new();
-        public IObservable<Unit> OnRightClick => _onRightClick;
+        public IObservable<Unit> OnRightClick => _onRightClick.TakeUntilDestroy(this);
 
         private readonly Subject<Unit> _onMouseEnter = new();
-        public IObservable<Unit> OnMouseEnter => _onMouseEnter;
+        public IObservable<Unit> OnMouseEnter => _onMouseEnter.TakeUntilDestroy(this);
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -36,7 +36,6 @@ namespace DeckEdit.View
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log(_onRightClick);
             _onMouseEnter.OnNext(Unit.Default);
         }
     }

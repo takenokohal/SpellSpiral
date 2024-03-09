@@ -21,4 +21,24 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  currentSavedDeck: []
+  currentSavedDeck:
+  - Gatling3
+  - Gatling3
+  - Gatling3
+  - FireShotGun3
+  - FireShotGun3
+  - FireShotGun3
+  - Explosion
+  - IceMissile4
+  - IceMissile4
+  - IceMissile4
+  - SingleLaser
+  - SingleLaser
+  - SingleLaser
+  - BigMultiLaser
+  - SmallHeal
+  - SmallHeal
+  - SmallHeal
+  - MidHeal
+  - MidHeal
+  - BigHeal

@@ -53,7 +53,7 @@ MonoBehaviour:
   attackDatabase: {fileID: 11400000, guid: 803bd3eaa60d0cb42885800f0a1c231e, type: 2}
   characterDatabase: {fileID: 11400000, guid: 5283d8522c66a8a4fa6340a044fdfecd, type: 2}
   playerConstData: {fileID: 11400000, guid: c9627ccae04c7044182290bbc8b1904e, type: 2}
-  sceneChanger: {fileID: 8871167273828595762, guid: b599d48483d48264fb50304d39b710fc,
-    type: 3}
   audioManager: {fileID: 8668005862352214212, guid: b78547fd5245dcd4d9e639e0f5995338,
+    type: 3}
+  sceneFadePanelView: {fileID: 6080814512602597102, guid: b599d48483d48264fb50304d39b710fc,
     type: 3}
