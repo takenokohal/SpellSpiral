@@ -4,14 +4,16 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class SummonServant : EnemySequenceBase
+    public class SummonServant : BossSequenceBase<BalteciaState>
     {
+        public override BalteciaState StateKey { get; }
+
         protected override async UniTask Sequence()
         {
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(
-                CharacterKey.Baltecia, 
+                CharacterKey, 
                 Color.red, 1,
-                () => Parent.Center.position));
+                () => Parent.transform.position));
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class TackleAndShotGun : EnemySequenceBase
+    public class TackleAndShotGun : BossSequenceBase<BalteciaState>
     {
         //   [SerializeField] private float drag;
 
@@ -38,11 +38,13 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             {
                 await UniTask.WaitWhile(() => !Parent.IsInitialized);
 
-                transform.SetParent(Parent.Center);
+                transform.SetParent(Parent.transform);
                 transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             });
         }
 
+
+        public override BalteciaState StateKey => BalteciaState.TackleAndShotgun;
 
         protected override async UniTask Sequence()
         {
@@ -78,8 +80,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             Parent.ToAnimationVelocity = -GetDirectionToPlayer();
 
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia, Color.red, 2,
-                () => Parent.Center.position));
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.red, 2,
+                () => Parent.transform.position));
 
             attackHitController.gameObject.SetActive(true);
 
@@ -113,7 +115,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         private async UniTaskVoid Shoot(int i, float currentArc)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia, Color.red, 1,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.red, 1,
                 () => CalcPos(i, currentArc)));
 
             directionalBulletPrefab.CreateFromPrefab(CalcPos(i, currentArc), CalcDir(i, currentArc) * shootSpeed);
@@ -131,7 +133,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         private Vector2 CalcPos(int i, float currentArc)
         {
             var dir3 = CalcDir(i, currentArc);
-            return (Vector2)Parent.Center.position + dir3 * (1 + i * 0.5f);
+            return (Vector2)Parent.transform.position + dir3 * (1 + i * 0.5f);
         }
 
         private async UniTaskVoid LerpVelocity()

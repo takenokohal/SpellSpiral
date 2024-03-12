@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class ShortHomingBullet : EnemySequenceBase
+    public class ShortHomingBullet : BossSequenceBase<BalteciaState>
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private float drag;
@@ -18,6 +18,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float changeSpeedValue;
         [SerializeField] private float bulletDuration;
 
+
+        public override BalteciaState StateKey => BalteciaState.ShortHomingBullet;
 
         protected override async UniTask Sequence()
         {
@@ -34,8 +36,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 var i1 = i;
                 UniTask.Void(async () =>
                 {
-                    await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia,
-                        Color.red, 1, () => Parent.Center.position + CalcDir(i1)));
+                    await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey,
+                        Color.red, 1, () => Parent.transform.position + CalcDir(i1)));
 
                     homingBullet.CreateFromPrefab(new HomingBullet.Parameter()
                     {
@@ -43,7 +45,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                         MaxSpeed = bulletSpeed,
                         Duration = bulletDuration,
                         Target = PlayerCore.Center,
-                        FirstPos = Parent.Center.position + CalcDir(i1),
+                        FirstPos = Parent.transform.position + CalcDir(i1),
                         FirstVelocity = CalcDir(i1) * bulletFirstSpeed
                     });
                 });

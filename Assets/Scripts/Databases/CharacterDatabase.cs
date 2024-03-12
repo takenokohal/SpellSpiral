@@ -13,6 +13,7 @@ namespace Databases
 
         public IReadOnlyList<CharacterData> CharacterDataList => characterDataList;
 
-        public CharacterData Find(CharacterKey characterKey) => CharacterDataList.First(value => value.CharacterKey == characterKey);
+        public CharacterData Find(string characterKey) =>
+            CharacterDataList.First(value => value.CharacterKey == characterKey);
     }
 }

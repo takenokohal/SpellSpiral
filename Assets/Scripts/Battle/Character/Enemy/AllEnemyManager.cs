@@ -9,11 +9,11 @@ namespace Battle.Character.Enemy
     {
      //   [Inject] private readonly CinemachineTargetGroup _targetGroup;
 
-        private readonly ReactiveCollection<EnemyCore> _enemyCores = new();
-        public IReadOnlyReactiveCollection<EnemyCore> EnemyCores => _enemyCores;
+        private readonly ReactiveCollection<EnemyBase> _enemyCores = new();
+        public IReadOnlyReactiveCollection<EnemyBase> EnemyCores => _enemyCores;
 
-        public void RegisterEnemy(EnemyCore enemyCore) => _enemyCores.Add(enemyCore);
-        public void RemoveEnemy(EnemyCore enemyCore) => _enemyCores.Remove(enemyCore);
+        public void RegisterEnemy(EnemyBase enemyBase) => _enemyCores.Add(enemyBase);
+        public void RemoveEnemy(EnemyBase enemyBase) => _enemyCores.Remove(enemyBase);
 
         private readonly ReactiveCollection<AttackHitController> _attacks = new();
 

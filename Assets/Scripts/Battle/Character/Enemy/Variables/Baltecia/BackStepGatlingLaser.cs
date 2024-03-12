@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class BackStepGatlingLaser : EnemySequenceBase
+    public class BackStepGatlingLaser : BossSequenceBase<BalteciaState>
     {
         [SerializeField] private float backStepDrag;
         [SerializeField] private float backStepSpeed;
@@ -27,9 +27,11 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         private void Start()
         {
-            transform.SetParent(Parent.Center);
+            transform.SetParent(Parent.transform);
             transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
+
+        public override BalteciaState StateKey => BalteciaState.BackStepAndGatlingAndLaser;
 
         protected override async UniTask Sequence()
         {
@@ -53,7 +55,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                     var j1 = j;
                     UniTask.Void(async () =>
                     {
-                        var mcp = new MagicCircleParameters(CharacterKey.Baltecia, Color.red,
+                        var mcp = new MagicCircleParameters(CharacterKey, Color.red,
                             1f,
                             () => CalcPos(i1, j1));
                         await MagicCircleFactory.CreateAndWait(mcp);
@@ -83,7 +85,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             var v = j == 0 ? 1 : -1;
             var offset = Quaternion.Euler(0, 0, 90f * v) * GetDirectionToPlayer() * radius / 2f;
-            return Parent.Center.position + offset * (i * 0.2f) +
+            return Parent.transform.position + offset * (i * 0.2f) +
                    (Vector3)GetDirectionToPlayer() * ((i - 2) * 0.1f);
         }
     }

@@ -41,7 +41,5 @@ namespace Battle.Character.Player
         public bool SpellChanting { get; set; }
         public bool QuickCharging { get; set; }
         public bool Warping { get; set; }
-
-
     }
 }

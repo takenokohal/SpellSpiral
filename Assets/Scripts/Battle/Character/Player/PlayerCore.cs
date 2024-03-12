@@ -104,5 +104,10 @@ namespace Battle.Character.Player
         {
             return OwnerType.Player;
         }
+
+        public Vector2 GetDirectionToPlayer(Vector2 from)
+        {
+            return ((Vector2)transform.position - from).normalized;
+        }
     }
 }

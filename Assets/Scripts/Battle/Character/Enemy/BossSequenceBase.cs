@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Battle.Character.Player;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
@@ -12,11 +13,12 @@ using UnityEngine;
 namespace Battle.Character.Enemy
 {
     //基本Destroyせずに使いまわす。
-    public abstract class EnemySequenceBase : SerializedMonoBehaviour
+    public abstract class BossSequenceBase<T> : SerializedMonoBehaviour where T : Enum
     {
         public class SequenceRequiredComponents
         {
-            public EnemyCore Parent { get; set; }
+            public BossBase<T> Parent { get; set; }
+            
             public PlayerCore PlayerCore { get; set; }
             public AllEnemyManager AllEnemyManager { get; set; }
 
@@ -26,7 +28,9 @@ namespace Battle.Character.Enemy
         }
 
 
-        protected EnemyCore Parent { get; private set; }
+        protected BossBase<T> Parent { get; private set; }
+
+        protected string CharacterKey => Parent.CharacterKey;
         protected PlayerCore PlayerCore { get; private set; }
 
         protected AllEnemyManager AllEnemyManager { get; private set; }
@@ -34,11 +38,13 @@ namespace Battle.Character.Enemy
         protected SpecialCameraSwitcher SpecialCameraSwitcher { get; private set; }
 
         protected MagicCircleFactory MagicCircleFactory { get; private set; }
-
+        
         public CancellationTokenSource SequenceCancellationToken { get; private set; }
 
         public Animator Animator => Parent.Animator;
 
+
+        public abstract T StateKey { get; }
 
         public void CancelSequence()
         {
@@ -48,7 +54,7 @@ namespace Battle.Character.Enemy
         }
 
 
-        public EnemySequenceBase Construct(SequenceRequiredComponents sequenceRequiredComponents)
+        public BossSequenceBase<T> Construct(SequenceRequiredComponents sequenceRequiredComponents)
         {
             var instance = Instantiate(this);
 
@@ -99,5 +105,6 @@ namespace Battle.Character.Enemy
         {
             return tween.ToUniTask(cancellationToken: SequenceCancellationToken.Token);
         }
+        
     }
 }

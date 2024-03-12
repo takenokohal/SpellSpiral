@@ -37,7 +37,7 @@ namespace Battle.Character.Player
             if (_allEnemyManager.EnemyCores.Count == 1)
             {
                 var enemy = _allEnemyManager.EnemyCores.First();
-                var rot = enemy.Center.position.x - PlayerCore.Center.position.x;
+                var rot = enemy.transform.position.x - PlayerCore.Center.position.x;
                 PlayerCore.CharacterRotation.Rotation = rot;
             }
             else

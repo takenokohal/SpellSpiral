@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class Explosion : EnemySequenceBase
+    public class Explosion : BossSequenceBase<BalteciaState>
     {
         [SerializeField] private ParticleSystem startEffect;
         [SerializeField] private ParticleSystem explosionEffect;
@@ -20,10 +20,12 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             {
                 await UniTask.WaitWhile(() => !Parent.IsInitialized);
 
-                transform.SetParent(Parent.Center);
+                transform.SetParent(Parent.transform);
                 transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             });
         }
+
+        public override BalteciaState StateKey => BalteciaState.Explosion;
 
         protected override async UniTask Sequence()
         {
@@ -31,8 +33,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             startEffect.Play();
             await MyDelay(delay);
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia, Color.red, 7,
-                () => Parent.Center.position));
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.red, 7,
+                () => Parent.transform.position));
 
             startEffect.Stop();
             explosionEffect.Play();

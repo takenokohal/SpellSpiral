@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class FlameSword : EnemySequenceBase
+    public class FlameSword : BossSequenceBase<BalteciaState>
     {
         [SerializeField] private ParticleSystem effect;
         [SerializeField] private AttackHitController attackHitController;
@@ -20,17 +20,19 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             {
                 await UniTask.WaitWhile(() => !Parent.IsInitialized);
 
-                transform.SetParent(Parent.Center);
+                transform.SetParent(Parent.transform);
                 transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             });
         }
+
+        public override BalteciaState StateKey => BalteciaState.FlameSword;
 
         protected override async UniTask Sequence()
         {
             var offset = GetDirectionToPlayer().x >= 0 ? -1.5f : 1.5f;
 
             var targetPos = PlayerCore.Center.position + new Vector3(offset, 0f);
-            var dir = (targetPos - Parent.Center.position).normalized;
+            var dir = (targetPos - Parent.transform.position).normalized;
 
             var rb = Parent.Rigidbody;
             rb.drag = drag;
@@ -39,9 +41,9 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             Parent.ToAnimationVelocity = dir;
 
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(
-                CharacterKey.Baltecia,
+                CharacterKey,
                 Color.red, 3f,
-                () => Parent.Center.position - new Vector3(offset, 0)));
+                () => Parent.transform.position - new Vector3(offset, 0)));
 
 
             effect.Play();

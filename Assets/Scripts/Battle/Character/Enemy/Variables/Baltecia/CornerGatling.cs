@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class CornerGatling : EnemySequenceBase
+    public class CornerGatling : BossSequenceBase<BalteciaState>
     {
         [SerializeField] private Vector2 cornerPosition;
         [SerializeField] private float moveSpeed;
@@ -21,12 +21,14 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private DirectionalBullet directionalBullet;
 
 
+        public override BalteciaState StateKey => BalteciaState.CornerGatling3;
+
         protected override async UniTask Sequence()
         {
             Parent.Rigidbody.velocity= Vector3.zero;
             
             //Move
-            var pos = Parent.Center.position;
+            var pos = Parent.transform.position;
             var cornerNormalize = new Vector2Int
             {
                 x = pos.x >= 0 ? -1 : 1,
@@ -34,9 +36,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             };
 
             var to = (Vector3)Vector2.Scale(cornerPosition, cornerNormalize);
-            to -= Parent.Center.localPosition;
 
-            Parent.ToAnimationVelocity = to - Parent.Center.position;
+            Parent.ToAnimationVelocity = to - Parent.transform.position;
             await TweenToUniTask(Parent.transform.DOMove(to, moveSpeed).SetSpeedBased());
 
             
@@ -68,7 +69,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             dir.Scale(-cornerNormalize);
 
 
-            var mcp = new MagicCircleParameters(CharacterKey.Baltecia, Color.red,  1f,
+            var mcp = new MagicCircleParameters(CharacterKey, Color.red,  1f,
                 () => CalcPos(i, j, dir));
             await MagicCircleFactory.CreateAndWait(mcp);
 
@@ -77,7 +78,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         private Vector2 CalcPos(int i, int j, Vector2 dir)
         {
-            return (Vector2)Parent.Center.position + dir * (2f + i * 0.5f);
+            return (Vector2)Parent.transform.position + dir * (2f + i * 0.5f);
         }
     }
 }

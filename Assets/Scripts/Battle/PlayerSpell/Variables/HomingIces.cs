@@ -38,7 +38,7 @@ namespace Battle.PlayerSpell.Variables
             Destroy(gameObject);
         }
 
-        private async UniTask Shoot(EnemyCore target, int i)
+        private async UniTask Shoot(EnemyBase target, int i)
         {
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white, 1f,
                 () => CalcPos(target, i)));
@@ -55,7 +55,7 @@ namespace Battle.PlayerSpell.Variables
         }
 
 
-        private Vector2 CalcDir(EnemyCore target, int i)
+        private Vector2 CalcDir(EnemyBase target, int i)
         {
             var v1 = -GetDirectionToEnemy(target);
             var v2 = Quaternion.Euler(0, 0, -Arc / 2f) * v1;
@@ -63,7 +63,7 @@ namespace Battle.PlayerSpell.Variables
             return v3;
         }
 
-        private Vector2 CalcPos(EnemyCore target, int i)
+        private Vector2 CalcPos(EnemyBase target, int i)
         {
             var v3 = CalcDir(target, i);
             var pos = (Vector2)PlayerCore.Center.position + v3 * 0.5f;

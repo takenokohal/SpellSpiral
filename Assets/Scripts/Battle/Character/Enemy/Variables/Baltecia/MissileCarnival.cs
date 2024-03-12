@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class MissileCarnival : EnemySequenceBase
+    public class MissileCarnival : BossSequenceBase<BalteciaState>
     {
         //  [SerializeField] private HomingBullet homingBullet;
 
@@ -32,6 +32,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float recoveryTime;
 
 
+        public override BalteciaState StateKey => BalteciaState.MissileCarnival;
 
         protected override async UniTask Sequence()
         {
@@ -46,9 +47,9 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             Parent.Rigidbody.velocity = Vector3.zero;
 
-            var dir = Vector3.zero - Parent.Center.position;
+            var dir = Vector3.zero - Parent.transform.position;
             Parent.ToAnimationVelocity = dir;
-            await TweenToUniTask(Parent.transform.DOMove(Vector3.zero - Parent.Center.localPosition, moveSpeed)
+            await TweenToUniTask(Parent.transform.DOMove(Vector3.zero - Parent.transform.localPosition, moveSpeed)
                 .SetSpeedBased()); 
             Parent.ToAnimationVelocity = Vector2.zero;
             await MyDelay(1f);
@@ -73,7 +74,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         private async UniTaskVoid Generate(int i, int j)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Baltecia, Color.magenta, 1,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.magenta, 1,
                 () => CalcPos(i, j)));
 
             homingBullet.CreateFromPrefab(new HomingBullet.Parameter()

@@ -29,9 +29,9 @@ namespace Battle.UI
             Init(_allEnemyManager.EnemyCores.First(value => value.IsBoss));
         }
 
-        private void Init(EnemyCore enemyCore)
+        private void Init(EnemyBase enemyBase)
         {
-            var param = enemyCore.EnemyParameter;
+            var param = enemyBase.EnemyParameter;
             var maxLife = param.MaxLife;
             lifeGage.maxValue = maxLife;
             lifeGage.value = maxLife;

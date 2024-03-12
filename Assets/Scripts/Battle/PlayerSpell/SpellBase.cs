@@ -62,7 +62,7 @@ namespace Battle.PlayerSpell
             return tween.ToUniTask(cancellationToken: destroyCancellationToken);
         }
 
-        protected Vector2 GetDirectionToEnemy(EnemyCore target) =>
+        protected Vector2 GetDirectionToEnemy(EnemyBase target) =>
             (target.Center.position - PlayerCore.Center.position).normalized;
     }
 }

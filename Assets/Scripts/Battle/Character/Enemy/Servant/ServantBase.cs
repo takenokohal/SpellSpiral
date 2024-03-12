@@ -10,15 +10,15 @@ namespace Battle.Character.Enemy.Servant
     {
         protected PlayerCore PlayerCore { get; private set; }
         
-        protected EnemyCore EnemyCore { get; private set; }
+        protected EnemyBase EnemyBase { get; private set; }
 
         public void Init(PlayerCore playerCore)
         {
             PlayerCore = playerCore;
-            EnemyCore = GetComponent<EnemyCore>();
+            EnemyBase = GetComponent<EnemyBase>();
         }
         
-        protected Vector2 GetDirectionToPlayer() => EnemyCore.GetDirectionToPlayer();
+        protected Vector2 GetDirectionToPlayer() => EnemyBase.GetDirectionToPlayer();
 
         protected UniTask MyDelay(float time)
         {
