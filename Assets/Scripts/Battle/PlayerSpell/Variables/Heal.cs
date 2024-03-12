@@ -13,12 +13,12 @@ namespace Battle.PlayerSpell.Variables
 
         protected override async UniTaskVoid Init()
         {
-            transform.SetParent(PlayerCore.Center);
+            transform.SetParent(PlayerCore.transform);
             transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white,
-                1.5f, () => PlayerCore.Center.position));
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white,
+                1.5f, () => PlayerCore.transform.position));
 
             PlayerCore.PlayerParameter.Life += healValue;
 

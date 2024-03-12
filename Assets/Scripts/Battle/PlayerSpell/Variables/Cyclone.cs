@@ -18,7 +18,7 @@ namespace Battle.PlayerSpell.Variables
         {
             foreach (var t in cubes)
             {
-                MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white, 1,
+                MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white, 1,
                     () => t.position)).Forget();
             }
 
@@ -37,7 +37,7 @@ namespace Battle.PlayerSpell.Variables
 
         private void FixedUpdate()
         {
-            transform.position = PlayerCore.Center.position;
+            transform.position = PlayerCore.transform.position;
             transform.localRotation *= Quaternion.Euler(rotationSpeed * Time.fixedDeltaTime, 0, 0);
         }
     }

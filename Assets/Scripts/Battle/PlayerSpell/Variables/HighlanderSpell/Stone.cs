@@ -1,4 +1,4 @@
-﻿using Battle.Character;
+﻿/*using Battle.Character;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -13,4 +13,4 @@ namespace Battle.PlayerSpell.Variables.HighlanderSpell
                 () => PlayerCore.Center.position));
         }
     }
-}
+}*/

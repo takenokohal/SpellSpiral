@@ -5,12 +5,13 @@ using Battle.Character.Player.Buff;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
 
 namespace Battle.PlayerSpell
 {
-    public abstract class SpellBase : MonoBehaviour
+    public abstract class SpellBase : SerializedMonoBehaviour
     {
         protected PlayerCore PlayerCore { get; private set; }
 
@@ -21,6 +22,8 @@ namespace Battle.PlayerSpell
         protected PlayerBuff PlayerBuff { get; private set; }
 
         protected SpellData SpellData { get; private set; }
+
+        protected string CharacterKey => PlayerCore.CharacterKey;
 
 
         public SpellBase Construct(
@@ -63,6 +66,6 @@ namespace Battle.PlayerSpell
         }
 
         protected Vector2 GetDirectionToEnemy(EnemyBase target) =>
-            (target.Center.position - PlayerCore.Center.position).normalized;
+            (target.transform.position - PlayerCore.transform.position).normalized;
     }
 }

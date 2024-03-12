@@ -1,6 +1,5 @@
 ﻿using Battle.Attack;
 using Cinemachine;
-using Cysharp.Threading.Tasks;
 using Databases;
 using DG.Tweening;
 using Others;
@@ -11,52 +10,38 @@ using VContainer;
 
 namespace Battle.Character.Player
 {
-    public class PlayerCore : MonoBehaviour, IAttackHittable
+    public class PlayerCore : CharacterBase
     {
-        public Rigidbody Rigidbody { get; private set; }
-        public Animator Animator { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
-        public CharacterRotation CharacterRotation { get; private set; }
 
-        [SerializeField] private Transform center;
-        [Inject] private readonly CinemachineImpulseSource _cinemachineImpulseSource;
-        [Inject] private readonly AttackHitEffectFactory _attackHitEffectFactory;
-        [Inject] private readonly AttackDatabase _attackDatabase;
-        [Inject] private readonly GameLoop _gameLoop;
         [Inject] private readonly PlayerConstData _playerConstData;
         public PlayerConstData PlayerConstData => _playerConstData;
 
         private static readonly int OnDamagedAnimKey = Animator.StringToHash("OnDamaged");
-
-        public Transform Center => center;
-
-        public bool IsInitialized { get; private set; }
-
+        
         public bool IsBattleStarted { get; private set; }
-        public UniTask WaitUntilInitialize() => UniTask.WaitWhile(() => !IsInitialized);
 
-        public UniTask WaitUntilBattleStart() => UniTask.WaitUntil(() => IsBattleStarted);
 
         public PlayerParameter PlayerParameter { get; } = new();
 
+        private CinemachineImpulseSource _cinemachineImpulseSource;
+
         private void Start()
         {
-            Rigidbody = GetComponent<Rigidbody>();
-            Animator = GetComponentInChildren<Animator>();
+            _cinemachineImpulseSource = FindObjectOfType<CinemachineImpulseSource>();
             PlayerInput = GetComponent<PlayerInput>();
-            CharacterRotation = GetComponent<CharacterRotation>();
 
             PlayerParameter.LifeObservable.Where(value => value <= 0).Subscribe(value =>
             {
-                _gameLoop.SendEvent(GameLoop.GameEvent.Lose);
+                gameLoop.SendEvent(GameLoop.GameEvent.Lose);
                 OnDead();
             }).AddTo(this);
 
-            _gameLoop.Event.Where(value => value == GameLoop.GameEvent.Win)
+            gameLoop.Event.Where(value => value == GameLoop.GameEvent.Win)
                 .Subscribe(_ => PlayerParameter.Invincible = true).AddTo(this);
 
 
-            _gameLoop.Event
+            gameLoop.Event
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => IsBattleStarted = true);
@@ -64,24 +49,26 @@ namespace Battle.Character.Player
             IsInitialized = true;
         }
 
-
-        void IAttackHittable.OnAttacked(AttackHitController attackHitController)
+        public override void OnAttacked(AttackHitController attackHitController)
         {
+            
             if (PlayerParameter.Invincible)
                 return;
 
 
-            var attackData = _attackDatabase.Find(attackHitController.AttackKey);
+            var attackData = attackDatabase.Find(attackHitController.AttackKey);
             if (attackData != null)
                 PlayerParameter.Life -= attackData.Damage;
 
             _cinemachineImpulseSource.GenerateImpulse();
-            _attackHitEffectFactory.Create(Center.position, Center.rotation);
+            attackHitEffectFactory.Create(transform.position, transform.rotation);
 
             Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
                 .OnComplete(() => Animator.transform.localPosition = Vector3.zero);
             Animator.SetTrigger(OnDamagedAnimKey);
         }
+
+
 
         private void OnDead()
         {
@@ -90,7 +77,7 @@ namespace Battle.Character.Player
             {
                 transform =
                 {
-                    position = center.position
+                    position = transform.position
                 }
             };
 
@@ -100,7 +87,7 @@ namespace Battle.Character.Player
             gameObject.SetActive(false);
         }
 
-        public OwnerType GetOwnerType()
+        public override OwnerType GetOwnerType()
         {
             return OwnerType.Player;
         }

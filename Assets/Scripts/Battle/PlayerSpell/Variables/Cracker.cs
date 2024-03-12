@@ -25,7 +25,7 @@ namespace Battle.PlayerSpell.Variables
         protected override async UniTaskVoid Init()
         {
             var target = AllEnemyManager.EnemyCores
-                .OrderBy(value => Vector3.Distance(value.Center.position, PlayerCore.Center.position)).First();
+                .OrderBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
 
             var currentArc = 0f;
             for (int i = 0; i < howMany; i++)
@@ -42,7 +42,7 @@ namespace Battle.PlayerSpell.Variables
 
         private async UniTaskVoid Shoot(EnemyBase target, int i, float currentArc)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white, 1,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white, 1,
                 () => CalcPos(target, i, currentArc)));
 
             var pos = (Vector3)CalcPos(target, i, currentArc);
@@ -54,7 +54,7 @@ namespace Battle.PlayerSpell.Variables
         private Vector2 CalcPos(EnemyBase target, int i, float currentArc)
         {
             var dir = CalcDir(target, i, currentArc);
-            return (Vector2)PlayerCore.Center.position + dir * magicCircleOffset;
+            return (Vector2)PlayerCore.transform.position + dir * magicCircleOffset;
         }
 
         private Vector2 CalcDir(EnemyBase target, int i, float currentArc)

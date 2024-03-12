@@ -25,7 +25,7 @@ namespace Battle.PlayerSpell.Variables
         protected override async UniTaskVoid Init()
         {
             var target = AllEnemyManager.EnemyCores.OrderBy(value =>
-                Vector3.Distance(value.Center.position, PlayerCore.Center.position)).First();
+                Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
 
             for (int i = 0; i < howMany; i++)
             {
@@ -40,7 +40,7 @@ namespace Battle.PlayerSpell.Variables
 
         private async UniTask Shoot(EnemyBase target, int i)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey.Player, Color.white, 1f,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white, 1f,
                 () => CalcPos(target, i)));
 
             homingBullet.CreateFromPrefab(new HomingBullet.Parameter()
@@ -48,7 +48,7 @@ namespace Battle.PlayerSpell.Variables
                 ChangeSpeedValue = changeSpeedValue,
                 MaxSpeed = maxSpeed,
                 Duration = duration,
-                Target = target.Center,
+                Target = target.transform,
                 FirstPos = CalcPos(target, i),
                 FirstVelocity = CalcDir(target, i) * firstSpeed
             });
@@ -66,7 +66,7 @@ namespace Battle.PlayerSpell.Variables
         private Vector2 CalcPos(EnemyBase target, int i)
         {
             var v3 = CalcDir(target, i);
-            var pos = (Vector2)PlayerCore.Center.position + v3 * 0.5f;
+            var pos = (Vector2)PlayerCore.transform.position + v3 * 0.5f;
             return pos;
         }
     }

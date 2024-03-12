@@ -10,12 +10,11 @@ namespace Battle.PlayerSpell.Variables
     {
         [SerializeField] private BuffKey buffKey;
 
-
         protected override async UniTaskVoid Init()
         {
             await MagicCircleFactory.CreateAndWait(
-                new MagicCircleParameters(CharacterKey.Player,
-                    Color.white, 1, () => PlayerCore.Center.position));
+                new MagicCircleParameters(CharacterKey,
+                    Color.white, 1, () => PlayerCore.transform.position));
 
             PlayerBuff.SetBuff(new BuffParameter(buffKey, SpellData.EffectDuration));
         }
