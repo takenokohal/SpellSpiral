@@ -17,14 +17,6 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 {
     public class BalteciaController : SerializedMonoBehaviour
     {
-        /*
-        [SerializeField] private MissileCarnival missileCarnivalPrefab;
-        [SerializeField] private TackleAndShotGun tackleAndShotGun;
-        [SerializeField] private MoveAndGatling gatling;
-
-        [SerializeField] private Homing homing;
-        */
-
         [Inject] private readonly PlayerCore _playerCore;
         [Inject] private readonly AllEnemyManager _allEnemyManager;
         [Inject] private readonly SpecialCameraSwitcher _specialCameraSwitcher;
@@ -124,6 +116,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             //Special
             MissileCarnival,
+            
+            SummonServant
         }
     }
 }

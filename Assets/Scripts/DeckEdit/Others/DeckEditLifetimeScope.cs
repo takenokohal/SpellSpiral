@@ -23,6 +23,8 @@ namespace DeckEdit.Others
             builder.RegisterComponentInHierarchy<PlayerInput>();
 
             builder.RegisterComponentInHierarchy<DeckCursorView>();
+            builder.RegisterComponentInHierarchy<CardPoolCursorView>();
+            builder.RegisterComponentInHierarchy<ActiveAreaController>();
 
             builder.RegisterEntryPoint<TestInitializer>();
         }

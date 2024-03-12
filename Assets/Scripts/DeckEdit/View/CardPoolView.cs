@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Battle.PlayerSpell;
 using Databases;
 using DeckEdit.Model;
 using UniRx;
@@ -22,6 +21,7 @@ namespace DeckEdit.View
 
 
         private readonly List<CardPoolDataView> _instances = new();
+        public IReadOnlyList<CardPoolDataView> Instances => _instances;
 
         private void Start()
         {
