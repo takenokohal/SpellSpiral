@@ -38,7 +38,7 @@ namespace Battle.CommonObject.Result
 
         private async UniTaskVoid OnLose()
         {
-            effect.transform.position = _playerCore.Center.position;
+            effect.transform.position = _playerCore.transform.position;
             effect.Play();
 
             await mainCanvas.DOFade(0, 1);

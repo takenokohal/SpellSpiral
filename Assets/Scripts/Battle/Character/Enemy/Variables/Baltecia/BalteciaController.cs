@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using Others;
 using Others.Utils;
+using UniRx;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
@@ -10,7 +12,12 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
-            Loop().Forget();
+
+            gameLoop.Event
+                .Where(value => value == GameLoop.GameEvent.BattleStart)
+                .Take(1)
+                .Subscribe(_ => Loop().Forget())
+                .AddTo(this);
         }
 
         private async UniTask Loop()
@@ -37,6 +44,5 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 await PlayState(nextState);
             }
         }
-
     }
 }

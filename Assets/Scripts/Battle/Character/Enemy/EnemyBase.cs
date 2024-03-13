@@ -1,17 +1,23 @@
 ﻿using Battle.Attack;
+using Battle.Character.Player;
 using Cinemachine;
 using DG.Tweening;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using VContainer;
 
 namespace Battle.Character.Enemy
 {
     public abstract class EnemyBase : CharacterBase
     {
+        [Inject] protected readonly PlayerCore playerCore;
+
 
         private CinemachineImpulseSource _impulseSource;
 
+
+        private Vector3 _animatorLocalPosition;
 
         public Vector2 GetDirectionToPlayer()
         {
@@ -28,6 +34,7 @@ namespace Battle.Character.Enemy
             _impulseSource = FindObjectOfType<CinemachineImpulseSource>();
             EnemyParameter = new EnemyParameter(characterDatabase.Find(CharacterKey).Life);
 
+            _animatorLocalPosition = Animator.transform.localPosition;
             this.OnDestroyAsObservable().Subscribe(_ => allEnemyManager.RemoveEnemy(this)).AddTo(this);
         }
 
@@ -42,7 +49,7 @@ namespace Battle.Character.Enemy
 
 
             Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
-                .OnComplete(() => Animator.transform.localPosition = Vector3.zero);
+                .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
             attackHitEffectFactory.Create(transform.position, transform.rotation);
         }
 

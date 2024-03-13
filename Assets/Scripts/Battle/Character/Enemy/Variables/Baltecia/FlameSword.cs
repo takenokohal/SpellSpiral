@@ -31,7 +31,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             var offset = GetDirectionToPlayer().x >= 0 ? -1.5f : 1.5f;
 
-            var targetPos = PlayerCore.Center.position + new Vector3(offset, 0f);
+            var targetPos = PlayerCore.transform.position + new Vector3(offset, 0f);
             var dir = (targetPos - Parent.transform.position).normalized;
 
             var rb = Parent.Rigidbody;

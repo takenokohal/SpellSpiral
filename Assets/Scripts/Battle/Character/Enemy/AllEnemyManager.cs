@@ -15,6 +15,13 @@ namespace Battle.Character.Enemy
         public void RegisterEnemy(EnemyBase enemyBase) => _enemyCores.Add(enemyBase);
         public void RemoveEnemy(EnemyBase enemyBase) => _enemyCores.Remove(enemyBase);
 
+        private readonly ReactiveProperty<EnemyBase> _boss = new();
+        public EnemyBase Boss => _boss.Value;
+        public void RegisterBoss(EnemyBase enemyBase) => _boss.Value = enemyBase;
+        
+
+
+        /*
         private readonly ReactiveCollection<AttackHitController> _attacks = new();
 
         public IReadOnlyCollection<AttackHitController> Attacks => _attacks;
@@ -30,6 +37,6 @@ namespace Battle.Character.Enemy
         {
             _attacks.Remove(attackHitController);
         //    _targetGroup.RemoveMember(attackHitController.transform);
-        }
+        }*/
     }
 }

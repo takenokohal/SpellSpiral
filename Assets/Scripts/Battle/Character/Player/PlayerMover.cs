@@ -20,6 +20,8 @@ namespace Battle.Character.Player
 
         private void FixedUpdate()
         {
+            if(!IsInitialized)
+                return;
             if (!IsBattleStarted)
                 return;
 

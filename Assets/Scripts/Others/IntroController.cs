@@ -45,7 +45,6 @@ namespace Others
 
         private async UniTaskVoid IntroStart()
         {
-            Debug.Log(introTime);
             AnimateUI();
             GenerateWall();
 

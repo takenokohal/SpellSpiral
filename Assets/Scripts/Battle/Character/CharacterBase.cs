@@ -25,11 +25,10 @@ namespace Battle.Character
         [Inject] protected readonly CharacterDatabase characterDatabase;
         [Inject] protected readonly AllEnemyManager allEnemyManager;
         [Inject] protected readonly GameLoop gameLoop;
-        [Inject] protected readonly PlayerCore playerCore;
         [Inject] protected readonly MagicCircleFactory magicCircleFactory;
 
 
-        public bool IsInitialized { get; protected set; }
+        public bool IsInitialized { get; private set; }
         public UniTask WaitUntilInitialize() => UniTask.WaitUntil(() => IsInitialized);
 
         protected virtual void InitializeFunction()

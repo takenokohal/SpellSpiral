@@ -18,7 +18,7 @@ namespace Battle.Character.Player
         public PlayerConstData PlayerConstData => _playerConstData;
 
         private static readonly int OnDamagedAnimKey = Animator.StringToHash("OnDamaged");
-        
+
         public bool IsBattleStarted { get; private set; }
 
 
@@ -26,10 +26,16 @@ namespace Battle.Character.Player
 
         private CinemachineImpulseSource _cinemachineImpulseSource;
 
-        private void Start()
+        private Vector3 _animatorLocalPosition;
+
+        protected override void InitializeFunction()
         {
+            base.InitializeFunction();
+
             _cinemachineImpulseSource = FindObjectOfType<CinemachineImpulseSource>();
             PlayerInput = GetComponent<PlayerInput>();
+
+            _animatorLocalPosition = Animator.transform.localPosition;
 
             PlayerParameter.LifeObservable.Where(value => value <= 0).Subscribe(value =>
             {
@@ -45,13 +51,11 @@ namespace Battle.Character.Player
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => IsBattleStarted = true);
-
-            IsInitialized = true;
         }
+
 
         public override void OnAttacked(AttackHitController attackHitController)
         {
-            
             if (PlayerParameter.Invincible)
                 return;
 
@@ -64,10 +68,9 @@ namespace Battle.Character.Player
             attackHitEffectFactory.Create(transform.position, transform.rotation);
 
             Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
-                .OnComplete(() => Animator.transform.localPosition = Vector3.zero);
+                .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
             Animator.SetTrigger(OnDamagedAnimKey);
         }
-
 
 
         private void OnDead()

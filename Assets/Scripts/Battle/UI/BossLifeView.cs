@@ -25,8 +25,8 @@ namespace Battle.UI
 
         private async void Start()
         {
-            await UniTask.WaitWhile(() => !_allEnemyManager.EnemyCores.Any(value => value.IsBoss));
-            Init(_allEnemyManager.EnemyCores.First(value => value.IsBoss));
+            await UniTask.WaitWhile(() => _allEnemyManager.Boss== null);
+            Init(_allEnemyManager.Boss);
         }
 
         private void Init(EnemyBase enemyBase)

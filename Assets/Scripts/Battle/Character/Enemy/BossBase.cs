@@ -31,8 +31,12 @@ namespace Battle.Character.Enemy
         {
             base.InitializeFunction();
 
+            allEnemyManager.RegisterBoss(this);
+            allEnemyManager.RegisterEnemy(this);
+
             Observable.EveryFixedUpdate().Subscribe(_ => MyFixedUpdate());
 
+            CreateSequence();
             gameLoop.Event
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
@@ -51,7 +55,6 @@ namespace Battle.Character.Enemy
         {
             await WaitUntilInitialize();
 
-            CreateSequence();
 
             gameObject.OnDestroyAsObservable().Subscribe(_ => commonCancellationTokenSource.Cancel());
 

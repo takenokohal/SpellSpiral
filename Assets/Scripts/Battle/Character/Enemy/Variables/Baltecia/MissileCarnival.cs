@@ -49,7 +49,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             var dir = Vector3.zero - Parent.transform.position;
             Parent.ToAnimationVelocity = dir;
-            await TweenToUniTask(Parent.transform.DOMove(Vector3.zero - Parent.transform.localPosition, moveSpeed)
+            await TweenToUniTask(Parent.transform.DOMove(Vector3.zero, moveSpeed)
                 .SetSpeedBased()); 
             Parent.ToAnimationVelocity = Vector2.zero;
             await MyDelay(1f);
@@ -81,7 +81,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             {
                 FirstPos = CalcPos(i, j),
                 Duration = bulletDuration,
-                Target = PlayerCore.Center,
+                Target = PlayerCore.transform,
                 MaxSpeed = maxSpeed,
                 FirstVelocity = Vector2.zero,
                 ChangeSpeedValue = speedChangeRate

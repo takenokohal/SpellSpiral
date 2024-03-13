@@ -61,7 +61,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                         await MagicCircleFactory.CreateAndWait(mcp);
 
                         directionalBulletPrefab.CreateFromPrefab(CalcPos(i1, j1),
-                            ((Vector2)PlayerCore.Center.position - CalcPos(i1, j1)).normalized * bulletSpeed);
+                            ((Vector2)PlayerCore.transform.position - CalcPos(i1, j1)).normalized * bulletSpeed);
                     });
                 }
 

@@ -48,8 +48,8 @@ namespace Battle.CommonObject.Result
             await UniTask.Delay(1000);
 
 
-            var enemy = _allEnemyManager.EnemyCores.First(value => value.IsBoss);
-            effect.transform.position = enemy.Center.position;
+            var enemy = _allEnemyManager.Boss;
+            effect.transform.position = enemy.transform.position;
             effect.Play();
 
             await mainCanvas.DOFade(0, 1);

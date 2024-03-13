@@ -23,7 +23,6 @@ namespace Battle.Character.Player.Deck
 
         public void Init()
         {
-            Debug.Log(_deckPresenter);
             _originDeck.AddRange(_deckPresenter.LoadDeck());
             ResetDeck();
         }

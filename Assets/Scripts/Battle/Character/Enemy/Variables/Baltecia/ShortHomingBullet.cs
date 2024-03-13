@@ -44,7 +44,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                         ChangeSpeedValue = changeSpeedValue,
                         MaxSpeed = bulletSpeed,
                         Duration = bulletDuration,
-                        Target = PlayerCore.Center,
+                        Target = PlayerCore.transform,
                         FirstPos = Parent.transform.position + CalcDir(i1),
                         FirstVelocity = CalcDir(i1) * bulletFirstSpeed
                     });

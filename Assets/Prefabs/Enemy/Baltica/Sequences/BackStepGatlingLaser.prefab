@@ -4787,7 +4787,7 @@ MonoBehaviour:
   shootingRecovery: 1
   laser: {fileID: 9194814169385649228}
   recovery: 3
-  directionalBullet: {fileID: 6815330157788082746, guid: 149667e49c0ef3643b063ebefbb51192,
+  directionalBulletPrefab: {fileID: 6815330157788082746, guid: 149667e49c0ef3643b063ebefbb51192,
     type: 3}
 --- !u!1 &881706987633205763
 GameObject:
