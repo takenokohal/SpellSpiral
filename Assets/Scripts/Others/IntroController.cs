@@ -1,6 +1,9 @@
-﻿using Cinemachine;
+﻿using Battle.Character.Enemy;
+using Battle.Character.Player;
+using Cinemachine;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Others.Scene;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -9,11 +12,13 @@ namespace Others
 {
     public class IntroController : MonoBehaviour
     {
-        [SerializeField] private Transform playerTransform;
-        [SerializeField] private Animator playerAnim;
+        [Inject] private readonly PlayerCore _playerCore;
+        [Inject] private readonly EnemyBase _enemyBase;
+        private Transform PlayerTransform => _playerCore.transform;
+        private Animator PlayerAnim => _playerCore.Animator;
 
-        [SerializeField] private Transform enemyTransform;
-        [SerializeField] private Animator enemyAnim;
+        private Transform EnemyTransform => _enemyBase.transform;
+        private Animator EnemyAnim => _enemyBase.Animator;
 
 
         [Inject] private readonly GameLoop _gameLoop;
@@ -55,16 +60,16 @@ namespace Others
 
         private async UniTask AnimateCharacters()
         {
-            playerAnim.SetFloat(HorizontalSpeedAnimKey, 1);
-            enemyAnim.SetFloat(HorizontalSpeedAnimKey, 1);
+            PlayerAnim.SetFloat(HorizontalSpeedAnimKey, 1);
+            EnemyAnim.SetFloat(HorizontalSpeedAnimKey, 1);
 
-            playerTransform.SetPositionAndRotation(playerFrom.position, playerFrom.rotation);
-            enemyTransform.SetPositionAndRotation(enemyFrom.position, enemyFrom.rotation);
+            PlayerTransform.SetPositionAndRotation(playerFrom.position, playerFrom.rotation);
+            EnemyTransform.SetPositionAndRotation(enemyFrom.position, enemyFrom.rotation);
 
 
             var seq = DOTween.Sequence();
-            seq.Append(playerTransform.DOMove(playerTo.position, introTime));
-            seq.Join(enemyTransform.DOMove(enemyTo.position, introTime));
+            seq.Append(PlayerTransform.DOMove(playerTo.position, introTime));
+            seq.Join(EnemyTransform.DOMove(enemyTo.position, introTime));
             seq.AppendInterval(recovery);
 
             DOVirtual.Float(
@@ -73,11 +78,11 @@ namespace Others
                 recovery,
                 value =>
                 {
-                    playerAnim.SetFloat(HorizontalSpeedAnimKey, value);
-                    enemyAnim.SetFloat(HorizontalSpeedAnimKey, value);
+                    PlayerAnim.SetFloat(HorizontalSpeedAnimKey, value);
+                    EnemyAnim.SetFloat(HorizontalSpeedAnimKey, value);
                 }).SetDelay(introTime - recovery);
-            playerTransform.DORotateQuaternion(playerTo.rotation, recovery).SetDelay(introTime - recovery);
-            enemyTransform.DORotateQuaternion(enemyTo.rotation, recovery).SetDelay(introTime - recovery);
+            PlayerTransform.DORotateQuaternion(playerTo.rotation, recovery).SetDelay(introTime - recovery);
+            EnemyTransform.DORotateQuaternion(enemyTo.rotation, recovery).SetDelay(introTime - recovery);
 
             await seq;
         }

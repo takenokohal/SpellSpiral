@@ -5,21 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: 66a2f792b34307b49a0ce5dadc7934a5
   - enabled: 1
-    path: Assets/Scenes/Training.unity
+    path: Assets/Scenes/BattleMain.unity
     guid: 0cee4561f7d3aaf49ba52998502513a0
   - enabled: 1
     path: Assets/Scenes/EditDeck.unity
     guid: 57a539a4e95b7974dbb6c78852c60590
   - enabled: 1
-    path: Assets/Scenes/Mission.unity
-    guid: ce2e9f53b6884c34fb346533f78e1678
+    path: Assets/Scenes/Stage1.unity
+    guid: 800e845991cf6e845a4b71efa2f048c6
+  - enabled: 1
+    path: Assets/Scenes/Training.unity
+    guid: 88e1fac0e875b674fac98e39cf12fb10
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

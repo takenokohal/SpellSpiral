@@ -35,7 +35,7 @@ namespace DeckEdit.View
             if (!_isActive)
                 return;
 
-            ManageMove();
+            ManageMoveX();
             ManageClick();
         }
 
@@ -58,19 +58,25 @@ namespace DeckEdit.View
             });
         }
 
-        private void ManageMove()
+        private void ManageMoveX()
         {
-            var input = GetInputInt();
-            if (input is { x: 0, y: 0 })
+            var inputX = FloatToInt(_playerInput.actions["Horizontal"].ReadValue<float>());
+            if (!_playerInput.actions["Horizontal"].triggered)
+                inputX = 0;
+            var inputY = FloatToInt(_playerInput.actions["Vertical"].ReadValue<float>());
+            if (!_playerInput.actions["Vertical"].triggered)
+                inputY = 0;
+
+            if (inputX == 0 && inputY == 0)
                 return;
             var length = GetCurrentDeckLength();
 
-            CurrentPos += input;
+            CurrentPos += new Vector2Int(inputX, inputY);
             CurrentPos = new Vector2Int(Repeat(CurrentPos.x, xMax), Repeat(CurrentPos.y, yMax));
 
             if (CurrentIndex >= length)
             {
-                if (input.x > 0)
+                if (inputX > 0)
                     CurrentPos = new Vector2Int(0, CurrentPos.y);
 
                 else
@@ -82,17 +88,6 @@ namespace DeckEdit.View
             _currentSelectedSpell.SetSelectData(_spellDatabase.Find(key.Key));
 
             UpdateView(key);
-        }
-
-        private Vector2Int GetInputInt()
-        {
-            var input = _playerInput.actions["Move"];
-            if (!input.triggered)
-                return Vector2Int.zero;
-            var v = input.ReadValue<Vector2>();
-            var xInput = FloatToInt(v.x);
-            var yInput = FloatToInt(v.y);
-            return new Vector2Int(xInput, yInput);
         }
 
         private static int FloatToInt(float value)

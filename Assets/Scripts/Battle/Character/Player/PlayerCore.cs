@@ -24,7 +24,6 @@ namespace Battle.Character.Player
 
         public PlayerParameter PlayerParameter { get; } = new();
 
-        private CinemachineImpulseSource _cinemachineImpulseSource;
 
         private Vector3 _animatorLocalPosition;
 
@@ -32,7 +31,6 @@ namespace Battle.Character.Player
         {
             base.InitializeFunction();
 
-            _cinemachineImpulseSource = FindObjectOfType<CinemachineImpulseSource>();
             PlayerInput = GetComponent<PlayerInput>();
 
             _animatorLocalPosition = Animator.transform.localPosition;
@@ -64,7 +62,7 @@ namespace Battle.Character.Player
             if (attackData != null)
                 PlayerParameter.Life -= attackData.Damage;
 
-            _cinemachineImpulseSource.GenerateImpulse();
+            characterCamera.ImpulseSource.GenerateImpulse();
             attackHitEffectFactory.Create(transform.position, transform.rotation);
 
             Animator.transform.DOShakePosition(0.1f, 0.1f, 2)

@@ -38,6 +38,7 @@ namespace Battle.CommonObject.Result
 
         public async UniTaskVoid Activate()
         {
+            gameObject.SetActive(true);
             await transform.DOScaleY(0, 0);
             await transform.DOScaleY(1, 0.5f);
             _isActive = true;
@@ -46,7 +47,6 @@ namespace Battle.CommonObject.Result
         private void Start()
         {
             _playerInput = GetComponent<PlayerInput>();
-            UpdateView();
         }
 
         private void Update()
@@ -87,7 +87,7 @@ namespace Battle.CommonObject.Result
 
             var nextScene = _currentChoice switch
             {
-                Choice.Retry => MySceneManager.CurrentSceneName,
+                Choice.Retry => _mySceneManager.CurrentSceneName,
                 Choice.EditDeck => "EditDeck",
                 Choice.Home => "Home",
                 _ => throw new ArgumentOutOfRangeException()

@@ -1,5 +1,6 @@
 ﻿using Battle.Attack;
 using Battle.Character.Player;
+using Battle.MyCamera;
 using Cinemachine;
 using DG.Tweening;
 using UniRx;
@@ -12,9 +13,7 @@ namespace Battle.Character.Enemy
     public abstract class EnemyBase : CharacterBase
     {
         [Inject] protected readonly PlayerCore playerCore;
-
-
-        private CinemachineImpulseSource _impulseSource;
+        [Inject] protected readonly SpecialCameraSwitcher specialCameraSwitcher;
 
 
         private Vector3 _animatorLocalPosition;
@@ -31,7 +30,6 @@ namespace Battle.Character.Enemy
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
-            _impulseSource = FindObjectOfType<CinemachineImpulseSource>();
             EnemyParameter = new EnemyParameter(characterDatabase.Find(CharacterKey).Life);
 
             _animatorLocalPosition = Animator.transform.localPosition;
@@ -45,7 +43,7 @@ namespace Battle.Character.Enemy
             if (attackData != null)
                 EnemyParameter.CurrentLife -= attackData.Damage;
 
-            _impulseSource.GenerateImpulse(5);
+            characterCamera.ImpulseSource.GenerateImpulse(5);
 
 
             Animator.transform.DOShakePosition(0.1f, 0.1f, 2)

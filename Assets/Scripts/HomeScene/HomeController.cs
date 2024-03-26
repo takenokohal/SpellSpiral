@@ -45,16 +45,16 @@ namespace HomeScene
                 return;
 
             MovePointer();
-            TryChangeScene();
+            TryChangeScene().Forget();
         }
 
         private void MovePointer()
         {
-            var inputAction = _playerInput.actions["Move"];
-            if (!inputAction.triggered)
+            var ver = _playerInput.actions["Vertical"];
+            if (!ver.triggered)
                 return;
 
-            var value = inputAction.ReadValue<Vector2>().y;
+            var value = ver.ReadValue<float>();
             var dir = value switch
             {
                 <= -0.5f => 1,
@@ -76,7 +76,7 @@ namespace HomeScene
             pointer.transform.DOMove(selected.title.transform.position, 0);
         }
 
-        private void TryChangeScene()
+        private async UniTask TryChangeScene()
         {
             var inputAction = _playerInput.actions["Yes"];
             if (!inputAction.triggered)
@@ -84,13 +84,13 @@ namespace HomeScene
 
             var nextScene = _currentChoice switch
             {
-                Choice.Mission => "Mission",
+                Choice.Mission => "Stage1",
                 Choice.Training => "Training",
                 Choice.EditDeck => "EditDeck",
                 _ => throw new ArgumentOutOfRangeException()
             };
 
-            _mySceneManager.ChangeSceneAsync(nextScene).Forget();
+            await _mySceneManager.ChangeSceneAsync(nextScene);
         }
 
         private void UpdateView()

@@ -2,6 +2,7 @@
 using Battle.Character.Enemy;
 using Battle.Character.Player;
 using Battle.CommonObject.MagicCircle;
+using Battle.MyCamera;
 using Cysharp.Threading.Tasks;
 using Databases;
 using Others;
@@ -19,17 +20,17 @@ namespace Battle.Character
         public Animator Animator { get; private set; }
         public CharacterRotation CharacterRotation { get; private set; }
 
-        //Centerも消す。Modelを中央に。
         [Inject] protected readonly AttackHitEffectFactory attackHitEffectFactory;
         [Inject] protected readonly AttackDatabase attackDatabase;
         [Inject] protected readonly CharacterDatabase characterDatabase;
         [Inject] protected readonly AllEnemyManager allEnemyManager;
         [Inject] protected readonly GameLoop gameLoop;
         [Inject] protected readonly MagicCircleFactory magicCircleFactory;
+        [Inject] protected readonly CharacterCamera characterCamera;
 
 
         public bool IsInitialized { get; private set; }
-        public UniTask WaitUntilInitialize() => UniTask.WaitUntil(() => IsInitialized);
+        public UniTask WaitUntilInitialize() => UniTask.WaitUntil(() => IsInitialized, cancellationToken: destroyCancellationToken);
 
         protected virtual void InitializeFunction()
         {

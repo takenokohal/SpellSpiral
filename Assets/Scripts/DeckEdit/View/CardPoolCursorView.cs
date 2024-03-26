@@ -53,21 +53,19 @@ namespace DeckEdit.View
         private void ManageMove()
         {
             var input = GetInputInt();
-            if (input.y == 0)
+            if (input == 0)
                 return;
 
-            _currentIndex = Mathf.Clamp(_currentIndex - input.y, 0, GetCardPoolLength() - 1);
+            _currentIndex = Mathf.Clamp(_currentIndex - input, 0, GetCardPoolLength() - 1);
         }
 
-        private Vector2Int GetInputInt()
+        private int GetInputInt()
         {
-            var input = _playerInput.actions["Move"];
+            var input = _playerInput.actions["Vertical"];
             if (!input.triggered)
-                return Vector2Int.zero;
-            var v = input.ReadValue<Vector2>();
-            var xInput = FloatToInt(v.x);
-            var yInput = FloatToInt(v.y);
-            return new Vector2Int(xInput, yInput);
+                return 0;
+            var v = input.ReadValue<float>();
+            return FloatToInt(v);
         }
 
         private static int FloatToInt(float value)

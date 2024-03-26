@@ -12,28 +12,46 @@ namespace Others.Scene
 
         public string PrevSceneName { get; private set; }
 
-        public static string CurrentSceneName => SceneManager.GetActiveScene().name;
+
+        public string CurrentSceneName { get; private set; }
+
+        public string CurrentAdditiveSceneName { get; private set; }
+
+        public MySceneManager()
+        {
+            CurrentSceneName = SceneManager.GetActiveScene().name;
+        }
 
         public async UniTask ChangeSceneAsync(string nextScene)
         {
             if (Changing)
                 return;
-
-            PrevSceneName = CurrentSceneName;
+            
+            PrevSceneName = CurrentSceneName ?? "Home";
+            CurrentSceneName = nextScene;
+            CurrentAdditiveSceneName = null;
 
             Changing = true;
+
             var asyncOperation = SceneManager.LoadSceneAsync(nextScene);
             asyncOperation.allowSceneActivation = false;
-
             await _sceneFadePanelView.FadeOut();
 
-            await UniTask.Delay(500);
-
             asyncOperation.allowSceneActivation = true;
+            await UniTask.Delay(500, DelayType.UnscaledDeltaTime);
+
+            await asyncOperation;
+
 
             await _sceneFadePanelView.FadeIn();
 
             Changing = false;
+        }
+
+        public async UniTask LoadSceneAdditive(string sceneName)
+        {
+            CurrentAdditiveSceneName = sceneName;
+            await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         }
     }
 }

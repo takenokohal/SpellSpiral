@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Battle.MyCamera;
+using Cinemachine;
 using Cysharp.Threading.Tasks;
 using Others;
 using UniRx;
@@ -13,7 +15,6 @@ namespace Battle.Character.Enemy
 {
     public abstract class BossBase<T> : EnemyBase where T : Enum
     {
-        [Inject] private readonly SpecialCameraSwitcher _specialCameraSwitcher;
         [SerializeField] private List<BossSequenceBase<T>> sequencePrefabs;
         private readonly Dictionary<T, BossSequenceBase<T>> _sequenceInstances = new();
 
@@ -31,10 +32,12 @@ namespace Battle.Character.Enemy
         {
             base.InitializeFunction();
 
+            var tg = FindObjectOfType<CinemachineTargetGroup>();
+            tg.AddMember(transform, 1, 0);
             allEnemyManager.RegisterBoss(this);
             allEnemyManager.RegisterEnemy(this);
 
-            Observable.EveryFixedUpdate().Subscribe(_ => MyFixedUpdate());
+            Observable.EveryFixedUpdate().Subscribe(_ => MyFixedUpdate()).AddTo(this);
 
             CreateSequence();
             gameLoop.Event
@@ -78,7 +81,7 @@ namespace Battle.Character.Enemy
                         AllEnemyManager = allEnemyManager,
                         Parent = this,
                         PlayerCore = playerCore,
-                        SpecialCameraSwitcher = _specialCameraSwitcher,
+                        SpecialCameraSwitcher = specialCameraSwitcher,
                         MagicCircleFactory = magicCircleFactory,
                     }));
             }

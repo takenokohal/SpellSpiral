@@ -100,7 +100,7 @@ namespace Battle.CommonObject.Bullet
 
         private async UniTaskVoid AutoKill()
         {
-            await UniTask.Delay(10000);
+            await UniTask.Delay(10000, cancellationToken: destroyCancellationToken);
             Kill().Forget();
         }
     }
