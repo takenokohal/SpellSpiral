@@ -19,14 +19,14 @@ namespace Others.LifetimeScopes
         [SerializeField] private AudioManager audioManager;
 
         [SerializeField] private SceneFadePanelView sceneFadePanelView;
-        
-        
+        [SerializeField] private YesNoDialog yesNoDialog;
+        [SerializeField] private OkDialog okDialog;
+
         protected override void Configure(IContainerBuilder builder)
         {
-
             Debug.Log("RegisterRoot");
-            
-            
+
+
             builder.RegisterInstance(spellDatabase);
             builder.RegisterInstance(spellColorPalette);
             builder.RegisterInstance(attackDatabase);
@@ -37,8 +37,18 @@ namespace Others.LifetimeScopes
             builder.Register<MySceneManager>(Lifetime.Singleton);
 
             var panelInstance = Instantiate(sceneFadePanelView);
+            DontDestroyOnLoad(panelInstance.gameObject);
             builder.RegisterInstance(panelInstance);
-            
+
+            var yesNoInstance = Instantiate(yesNoDialog);
+            DontDestroyOnLoad(yesNoInstance.gameObject);
+            builder.RegisterInstance(yesNoInstance);
+
+
+            var okInstance = Instantiate(okDialog);
+            DontDestroyOnLoad(okInstance.gameObject);
+            builder.RegisterInstance(okInstance);
+
             Instantiate(audioManager);
         }
     }

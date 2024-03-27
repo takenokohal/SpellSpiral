@@ -7,26 +7,25 @@ using UnityEngine.InputSystem;
 
 namespace Others
 {
-    public class YesNoDialog : MonoBehaviour
+    public class OkDialog : MonoBehaviour
     {
         [SerializeField] private TMP_Text messageText;
 
         [SerializeField] private PlayerInput myPlayerInput;
 
         [SerializeField] private Transform root;
-
-
-        private UniTaskCompletionSource<YesNo> _completionSource;
+        
+        private UniTaskCompletionSource _completionSource;
 
         public bool IsOpen { get; private set; }
 
         private void Start()
         {
-            root.localScale= Vector3.zero;
+            root.localScale=Vector3.zero;
             gameObject.SetActive(false);
         }
 
-        public async UniTask<YesNo> Open(string message)
+        public async UniTask Open(string message)
         {
             var otherInput
                 = FindObjectsOfType<PlayerInput>().Where(value => value != myPlayerInput);
@@ -39,9 +38,9 @@ namespace Others
             IsOpen = true;
             messageText.text = message;
             await root.DOScale(1, 0.2f);
-            _completionSource = new UniTaskCompletionSource<YesNo>();
+            _completionSource = new UniTaskCompletionSource();
 
-            var v = await _completionSource.Task;
+            await _completionSource.Task;
 
 
             _completionSource = null;
@@ -55,7 +54,6 @@ namespace Others
             }
 
             gameObject.SetActive(false);
-            return v;
         }
 
         private void Update()
@@ -64,16 +62,10 @@ namespace Others
                 return;
 
             if (myPlayerInput.actions["Yes"].WasPressedThisFrame())
-                _completionSource.TrySetResult(YesNo.Yes);
+                _completionSource.TrySetResult();
             else if (myPlayerInput.actions["No"].WasPressedThisFrame())
-                _completionSource.TrySetResult(YesNo.No);
+                _completionSource.TrySetResult();
         }
 
-
-        public enum YesNo
-        {
-            Yes,
-            No
-        }
     }
 }

@@ -11,12 +11,6 @@ namespace Others.Scene
         [SerializeField] private float duration;
 
 
-        private void Start()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
-
         public async UniTask FadeIn()
         {
             await panel.DOFade(0, duration);

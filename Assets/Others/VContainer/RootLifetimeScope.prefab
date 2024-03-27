@@ -57,3 +57,7 @@ MonoBehaviour:
     type: 3}
   sceneFadePanelView: {fileID: 6080814512602597102, guid: b599d48483d48264fb50304d39b710fc,
     type: 3}
+  yesNoDialog: {fileID: 5858009886574361395, guid: 2995c5c7aa35c3c4bba7b32ecee6808c,
+    type: 3}
+  okDialog: {fileID: 1142365694622216976, guid: fe1eb44b876445643a5603131cb2acce,
+    type: 3}

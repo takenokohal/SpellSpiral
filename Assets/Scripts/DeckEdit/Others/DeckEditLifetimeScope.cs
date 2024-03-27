@@ -27,6 +27,8 @@ namespace DeckEdit.Others
             builder.RegisterComponentInHierarchy<ActiveAreaController>();
 
             builder.RegisterEntryPoint<TestInitializer>();
+
+            builder.RegisterEntryPoint<ReturnAndSave>();
         }
     }
 }

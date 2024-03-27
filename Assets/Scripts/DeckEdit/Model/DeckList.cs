@@ -27,13 +27,17 @@ namespace DeckEdit.Model
         public IObservable<SpellKey> OnRemove => _onRemove;
         public IObservable<Unit> OnSort => _onSort;
 
+        public const int MaxCount = 20;
+
+        public bool IsFilled => CurrentDeckList.Count >= MaxCount;
+
 
         public void Add(SpellKey spellKey)
         {
             if (CurrentDeckList.Count(value => value.Key == spellKey.Key) >= 3)
                 return;
 
-            if (CurrentDeckList.Count >= 20)
+            if (IsFilled)
                 return;
 
             _currentDeckList.Add(spellKey);
