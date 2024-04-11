@@ -46,6 +46,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: a575fa6cb1b76d74f806ef4c21ed3d22, type: 3}
     - {fileID: 7236124037966821928, guid: 21272bd567651cb4b9c1e2832fb83aa2, type: 3}
     - {fileID: 21300000, guid: 1be05a3478e5d1a4abdc8879143bcb3e, type: 3}
+    - {fileID: 8537585627540597432, guid: 01ac7983bef235646b98066f181edb38, type: 3}
+    - {fileID: 21300000, guid: a4e55044aa2177c41b82945c328179e1, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -64,7 +66,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 34
+      Data: 33
     - Name: 
       Entry: 7
       Data: 
@@ -499,7 +501,7 @@ MonoBehaviour:
       Data: Gatling3
     - Name: name
       Entry: 1
-      Data: "\u30D5\u30A1\u30A4\u30A2\u30FC\u30DC\u30FC\u30EB"
+      Data: "\u30D5\u30A1\u30A4\u30A2\u30FC\u30B7\u30E5\u30FC\u30C8"
     - Name: manaCost
       Entry: 3
       Data: 20
@@ -1414,19 +1416,19 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: AggroBoost
+      Data: SummonMiniDragon
     - Name: $v
       Entry: 7
       Data: 34|Battle.PlayerSpell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
-      Data: AggroBoost
+      Data: SummonMiniDragon
     - Name: name
       Entry: 1
       Data: 
     - Name: manaCost
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: spellAttribute
       Entry: 3
       Data: 0
@@ -1438,55 +1440,13 @@ MonoBehaviour:
       Data: 0
     - Name: description
       Entry: 1
-      Data: "\u91CD\u306D\u639B\u3051\u53EF\u80FD\u3002"
+      Data: 
     - Name: spellBase
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 30
     - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: Stone
-    - Name: $v
-      Entry: 7
-      Data: 35|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: Stone
-    - Name: name
-      Entry: 1
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 0
-    - Name: spellAttribute
-      Entry: 3
-      Data: 0
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: description
-      Entry: 1
-      Data: "\u767A\u52D5\u5F8C\uFF13\u56DE\u307E\u3067\u306B\u4F7F\u7528\u3059\u308B\u9B54\u6CD5\u3092\u306E\u30B3\u30B9\u30C8\u3092\uFF10\u306B\u3059\u308B\u3002"
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 31
     - Name: 
       Entry: 8
       Data: 

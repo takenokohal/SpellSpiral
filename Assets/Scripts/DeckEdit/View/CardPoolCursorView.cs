@@ -1,6 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Audio;
+using Cysharp.Threading.Tasks;
 using Databases;
 using DeckEdit.Model;
+using Others;
+using Others.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -10,7 +13,8 @@ namespace DeckEdit.View
 {
     public class CardPoolCursorView : MonoBehaviour
     {
-        [Inject] private readonly PlayerInput _playerInput;
+        [Inject] private readonly MyInputManager _myInputManager;
+        private PlayerInput PlayerInput => _myInputManager.UiInput;
         [Inject] private readonly CardPoolView _cardPoolView;
         [Inject] private readonly CardPool _cardPool;
         [Inject] private readonly DeckList _deckList;
@@ -26,26 +30,39 @@ namespace DeckEdit.View
         [SerializeField] private float scrollMax;
 
 
+
         private bool _isActive = true;
+        
+        private float _preInput;
+        private const float Threshold = 0.5f;
+        [Inject] private readonly OkDialog _okDialog;
+        [Inject] private readonly YesNoDialog _yesNoDialog;
+        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
 
         private void Update()
         {
             if (!_isActive)
                 return;
+            if(AnyDialogIsOpen)
+                return;
+            
 
             ManageMove();
             ManageClick();
 
 
             UpdateView();
+            
+            _preInput = PlayerInput.actions["Vertical"].ReadValue<float>();
         }
 
         private void ManageClick()
         {
-            if (!_playerInput.actions["Yes"].WasPressedThisFrame())
+            if (!PlayerInput.actions["Yes"].WasPressedThisFrame())
                 return;
 
 
+            AllAudioManager.PlaySe("Select");
             var key = FindKey();
             _deckList.Add(new SpellKey(key));
         }
@@ -56,16 +73,29 @@ namespace DeckEdit.View
             if (input == 0)
                 return;
 
+            AllAudioManager.PlaySe("CursorMove");
             _currentIndex = Mathf.Clamp(_currentIndex - input, 0, GetCardPoolLength() - 1);
         }
 
         private int GetInputInt()
         {
-            var input = _playerInput.actions["Vertical"];
-            if (!input.triggered)
+            var input = PlayerInput.actions["Vertical"];
+            if (!IsTrigger())
                 return 0;
             var v = input.ReadValue<float>();
             return FloatToInt(v);
+        }
+        private bool IsTrigger()
+        {
+            var value = PlayerInput.actions["Vertical"].ReadValue<float>();
+            switch (_preInput)
+            {
+                case < Threshold when value >= Threshold:
+                case > -Threshold when value <= -Threshold:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         private static int FloatToInt(float value)

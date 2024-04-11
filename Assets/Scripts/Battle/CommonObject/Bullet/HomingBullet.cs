@@ -17,7 +17,6 @@ namespace Battle.CommonObject.Bullet
 
         private Parameter _parameter;
 
-
         private float _elapsedTime;
 
         private readonly ReactiveProperty<bool> _isDead = new();
@@ -44,7 +43,6 @@ namespace Battle.CommonObject.Bullet
             public float ChangeSpeedValue { get; set; }
         }
 
-
         public HomingBullet CreateFromPrefab(Parameter parameter)
         {
             var v = Instantiate(this);
@@ -56,7 +54,7 @@ namespace Battle.CommonObject.Bullet
 
         private void Activate(Parameter parameter)
         {
-            AudioManager.PlaySe("MagicShot");
+           AllAudioManager.PlaySe("MagicShot");
 
             gameObject.SetActive(true);
             _parameter = parameter;
@@ -90,7 +88,7 @@ namespace Battle.CommonObject.Bullet
         {
             if (IsDead)
                 return;
-            
+
             IsDead = true;
 
             await transform.DOScale(0, 0.5f);

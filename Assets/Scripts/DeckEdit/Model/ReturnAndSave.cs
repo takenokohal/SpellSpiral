@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Others;
+using Others.Input;
 using Others.Scene;
 using UnityEngine.InputSystem;
 using VContainer;
@@ -10,7 +11,8 @@ namespace DeckEdit.Model
 {
     public class ReturnAndSave : ITickable
     {
-        [Inject] private readonly PlayerInput _playerInput;
+        [Inject] private readonly MyInputManager _myInputManager;
+        private PlayerInput PlayerInput => _myInputManager.UiInput;
         [Inject] private readonly YesNoDialog _yesNoDialog;
         [Inject] private readonly OkDialog _okDialog;
         [Inject] private readonly MySceneManager _mySceneManager;
@@ -20,10 +22,14 @@ namespace DeckEdit.Model
         {
             if (_yesNoDialog.IsOpen)
                 return;
-            if (!_playerInput.actions["No"].WasPressedThisFrame()) 
+
+            if (_okDialog.IsOpen)
                 return;
             
-            
+            if (!PlayerInput.actions["No"].WasPressedThisFrame())
+                return;
+
+
             if (_deckList.IsFilled)
                 DialogCheck().Forget();
             else

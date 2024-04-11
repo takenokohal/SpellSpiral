@@ -2,6 +2,7 @@ using System;
 using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
 using Battle.PlayerSpell;
+using Cysharp.Threading.Tasks;
 using Databases;
 using Others;
 using Others.Utils;
@@ -35,7 +36,7 @@ namespace Battle.Character.Player
         protected override void Init()
         {
             _battleDeck.Init();
-            
+
             foreach (var spellSlot in EnumUtil<SpellSlot>.GetValues())
             {
                 _battleDeck.Draw(out var spell);
@@ -115,6 +116,15 @@ namespace Battle.Character.Player
                     throw new ArgumentOutOfRangeException();
             }
 
+
+            if (_playerBuff.HasBuff(BuffKey.Duplication))
+            {
+                UniTask.Void(async () =>
+                {
+                    await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
+                    _spellFactory.Create(spellKey);
+                });
+            }
 
             return true;
         }

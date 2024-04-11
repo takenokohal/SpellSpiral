@@ -1,4 +1,5 @@
-﻿using Battle.Character;
+﻿using Audio;
+using Battle.Character;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace Battle.PlayerSpell.Variables
             PlayerCore.PlayerParameter.Life += healValue;
 
             effect.Play();
+            AllAudioManager.PlaySe("Heal");
 
             await MyDelay(1);
             Destroy(gameObject);

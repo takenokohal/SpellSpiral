@@ -20,3 +20,8 @@ MonoBehaviour:
   stepSpeed: 50
   stepDuration: 0.3
   stepDrag: 10
+  buffReduceManaRatio: 0.5
+  buffAutoManaChargeRatio: 1.5
+  buffQuickManaChargeRatio: 1.5
+  attachedAutoHealValue: 1.5
+  buffPowerRatio: 1.5

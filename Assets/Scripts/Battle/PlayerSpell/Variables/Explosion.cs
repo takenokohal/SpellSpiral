@@ -1,4 +1,5 @@
-﻿using Battle.Attack;
+﻿using Audio;
+using Battle.Attack;
 using Battle.Character;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace Battle.PlayerSpell.Variables
             transform.position = CalcPos();
             attackHitController.gameObject.SetActive(true);
             effect.Play();
+            AllAudioManager.PlaySe("Explosion");
+
 
             await MyDelay(0.5f);
             attackHitController.gameObject.SetActive(false);

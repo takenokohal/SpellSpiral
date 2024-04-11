@@ -325,6 +325,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f58b5730-0063-4852-b9cc-b3ef3d3f6df9",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Step",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1d400121-c380-439a-a655-38bbea2677a4",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -341,6 +352,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Charge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b80051e5-07a3-439c-bb75-d63d22d9da50",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Charge",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -614,8 +636,52 @@
                 },
                 {
                     "name": "",
+                    "id": "84d359f2-6802-43af-a537-40d5130fb14b",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc3677de-bb31-4569-82e9-786e800f7afc",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2f0a6518-1fc9-48aa-86b4-ce4be0a232fe",
                     "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4dc4c3bd-ef11-49da-ad9e-423e515024f0",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "215e6033-1b2d-4117-a890-7379644cf53b",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -669,6 +735,17 @@
                 },
                 {
                     "name": "",
+                    "id": "400adebb-b83e-4485-8d6e-12df84d9abf1",
+                    "path": "<Gamepad>/dpad/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f6cc395e-0f98-4db3-9f73-61ddd915959b",
                     "path": "<Gamepad>/leftStick/x",
                     "interactions": "",
@@ -713,6 +790,17 @@
                 },
                 {
                     "name": "",
+                    "id": "22fcd22c-3880-4a8a-be97-fc1739139908",
+                    "path": "<Gamepad>/dpad/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f77f6b4a-9b1e-4eda-94bb-2440d9631376",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -726,6 +814,17 @@
                     "name": "",
                     "id": "1a2b7bce-2697-4d0c-9322-3af83a0ae931",
                     "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c75c534-856f-4a42-ae81-92b7f491f43b",
+                    "path": "<SwitchProControllerHID>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

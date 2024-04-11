@@ -53,11 +53,13 @@ MonoBehaviour:
   attackDatabase: {fileID: 11400000, guid: 803bd3eaa60d0cb42885800f0a1c231e, type: 2}
   characterDatabase: {fileID: 11400000, guid: 5283d8522c66a8a4fa6340a044fdfecd, type: 2}
   playerConstData: {fileID: 11400000, guid: c9627ccae04c7044182290bbc8b1904e, type: 2}
-  audioManager: {fileID: 8668005862352214212, guid: b78547fd5245dcd4d9e639e0f5995338,
+  seManager: {fileID: 8668005862352214212, guid: b78547fd5245dcd4d9e639e0f5995338,
     type: 3}
   sceneFadePanelView: {fileID: 6080814512602597102, guid: b599d48483d48264fb50304d39b710fc,
     type: 3}
   yesNoDialog: {fileID: 5858009886574361395, guid: 2995c5c7aa35c3c4bba7b32ecee6808c,
     type: 3}
   okDialog: {fileID: 1142365694622216976, guid: fe1eb44b876445643a5603131cb2acce,
+    type: 3}
+  myInputManager: {fileID: 4717391911517415728, guid: 33407c4f21250d44b907049bc4899ccc,
     type: 3}

@@ -14,7 +14,6 @@ namespace Battle.CommonObject.Bullet
         [SerializeField] private Rigidbody rb;
         [SerializeField] private AttackHitController attackHitController;
 
-
         private readonly ReactiveProperty<bool> _isDead = new();
 
         public bool IsDead
@@ -40,20 +39,20 @@ namespace Battle.CommonObject.Bullet
 
             _isDead.Value = true;
 
-            await transform.DOScale(0, 0.5f);
+            await transform.DOScale(0, 0.5f).ToUniTask(cancellationToken: destroyCancellationToken);
 
             Destroy(gameObject);
         }
 
         private async UniTaskVoid AutoKill()
         {
-            await UniTask.Delay(10000,cancellationToken: destroyCancellationToken);
+            await UniTask.Delay(10000, cancellationToken: destroyCancellationToken);
             Kill().Forget();
         }
 
         private void Activate(Vector2 pos, Vector2 velocity)
         {
-            AudioManager.PlaySe("MagicShot");
+            AllAudioManager.PlaySe("MagicShot");
             gameObject.SetActive(true);
             transform.position = pos;
             rb.velocity = velocity;

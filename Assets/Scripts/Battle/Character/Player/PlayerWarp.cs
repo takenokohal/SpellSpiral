@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using Audio;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -9,14 +10,11 @@ namespace Battle.Character.Player
         [SerializeField] private ParticleSystem ps;
         [SerializeField] private GameObject graphic;
 
-
-        private PlayerMover _playerMover;
-
+        
         private CancellationTokenSource _cancellationTokenSource;
 
         protected override void Init()
         {
-            _playerMover = GetComponent<PlayerMover>();
         }
 
         private void Update()
@@ -54,6 +52,7 @@ namespace Battle.Character.Player
 
             graphic.SetActive(false);
             ps.Play();
+            AllAudioManager.PlaySe("Warp");
             PlayerCore.Rigidbody.drag = PlayerConstData.StepDrag;
 
             var dir = GetDirection();

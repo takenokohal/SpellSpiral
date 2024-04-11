@@ -15,7 +15,7 @@ namespace Battle.UI
         [SerializeField] private Slider lifeGage;
         [SerializeField] private Slider redGage;
 
-        [Inject] private readonly AllEnemyManager _allEnemyManager;
+        [Inject] private readonly AllCharacterManager _allCharacterManager;
 
 
         [SerializeField] private float redGageStopTime;
@@ -25,8 +25,8 @@ namespace Battle.UI
 
         private async void Start()
         {
-            await UniTask.WaitWhile(() => _allEnemyManager.Boss== null);
-            Init(_allEnemyManager.Boss);
+            await UniTask.WaitWhile(() => _allCharacterManager.Boss== null);
+            Init(_allCharacterManager.Boss);
         }
 
         private void Init(EnemyBase enemyBase)

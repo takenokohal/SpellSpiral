@@ -34,7 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -64,6 +64,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 4|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 2
@@ -88,6 +91,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 5|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 1
@@ -112,6 +118,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 6|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 5
@@ -136,6 +145,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 7|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 2
@@ -160,6 +172,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 8|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 10
@@ -184,6 +199,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 9|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 2
@@ -208,6 +226,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 10|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 0
     - Name: damage
       Entry: 3
       Data: 15
@@ -257,6 +278,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 12|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
     - Name: damage
       Entry: 3
       Data: 2
@@ -281,6 +305,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 13|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
     - Name: damage
       Entry: 3
       Data: 3
@@ -305,6 +332,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 14|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
     - Name: damage
       Entry: 3
       Data: 20
@@ -329,6 +359,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 15|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
     - Name: damage
       Entry: 3
       Data: 40
@@ -353,12 +386,67 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 16|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
     - Name: damage
       Entry: 3
       Data: 50
     - Name: attackWeight
       Entry: 3
       Data: 1
+    - Name: attribute
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: EnemyMiniDragon
+    - Name: $v
+      Entry: 7
+      Data: 17|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Battle.Attack.AttackData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FireCube
+    - Name: $v
+      Entry: 7
+      Data: 18|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: damage
+      Entry: 3
+      Data: 5
+    - Name: attackWeight
+      Entry: 3
+      Data: 0
     - Name: attribute
       Entry: 3
       Data: 0

@@ -6,6 +6,8 @@
         AutoManaCharge,
         QuickManaCharge,
         
+        Duplication,
+        
         AutoHeal,
         SuperInvisible,
         RaijinStep,

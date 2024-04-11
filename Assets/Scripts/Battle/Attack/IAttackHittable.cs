@@ -4,6 +4,6 @@
     {
         public void OnAttacked(AttackHitController attackHitController);
 
-        public OwnerType GetOwnerType();
+        public bool CheckHit(AttackHitController attackHitController);
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Others.Input;
 using Others.Scene;
 using Others.Utils;
 using TMPro;
@@ -13,7 +15,8 @@ namespace HomeScene
 {
     public class HomeController : MonoBehaviour
     {
-        private PlayerInput _playerInput;
+        [Inject] private MyInputManager _myInputManager;
+        private PlayerInput PlayerInput => _myInputManager.UiInput;
 
         private Choice _currentChoice;
 
@@ -25,6 +28,10 @@ namespace HomeScene
 
         [Inject] private readonly MySceneManager _mySceneManager;
 
+        private float _preInput;
+        private const float Threshold = 0.5f;
+
+
         [Serializable]
         private class IconAndTitle
         {
@@ -35,7 +42,6 @@ namespace HomeScene
 
         private void Start()
         {
-            _playerInput = GetComponent<PlayerInput>();
             UpdateView();
         }
 
@@ -46,15 +52,17 @@ namespace HomeScene
 
             MovePointer();
             TryChangeScene().Forget();
+
+            _preInput = PlayerInput.actions["Vertical"].ReadValue<float>();
         }
 
         private void MovePointer()
         {
-            var ver = _playerInput.actions["Vertical"];
-            if (!ver.triggered)
+            var ver = PlayerInput.actions["Vertical"];
+            var value = ver.ReadValue<float>();
+            if (!IsTrigger())
                 return;
 
-            var value = ver.ReadValue<float>();
             var dir = value switch
             {
                 <= -0.5f => 1,
@@ -74,22 +82,38 @@ namespace HomeScene
             }
 
             pointer.transform.DOMove(selected.title.transform.position, 0);
+
+            AllAudioManager.PlaySe("CursorMove");
+        }
+
+        private bool IsTrigger()
+        {
+            var value = PlayerInput.actions["Vertical"].ReadValue<float>();
+            switch (_preInput)
+            {
+                case < Threshold when value >= Threshold:
+                case > -Threshold when value <= -Threshold:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         private async UniTask TryChangeScene()
         {
-            var inputAction = _playerInput.actions["Yes"];
+            var inputAction = PlayerInput.actions["Yes"];
             if (!inputAction.triggered)
                 return;
 
             var nextScene = _currentChoice switch
             {
-                Choice.Mission => "Stage1",
+                Choice.Mission => "Stage1Light",
                 Choice.Training => "Training",
                 Choice.EditDeck => "EditDeck",
                 _ => throw new ArgumentOutOfRangeException()
             };
 
+            AllAudioManager.PlaySe("Select");
             await _mySceneManager.ChangeSceneAsync(nextScene);
         }
 

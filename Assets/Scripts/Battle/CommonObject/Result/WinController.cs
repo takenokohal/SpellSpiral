@@ -16,7 +16,7 @@ namespace Battle.CommonObject.Result
     public class WinController : MonoBehaviour
     {
         [Inject] private readonly GameLoop _gameLoop;
-        [Inject] private readonly AllEnemyManager _allEnemyManager;
+        [Inject] private readonly AllCharacterManager _allCharacterManager;
 
         [SerializeField] private ParticleSystem effect;
 
@@ -48,7 +48,7 @@ namespace Battle.CommonObject.Result
             await UniTask.Delay(1000);
 
 
-            var enemy = _allEnemyManager.Boss;
+            var enemy = _allCharacterManager.Boss;
             effect.transform.position = enemy.transform.position;
             effect.Play();
 

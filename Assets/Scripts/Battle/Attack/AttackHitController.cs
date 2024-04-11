@@ -7,14 +7,13 @@ namespace Battle.Attack
 {
     public class AttackHitController : SerializedMonoBehaviour
     {
-        [SerializeField] private OwnerType owner;
-
         [SerializeField] private AttackKey attackKey;
 
         public AttackKey AttackKey => attackKey;
-
+        
         private readonly Subject<IAttackHittable> _onAttackHit = new();
         public IObservable<IAttackHittable> OnAttackHit => _onAttackHit.TakeUntilDestroy(this);
+        
 
         private void OnTriggerEnter(Collider other)
         {
@@ -23,7 +22,7 @@ namespace Battle.Attack
             if (v == null)
                 return;
 
-            if (v.GetOwnerType() == owner)
+            if (v.CheckHit(this))
                 return;
 
             v.OnAttacked(this);

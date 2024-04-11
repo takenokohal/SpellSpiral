@@ -19,7 +19,7 @@ namespace Battle.Attack
         }
 
 
-        public async void Create(Vector3 position, Quaternion rotation)
+        public async UniTaskVoid Create(Vector3 position, Quaternion rotation)
         {
             var v = _objectPool.Get();
             var t = v.transform;

@@ -7,7 +7,7 @@ namespace Battle.Character.Player
 {
     public class PlayerMover : PlayerComponent
     {
-        [Inject] private readonly AllEnemyManager _allEnemyManager;
+        [Inject] private readonly AllCharacterManager _allCharacterManager;
 
         public static int HorizontalAnimKey { get; } = Animator.StringToHash("HorizontalSpeed");
         public static int VerticalAnimKey { get; } = Animator.StringToHash("VerticalSpeed");
@@ -36,9 +36,9 @@ namespace Battle.Character.Player
 
         private void SetRotation()
         {
-            if (_allEnemyManager.EnemyCores.Count == 1)
+            if (_allCharacterManager.AllCharacters.Count == 1)
             {
-                var enemy = _allEnemyManager.EnemyCores.First();
+                var enemy = _allCharacterManager.AllCharacters.First();
                 var rot = enemy.transform.position.x - PlayerCore.transform.position.x;
                 PlayerCore.CharacterRotation.Rotation = rot;
             }

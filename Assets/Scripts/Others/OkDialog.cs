@@ -1,9 +1,10 @@
-﻿using System.Linq;
+﻿using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Others.Input;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using VContainer;
 
 namespace Others
 {
@@ -11,29 +12,22 @@ namespace Others
     {
         [SerializeField] private TMP_Text messageText;
 
-        [SerializeField] private PlayerInput myPlayerInput;
-
         [SerializeField] private Transform root;
-        
+
         private UniTaskCompletionSource _completionSource;
+
+        [Inject] private readonly MyInputManager _myInputManager;
 
         public bool IsOpen { get; private set; }
 
         private void Start()
         {
-            root.localScale=Vector3.zero;
+            root.localScale = Vector3.zero;
             gameObject.SetActive(false);
         }
 
         public async UniTask Open(string message)
         {
-            var otherInput
-                = FindObjectsOfType<PlayerInput>().Where(value => value != myPlayerInput);
-            var playerInputs = otherInput as PlayerInput[] ?? otherInput.ToArray();
-            foreach (var playerInput in playerInputs)
-            {
-                playerInput.enabled = false;
-            }
             gameObject.SetActive(true);
             IsOpen = true;
             messageText.text = message;
@@ -44,15 +38,10 @@ namespace Others
 
 
             _completionSource = null;
-            IsOpen = false;
 
             await root.DOScale(0, 0.2f);
-            
-            foreach (var playerInput in playerInputs)
-            {
-                playerInput.enabled = true;
-            }
 
+            IsOpen = false;
             gameObject.SetActive(false);
         }
 
@@ -61,11 +50,18 @@ namespace Others
             if (_completionSource == null)
                 return;
 
-            if (myPlayerInput.actions["Yes"].WasPressedThisFrame())
+            if (_myInputManager.UiInput.actions["Yes"].WasPressedThisFrame())
+            {
                 _completionSource.TrySetResult();
-            else if (myPlayerInput.actions["No"].WasPressedThisFrame())
-                _completionSource.TrySetResult();
-        }
+                AllAudioManager.PlaySe("Select");
+            }
 
+            else if (_myInputManager.UiInput.actions["No"].WasPressedThisFrame())
+            {
+                _completionSource.TrySetResult();
+                AllAudioManager.PlaySe("Select");
+
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using Battle.Character.Player;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Others;
+using Others.Input;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,7 +24,8 @@ namespace Battle.CommonObject.Result
         [SerializeField] private CanvasGroup loseCanvas;
         [SerializeField] private Image whiteOut;
 
-        [SerializeField] private PlayerInput input;
+        [Inject] private readonly MyInputManager _myInputManager;
+        private PlayerInput Input => _myInputManager.UiInput;
 
         [SerializeField] private LoseMenu loseMenu;
 

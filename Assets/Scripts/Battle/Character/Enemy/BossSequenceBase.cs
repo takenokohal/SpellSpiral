@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading;
+using Audio;
 using Battle.Character.Player;
+using Battle.Character.Servant;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
 using Cysharp.Threading.Tasks;
@@ -20,11 +22,13 @@ namespace Battle.Character.Enemy
             public BossBase<T> Parent { get; set; }
             
             public PlayerCore PlayerCore { get; set; }
-            public AllEnemyManager AllEnemyManager { get; set; }
+            public AllCharacterManager AllCharacterManager { get; set; }
 
             public SpecialCameraSwitcher SpecialCameraSwitcher { get; set; }
 
             public MagicCircleFactory MagicCircleFactory { get; set; }
+            
+            public ServantFactory ServantFactory { get; set; }
         }
 
 
@@ -33,11 +37,13 @@ namespace Battle.Character.Enemy
         protected string CharacterKey => Parent.CharacterKey;
         protected PlayerCore PlayerCore { get; private set; }
 
-        protected AllEnemyManager AllEnemyManager { get; private set; }
+        protected AllCharacterManager AllCharacterManager { get; private set; }
 
         protected SpecialCameraSwitcher SpecialCameraSwitcher { get; private set; }
 
         protected MagicCircleFactory MagicCircleFactory { get; private set; }
+        
+        protected ServantFactory ServantFactory { get; private set; }
         
         public CancellationTokenSource SequenceCancellationToken { get; private set; }
 
@@ -67,11 +73,12 @@ namespace Battle.Character.Enemy
         {
             Parent = sequenceRequiredComponents.Parent;
             PlayerCore = sequenceRequiredComponents.PlayerCore;
-            AllEnemyManager = sequenceRequiredComponents.AllEnemyManager;
+            AllCharacterManager = sequenceRequiredComponents.AllCharacterManager;
             SpecialCameraSwitcher = sequenceRequiredComponents.SpecialCameraSwitcher;
 
             MagicCircleFactory = sequenceRequiredComponents.MagicCircleFactory;
-
+            ServantFactory = sequenceRequiredComponents.ServantFactory;
+            
             SequenceCancellationToken = new CancellationTokenSource();
 
             gameObject.OnDestroyAsObservable().Subscribe(_ => SequenceCancellationToken?.Cancel());

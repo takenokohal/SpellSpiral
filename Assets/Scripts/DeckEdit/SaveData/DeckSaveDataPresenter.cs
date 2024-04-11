@@ -16,11 +16,6 @@ namespace DeckEdit.SaveData
 
         public void SaveDeck(List<string> deck)
         {
-            foreach (var s in deck)
-            {
-                Debug.Log(s);
-            }
-
             EasySaveWrapper.Save(SaveDataKey, new DeckSaveData()
             {
                 deckData = deck

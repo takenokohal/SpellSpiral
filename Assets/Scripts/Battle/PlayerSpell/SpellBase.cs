@@ -1,7 +1,10 @@
 ﻿using System;
+using Audio;
+using Battle.Character;
 using Battle.Character.Enemy;
 using Battle.Character.Player;
 using Battle.Character.Player.Buff;
+using Battle.Character.Servant;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -15,29 +18,34 @@ namespace Battle.PlayerSpell
     {
         protected PlayerCore PlayerCore { get; private set; }
 
-        protected AllEnemyManager AllEnemyManager { get; private set; }
+        protected AllCharacterManager AllCharacterManager { get; private set; }
 
         protected MagicCircleFactory MagicCircleFactory { get; private set; }
 
         protected PlayerBuff PlayerBuff { get; private set; }
 
         protected SpellData SpellData { get; private set; }
-
+        
+        protected ServantFactory ServantFactory { get; private set; }
+        
         protected string CharacterKey => PlayerCore.CharacterKey;
 
 
         public SpellBase Construct(
             PlayerCore playerCore,
-            AllEnemyManager allEnemyManager,
+            AllCharacterManager allCharacterManager,
             MagicCircleFactory magicCircleFactory,
-            PlayerBuff playerBuff, SpellData spellData)
+            PlayerBuff playerBuff,
+            SpellData spellData,
+            ServantFactory servantFactory)
         {
             var instance = Instantiate(this);
             instance.PlayerCore = playerCore;
-            instance.AllEnemyManager = allEnemyManager;
+            instance.AllCharacterManager = allCharacterManager;
             instance.MagicCircleFactory = magicCircleFactory;
             instance.PlayerBuff = playerBuff;
             instance.SpellData = spellData;
+            instance.ServantFactory = servantFactory;
             instance.Init();
             return instance;
         }
@@ -65,7 +73,7 @@ namespace Battle.PlayerSpell
             return tween.ToUniTask(cancellationToken: destroyCancellationToken);
         }
 
-        protected Vector2 GetDirectionToEnemy(EnemyBase target) =>
+        protected Vector2 GetDirectionPlayerToCharacter(CharacterBase target) =>
             (target.transform.position - PlayerCore.transform.position).normalized;
     }
 }

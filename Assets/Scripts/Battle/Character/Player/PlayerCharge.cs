@@ -1,4 +1,5 @@
-﻿using Battle.Character.Player.Buff;
+﻿using Audio;
+using Battle.Character.Player.Buff;
 using UnityEngine;
 using VContainer;
 
@@ -20,6 +21,8 @@ namespace Battle.Character.Player
 
         private bool Chargeable => !PlayerParameter.IsDead &&
                                    !PlayerParameter.Warping;
+
+        private SeSource _seSource;
 
         private bool Charging
         {
@@ -64,6 +67,7 @@ namespace Battle.Character.Player
                 ? buffedEffectColor
                 : normalEffectColor;
             effect.Play();
+            _seSource = AllAudioManager.PlaySe("Charge");
             Charging = true;
             PlayerCore.Animator.SetBool(AnimKey, true);
         }
@@ -74,6 +78,7 @@ namespace Battle.Character.Player
                 return;
 
             effect.Stop();
+            _seSource.Stop();
             Charging = false;
             PlayerCore.Animator.SetBool(AnimKey, false);
         }

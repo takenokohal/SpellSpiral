@@ -1,4 +1,5 @@
 ﻿using System;
+using Audio;
 using Battle.Attack;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -66,6 +67,7 @@ namespace Battle.CommonObject.Bullet
             for (int i = 0; i < hitCount; i++)
             {
                 attackHitControllerInChildren.gameObject.SetActive(true);
+                AllAudioManager.PlaySe("Laser");
                 await UniTask.Delay((int)(deltaTime * 1000f), delayTiming: PlayerLoopTiming.FixedUpdate,
                     cancellationToken: destroyCancellationToken);
                 attackHitControllerInChildren.gameObject.SetActive(false);

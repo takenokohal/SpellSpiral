@@ -18,7 +18,9 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 6338694605121556568, guid: ea6444b3dc47618419a47b99cad67e03, type: 3}
     - {fileID: 6165544350253723933, guid: 7da748fb4be928b4e86ac4f78c9258aa, type: 3}
+    - {fileID: -6838673519727472687, guid: 178d8ef19d2700344bc11e4d76bc9aef, type: 3}
     - {fileID: 6165544350253723933, guid: 05d4b346e3b890a4dbfeea89d7755c7a, type: 3}
+    - {fileID: 6165544350253723933, guid: f347e6a0486e6bd469e74f001d3e7dfd, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -37,7 +39,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -70,10 +72,31 @@ MonoBehaviour:
       Data: 3|Databases.StageObjectHolder+StageObject, Assembly-CSharp
     - Name: enemy
       Entry: 10
+      Data: 2
+    - Name: backGroundCameraRoot
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Stage1Light
+    - Name: $v
+      Entry: 7
+      Data: 4|Databases.StageObjectHolder+StageObject, Assembly-CSharp
+    - Name: enemy
+      Entry: 10
       Data: 0
     - Name: backGroundCameraRoot
       Entry: 10
-      Data: 2
+      Data: 4
     - Name: 
       Entry: 8
       Data: 

@@ -34,13 +34,12 @@ namespace Battle.Character.Enemy
 
             var tg = FindObjectOfType<CinemachineTargetGroup>();
             tg.AddMember(transform, 1, 0);
-            allEnemyManager.RegisterBoss(this);
-            allEnemyManager.RegisterEnemy(this);
+            AllCharacterManager.RegisterBoss(this);
 
             Observable.EveryFixedUpdate().Subscribe(_ => MyFixedUpdate()).AddTo(this);
 
             CreateSequence();
-            gameLoop.Event
+            GameLoop.Event
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => { BattleStart().Forget(); })
@@ -67,7 +66,7 @@ namespace Battle.Character.Enemy
                 .Subscribe(_ =>
                 {
                     commonCancellationTokenSource.Cancel();
-                    gameLoop.SendEvent(GameLoop.GameEvent.Win);
+                    GameLoop.SendEvent(GameLoop.GameEvent.Win);
                 });
         }
 
@@ -78,18 +77,19 @@ namespace Battle.Character.Enemy
                 _sequenceInstances.Add(prefab.StateKey, prefab.Construct(
                     new BossSequenceBase<T>.SequenceRequiredComponents()
                     {
-                        AllEnemyManager = allEnemyManager,
+                        AllCharacterManager = AllCharacterManager,
                         Parent = this,
                         PlayerCore = playerCore,
                         SpecialCameraSwitcher = specialCameraSwitcher,
-                        MagicCircleFactory = magicCircleFactory,
+                        MagicCircleFactory = MagicCircleFactory,
+                        ServantFactory = ServantFactory
                     }));
             }
         }
 
         private void MyFixedUpdate()
         {
-            if (gameLoop.CurrentState != GameLoop.GameEvent.BattleStart)
+            if (GameLoop.CurrentState != GameLoop.GameEvent.BattleStart)
                 return;
 
 

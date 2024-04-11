@@ -20,16 +20,174 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  characterDataList:
-  - characterKey: Baltecia
-    life: 100
-    magicCircleSprite: {fileID: 21300000, guid: 4c803ac903b67ed40b52505609425ef5,
-      type: 3}
-  - characterKey: Player
-    life: 100
-    magicCircleSprite: {fileID: 21300000, guid: e738df8c100eb4843b357c20f4b2cab8,
-      type: 3}
-  - characterKey: TrainingCubeMan
-    life: 114514
-    magicCircleSprite: {fileID: 0}
+    SerializationNodes:
+    - Name: _characterDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Battle.Character.CharacterData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Player
+    - Name: $v
+      Entry: 7
+      Data: 2|Battle.Character.CharacterData, Assembly-CSharp
+    - Name: characterKey
+      Entry: 1
+      Data: Player
+    - Name: characterType
+      Entry: 3
+      Data: 0
+    - Name: ownerType
+      Entry: 3
+      Data: 0
+    - Name: life
+      Entry: 3
+      Data: 100
+    - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Baltecia
+    - Name: $v
+      Entry: 7
+      Data: 3|Battle.Character.CharacterData, Assembly-CSharp
+    - Name: characterKey
+      Entry: 1
+      Data: Baltecia
+    - Name: characterType
+      Entry: 3
+      Data: 1
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: life
+      Entry: 3
+      Data: 150
+    - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: EnemyMiniDragon
+    - Name: $v
+      Entry: 7
+      Data: 4|Battle.Character.CharacterData, Assembly-CSharp
+    - Name: characterKey
+      Entry: 1
+      Data: EnemyMiniDragon
+    - Name: characterType
+      Entry: 3
+      Data: 2
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: life
+      Entry: 3
+      Data: 5
+    - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: TrainingCubeMan
+    - Name: $v
+      Entry: 7
+      Data: 5|Battle.Character.CharacterData, Assembly-CSharp
+    - Name: characterKey
+      Entry: 1
+      Data: TrainingCubeMan
+    - Name: characterType
+      Entry: 3
+      Data: 1
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: life
+      Entry: 3
+      Data: 114514
+    - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: TestMan
+    - Name: $v
+      Entry: 7
+      Data: 6|Battle.Character.CharacterData, Assembly-CSharp
+    - Name: characterKey
+      Entry: 1
+      Data: TestMan
+    - Name: characterType
+      Entry: 3
+      Data: 1
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: life
+      Entry: 3
+      Data: 114514
+    - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

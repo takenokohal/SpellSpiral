@@ -19,9 +19,7 @@ namespace DeckEdit.Others
             builder.RegisterComponentInHierarchy<SaveButtonView>();
             builder.RegisterComponentInHierarchy<DetailView>();
             builder.RegisterComponentInHierarchy<BackButtonView>();
-
-            builder.RegisterComponentInHierarchy<PlayerInput>();
-
+            
             builder.RegisterComponentInHierarchy<DeckCursorView>();
             builder.RegisterComponentInHierarchy<CardPoolCursorView>();
             builder.RegisterComponentInHierarchy<ActiveAreaController>();

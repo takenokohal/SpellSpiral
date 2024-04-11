@@ -74,17 +74,21 @@ namespace Databases
 
                 var characterKey = cells[0].Trim('"');
                 var attackKey = cells[1].Trim('"');
-                var damage = int.TryParse(cells[2].Trim('"'), out var damageResult) ? damageResult : 0;
-                var attribute = Enum.TryParse<SpellAttribute>(cells[3].Trim('"'), out var attributeResult)
+                var ownerType = Enum.TryParse<OwnerType>(cells[2].Trim('"'), out var ownerResult)
+                    ? ownerResult
+                    : OwnerType.Player;
+                var damage = int.TryParse(cells[3].Trim('"'), out var damageResult) ? damageResult : 0;
+                var attribute = Enum.TryParse<SpellAttribute>(cells[4].Trim('"'), out var attributeResult)
                     ? attributeResult
                     : SpellAttribute.Fire;
-                var weight = Enum.TryParse<AttackWeight>(cells[4].Trim('"'), out var weightResult)
+                var weight = Enum.TryParse<AttackWeight>(cells[5].Trim('"'), out var weightResult)
                     ? weightResult
                     : AttackWeight.Light;
 
                 _attackDataDictionary.TryAdd(characterKey, new Dictionary<string, AttackData>());
 
-                _attackDataDictionary[characterKey].TryAdd(attackKey, new AttackData(damage, weight, attribute));
+                _attackDataDictionary[characterKey]
+                    .TryAdd(attackKey, new AttackData(ownerType, damage, weight, attribute));
             }
         }
 #endif

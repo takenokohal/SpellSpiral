@@ -1,4 +1,5 @@
-﻿using Battle.Attack;
+﻿using Audio;
+using Battle.Attack;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -38,6 +39,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             startEffect.Stop();
             explosionEffect.Play();
+            AllAudioManager.PlaySe("Explosion");
             attackHitController.gameObject.SetActive(true);
             
             Animator.SetBool(ChargingAnimKey, false);

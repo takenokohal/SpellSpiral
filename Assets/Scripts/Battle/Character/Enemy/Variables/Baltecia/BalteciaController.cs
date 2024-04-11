@@ -13,7 +13,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             base.InitializeFunction();
 
-            gameLoop.Event
+            GameLoop.Event
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => Loop().Forget())

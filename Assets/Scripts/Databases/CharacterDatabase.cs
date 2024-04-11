@@ -1,19 +1,85 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Battle.Attack;
 using Battle.Character;
+using Battle.PlayerSpell;
+using Cysharp.Threading.Tasks;
+using Others;
+using Others.Utils;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Databases
 {
     [CreateAssetMenu(menuName = "Create CharacterDatabase", fileName = "CharacterDatabase", order = 0)]
     public class CharacterDatabase : SerializedScriptableObject
     {
-        [SerializeField] private List<CharacterData> characterDataList;
+        [OdinSerialize, Searchable] private readonly Dictionary<string, CharacterData> _characterDictionary = new();
 
-        public IReadOnlyList<CharacterData> CharacterDataList => characterDataList;
+        public IReadOnlyDictionary<string, CharacterData> CharacterDictionary => _characterDictionary;
 
-        public CharacterData Find(string characterKey) =>
-            CharacterDataList.First(value => value.CharacterKey == characterKey);
+
+        public CharacterData Find(string characterKey) => CharacterDictionary[characterKey];
+
+
+#if UNITY_EDITOR
+
+        [Button]
+        private void Update()
+        {
+            UpdateAsync().Forget();
+        }
+
+        private async UniTaskVoid UpdateAsync()
+        {
+            Debug.Log("UpdateStart");
+            var req = UnityWebRequest.Get(PathsAndURL.CharacterDatabaseSpreadSheetURL);
+            await req.SendWebRequest();
+
+            if (req.result == UnityWebRequest.Result.Success)
+            {
+                var text = req.downloadHandler.text;
+                Parse(text);
+                Debug.Log("UpdateComplete");
+            }
+            else
+            {
+                Debug.LogError(req.error);
+            }
+
+            req.Dispose();
+        }
+
+        private void Parse(string csv)
+        {
+            _characterDictionary.Clear();
+
+            var rows = csv.Split(new[] { "\n" }, StringSplitOptions.None);
+
+            foreach (var row in rows.Skip(1))
+            {
+                var cells = row.Split(new[] { ',' });
+
+                var characterKey = cells[0].Trim('"');
+                var characterType = Enum.TryParse<CharacterType>(cells[1].Trim('"'), out var ctResult)
+                    ? ctResult
+                    : CharacterType.Player;
+
+                var ownerType = Enum.TryParse<OwnerType>(cells[2].Trim('"'), out var otResult)
+                    ? otResult
+                    : OwnerType.Player;
+
+                var life = int.TryParse(cells[3].Trim('"'), out var lifeResult) ? lifeResult : 0;
+
+                var data = new CharacterData(characterKey, characterType, ownerType, life, null);
+
+                _characterDictionary.TryAdd(characterKey, data);
+            }
+        }
+#endif
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Audio;
 using Databases;
 using DeckEdit.SaveData;
+using Others.Input;
 using Others.Scene;
 using UnityEngine;
 using VContainer;
@@ -16,16 +17,18 @@ namespace Others.LifetimeScopes
         [SerializeField] private CharacterDatabase characterDatabase;
         [SerializeField] private PlayerConstData playerConstData;
 
-        [SerializeField] private AudioManager audioManager;
+        [SerializeField] private SeManager seManager;
 
         [SerializeField] private SceneFadePanelView sceneFadePanelView;
         [SerializeField] private YesNoDialog yesNoDialog;
         [SerializeField] private OkDialog okDialog;
-
+        [SerializeField] private MyInputManager myInputManager;
+        
         protected override void Configure(IContainerBuilder builder)
         {
             Debug.Log("RegisterRoot");
 
+            Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
 
             builder.RegisterInstance(spellDatabase);
             builder.RegisterInstance(spellColorPalette);
@@ -36,20 +39,21 @@ namespace Others.LifetimeScopes
             builder.Register<DeckSaveDataPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MySceneManager>(Lifetime.Singleton);
 
-            var panelInstance = Instantiate(sceneFadePanelView);
-            DontDestroyOnLoad(panelInstance.gameObject);
-            builder.RegisterInstance(panelInstance);
+            builder.RegisterEntryPoint<AllAudioManager>();
+            
+            InstantiateDontDestroyRegister(sceneFadePanelView, builder);
+            InstantiateDontDestroyRegister(yesNoDialog, builder);
+            InstantiateDontDestroyRegister(okDialog, builder);
 
-            var yesNoInstance = Instantiate(yesNoDialog);
-            DontDestroyOnLoad(yesNoInstance.gameObject);
-            builder.RegisterInstance(yesNoInstance);
+            InstantiateDontDestroyRegister(seManager, builder);
+            InstantiateDontDestroyRegister(myInputManager, builder);
+        }
 
-
-            var okInstance = Instantiate(okDialog);
-            DontDestroyOnLoad(okInstance.gameObject);
-            builder.RegisterInstance(okInstance);
-
-            Instantiate(audioManager);
+        private void InstantiateDontDestroyRegister<T>(T prefab, IContainerBuilder builder) where T : MonoBehaviour
+        {
+            var instance = Instantiate(prefab);
+            DontDestroyOnLoad(instance.gameObject);
+            builder.RegisterComponent(instance);
         }
     }
 }

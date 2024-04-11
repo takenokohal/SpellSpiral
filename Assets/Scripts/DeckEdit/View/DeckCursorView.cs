@@ -1,6 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Audio;
+using Cysharp.Threading.Tasks;
 using Databases;
 using DeckEdit.Model;
+using Others;
+using Others.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
@@ -9,7 +12,8 @@ namespace DeckEdit.View
 {
     public class DeckCursorView : MonoBehaviour
     {
-        [Inject] private readonly PlayerInput _playerInput;
+        [Inject] private readonly MyInputManager _myInputManager;
+        private PlayerInput PlayerInput => _myInputManager.UiInput;
         [Inject] private readonly DeckListView _deckListView;
         [Inject] private readonly DeckList _deckList;
         [Inject] private readonly CurrentSelectedSpell _currentSelectedSpell;
@@ -18,7 +22,15 @@ namespace DeckEdit.View
         [SerializeField] private int xMax = 10;
         [SerializeField] private int yMax = 2;
 
+        [Inject] private readonly OkDialog _okDialog;
+        [Inject] private readonly YesNoDialog _yesNoDialog;
+        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
         private Vector2Int CurrentPos { get; set; }
+
+        
+        private float _preInputX;
+        private float _preInputY;
+        private const float Threshold = 0.5f;
 
         private int CurrentIndex
         {
@@ -34,17 +46,24 @@ namespace DeckEdit.View
         {
             if (!_isActive)
                 return;
+            
+            if(AnyDialogIsOpen)
+                return;
 
-            ManageMoveX();
-            ManageClick();
+            ManageMove();
+            ManageClick();            
+            _preInputY = PlayerInput.actions["Vertical"].ReadValue<float>();
+            _preInputX = PlayerInput.actions["Horizontal"].ReadValue<float>();
+
         }
 
         private void ManageClick()
         {
-            if (!_playerInput.actions["Yes"].WasPressedThisFrame())
+            if (!PlayerInput.actions["Yes"].WasPressedThisFrame())
                 return;
 
 
+            AllAudioManager.PlaySe("Select");
             var key = FindKey();
             _deckList.Remove(key);
 
@@ -58,13 +77,13 @@ namespace DeckEdit.View
             });
         }
 
-        private void ManageMoveX()
+        private void ManageMove()
         {
-            var inputX = FloatToInt(_playerInput.actions["Horizontal"].ReadValue<float>());
-            if (!_playerInput.actions["Horizontal"].triggered)
+            var inputX = FloatToInt(PlayerInput.actions["Horizontal"].ReadValue<float>());
+            if (!IsTriggerX())
                 inputX = 0;
-            var inputY = FloatToInt(_playerInput.actions["Vertical"].ReadValue<float>());
-            if (!_playerInput.actions["Vertical"].triggered)
+            var inputY = FloatToInt(PlayerInput.actions["Vertical"].ReadValue<float>());
+            if (!IsTriggerY())
                 inputY = 0;
 
             if (inputX == 0 && inputY == 0)
@@ -88,6 +107,33 @@ namespace DeckEdit.View
             _currentSelectedSpell.SetSelectData(_spellDatabase.Find(key.Key));
 
             UpdateView(key);
+            AllAudioManager.PlaySe("CursorMove");
+        }
+        
+        private bool IsTriggerX()
+        {
+            var value = PlayerInput.actions["Horizontal"].ReadValue<float>();
+            switch (_preInputX)
+            {
+                case < Threshold when value >= Threshold:
+                case > -Threshold when value <= -Threshold:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        
+        private bool IsTriggerY()
+        {
+            var value = PlayerInput.actions["Vertical"].ReadValue<float>();
+            switch (_preInputY)
+            {
+                case < Threshold when value >= Threshold:
+                case > -Threshold when value <= -Threshold:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         private static int FloatToInt(float value)

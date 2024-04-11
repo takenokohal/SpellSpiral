@@ -14,7 +14,6 @@ namespace Battle.CommonObject.MagicCircle
 
         [Inject] private readonly CharacterDatabase _characterDatabase;
 
-
         private ObjectPool<MagicCircle> _pool;
 
         private void Start()
@@ -27,7 +26,7 @@ namespace Battle.CommonObject.MagicCircle
 
         public async UniTask CreateAndWait(MagicCircleParameters magicCircleParameters)
         {
-            AudioManager.PlaySe("MagicCircle");
+           AllAudioManager.PlaySe("MagicCircle");
 
             var magicCircle = _pool.Get();
             var data = _characterDatabase.Find(magicCircleParameters.CharacterKey);

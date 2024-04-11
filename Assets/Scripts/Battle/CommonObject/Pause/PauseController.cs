@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Others.Input;
 using Others.Scene;
 using Others.Utils;
 using TMPro;
@@ -13,7 +15,8 @@ namespace Battle.CommonObject.Pause
 {
     public class PauseController : MonoBehaviour
     {
-        private PlayerInput _playerInput;
+        [Inject] private readonly MyInputManager _myInputManager;
+        private PlayerInput PlayerInput => _myInputManager.UiInput;
 
         private Choice _currentChoice;
         private bool _isActive;
@@ -29,6 +32,9 @@ namespace Battle.CommonObject.Pause
 
         [Inject] private readonly MySceneManager _mySceneManager;
 
+        private float _preInput;
+        private const float Threshold = 0.5f;
+
         [Serializable]
         private class IconAndTitle
         {
@@ -39,13 +45,12 @@ namespace Battle.CommonObject.Pause
 
         private void Start()
         {
-            _playerInput = GetComponent<PlayerInput>();
             UpdateView();
         }
 
         private void Update()
         {
-            if (_playerInput.actions["Pause"].WasPressedThisFrame())
+            if (PlayerInput.actions["Pause"].WasPressedThisFrame())
                 Activate(!_isActive).Forget();
 
             if (!_isActive)
@@ -53,8 +58,12 @@ namespace Battle.CommonObject.Pause
             if (_mySceneManager.Changing)
                 return;
 
+
+            TryCancelPause();
             MovePointer();
             TryPressButton();
+
+            _preInput = PlayerInput.actions["Vertical"].ReadValue<float>();
         }
 
         public async UniTaskVoid Activate(bool isActive)
@@ -62,17 +71,20 @@ namespace Battle.CommonObject.Pause
             _isActive = isActive;
             Time.timeScale = isActive ? 0 : 1;
 
+            await UniTask.Yield();
+            _myInputManager.BattleInput.enabled = isActive;
 
             await canvasGroup.DOFade(isActive ? 1 : 0, 0.1f).SetUpdate(true);
         }
 
         private void MovePointer()
         {
-            var inputAction = _playerInput.actions["Vertical"];
-            if (!inputAction.triggered)
+            var inputAction = PlayerInput.actions["Vertical"];
+            var value = inputAction.ReadValue<float>();
+
+            if (!IsTrigger())
                 return;
 
-            var value = inputAction.ReadValue<float>();
             var dir = value switch
             {
                 <= -0.5f => 1,
@@ -85,10 +97,33 @@ namespace Battle.CommonObject.Pause
             UpdateView();
         }
 
-        private void TryPressButton()
+        private bool IsTrigger()
         {
-            var inputAction = _playerInput.actions["Yes"];
-            if (!inputAction.triggered)
+            var value = PlayerInput.actions["Vertical"].ReadValue<float>();
+            switch (_preInput)
+            {
+                case < Threshold when value >= Threshold:
+                case > -Threshold when value <= -Threshold:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        private void TryCancelPause()
+        {
+            var noButton = PlayerInput.actions["No"];
+            if (!noButton.triggered)
+                return;
+
+            Activate(false).Forget();
+        }
+
+        private async UniTaskVoid TryPressButton()
+        {
+            var yesButton = PlayerInput.actions["Yes"];
+
+            if (!yesButton.triggered)
                 return;
 
             switch (_currentChoice)
@@ -98,7 +133,8 @@ namespace Battle.CommonObject.Pause
                     break;
                 case Choice.Home:
                     Time.timeScale = 1;
-                    _mySceneManager.ChangeSceneAsync("Home").Forget();
+                    await _mySceneManager.ChangeSceneAsync("Home");
+                    _myInputManager.BattleInput.enabled = true;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

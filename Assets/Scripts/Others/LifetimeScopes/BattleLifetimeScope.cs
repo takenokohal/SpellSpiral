@@ -1,8 +1,10 @@
-﻿using Battle.Attack;
+﻿using Audio;
+using Battle.Attack;
 using Battle.Character.Enemy;
 using Battle.Character.Player;
 using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
+using Battle.Character.Servant;
 using Battle.CommonObject.MagicCircle;
 using Battle.CommonObject.Pause;
 using Battle.CommonObject.Result;
@@ -38,13 +40,17 @@ namespace Others.LifetimeScopes
             }
             */
 
+            builder.RegisterEntryPoint<BGMPlayer>();
+
             var stageObject = stageObjectHolder.StageObjects[stageName];
 
             builder.RegisterEntryPoint<GameLoop>().AsSelf();
 
 
+            builder.RegisterComponentInHierarchy<ServantFactory>();
+
             //Enemy
-            builder.Register<AllEnemyManager>(Lifetime.Singleton);
+            builder.Register<AllCharacterManager>(Lifetime.Singleton);
 
             var enemy = Instantiate(stageObject.Enemy);
             builder.RegisterComponent(enemy);

@@ -1,8 +1,10 @@
-﻿using Battle.Attack;
+﻿using Audio;
+using Battle.Attack;
 using Cinemachine;
 using Databases;
 using DG.Tweening;
 using Others;
+using Others.Input;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,7 +14,8 @@ namespace Battle.Character.Player
 {
     public class PlayerCore : CharacterBase
     {
-        public PlayerInput PlayerInput { get; private set; }
+        [Inject] private readonly MyInputManager _myInputManager;
+        public PlayerInput PlayerInput => _myInputManager.BattleInput;
 
         [Inject] private readonly PlayerConstData _playerConstData;
         public PlayerConstData PlayerConstData => _playerConstData;
@@ -30,22 +33,20 @@ namespace Battle.Character.Player
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
-
-            PlayerInput = GetComponent<PlayerInput>();
-
+            
             _animatorLocalPosition = Animator.transform.localPosition;
 
             PlayerParameter.LifeObservable.Where(value => value <= 0).Subscribe(value =>
             {
-                gameLoop.SendEvent(GameLoop.GameEvent.Lose);
+                GameLoop.SendEvent(GameLoop.GameEvent.Lose);
                 OnDead();
             }).AddTo(this);
 
-            gameLoop.Event.Where(value => value == GameLoop.GameEvent.Win)
+            GameLoop.Event.Where(value => value == GameLoop.GameEvent.Win)
                 .Subscribe(_ => PlayerParameter.Invincible = true).AddTo(this);
 
 
-            gameLoop.Event
+            GameLoop.Event
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => IsBattleStarted = true);
@@ -58,12 +59,13 @@ namespace Battle.Character.Player
                 return;
 
 
-            var attackData = attackDatabase.Find(attackHitController.AttackKey);
+            var attackData = AttackDatabase.Find(attackHitController.AttackKey);
             if (attackData != null)
                 PlayerParameter.Life -= attackData.Damage;
 
-            characterCamera.ImpulseSource.GenerateImpulse();
-            attackHitEffectFactory.Create(transform.position, transform.rotation);
+            AllAudioManager.PlaySe("Hit");
+            CharacterCamera.ImpulseSource.GenerateImpulse();
+            AttackHitEffectFactory.Create(transform.position, transform.rotation).Forget();
 
             Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
                 .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
@@ -86,11 +88,6 @@ namespace Battle.Character.Player
 
 
             gameObject.SetActive(false);
-        }
-
-        public override OwnerType GetOwnerType()
-        {
-            return OwnerType.Player;
         }
 
         public Vector2 GetDirectionToPlayer(Vector2 from)
