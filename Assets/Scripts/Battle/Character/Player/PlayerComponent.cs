@@ -10,7 +10,7 @@ namespace Battle.Character.Player
 
         protected PlayerParameter PlayerParameter => PlayerCore.PlayerParameter;
 
-        protected bool IsPlayerDead => PlayerCore.PlayerParameter.IsDead;
+        protected bool IsPlayerDead => PlayerCore.IsDead;
         
         protected bool IsInitialized { get; private set; }
 

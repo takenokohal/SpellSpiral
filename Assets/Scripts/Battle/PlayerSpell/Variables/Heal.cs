@@ -21,7 +21,7 @@ namespace Battle.PlayerSpell.Variables
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white,
                 1.5f, () => PlayerCore.transform.position));
 
-            PlayerCore.PlayerParameter.Life += healValue;
+            PlayerCore.CurrentLife += healValue;
 
             effect.Play();
             AllAudioManager.PlaySe("Heal");

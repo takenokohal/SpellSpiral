@@ -25,7 +25,8 @@ namespace Battle.PlayerSpell.Variables
         {
             var target = AllCharacterManager.AllCharacters
                 .Where(value=> value.GetOwnerType()== OwnerType.Enemy)
-                .OrderBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
+                .OrderBy(value=> value.CurrentLife)
+                .ThenBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
             for (int i = 0; i < howMany; i++)
             {
                 Shoot(target, i).Forget();

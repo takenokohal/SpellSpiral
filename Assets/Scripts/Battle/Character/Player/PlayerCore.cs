@@ -1,8 +1,6 @@
-﻿using Audio;
-using Battle.Attack;
+﻿using Battle.Attack;
 using Cinemachine;
 using Databases;
-using DG.Tweening;
 using Others;
 using Others.Input;
 using UniRx;
@@ -28,15 +26,12 @@ namespace Battle.Character.Player
         public PlayerParameter PlayerParameter { get; } = new();
 
 
-        private Vector3 _animatorLocalPosition;
-
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
-            
-            _animatorLocalPosition = Animator.transform.localPosition;
 
-            PlayerParameter.LifeObservable.Where(value => value <= 0).Subscribe(value =>
+
+            OnDeadObservable().Subscribe(_ =>
             {
                 GameLoop.SendEvent(GameLoop.GameEvent.Lose);
                 OnDead();
@@ -50,26 +45,6 @@ namespace Battle.Character.Player
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => IsBattleStarted = true);
-        }
-
-
-        public override void OnAttacked(AttackHitController attackHitController)
-        {
-            if (PlayerParameter.Invincible)
-                return;
-
-
-            var attackData = AttackDatabase.Find(attackHitController.AttackKey);
-            if (attackData != null)
-                PlayerParameter.Life -= attackData.Damage;
-
-            AllAudioManager.PlaySe("Hit");
-            CharacterCamera.ImpulseSource.GenerateImpulse();
-            AttackHitEffectFactory.Create(transform.position, transform.rotation).Forget();
-
-            Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
-                .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
-            Animator.SetTrigger(OnDamagedAnimKey);
         }
 
 
@@ -93,6 +68,11 @@ namespace Battle.Character.Player
         public Vector2 GetDirectionToPlayer(Vector2 from)
         {
             return ((Vector2)transform.position - from).normalized;
+        }
+
+        protected override bool ChickHitChild(AttackHitController attackHitController)
+        {
+            return !PlayerParameter.Invincible;
         }
     }
 }

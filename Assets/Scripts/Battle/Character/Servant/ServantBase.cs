@@ -1,8 +1,7 @@
-﻿using Audio;
-using Battle.Attack;
-using Battle.Character.Player;
+﻿using Battle.Character.Player;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -11,14 +10,12 @@ namespace Battle.Character.Servant
     public abstract class ServantBase : CharacterBase
     {
         [Inject] protected readonly PlayerCore playerCore;
-        private Vector3 _animatorLocalPosition;
 
-        private int _lifeTest;
 
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
-            _animatorLocalPosition = Animator.transform.localPosition;
+            OnDeadObservable().Subscribe(_ => Dead());
         }
 
         protected UniTask MyDelay(float time)
@@ -32,19 +29,6 @@ namespace Battle.Character.Servant
             return tween.ToUniTask(cancellationToken: destroyCancellationToken);
         }
 
-        public override void OnAttacked(AttackHitController attackHitController)
-        {
-            var attackData = AttackDatabase.Find(attackHitController.AttackKey);
-            if (attackData != null)
-                _lifeTest -= attackData.Damage;
-
-
-            Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
-                .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
-
-            AllAudioManager.PlaySe("Hit");
-            AttackHitEffectFactory.Create(transform.position, transform.rotation).Forget();
-        }
 
         public ServantBase CreateFromPrefab()
         {
@@ -55,7 +39,12 @@ namespace Battle.Character.Servant
 
         private void Activate()
         {
-            
+        }
+
+        private void Dead()
+        {
+            AllCharacterManager.RemoveCharacter(this);
+            Destroy(gameObject);
         }
 
         protected Vector2 GetDirectionToTarget(CharacterBase target)

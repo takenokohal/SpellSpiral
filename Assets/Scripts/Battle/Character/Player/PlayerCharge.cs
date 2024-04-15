@@ -19,7 +19,7 @@ namespace Battle.Character.Player
 
         private static readonly int AnimKey = Animator.StringToHash("Charging");
 
-        private bool Chargeable => !PlayerParameter.IsDead &&
+        private bool Chargeable => !IsPlayerDead &&
                                    !PlayerParameter.Warping;
 
         private SeSource _seSource;

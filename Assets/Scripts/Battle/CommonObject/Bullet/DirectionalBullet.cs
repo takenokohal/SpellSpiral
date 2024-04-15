@@ -38,8 +38,9 @@ namespace Battle.CommonObject.Bullet
                 return;
 
             _isDead.Value = true;
+            rb.velocity /= 2f;
 
-            await transform.DOScale(0, 0.5f).ToUniTask(cancellationToken: destroyCancellationToken);
+            await transform.DOScale(0, 0.2f).ToUniTask(cancellationToken: destroyCancellationToken);
 
             Destroy(gameObject);
         }

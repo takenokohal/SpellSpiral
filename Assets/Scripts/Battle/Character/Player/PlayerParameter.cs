@@ -9,20 +9,6 @@ namespace Battle.Character.Player
 {
     public class PlayerParameter
     {
-        public const int MaxLife = 100;
-
-        private readonly ReactiveProperty<float> _life = new(MaxLife);
-
-        public float Life
-        {
-            get => _life.Value;
-            set => _life.Value = Mathf.Clamp(value, 0, MaxLife);
-        }
-
-        public IObservable<float> LifeObservable => _life;
-
-        public bool IsDead => Life <= 0;
-
         public const int MaxMana = 100;
 
         private readonly ReactiveProperty<float> _mana = new(MaxMana);

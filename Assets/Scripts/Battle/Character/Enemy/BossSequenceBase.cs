@@ -87,8 +87,7 @@ namespace Battle.Character.Enemy
 
             await UniTask.WaitWhile(() => !Parent.IsInitialized);
 
-            Parent.EnemyParameter.CurrentLifeObservable
-                .Where(value => value <= 0)
+            Parent.OnDeadObservable()
                 .Take(1).Subscribe(_ => CancelSequence());
         }
 

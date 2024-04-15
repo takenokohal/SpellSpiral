@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using UniRx;
 
 namespace Battle.Character.Enemy
@@ -22,4 +22,4 @@ namespace Battle.Character.Enemy
             _currentLife.Value = MaxLife;
         }
     }
-}
+}*/

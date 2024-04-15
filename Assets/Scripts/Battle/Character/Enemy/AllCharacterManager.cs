@@ -1,4 +1,7 @@
-﻿using UniRx;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Battle.Attack;
+using UniRx;
 
 namespace Battle.Character.Enemy
 {
@@ -7,7 +10,7 @@ namespace Battle.Character.Enemy
         private readonly ReactiveCollection<CharacterBase> _allCharacters = new();
         public IReadOnlyReactiveCollection<CharacterBase> AllCharacters => _allCharacters;
 
-        
+
         public void RegisterCharacter(CharacterBase characterBase) => _allCharacters.Add(characterBase);
         public void RemoveCharacter(CharacterBase characterBase) => _allCharacters.Remove(characterBase);
 
@@ -15,6 +18,12 @@ namespace Battle.Character.Enemy
         private readonly ReactiveProperty<EnemyBase> _boss = new();
         public EnemyBase Boss => _boss.Value;
         public void RegisterBoss(EnemyBase enemyBase) => _boss.Value = enemyBase;
+
+        public IEnumerable<CharacterBase> GetEnemyCharacters() =>
+            AllCharacters.Where(value => value.CharacterData.OwnerType == OwnerType.Enemy);
+
+        public IEnumerable<CharacterBase> GetPlayerCharacters() =>
+            AllCharacters.Where(value => value.CharacterData.OwnerType == OwnerType.Player);
 
 
         /*

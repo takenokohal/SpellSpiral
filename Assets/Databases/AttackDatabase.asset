@@ -418,7 +418,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: EnemyMiniDragon
+      Data: BalteciaMiniDragon
     - Name: $v
       Entry: 7
       Data: 17|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Battle.Attack.AttackData,

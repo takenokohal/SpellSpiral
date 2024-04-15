@@ -31,7 +31,12 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 BalteciaState.CornerGatling3,
                 BalteciaState.FlameSword,
                 BalteciaState.Explosion,
-                BalteciaState.ShortHomingBullet
+                BalteciaState.ShortHomingBullet,
+                BalteciaState.SummonServant,
+                BalteciaState.SummonServant,
+                BalteciaState.SummonServant,
+                BalteciaState.SummonServant, 
+                BalteciaState.SummonServant
             };
 
             while (!commonCancellationTokenSource.IsCancellationRequested)

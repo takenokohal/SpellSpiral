@@ -60,14 +60,12 @@ namespace Battle.Character.Enemy
 
             gameObject.OnDestroyAsObservable().Subscribe(_ => commonCancellationTokenSource.Cancel());
 
-            EnemyParameter.CurrentLifeObservable
-                .Where(value => value <= 0)
-                .Take(1)
-                .Subscribe(_ =>
-                {
-                    commonCancellationTokenSource.Cancel();
-                    GameLoop.SendEvent(GameLoop.GameEvent.Win);
-                });
+
+            OnDeadObservable().Take(1).Subscribe(_ =>
+            {
+                commonCancellationTokenSource.Cancel();
+                GameLoop.SendEvent(GameLoop.GameEvent.Win);
+            });
         }
 
         private void CreateSequence()

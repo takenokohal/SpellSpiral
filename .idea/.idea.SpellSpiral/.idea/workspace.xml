@@ -14,6 +14,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/09/af003218/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/10/597726f8/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/45/6e4e369e/ObjectPool`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/64/3fe8f11f/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/9a/ebdd2fa8/Scene.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/f5/3f014d03/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78266e6ef69d42759e5eb24bde7e827864a00/71/63d179c4/SerializedMonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -109,17 +110,82 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Character/Enemy/BossSequenceBase.cs</url>
-          <line>96</line>
-          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Character\Enemy\BossSequenceBase.cs" initialLine="96" containingFunctionPresentation="Method 'SequenceStart'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Character/Player/PlayerCore.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Character\Player\PlayerCore.cs" initialLine="35" containingFunctionPresentation="Lambda expression inside Method 'InitializeFunction'">
             <startOffsets>
-              <option value="3168" />
+              <option value="933" />
             </startOffsets>
             <endOffsets>
-              <option value="3226" />
+              <option value="977" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Character/CharacterBase.cs</url>
+          <line>62</line>
+          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Character\CharacterBase.cs" initialLine="62" containingFunctionPresentation="Property 'IsDead'">
+            <startOffsets>
+              <option value="2180" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2217" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Attack/AttackHitController.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Attack\AttackHitController.cs" initialLine="19" containingFunctionPresentation="Method 'OnTriggerEnter'">
+            <startOffsets>
+              <option value="536" />
+            </startOffsets>
+            <endOffsets>
+              <option value="582" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Attack/AttackHitController.cs</url>
+          <line>21</line>
+          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Attack\AttackHitController.cs" initialLine="21" containingFunctionPresentation="Method 'OnTriggerEnter'">
+            <startOffsets>
+              <option value="596" />
+            </startOffsets>
+            <endOffsets>
+              <option value="610" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Attack/AttackHitController.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Attack\AttackHitController.cs" initialLine="24" containingFunctionPresentation="Method 'OnTriggerEnter'">
+            <startOffsets>
+              <option value="648" />
+            </startOffsets>
+            <endOffsets>
+              <option value="670" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Battle/Attack/AttackHitController.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\Battle\Attack\AttackHitController.cs" initialLine="27" containingFunctionPresentation="Method 'OnTriggerEnter'">
+            <startOffsets>
+              <option value="708" />
+            </startOffsets>
+            <endOffsets>
+              <option value="727" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

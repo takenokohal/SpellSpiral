@@ -29,7 +29,8 @@ namespace Battle.UI
 
         private async UniTaskVoid Init()
         {
-            const int maxLife = PlayerParameter.MaxLife;
+            await _playerCore.WaitUntilInitialize();
+            var maxLife = _playerCore.CharacterData.Life;
             lifeGage.maxValue = maxLife;
             lifeGage.value = maxLife;
 
@@ -38,8 +39,7 @@ namespace Battle.UI
 
             await _playerCore.WaitUntilInitialize();
 
-            var param = _playerCore.PlayerParameter;
-            param.LifeObservable.Subscribe(OnLifeChange).AddTo(this);
+            _playerCore.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
         }
 
         private void OnLifeChange(float value)

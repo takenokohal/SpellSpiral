@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace Battle.Character.Servant
 {
-    //固定砲台
     public class MiniDragon : ServantBase
     {
         [SerializeField] private DirectionalBullet directionalBullet;
@@ -36,6 +35,8 @@ namespace Battle.Character.Servant
                     .Where(value => value.GetOwnerType() != GetOwnerType())
                     .OrderBy(value =>
                         Vector2.Distance(transform.position, value.transform.position)).First();
+
+            CharacterRotation.Rotation = target.transform.position.x - transform.position.x;
             directionalBullet.CreateFromPrefab(nozzle.position, GetDirectionToTarget(target) * bulletSpeed);
         }
     }

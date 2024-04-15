@@ -22,7 +22,7 @@ namespace Battle.PlayerSpell.Variables
                 2f, CalcPos));
             
             var tmpPos = CalcPos();
-            var tmpRot = PlayerCore.CharacterRotation.isRight ? 0 : 180f;
+            var tmpRot = PlayerCore.CharacterRotation.IsRight ? 0 : 180f;
             multiHitLaser.Activate(new MultiHitLaser.Parameter(
                 () => tmpPos, () => tmpRot, duration, hitCount)).Forget();
 

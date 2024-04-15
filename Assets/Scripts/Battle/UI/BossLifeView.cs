@@ -25,21 +25,20 @@ namespace Battle.UI
 
         private async void Start()
         {
-            await UniTask.WaitWhile(() => _allCharacterManager.Boss== null);
+            await UniTask.WaitWhile(() => _allCharacterManager.Boss == null);
             Init(_allCharacterManager.Boss);
         }
 
         private void Init(EnemyBase enemyBase)
         {
-            var param = enemyBase.EnemyParameter;
-            var maxLife = param.MaxLife;
+            var maxLife = enemyBase.CharacterData.Life;
             lifeGage.maxValue = maxLife;
             lifeGage.value = maxLife;
 
             redGage.maxValue = maxLife;
             redGage.value = maxLife;
 
-            param.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
+            enemyBase.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
         }
 
         private void OnLifeChange(float value)

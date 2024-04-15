@@ -27,6 +27,17 @@ namespace Others.SaveData
             v.SaveDeck(currentSavedDeck);
         }
 
+        [Button]
+        private void SetAllSpell(string str)
+        {
+            var list = new List<string>();
+            for (int i = 0; i < 20; i++)
+            {
+                list.Add(str);
+            }
+            var v = new DeckSaveDataPresenter();
+            v.SaveDeck(list);
+        }
 
         private IEnumerable<string> GetStrings()
         {

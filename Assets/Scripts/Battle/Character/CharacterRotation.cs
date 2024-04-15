@@ -8,18 +8,19 @@ namespace Battle.Character
     {
         private const float RotationDuration = 0.2f;
 
-        public bool isRight = true;
+        public bool IsRight { get; private set; }
 
 
         private float _currentAnimatingRot = 90f;
 
         private readonly Transform _transform;
 
+        private const float ToRotation = 120f;
 
         public float Rotation
         {
-            get => isRight ? 1 : -1;
-            set => isRight = value > 0;
+            get => IsRight ? 1 : -1;
+            set => IsRight = value > 0;
         }
 
 
@@ -33,13 +34,13 @@ namespace Battle.Character
 
         private void FixedUpdate()
         {
-            var to = isRight ? 90f : -90f;
+            var to = IsRight ? ToRotation : -ToRotation;
             if (Mathf.Abs(to - _currentAnimatingRot) < 0.01f)
                 return;
 
             var lerp = Mathf.Lerp(_currentAnimatingRot, to, RotationDuration);
             _currentAnimatingRot = lerp;
-            _transform.eulerAngles = new Vector3(0, _currentAnimatingRot);
+            _transform.rotation = Quaternion.Euler(0, _currentAnimatingRot, 0);
         }
     }
 }

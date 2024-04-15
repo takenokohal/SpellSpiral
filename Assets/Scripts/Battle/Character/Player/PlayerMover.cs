@@ -20,7 +20,7 @@ namespace Battle.Character.Player
 
         private void FixedUpdate()
         {
-            if(!IsInitialized)
+            if (!IsInitialized)
                 return;
             if (!IsBattleStarted)
                 return;
@@ -36,7 +36,10 @@ namespace Battle.Character.Player
 
         private void SetRotation()
         {
-            if (_allCharacterManager.AllCharacters.Count == 1)
+            var enemyXPoses = _allCharacterManager.GetEnemyCharacters().Select(value => value.transform.position.x)
+                .ToArray();
+            var playerXPos = PlayerCore.transform.position.x;
+            if (enemyXPoses.All(value => value - playerXPos <= 0) || enemyXPoses.All(value => value - playerXPos > 0))
             {
                 var enemy = _allCharacterManager.AllCharacters.First();
                 var rot = enemy.transform.position.x - PlayerCore.transform.position.x;

@@ -75,7 +75,7 @@ namespace Battle.CommonObject.Bullet
             _elapsedTime += dt;
 
 
-            var to = _elapsedTime <= _parameter.Duration
+            var to = (_elapsedTime <= _parameter.Duration) 
                 ? (_parameter.Target.position - transform.position).normalized * _parameter.MaxSpeed
                 : rb.velocity.normalized * _parameter.MaxSpeed;
 
@@ -91,7 +91,8 @@ namespace Battle.CommonObject.Bullet
 
             IsDead = true;
 
-            await transform.DOScale(0, 0.5f);
+            rb.velocity /= 2f;
+            await transform.DOScale(0, 0.2f);
 
             Destroy(gameObject);
         }

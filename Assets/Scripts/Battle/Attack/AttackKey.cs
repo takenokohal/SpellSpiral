@@ -35,7 +35,7 @@ namespace Battle.Attack
         {
 #if UNITY_EDITOR
             var db = AttackDatabase.LoadOnEditor();
-            return db.AttackDataDictionary.Select(value => value.Key);
+            return db.AttackDataDictionary[characterKey].Select(value => value.Key);
 #else
             return null;
 #endif

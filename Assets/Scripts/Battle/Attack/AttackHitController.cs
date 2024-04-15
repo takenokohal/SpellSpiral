@@ -22,7 +22,7 @@ namespace Battle.Attack
             if (v == null)
                 return;
 
-            if (v.CheckHit(this))
+            if (!v.CheckHit(this))
                 return;
 
             v.OnAttacked(this);

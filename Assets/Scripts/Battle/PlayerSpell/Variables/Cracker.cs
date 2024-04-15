@@ -26,8 +26,9 @@ namespace Battle.PlayerSpell.Variables
         protected override async UniTaskVoid Init()
         {
             var target = AllCharacterManager.AllCharacters
-                 .Where(value => value.GetOwnerType() == OwnerType.Enemy)
-                .OrderBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
+                .Where(value => value.GetOwnerType() == OwnerType.Enemy)
+                .OrderBy(value => value.CurrentLife)
+                .ThenBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
 
             var currentArc = 0f;
             for (int i = 0; i < howMany; i++)
