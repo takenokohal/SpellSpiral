@@ -5,6 +5,7 @@ using Battle.Attack;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
 namespace Battle.CommonObject.Bullet
@@ -54,7 +55,7 @@ namespace Battle.CommonObject.Bullet
 
         private void Activate(Parameter parameter)
         {
-           AllAudioManager.PlaySe("MagicShot");
+            AllAudioManager.PlaySe("MagicShot");
 
             gameObject.SetActive(true);
             _parameter = parameter;
@@ -64,6 +65,9 @@ namespace Battle.CommonObject.Bullet
             transform.position = _parameter.FirstPos;
             rb.velocity = _parameter.FirstVelocity;
             AutoKill().Forget();
+
+            var target = _parameter.Target;
+            target.OnDestroyAsObservable().Take(1).TakeUntilDestroy(this).Subscribe(_ => _elapsedTime = 114514);
 
             attackHitController.OnAttackHit.Subscribe(_ => Kill().Forget());
         }
@@ -75,7 +79,7 @@ namespace Battle.CommonObject.Bullet
             _elapsedTime += dt;
 
 
-            var to = (_elapsedTime <= _parameter.Duration) 
+            var to = (_elapsedTime <= _parameter.Duration)
                 ? (_parameter.Target.position - transform.position).normalized * _parameter.MaxSpeed
                 : rb.velocity.normalized * _parameter.MaxSpeed;
 

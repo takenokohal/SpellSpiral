@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle.Character;
+using Battle.PlayerSpell;
 using UnityEngine;
 
 namespace Battle.CommonObject.MagicCircle
@@ -7,18 +8,24 @@ namespace Battle.CommonObject.MagicCircle
     public class MagicCircleParameters
     {
         public string CharacterKey { get; }
-        public Color Color { get; }
         public float Size { get; }
 
         public Func<Vector2> Pos { get; }
 
-        public MagicCircleParameters(string characterKey, Color color, float size,
+
+        public MagicCircleParameters(CharacterBase character, float size,
             Func<Vector2> pos)
         {
-            CharacterKey = characterKey;
-            Color = color;
+            CharacterKey = character.CharacterKey;
             Size = size;
             Pos = pos;
         }
+    }
+
+    public enum MagicCircleType
+    {
+        Bullet,
+        Laser,
+        Summon
     }
 }

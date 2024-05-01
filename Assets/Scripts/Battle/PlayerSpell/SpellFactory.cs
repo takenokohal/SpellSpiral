@@ -14,8 +14,8 @@ namespace Battle.PlayerSpell
         [Inject] private readonly AllCharacterManager _allCharacterManager;
         [Inject] private readonly PlayerCore _playerCore;
         [Inject] private readonly MagicCircleFactory _magicCircleFactory;
-        [Inject] private readonly PlayerBuff _playerBuff;
         [Inject] private readonly ServantFactory _servantFactory;
+
 
         public void Create(string spellKey)
         {
@@ -24,7 +24,7 @@ namespace Battle.PlayerSpell
                 _playerCore,
                 _allCharacterManager,
                 _magicCircleFactory,
-                _playerBuff,
+                _spellDatabase,
                 spellData, _servantFactory);
         }
     }

@@ -24,13 +24,14 @@ namespace Battle.CommonObject.MagicCircle
                 magicCircle => magicCircle.gameObject.SetActive(false));
         }
 
+
         public async UniTask CreateAndWait(MagicCircleParameters magicCircleParameters)
         {
-           AllAudioManager.PlaySe("MagicCircle");
+            AllAudioManager.PlaySe("MagicCircle");
 
             var magicCircle = _pool.Get();
             var data = _characterDatabase.Find(magicCircleParameters.CharacterKey);
-            magicCircle.Init(data.MagicCircleSprite, magicCircleParameters.Color);
+            magicCircle.Init(data.MagicCircleSprite);
 
             var t = magicCircle.transform;
             t.localScale = Vector3.zero;

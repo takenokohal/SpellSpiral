@@ -59,7 +59,6 @@ namespace Others.LifetimeScopes
             builder.RegisterComponentInHierarchy<PlayerCore>();
             builder.RegisterComponentInHierarchy<PlayerMover>();
             builder.RegisterComponentInHierarchy<PlayerChant>();
-            builder.RegisterComponentInHierarchy<PlayerBuff>();
             builder.RegisterComponentInHierarchy<PlayerCharge>();
 
             //Camera
@@ -91,6 +90,7 @@ namespace Others.LifetimeScopes
             builder.RegisterComponentInHierarchy<PlayerLifeView>();
             builder.RegisterComponentInHierarchy<PlayerManaView>();
             builder.RegisterComponentInHierarchy<BossLifeView>();
+            builder.RegisterComponentInHierarchy<PlayerBuffView>();
 
             //Intro
             builder.RegisterComponentInHierarchy<IntroController>();

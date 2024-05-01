@@ -55,7 +55,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                     var j1 = j;
                     UniTask.Void(async () =>
                     {
-                        var mcp = new MagicCircleParameters(CharacterKey, Color.red,
+                        var mcp = new MagicCircleParameters(Parent,
                             1f,
                             () => CalcPos(i1, j1));
                         await MagicCircleFactory.CreateAndWait(mcp);

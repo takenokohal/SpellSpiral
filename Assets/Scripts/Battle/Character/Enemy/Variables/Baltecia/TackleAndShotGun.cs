@@ -80,7 +80,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             Parent.ToAnimationVelocity = -GetDirectionToPlayer();
 
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.red, 2,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 2,
                 () => Parent.transform.position));
 
             attackHitController.gameObject.SetActive(true);
@@ -115,7 +115,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         private async UniTaskVoid Shoot(int i, float currentArc)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.red, 1,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => CalcPos(i, currentArc)));
 
             directionalBulletPrefab.CreateFromPrefab(CalcPos(i, currentArc), CalcDir(i, currentArc) * shootSpeed);

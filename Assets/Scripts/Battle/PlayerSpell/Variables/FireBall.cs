@@ -39,7 +39,7 @@ namespace Battle.PlayerSpell.Variables
 
         private async UniTaskVoid Shoot(CharacterBase target, int i)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white, 1,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore, 1,
                 () => CalcPos(target, i)));
 
             var pos = (Vector3)CalcPos(target, i);

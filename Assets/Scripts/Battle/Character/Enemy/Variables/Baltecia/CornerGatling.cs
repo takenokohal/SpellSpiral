@@ -69,7 +69,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             dir.Scale(-cornerNormalize);
 
 
-            var mcp = new MagicCircleParameters(CharacterKey, Color.red,  1f,
+            var mcp = new MagicCircleParameters(Parent,  1f,
                 () => CalcPos(i, j, dir));
             await MagicCircleFactory.CreateAndWait(mcp);
 

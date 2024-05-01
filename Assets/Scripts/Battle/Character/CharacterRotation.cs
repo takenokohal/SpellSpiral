@@ -8,7 +8,7 @@ namespace Battle.Character
     {
         private const float RotationDuration = 0.2f;
 
-        public bool IsRight { get; private set; }
+        public bool IsRight { get; set; }
 
 
         private float _currentAnimatingRot = 90f;
@@ -16,6 +16,8 @@ namespace Battle.Character
         private readonly Transform _transform;
 
         private const float ToRotation = 120f;
+
+        public bool IsStop { get; set; }
 
         public float Rotation
         {
@@ -34,6 +36,8 @@ namespace Battle.Character
 
         private void FixedUpdate()
         {
+            if (IsStop)
+                return;
             var to = IsRight ? ToRotation : -ToRotation;
             if (Mathf.Abs(to - _currentAnimatingRot) < 0.01f)
                 return;

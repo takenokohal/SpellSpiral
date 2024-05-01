@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Battle.Attack;
+using Battle.Character.Player.Buff;
 using Battle.MyCamera;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
@@ -32,8 +34,6 @@ namespace Battle.Character.Enemy
         {
             base.InitializeFunction();
 
-            var tg = FindObjectOfType<CinemachineTargetGroup>();
-            tg.AddMember(transform, 1, 0);
             AllCharacterManager.RegisterBoss(this);
 
             Observable.EveryFixedUpdate().Subscribe(_ => MyFixedUpdate()).AddTo(this);
@@ -97,6 +97,18 @@ namespace Battle.Character.Enemy
 
             Animator.SetFloat(_horizontalAnimKey, _animationBlendValue.x);
             Animator.SetFloat(_verticalAnimKey, _animationBlendValue.y);
+        }
+
+        protected override float CalcDamage(AttackHitController attackHitController)
+        {
+            var attackBuff = playerCore.PlayerBuff.BuffCount(BuffKey.BuffMultiply);
+            var damage = (float)AttackDatabase.Find(attackHitController.AttackKey).Damage;
+            for (int i = 0; i < attackBuff; i++)
+            {
+                damage *= playerCore.PlayerConstData.BuffPowerRatio;
+            }
+
+            return damage;
         }
     }
 }

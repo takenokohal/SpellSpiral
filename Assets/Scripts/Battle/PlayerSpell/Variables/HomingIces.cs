@@ -44,7 +44,7 @@ namespace Battle.PlayerSpell.Variables
 
         private async UniTask Shoot(CharacterBase target, int i)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white, 1f,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore, 1f,
                 () => CalcPos(target, i)));
 
             homingBullet.CreateFromPrefab(new HomingBullet.Parameter()

@@ -1,4 +1,5 @@
 ﻿using Battle.Attack;
+using Battle.Character.Servant;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -7,15 +8,14 @@ namespace Battle.PlayerSpell.Variables
 {
     public class SummonCommon : SpellBase
     {
-        [SerializeField] private string servantKey;
-        
+        [SerializeField] private ServantBase servantPrefab;
+
         protected override async UniTaskVoid Init()
         {
             await MagicCircleFactory.CreateAndWait(
-                new MagicCircleParameters(CharacterKey,
-                    Color.white, 1, () => PlayerCore.transform.position));
+                new MagicCircleParameters(PlayerCore, 1, () => PlayerCore.transform.position));
 
-            ServantFactory.Create(servantKey);
+            ServantFactory.CreateAndInject(servantPrefab, PlayerCore, PlayerCore.transform.position);
         }
     }
 }

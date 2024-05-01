@@ -18,7 +18,7 @@ namespace Battle.PlayerSpell.Variables
         {
             foreach (var t in cubes)
             {
-                MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white, 1,
+                MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore, 1,
                     () => t.position)).Forget();
             }
 

@@ -28,6 +28,13 @@ namespace Databases
 
 #if UNITY_EDITOR
 
+        public static CharacterDatabase LoadOnEditor()
+        {
+            var path = PathsAndURL.CreateDatabasePath<CharacterDatabase>();
+            var v = AssetDatabase.LoadAssetAtPath<CharacterDatabase>(path);
+            return v;
+        }
+
         [Button]
         private void Update()
         {
@@ -69,13 +76,15 @@ namespace Databases
                     ? ctResult
                     : CharacterType.Player;
 
-                var ownerType = Enum.TryParse<OwnerType>(cells[2].Trim('"'), out var otResult)
+                var masterName = cells[2].Trim('"');
+
+                var ownerType = Enum.TryParse<OwnerType>(cells[3].Trim('"'), out var otResult)
                     ? otResult
                     : OwnerType.Player;
 
-                var life = int.TryParse(cells[3].Trim('"'), out var lifeResult) ? lifeResult : 0;
+                var life = int.TryParse(cells[4].Trim('"'), out var lifeResult) ? lifeResult : 0;
 
-                var data = new CharacterData(characterKey, characterType, ownerType, life, null);
+                var data = new CharacterData(characterKey, characterType, masterName, ownerType, life, null);
 
                 _characterDictionary.TryAdd(characterKey, data);
             }

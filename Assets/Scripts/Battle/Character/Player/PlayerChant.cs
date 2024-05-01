@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
 using Battle.PlayerSpell;
@@ -23,7 +24,6 @@ namespace Battle.Character.Player
 
         [Inject] private readonly SpellFactory _spellFactory;
         [Inject] private readonly SpellDatabase _spellDatabase;
-        [Inject] private readonly PlayerBuff _playerBuff;
 
         private static readonly int AnimKey = Animator.StringToHash("Chant");
 
@@ -85,22 +85,24 @@ namespace Battle.Character.Player
             var spellKey = _currentSpells[spellSlot];
             var spellData = _spellDatabase.SpellDictionary[spellKey];
             var manaCost = (float)spellData.ManaCost;
-            var playerParameter = PlayerCore.PlayerParameter;
 
-            if (_playerBuff.HasBuff(BuffKey.ReduceCost))
-                manaCost /= 2f;
+            var reduceCostCount = PlayerBuff.BuffCount(BuffKey.ReduceCost);
+            for (int i = 0; i < reduceCostCount; i++)
+            {
+                manaCost *= PlayerConstData.BuffReduceManaRatio;
+            }
 
             if (PlayerParameter.Mana < manaCost)
             {
                 return false;
             }
 
-            playerParameter.Mana -= manaCost;
+            PlayerParameter.Mana -= manaCost;
 
             _spellFactory.Create(spellKey);
 
+            TryDuplication(spellKey).Forget();
 
-            //  PlayerCore.Animator.SetTrigger(AnimKey);
 
             switch (spellData.SpellType)
             {
@@ -117,16 +119,20 @@ namespace Battle.Character.Player
             }
 
 
-            if (_playerBuff.HasBuff(BuffKey.Duplication))
-            {
-                UniTask.Void(async () =>
-                {
-                    await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
-                    _spellFactory.Create(spellKey);
-                });
-            }
-
             return true;
+        }
+
+        private async UniTaskVoid TryDuplication(string spellKey)
+        {
+            var dups = PlayerBuff.BuffParameters.Where(value => value.BuffKey == BuffKey.Duplication);
+
+            foreach (var buffParameter in dups)
+            {
+                await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
+                _spellFactory.Create(spellKey);
+
+                PlayerBuff.BuffParameters.Remove(buffParameter);
+            }
         }
 
         private void ChangeSpell(SpellSlot spellSlot)

@@ -34,7 +34,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             startEffect.Play();
             await MyDelay(delay);
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.red, 7,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 7,
                 () => Parent.transform.position));
 
             startEffect.Stop();

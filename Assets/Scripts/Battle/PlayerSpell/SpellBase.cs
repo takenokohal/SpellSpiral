@@ -7,6 +7,7 @@ using Battle.Character.Player.Buff;
 using Battle.Character.Servant;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
+using Databases;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UniRx;
@@ -18,16 +19,16 @@ namespace Battle.PlayerSpell
     {
         protected PlayerCore PlayerCore { get; private set; }
 
+        protected PlayerBuff PlayerBuff => PlayerCore.PlayerBuff;
+
         protected AllCharacterManager AllCharacterManager { get; private set; }
 
         protected MagicCircleFactory MagicCircleFactory { get; private set; }
-
-        protected PlayerBuff PlayerBuff { get; private set; }
-
+        protected SpellDatabase SpellDatabase { get; private set; }
         protected SpellData SpellData { get; private set; }
-        
+
         protected ServantFactory ServantFactory { get; private set; }
-        
+
         protected string CharacterKey => PlayerCore.CharacterKey;
 
 
@@ -35,7 +36,7 @@ namespace Battle.PlayerSpell
             PlayerCore playerCore,
             AllCharacterManager allCharacterManager,
             MagicCircleFactory magicCircleFactory,
-            PlayerBuff playerBuff,
+            SpellDatabase spellDatabase,
             SpellData spellData,
             ServantFactory servantFactory)
         {
@@ -43,7 +44,7 @@ namespace Battle.PlayerSpell
             instance.PlayerCore = playerCore;
             instance.AllCharacterManager = allCharacterManager;
             instance.MagicCircleFactory = magicCircleFactory;
-            instance.PlayerBuff = playerBuff;
+            instance.SpellDatabase = spellDatabase;
             instance.SpellData = spellData;
             instance.ServantFactory = servantFactory;
             instance.Init();

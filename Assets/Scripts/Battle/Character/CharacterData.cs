@@ -7,20 +7,31 @@ namespace Battle.Character
     [Serializable]
     public class CharacterData
     {
-        public CharacterData(string characterKey, CharacterType characterType, OwnerType ownerType, int life, Sprite magicCircleSprite)
+        public CharacterData(
+            string characterKey, 
+            CharacterType characterType, 
+            string masterName,
+            OwnerType ownerType,
+            int life,
+            Sprite magicCircleSprite)
         {
             this.characterKey = characterKey;
             this.characterType = characterType;
+            this.masterName = masterName;
             this.ownerType = ownerType;
             this.life = life;
             this.magicCircleSprite = magicCircleSprite;
         }
+
         [SerializeField] private string characterKey;
 
         public string CharacterKey => characterKey;
 
         [SerializeField] private CharacterType characterType;
         public CharacterType CharacterType => characterType;
+
+        [SerializeField] private string masterName;
+        public string MasterName => masterName;
 
         [SerializeField] private OwnerType ownerType;
 

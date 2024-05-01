@@ -22,6 +22,7 @@ namespace Databases
         [SerializeField] private float buffQuickManaChargeRatio;
         [SerializeField] private float attachedAutoHealValue;
         [SerializeField] private float buffPowerRatio;
+        [SerializeField] private float buffDefenseRatio;
         
 
         public float AutoManaChargePerSec => autoManaChargePerSec;
@@ -36,6 +37,8 @@ namespace Databases
         public float StepDrag => stepDrag;
 
         public float BuffPowerRatio => buffPowerRatio;
+
+        public float BuffDefenseRatio => buffDefenseRatio;
 
         public float BuffQuickManaChargeRatio => buffQuickManaChargeRatio;
 

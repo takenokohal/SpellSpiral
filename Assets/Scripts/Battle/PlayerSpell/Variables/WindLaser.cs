@@ -16,9 +16,7 @@ namespace Battle.PlayerSpell.Variables
 
         protected override async UniTaskVoid Init()
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(
-                CharacterKey,
-                Color.white,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore,
                 2f, CalcPos));
             
             var tmpPos = CalcPos();

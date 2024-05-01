@@ -71,19 +71,19 @@ namespace Databases
             {
                 var cells = row.Split(new[] { ',' });
 
-                var spellKey = cells[0].Trim('"');
-                var spellName = cells[1].Trim('"');
-                var cost = int.TryParse(cells[2].Trim('"'), out var costResult) ? costResult : 0;
-                var attribute = Enum.TryParse<SpellAttribute>(cells[3].Trim('"'), out var attributeResult)
+                var spellKey = cells[1].Trim('"');
+                var spellName = cells[2].Trim('"');
+                var cost = int.TryParse(cells[3].Trim('"'), out var costResult) ? costResult : 0;
+                var attribute = Enum.TryParse<SpellAttribute>(cells[4].Trim('"'), out var attributeResult)
                     ? attributeResult
                     : SpellAttribute.Fire;
 
-                var spellType = Enum.TryParse<SpellType>(cells[4].Trim('"'), out var typeResult)
+                var spellType = Enum.TryParse<SpellType>(cells[5].Trim('"'), out var typeResult)
                     ? typeResult
                     : SpellType.Attack;
 
-                var duration = float.TryParse(cells[5].Trim('"'), out var durationResult) ? durationResult : 0;
-                var desc = cells[6].Trim('"');
+                var duration = float.TryParse(cells[6].Trim('"'), out var durationResult) ? durationResult : 0;
+                var desc = cells[7].Trim('"');
 
                 var spellBase = AssetDatabase.LoadAssetAtPath<SpellBase>(PathsAndURL.CreateSpellBasePath(spellKey));
                 var spellIcon = AssetDatabase.LoadAssetAtPath<Sprite>(PathsAndURL.CreateSpellIconPath(spellKey));

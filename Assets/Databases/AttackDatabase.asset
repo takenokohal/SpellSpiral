@@ -34,7 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
@@ -443,13 +443,146 @@ MonoBehaviour:
       Data: 1
     - Name: damage
       Entry: 3
-      Data: 5
+      Data: 2
     - Name: attackWeight
       Entry: 3
       Data: 0
     - Name: attribute
       Entry: 3
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Molle
+    - Name: $v
+      Entry: 7
+      Data: 19|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Battle.Attack.AttackData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ServantBullet
+    - Name: $v
+      Entry: 7
+      Data: 20|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: damage
+      Entry: 3
+      Data: 3
+    - Name: attackWeight
+      Entry: 3
+      Data: 0
+    - Name: attribute
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BoarTackle
+    - Name: $v
+      Entry: 7
+      Data: 21|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: damage
+      Entry: 3
+      Data: 5
+    - Name: attackWeight
+      Entry: 3
+      Data: 0
+    - Name: attribute
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: HomingTackle
+    - Name: $v
+      Entry: 7
+      Data: 22|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: damage
+      Entry: 3
+      Data: 3
+    - Name: attackWeight
+      Entry: 3
+      Data: 0
+    - Name: attribute
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SlimePoison
+    - Name: $v
+      Entry: 7
+      Data: 23|Battle.Attack.AttackData, Assembly-CSharp
+    - Name: ownerType
+      Entry: 3
+      Data: 1
+    - Name: damage
+      Entry: 3
+      Data: 1
+    - Name: attackWeight
+      Entry: 3
+      Data: 0
+    - Name: attribute
+      Entry: 3
+      Data: 3
     - Name: 
       Entry: 8
       Data: 

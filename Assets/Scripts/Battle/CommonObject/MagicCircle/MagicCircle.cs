@@ -6,10 +6,10 @@ namespace Battle.CommonObject.MagicCircle
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
 
-        public void Init(Sprite sprite, Color color)
+        public void Init(Sprite sprite)
         {
-            spriteRenderer.sprite = sprite;
-            spriteRenderer.color = color;
+            //一旦無し
+            //spriteRenderer.sprite = sprite;
         }
     }
 }

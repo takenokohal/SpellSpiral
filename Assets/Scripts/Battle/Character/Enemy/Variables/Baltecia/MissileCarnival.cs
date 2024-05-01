@@ -74,7 +74,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         private async UniTaskVoid Generate(int i, int j)
         {
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.magenta, 1,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => CalcPos(i, j)));
 
             homingBullet.CreateFromPrefab(new HomingBullet.Parameter()

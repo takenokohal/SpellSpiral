@@ -8,14 +8,13 @@ using Databases;
 using Others;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using UnityEngine;
 using VContainer;
 
 namespace Battle.Character.Servant
 {
     public class ServantFactory : SerializedMonoBehaviour
     {
-        [OdinSerialize] private Dictionary<string, ServantBase> _servantPrefabs;
-
         [Inject] private readonly AttackHitEffectFactory _attackHitEffectFactory;
         [Inject] private readonly AttackDatabase _attackDatabase;
         [Inject] private readonly CharacterDatabase _characterDatabase;
@@ -24,10 +23,9 @@ namespace Battle.Character.Servant
         [Inject] private readonly MagicCircleFactory _magicCircleFactory;
         [Inject] private readonly CharacterCamera _characterCamera;
 
-        public ServantBase Create(string key)
+        public ServantBase CreateAndInject(ServantBase servantPrefab, CharacterBase master, Vector2 pos)
         {
-            var prefab = _servantPrefabs[key];
-            var instance = prefab.CreateFromPrefab();
+            var instance = servantPrefab.CreateFromPrefab(master);
             instance.AcquiredInject(
                 _attackHitEffectFactory,
                 _attackDatabase,
@@ -37,6 +35,8 @@ namespace Battle.Character.Servant
                 _magicCircleFactory,
                 this,
                 _characterCamera);
+
+            instance.transform.position = pos;
 
             return instance;
         }

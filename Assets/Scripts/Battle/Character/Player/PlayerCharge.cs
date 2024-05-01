@@ -1,7 +1,6 @@
 ﻿using Audio;
 using Battle.Character.Player.Buff;
 using UnityEngine;
-using VContainer;
 
 namespace Battle.Character.Player
 {
@@ -13,9 +12,6 @@ namespace Battle.Character.Player
 
         [SerializeField] private Color normalEffectColor;
         [SerializeField] private Color buffedEffectColor;
-
-
-        [Inject] private readonly PlayerBuff _playerBuff;
 
         private static readonly int AnimKey = Animator.StringToHash("Charging");
 
@@ -39,13 +35,27 @@ namespace Battle.Character.Player
         {
             if (!IsBattleStarted)
                 return;
-            Charge();
+
 
             if (!Charging)
                 TryStartCharge();
 
             if (Charging)
                 TryEndCharge();
+        }
+
+        private void FixedUpdate()
+        {
+            if (IsPlayerDead)
+                return;
+
+            if (Charging)
+                QuickCharge();
+
+            if (!Charging)
+                AutoCharge();
+            
+            TryAutoHeal();
         }
 
 
@@ -57,15 +67,6 @@ namespace Battle.Character.Player
             if (!PlayerCore.PlayerInput.actions["Charge"].IsPressed())
                 return;
 
-
-            var effectMain = effect.main;
-            effectMain.startColor = _playerBuff.HasBuff(BuffKey.QuickManaCharge)
-                ? buffedEffectColor
-                : normalEffectColor;
-            var subEffectMain = subEffect.main;
-            subEffectMain.startColor = _playerBuff.HasBuff(BuffKey.QuickManaCharge)
-                ? buffedEffectColor
-                : normalEffectColor;
             effect.Play();
             _seSource = AllAudioManager.PlaySe("Charge");
             Charging = true;
@@ -83,28 +84,48 @@ namespace Battle.Character.Player
             PlayerCore.Animator.SetBool(AnimKey, false);
         }
 
-        private void Charge()
+        private void AutoCharge()
         {
-            if (IsPlayerDead)
-                return;
+            var chargeValue = PlayerConstData.AutoManaChargePerSec;
 
-            var finalValue = 0f;
-            var autoCharge = PlayerConstData.AutoManaChargePerSec;
-            if (_playerBuff.HasBuff(BuffKey.AutoManaCharge))
-                autoCharge *= PlayerConstData.BuffAutoManaChargeRatio;
+            var buffCount =PlayerBuff.BuffCount(BuffKey.AutoManaCharge);
 
-            finalValue += autoCharge;
-
-            if (Charging)
+            for (int i = 0; i < buffCount; i++)
             {
-                var quickCharge = PlayerConstData.QuickManaChargePerSec;
-                if (_playerBuff.HasBuff(BuffKey.QuickManaCharge))
-                    quickCharge *= PlayerConstData.BuffQuickManaChargeRatio;
-
-                finalValue += quickCharge;
+                chargeValue *= PlayerConstData.BuffAutoManaChargeRatio;
             }
 
-            PlayerCore.PlayerParameter.Mana += Time.deltaTime * finalValue;
+            PlayerParameter.Mana += Time.fixedDeltaTime * chargeValue;
+        }
+
+        private void QuickCharge()
+        {
+            var chargeValue = PlayerConstData.QuickManaChargePerSec;
+            var buffCount = PlayerBuff.BuffCount(BuffKey.QuickManaCharge);
+
+            for (int i = 0; i < buffCount; i++)
+            {
+                chargeValue *= PlayerConstData.BuffQuickManaChargeRatio;
+            }
+
+            PlayerParameter.Mana += Time.fixedDeltaTime * chargeValue;
+        }
+
+        private void TryAutoHeal()
+        {
+            var healCount = PlayerBuff.BuffCount(BuffKey.AutoHeal);
+
+            if (healCount <= 0)
+                return;
+
+            var value = 0f;
+
+            for (int i = 0; i < healCount; i++)
+            {
+                value += PlayerConstData.AttachedAutoHealValue;
+            }
+
+            PlayerCore.CurrentLife += value;
         }
     }
 }

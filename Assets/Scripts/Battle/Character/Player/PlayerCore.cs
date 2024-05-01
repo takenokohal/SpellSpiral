@@ -1,4 +1,5 @@
 ﻿using Battle.Attack;
+using Battle.Character.Player.Buff;
 using Cinemachine;
 using Databases;
 using Others;
@@ -16,6 +17,7 @@ namespace Battle.Character.Player
         public PlayerInput PlayerInput => _myInputManager.BattleInput;
 
         [Inject] private readonly PlayerConstData _playerConstData;
+
         public PlayerConstData PlayerConstData => _playerConstData;
 
         private static readonly int OnDamagedAnimKey = Animator.StringToHash("OnDamaged");
@@ -25,6 +27,7 @@ namespace Battle.Character.Player
 
         public PlayerParameter PlayerParameter { get; } = new();
 
+        public PlayerBuff PlayerBuff { get; } = new();
 
         protected override void InitializeFunction()
         {
@@ -45,6 +48,11 @@ namespace Battle.Character.Player
                 .Where(value => value == GameLoop.GameEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => IsBattleStarted = true);
+        }
+
+        private void FixedUpdate()
+        {
+            PlayerBuff.MyFixedUpdate();
         }
 
 
@@ -73,6 +81,18 @@ namespace Battle.Character.Player
         protected override bool ChickHitChild(AttackHitController attackHitController)
         {
             return !PlayerParameter.Invincible;
+        }
+
+        protected override float CalcDamage(AttackHitController attackHitController)
+        {
+            var defense = PlayerBuff.BuffCount(BuffKey.DefenseBuff);
+            var damage = (float)AttackDatabase.Find(attackHitController.AttackKey).Damage;
+            for (int i = 0; i < defense; i++)
+            {
+                damage *= PlayerConstData.BuffDefenseRatio;
+            }
+
+            return damage;
         }
     }
 }

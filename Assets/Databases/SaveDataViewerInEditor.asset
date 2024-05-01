@@ -22,8 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   currentSavedDeck:
-  - Gatling3
-  - Gatling3
+  - Duplication
+  - Duplication
   - Gatling3
   - FireShotGun3
   - FireShotGun3
@@ -31,7 +31,7 @@ MonoBehaviour:
   - Explosion
   - IceMissile4
   - IceMissile4
-  - IceMissile4
+  - Duplication
   - SingleLaser
   - SingleLaser
   - SingleLaser

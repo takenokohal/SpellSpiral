@@ -28,6 +28,10 @@ namespace Battle.Character.Player
             if (PlayerParameter.Warping)
                 return;
 
+            //チャージ中動けないように
+            if (PlayerParameter.QuickCharging)
+                return;
+
 
             SetRotation();
 
@@ -67,9 +71,13 @@ namespace Battle.Character.Player
             PlayerCore.Animator.SetFloat(HorizontalAnimKey, AnimationBlendValue.x);
             PlayerCore.Animator.SetFloat(VerticalAnimKey, AnimationBlendValue.y);
 
+            /*
             var velocity = !PlayerParameter.QuickCharging
                 ? Vector2.Lerp(rb.velocity, input * PlayerConstData.MoveSpeed, PlayerConstData.MoveLerpValue)
                 : input * PlayerConstData.ChargingMoveSpeed;
+                */
+
+            var velocity = Vector2.Lerp(rb.velocity, input * PlayerConstData.MoveSpeed, PlayerConstData.MoveLerpValue);
 
             rb.velocity = velocity;
         }

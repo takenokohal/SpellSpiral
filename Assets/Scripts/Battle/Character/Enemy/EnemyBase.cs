@@ -1,6 +1,7 @@
 ﻿using Audio;
 using Battle.Attack;
 using Battle.Character.Player;
+using Battle.Character.Player.Buff;
 using Battle.MyCamera;
 using Cinemachine;
 using DG.Tweening;
@@ -15,7 +16,6 @@ namespace Battle.Character.Enemy
     {
         [Inject] protected readonly PlayerCore playerCore;
         [Inject] protected readonly SpecialCameraSwitcher specialCameraSwitcher;
-
 
         public Vector2 GetDirectionToPlayer()
         {

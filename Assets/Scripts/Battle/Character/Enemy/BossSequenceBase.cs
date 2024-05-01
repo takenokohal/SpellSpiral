@@ -109,6 +109,7 @@ namespace Battle.Character.Enemy
 
         protected UniTask TweenToUniTask(Tweener tween)
         {
+            tween.SetUpdate(UpdateType.Fixed);
             return tween.ToUniTask(cancellationToken: SequenceCancellationToken.Token);
         }
         

@@ -9,6 +9,8 @@
         Duplication,
         
         AutoHeal,
+        
+        DefenseBuff,
         SuperInvisible,
         RaijinStep,
         Acid,

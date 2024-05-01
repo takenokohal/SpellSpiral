@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Audio;
 using Battle.Attack;
 using Battle.Character.Enemy;
@@ -18,7 +20,9 @@ namespace Battle.Character
 {
     public abstract class CharacterBase : SerializedMonoBehaviour, IAttackHittable
     {
-        [SerializeField] private string characterKey;
+        [SerializeField, ValueDropdown(nameof(GetCharacterKeys))]
+        private string characterKey;
+
         public string CharacterKey => characterKey;
         public Rigidbody Rigidbody { get; private set; }
         public Animator Animator { get; private set; }
@@ -62,6 +66,7 @@ namespace Battle.Character
             get => _isDead.Value;
             private set => _isDead.Value = value;
         }
+
 
         public IObservable<Unit> OnDeadObservable() =>
             _isDead.Where(value => value).AsUnitObservable().TakeUntilDestroy(this);
@@ -141,7 +146,7 @@ namespace Battle.Character
             var attackData = AttackDatabase.Find(attackHitController.AttackKey);
             if (attackData != null)
             {
-                CurrentLife -= attackData.Damage;
+                CurrentLife -= CalcDamage(attackHitController);
             }
 
             AllAudioManager.PlaySe("Hit");
@@ -155,6 +160,8 @@ namespace Battle.Character
             OnAttackedChild(attackHitController);
         }
 
+        protected abstract float CalcDamage(AttackHitController attackHitController);
+
         protected virtual void OnAttackedChild(AttackHitController attackHitController)
         {
         }
@@ -162,6 +169,17 @@ namespace Battle.Character
         public OwnerType GetOwnerType()
         {
             return CharacterData.OwnerType;
+        }
+
+        private static IEnumerable<string> GetCharacterKeys()
+        {
+#if UNITY_EDITOR
+            var db = CharacterDatabase.LoadOnEditor();
+            return db.CharacterDictionary.Select(value => value.Key);
+
+#else
+            return null;
+#endif
         }
     }
 }

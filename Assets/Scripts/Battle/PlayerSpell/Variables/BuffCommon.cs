@@ -1,5 +1,4 @@
-﻿using Battle.Character;
-using Battle.Character.Player.Buff;
+﻿using Battle.Character.Player.Buff;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -13,10 +12,15 @@ namespace Battle.PlayerSpell.Variables
         protected override async UniTaskVoid Init()
         {
             await MagicCircleFactory.CreateAndWait(
-                new MagicCircleParameters(CharacterKey,
-                    Color.white, 1, () => PlayerCore.transform.position));
+                new MagicCircleParameters(PlayerCore, 1, () => PlayerCore.transform.position));
 
-            PlayerBuff.SetBuff(new BuffParameter(buffKey, SpellData.EffectDuration));
+
+            var ed = SpellData.EffectDuration;
+            PlayerBuff.BuffParameters.Add(new BuffParameter(buffKey, SpellData.SpellKey, ed > 0 ? ed : null));
+
+            await UniTask.Yield(destroyCancellationToken);
+
+            Destroy(gameObject);
         }
     }
 }

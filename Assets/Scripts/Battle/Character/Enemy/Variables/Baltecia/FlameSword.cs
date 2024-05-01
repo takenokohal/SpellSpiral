@@ -40,9 +40,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             Parent.ToAnimationVelocity = dir;
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(
-                CharacterKey,
-                Color.red, 3f,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 3f,
                 () => Parent.transform.position - new Vector3(offset, 0)));
 
 

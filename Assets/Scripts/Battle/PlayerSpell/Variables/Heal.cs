@@ -18,7 +18,7 @@ namespace Battle.PlayerSpell.Variables
             transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
 
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(CharacterKey, Color.white,
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore,
                 1.5f, () => PlayerCore.transform.position));
 
             PlayerCore.CurrentLife += healValue;

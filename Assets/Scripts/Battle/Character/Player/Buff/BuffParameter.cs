@@ -1,17 +1,18 @@
-﻿using UnityEngine;
-
-namespace Battle.Character.Player.Buff
+﻿namespace Battle.Character.Player.Buff
 {
     public class BuffParameter
     {
         public BuffKey BuffKey { get; }
-        public float EffectDuration { get; private set; }
+        
+        public string SpellKey { get; }
+        public float? EffectDuration { get; private set; }
 
         public float CurrentTime { get; private set; }
 
-        public BuffParameter(BuffKey buffKey, float effectDuration)
+        public BuffParameter(BuffKey buffKey,  string spellKey,float? effectDuration)
         {
             BuffKey = buffKey;
+            SpellKey = spellKey;
             EffectDuration = effectDuration;
         }
 
