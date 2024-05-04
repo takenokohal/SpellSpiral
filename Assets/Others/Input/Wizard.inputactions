@@ -227,7 +227,7 @@
                 {
                     "name": "",
                     "id": "5c3417de-8d0c-4000-9cbd-1711f2d0ebe5",
-                    "path": "",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -259,6 +259,17 @@
                 },
                 {
                     "name": "",
+                    "id": "668e1619-309d-43c8-bc34-113016cd7f26",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chant_Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2f868289-485c-4712-a781-83e00f167d7c",
                     "path": "<Keyboard>/numpad4",
                     "interactions": "",
@@ -281,6 +292,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1d16d833-90e8-4a1a-b553-6964bc11f581",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chant_Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6b846581-d4c5-4724-8b77-457f41952954",
                     "path": "<Keyboard>/numpad6",
                     "interactions": "",
@@ -297,6 +319,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Chant_Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8fa1bb5-b523-410f-815d-bf2395cc21af",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Chant_Right",
                     "isComposite": false,
                     "isPartOfComposite": false

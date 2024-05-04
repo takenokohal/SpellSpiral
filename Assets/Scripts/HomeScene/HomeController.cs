@@ -107,7 +107,7 @@ namespace HomeScene
 
             var nextScene = _currentChoice switch
             {
-                Choice.Mission => "Stage1Light",
+                Choice.Mission => "BalteciaStage",
                 Choice.Training => "Training",
                 Choice.EditDeck => "EditDeck",
                 _ => throw new ArgumentOutOfRangeException()

@@ -89,7 +89,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: Stage1Light
+      Data: BalteciaStage
     - Name: $v
       Entry: 7
       Data: 4|Databases.StageObjectHolder+StageObject, Assembly-CSharp

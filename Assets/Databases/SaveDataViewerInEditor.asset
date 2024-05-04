@@ -22,23 +22,18 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   currentSavedDeck:
-  - Duplication
-  - Duplication
-  - Gatling3
-  - FireShotGun3
-  - FireShotGun3
-  - FireShotGun3
+  - FireShoot
+  - FireClacker
+  - IceMissile
+  - FlowerCyclone
+  - HeavyLaser
+  - Thunder
   - Explosion
-  - IceMissile4
-  - IceMissile4
-  - Duplication
-  - SingleLaser
-  - SingleLaser
-  - SingleLaser
-  - BigMultiLaser
   - SmallHeal
-  - SmallHeal
-  - SmallHeal
-  - MidHeal
   - MidHeal
   - BigHeal
+  - BuffQucikManaCharge
+  - ReduceCost
+  - BuffAttack
+  - Duplication
+  - BuffDefense

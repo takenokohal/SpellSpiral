@@ -3,6 +3,7 @@ using Databases;
 using Others;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Video;
 
 namespace Battle.PlayerSpell
 {
@@ -23,11 +24,14 @@ namespace Battle.PlayerSpell
         [SerializeField] private SpellBase spellBase;
         [SerializeField] private Sprite spellIcon;
 
+        [SerializeField] private VideoClip videoClip;
+
 
         public bool IsNotImp() => spellBase == null || spellIcon == null;
 
         public SpellData(string spellKey, string name, int manaCost, SpellAttribute spellAttribute,
-            SpellType spellType, float effectDuration, string description, SpellBase spellBase, Sprite spellIcon)
+            SpellType spellType, float effectDuration, string description, SpellBase spellBase, Sprite spellIcon,
+            VideoClip videoClip)
         {
             this.spellKey = spellKey;
             this.name = name;
@@ -38,6 +42,7 @@ namespace Battle.PlayerSpell
             this.description = description;
             this.spellBase = spellBase;
             this.spellIcon = spellIcon;
+            this.videoClip = videoClip;
         }
 
         public string SpellKey => spellKey;
@@ -57,6 +62,8 @@ namespace Battle.PlayerSpell
         public float EffectDuration => effectDuration;
 
         public string SpellDescription => description;
+
+        public VideoClip VideoClip => videoClip;
 
         private Color GetColor()
         {

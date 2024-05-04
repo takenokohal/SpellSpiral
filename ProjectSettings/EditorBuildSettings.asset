@@ -21,11 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Training.unity
     guid: 88e1fac0e875b674fac98e39cf12fb10
   - enabled: 1
-    path: Assets/Scenes/Stage1Light.unity
+    path: Assets/Scenes/BalteciaStage.unity
     guid: 7e707a3b4ddde4b4bb5a342c6afcd27d
   - enabled: 1
     path: Assets/Scenes/MolleStage.unity
     guid: 34dbcacf23cacfc4989c27ba7c667243
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 2a088e273c379fc4a827d404321b0c98
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

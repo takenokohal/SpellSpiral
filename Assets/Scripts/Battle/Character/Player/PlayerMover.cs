@@ -30,7 +30,11 @@ namespace Battle.Character.Player
 
             //チャージ中動けないように
             if (PlayerParameter.QuickCharging)
+            {
+                var rb = PlayerCore.Rigidbody;
+                rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 0.2f);
                 return;
+            }
 
 
             SetRotation();

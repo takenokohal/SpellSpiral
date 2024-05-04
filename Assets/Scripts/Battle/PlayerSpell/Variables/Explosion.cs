@@ -35,7 +35,7 @@ namespace Battle.PlayerSpell.Variables
 
         private Vector2 CalcPos()
         {
-            return PlayerCore.transform.position + PlayerCore.CharacterRotation.Rotation * new Vector3(3, 0);
+            return PlayerCore.transform.position;
         }
     }
 }

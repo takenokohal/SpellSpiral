@@ -10,6 +10,7 @@ using Sirenix.Serialization;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Video;
 
 namespace Databases
 {
@@ -50,6 +51,7 @@ namespace Databases
             if (req.result == UnityWebRequest.Result.Success)
             {
                 var text = req.downloadHandler.text;
+                Debug.Log(text);
                 Parse(text);
                 Debug.Log("UpdateComplete");
             }
@@ -87,6 +89,7 @@ namespace Databases
 
                 var spellBase = AssetDatabase.LoadAssetAtPath<SpellBase>(PathsAndURL.CreateSpellBasePath(spellKey));
                 var spellIcon = AssetDatabase.LoadAssetAtPath<Sprite>(PathsAndURL.CreateSpellIconPath(spellKey));
+                var video = AssetDatabase.LoadAssetAtPath<VideoClip>(PathsAndURL.CreateVideoPath(spellKey));
 
                 var data = new SpellData(
                     spellKey,
@@ -97,7 +100,8 @@ namespace Databases
                     duration,
                     desc,
                     spellBase,
-                    spellIcon
+                    spellIcon,
+                    video
                 );
                 _spellDictionary.TryAdd(spellKey, data);
             }
