@@ -7,7 +7,9 @@ namespace HomeScene
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterComponentInHierarchy<HomeController>();
+            builder.RegisterEntryPoint<HomeStateChangeController>();
+            builder.RegisterComponentInHierarchy<MissionController>();
+            builder.RegisterComponentInHierarchy<HomeMenuController>();
         }
     }
 }
