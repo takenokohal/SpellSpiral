@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -26,6 +27,11 @@ namespace Audio
                 source => source.gameObject.SetActive(false));
         }
 
+        private void Update()
+        {
+            Debug.Log(_sePool.CountActive);
+        }
+
         public SeSource PlaySe(string seName)
         {
             ManageVolume();
@@ -36,11 +42,15 @@ namespace Audio
 
             _playingSeList.Add(se);
 
-            se.OnPlayFinish.Take(1).Subscribe(_ =>
+            UniTask.Void(async () =>
             {
+                await UniTask.WaitUntil(() => se.IsFinished, cancellationToken: se.destroyCancellationToken);
+
+                Debug.Log("AAAAA");
                 _sePool.Release(se);
                 _playingSeList.Remove(se);
-            }).AddTo(this);
+            });
+
 
             return se;
         }

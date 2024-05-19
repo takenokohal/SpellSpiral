@@ -369,6 +369,17 @@
                 },
                 {
                     "name": "",
+                    "id": "56c40c44-69cc-4f43-a4a6-e42a670b396a",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Step",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1d400121-c380-439a-a655-38bbea2677a4",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -636,6 +647,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6bd9d094-9c9a-4ae4-933f-726d6fb6dad9",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8298ce8d-60a6-43aa-878b-1d13aae1221c",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
@@ -658,8 +680,19 @@
                 },
                 {
                     "name": "",
+                    "id": "3a1cf7bb-d1bf-4af9-9222-e8c108072688",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "No",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fad6311e-90ef-4f25-8020-cc8b211ce72f",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -691,8 +724,19 @@
                 },
                 {
                     "name": "",
+                    "id": "4caabe15-e341-4b90-b78f-b55b462f2bae",
+                    "path": "<Keyboard>/numpad6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2f0a6518-1fc9-48aa-86b4-ce4be0a232fe",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -715,6 +759,17 @@
                     "name": "",
                     "id": "215e6033-1b2d-4117-a890-7379644cf53b",
                     "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f7c935e-fbbe-4132-9e1e-382c5f718b90",
+                    "path": "<Keyboard>/numpad4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

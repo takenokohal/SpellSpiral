@@ -22,6 +22,10 @@ namespace Battle.CommonObject.Bullet
 
         private readonly ReactiveProperty<bool> _isDead = new();
 
+        [SerializeField] public int hitCount = 1;
+
+        private int _currentHitCount;
+
         public bool IsDead
         {
             get => _isDead.Value;
@@ -69,7 +73,12 @@ namespace Battle.CommonObject.Bullet
             var target = _parameter.Target;
             target.OnDestroyAsObservable().Take(1).TakeUntilDestroy(this).Subscribe(_ => _elapsedTime = 114514);
 
-            attackHitController.OnAttackHit.Subscribe(_ => Kill().Forget());
+            attackHitController.OnAttackHit.Subscribe(_ =>
+            {
+                _currentHitCount++;
+                if (_currentHitCount >= hitCount)
+                    Kill().Forget();
+            });
         }
 
         private void FixedUpdate()

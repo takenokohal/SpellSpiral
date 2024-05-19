@@ -23,6 +23,7 @@ MonoBehaviour:
     - {fileID: 6165544350253723933, guid: f347e6a0486e6bd469e74f001d3e7dfd, type: 3}
     - {fileID: 1975351335978203660, guid: c60a19c8bd4d6ba40918f6542a646d2f, type: 3}
     - {fileID: 6385031230854988170, guid: 5257cd216393fcc4394abab93fcc7a44, type: 3}
+    - {fileID: -945058432717580697, guid: 451a1b0428bc9f9469495a91f2fc2286, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -41,7 +42,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -89,7 +90,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: BalteciaStage
+      Data: Baltecia
     - Name: $v
       Entry: 7
       Data: 4|Databases.StageObjectHolder+StageObject, Assembly-CSharp
@@ -138,6 +139,27 @@ MonoBehaviour:
     - Name: enemy
       Entry: 10
       Data: 6
+    - Name: backGroundCameraRoot
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Dorothy
+    - Name: $v
+      Entry: 7
+      Data: 7|Databases.StageObjectHolder+StageObject, Assembly-CSharp
+    - Name: enemy
+      Entry: 10
+      Data: 7
     - Name: backGroundCameraRoot
       Entry: 10
       Data: 3

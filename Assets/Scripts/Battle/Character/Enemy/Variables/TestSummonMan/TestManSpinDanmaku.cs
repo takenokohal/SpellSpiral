@@ -31,12 +31,14 @@ namespace Battle.Character.Enemy.Variables.TestSummonMan
 
         private async UniTaskVoid Shoot(int i)
         {
+            /*
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => CalcPos(i)));
             spinBullet.CreateFromPrefab(new SpinBullet.Parameter()
             {
                 FirstPos = CalcPos(i), FirstVelocity = CalcDir(i) * firstSpeed, SpinAngle = spinAngle,
                 SpinPower = spinPower
             });
+            */
 
             /*
             spinBullet.CreateFromPrefab(new SpinBullet.Parameter()

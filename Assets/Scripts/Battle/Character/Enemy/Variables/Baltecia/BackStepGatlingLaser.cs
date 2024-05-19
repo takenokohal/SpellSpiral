@@ -45,6 +45,9 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             Parent.ToAnimationVelocity = Vector2.zero;
 
+            Parent.Animator.Play("Attack", 0, 0);
+
+
             //射撃
             for (int i = 0; i < howManyIn1Side; i++)
             {

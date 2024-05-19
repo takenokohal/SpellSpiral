@@ -3,6 +3,7 @@ using Battle.Character.Enemy;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ namespace Battle.UI
         [SerializeField] private Slider lifeGage;
         [SerializeField] private Slider redGage;
 
+        [SerializeField] private TMP_Text nameText;
+        
         [Inject] private readonly AllCharacterManager _allCharacterManager;
 
 
@@ -39,6 +42,8 @@ namespace Battle.UI
             redGage.value = maxLife;
 
             enemyBase.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
+
+            nameText.text = enemyBase.CharacterData.CharacterKey;
         }
 
         private void OnLifeChange(float value)

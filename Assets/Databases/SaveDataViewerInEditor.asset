@@ -23,17 +23,22 @@ MonoBehaviour:
     SerializationNodes: []
   currentSavedDeck:
   - FireShoot
-  - FireClacker
+  - FireShoot
+  - FireShoot
+  - FireCracker
+  - FireCracker
+  - FireCracker
   - IceMissile
-  - FlowerCyclone
-  - HeavyLaser
+  - IceMissile
+  - IceMissile
+  - QuickLaser
+  - QuickLaser
   - Thunder
   - Explosion
+  - HeavyLaser
   - SmallHeal
   - MidHeal
-  - BigHeal
-  - BuffQucikManaCharge
-  - ReduceCost
   - BuffAttack
   - Duplication
   - BuffDefense
+  - BuffQuickManaCharge

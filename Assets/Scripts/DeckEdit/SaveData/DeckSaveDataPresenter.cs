@@ -11,7 +11,14 @@ namespace DeckEdit.SaveData
         public List<string> LoadDeck()
         {
             var data = EasySaveWrapper.Load<DeckSaveData>(SaveDataKey);
-            return data == null ? new List<string>() : data.deckData;
+
+            if (data != null)
+                return data.deckData;
+
+
+            var list = DefaultDeckData.GetDefaultDeck();
+            SaveDeck(list);
+            return list;
         }
 
         public void SaveDeck(List<string> deck)

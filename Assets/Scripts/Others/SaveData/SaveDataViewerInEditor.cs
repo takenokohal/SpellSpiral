@@ -38,8 +38,7 @@ namespace Others.SaveData
                 list.Add(str);
             }
 
-            var v = new DeckSaveDataPresenter();
-            v.SaveDeck(list);
+            currentSavedDeck = list;
         }
 
         [Button]
@@ -70,6 +69,20 @@ namespace Others.SaveData
             var keys = db.SpellDictionary.Where(value => !value.Value.IsNotImp()).Select(value => value.Key);
 
             currentSavedDeck = keys.ToList();
+        }
+
+        [Button]
+        private void SetDefault()
+        {
+            currentSavedDeck = DefaultDeckData.GetDefaultDeck();
+
+            var db = SpellDatabase.LoadOnEditor();
+            foreach (var str in currentSavedDeck)
+            {
+                var data = db.Find(str);
+                Debug.Log(data.SpellBase);
+                Debug.Log(data.SpellIcon);
+            }
         }
 #endif
     }

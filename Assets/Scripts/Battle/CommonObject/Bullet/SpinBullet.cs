@@ -34,9 +34,7 @@ namespace Battle.CommonObject.Bullet
             public Vector2 FirstPos { get; set; }
             public Vector2 FirstVelocity { get; set; }
 
-            public float SpinAngle { get; set; }
-
-            public float SpinPower { get; set; }
+            public Vector2 Force { get; set; }
         }
 
         public SpinBullet CreateFromPrefab(Parameter parameter)
@@ -66,10 +64,7 @@ namespace Battle.CommonObject.Bullet
 
         private void FixedUpdate()
         {
-            var velocityDir = rb.velocity.normalized;
-            var forceDir = Quaternion.Euler(0, 0, _parameter.SpinAngle) * velocityDir;
-
-            rb.AddForce(forceDir * _parameter.SpinPower);
+            rb.AddForce(_parameter.Force);
         }
 
 

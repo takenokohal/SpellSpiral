@@ -25,3 +25,4 @@ MonoBehaviour:
   buffQuickManaChargeRatio: 1.5
   attachedAutoHealValue: 1.5
   buffPowerRatio: 1.5
+  buffDefenseRatio: 0.8

@@ -23,9 +23,8 @@ namespace Battle.PlayerSpell.Variables
 
         protected override async UniTaskVoid Init()
         {
-            var target = AllCharacterManager.AllCharacters
-                .Where(value=> value.GetOwnerType()== OwnerType.Enemy)
-                .OrderBy(value=> value.CurrentLife)
+            var target = AllCharacterManager.GetEnemyCharacters()
+                .OrderBy(value => value.CurrentLife)
                 .ThenBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
             for (int i = 0; i < howMany; i++)
             {
@@ -50,7 +49,8 @@ namespace Battle.PlayerSpell.Variables
 
         private Vector2 CalcPos(CharacterBase target, int i)
         {
-            return PlayerCore.transform.position + (Vector3)GetDirectionPlayerToCharacter(target) * (1f + i * magicCircleOffset);
+            return PlayerCore.transform.position +
+                   (Vector3)GetDirectionPlayerToCharacter(target) * (1f + i * magicCircleOffset);
         }
     }
 }

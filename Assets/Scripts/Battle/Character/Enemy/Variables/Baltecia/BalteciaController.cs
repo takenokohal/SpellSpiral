@@ -9,6 +9,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 {
     public class BalteciaController : BossBase<BalteciaState>
     {
+        private bool _halfLifeSpecialAttacked;
+
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
@@ -38,11 +40,20 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             {
                 var nextState = states.Where(value => value != CurrentState).GetRandomValue();
 
-
+                if (HalfLifeCheck())
+                {
+                    _halfLifeSpecialAttacked = true;
+                    nextState = BalteciaState.MissileCarnival;
+                }
                 LookPlayer();
 
                 await PlayState(nextState);
             }
+        }
+
+        private bool HalfLifeCheck()
+        {
+            return CurrentLife <= CharacterData.Life / 2f && !_halfLifeSpecialAttacked;
         }
     }
 }

@@ -16,6 +16,10 @@ namespace Battle.CommonObject.Bullet
 
         private readonly ReactiveProperty<bool> _isDead = new();
 
+        //貫通
+        [SerializeField] private bool pierce;
+
+
         public bool IsDead
         {
             get => _isDead.Value;
@@ -24,10 +28,10 @@ namespace Battle.CommonObject.Bullet
 
         public IObservable<bool> IsDeadObservable => _isDead.TakeUntilDestroy(this);
 
-        public DirectionalBullet CreateFromPrefab(Vector2 pos, Vector2 velocity)
+        public DirectionalBullet CreateFromPrefab(Vector2 pos, Vector2 velocity, float lifeTime = -1)
         {
             var instance = Instantiate(this);
-            instance.Activate(pos, velocity);
+            instance.Activate(pos, velocity, lifeTime);
             return instance;
         }
 
@@ -40,7 +44,7 @@ namespace Battle.CommonObject.Bullet
             _isDead.Value = true;
             rb.velocity /= 2f;
 
-            await transform.DOScale(0, 0.2f).ToUniTask(cancellationToken: destroyCancellationToken);
+            await transform.DOScale(0, 0.1f).ToUniTask(cancellationToken: destroyCancellationToken);
 
             Destroy(gameObject);
         }
@@ -51,7 +55,7 @@ namespace Battle.CommonObject.Bullet
             Kill().Forget();
         }
 
-        private void Activate(Vector2 pos, Vector2 velocity)
+        private void Activate(Vector2 pos, Vector2 velocity, float lifeTime)
         {
             AllAudioManager.PlaySe("MagicShot");
             gameObject.SetActive(true);
@@ -59,8 +63,19 @@ namespace Battle.CommonObject.Bullet
             rb.velocity = velocity;
 
             AutoKill().Forget();
-            attackHitController.OnAttackHit
-                .Subscribe(_ => { Kill().Forget(); });
+            if (!pierce)
+                attackHitController.OnAttackHit
+                    .Subscribe(_ => { Kill().Forget(); });
+
+            if (lifeTime > 0f)
+                LifeTime(lifeTime).Forget();
+        }
+
+        private async UniTaskVoid LifeTime(float lifeTime)
+        {
+            await UniTask.Delay((int)(lifeTime * 1000f), cancellationToken: destroyCancellationToken);
+
+            Kill().Forget();
         }
     }
 }

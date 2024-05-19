@@ -25,8 +25,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         protected override async UniTask Sequence()
         {
-            Parent.Rigidbody.velocity= Vector3.zero;
-            
+            Parent.Rigidbody.velocity = Vector3.zero;
+
             //Move
             var pos = Parent.transform.position;
             var cornerNormalize = new Vector2Int
@@ -40,8 +40,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             Parent.ToAnimationVelocity = to - Parent.transform.position;
             await TweenToUniTask(Parent.transform.DOMove(to, moveSpeed).SetSpeedBased());
 
-            
-            Parent.ToAnimationVelocity= Vector2.zero;
+
+            Parent.ToAnimationVelocity = Vector2.zero;
             await MyDelay(moveRecovery);
 
             Parent.CharacterRotation.Rotation = -to.x;
@@ -50,6 +50,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             //Shoot
             for (int i = 0; i < 3; i++)
             {
+                Parent.Animator.Play("Attack", 0, 0);
+
                 for (int j = 0; j < howManyIn1Loop; j++)
                 {
                     Generate(i, j, cornerNormalize).Forget();
@@ -69,11 +71,11 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             dir.Scale(-cornerNormalize);
 
 
-            var mcp = new MagicCircleParameters(Parent,  1f,
+            var mcp = new MagicCircleParameters(Parent, 1f,
                 () => CalcPos(i, j, dir));
             await MagicCircleFactory.CreateAndWait(mcp);
 
-           directionalBullet.CreateFromPrefab(CalcPos(i, j, dir), dir * bulletSpeed);
+            directionalBullet.CreateFromPrefab(CalcPos(i, j, dir), dir * bulletSpeed);
         }
 
         private Vector2 CalcPos(int i, int j, Vector2 dir)

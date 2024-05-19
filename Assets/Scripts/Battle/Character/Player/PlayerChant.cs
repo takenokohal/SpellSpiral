@@ -124,7 +124,7 @@ namespace Battle.Character.Player
 
         private async UniTaskVoid TryDuplication(string spellKey)
         {
-            var dups = PlayerBuff.BuffParameters.Where(value => value.BuffKey == BuffKey.Duplication);
+            var dups = PlayerBuff.BuffParameters.Where(value => value.BuffKey == BuffKey.Duplication).ToList();
 
             foreach (var buffParameter in dups)
             {

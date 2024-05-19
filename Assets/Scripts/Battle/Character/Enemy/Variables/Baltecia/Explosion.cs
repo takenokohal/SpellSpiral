@@ -12,9 +12,9 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private ParticleSystem explosionEffect;
 
         [SerializeField] private AttackHitController attackHitController;
-        [SerializeField] private float delay;
+       // [SerializeField] private float delay;
         private static readonly int ChargingAnimKey = Animator.StringToHash("Charging");
-
+        
         private void Start()
         {
             UniTask.Void(async () =>
@@ -32,7 +32,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             Animator.SetBool(ChargingAnimKey, true);
             startEffect.Play();
-            await MyDelay(delay);
+          //  await MyDelay(delay);
 
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 7,
                 () => Parent.transform.position));

@@ -105,7 +105,12 @@ namespace Battle.Character
         {
             Rigidbody = GetComponent<Rigidbody>();
             Animator = GetComponentInChildren<Animator>();
-            CharacterRotation = new CharacterRotation(transform);
+            CharacterRotation = new CharacterRotation(transform)
+            {
+                IsStop = true
+            };
+            GameLoop.Event.Where(value => value == GameLoop.GameEvent.BattleStart).Take(1)
+                .Subscribe(_ => CharacterRotation.IsStop = false).AddTo(this);
 
             CharacterData = CharacterDatabase.Find(characterKey);
 

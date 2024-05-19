@@ -114,7 +114,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         }
 
         private async UniTaskVoid Shoot(int i, float currentArc)
-        {
+        {            Parent.Animator.Play("Attack", 0, 0);
+
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => CalcPos(i, currentArc)));
 

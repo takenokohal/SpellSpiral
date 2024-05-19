@@ -8,26 +8,26 @@ namespace Audio
     {
         [SerializeField] private AudioSource audioSource;
 
-        private readonly Subject<Unit> _onPlayFinish = new();
-        public IObservable<Unit> OnPlayFinish => _onPlayFinish.TakeUntilDestroy(this);
-
         private const float MinVolume = 0.01f;
+
+        public bool IsFinished { get; private set; }
 
         private void Update()
         {
             if (audioSource.isPlaying)
                 return;
 
-            if (Volume < MinVolume)
+            if (Volume > MinVolume)
                 return;
 
-            _onPlayFinish.OnNext(Unit.Default);
+            IsFinished = true;
         }
 
         public void Play(AudioClip audioClip)
         {
             audioSource.clip = audioClip;
             audioSource.Play();
+            IsFinished = false;
         }
 
         public void Stop()

@@ -1,4 +1,5 @@
 ﻿using Audio;
+using Cinemachine;
 using Cysharp.Threading.Tasks;
 using Databases;
 using DG.Tweening;
@@ -14,10 +15,14 @@ namespace Battle.CommonObject.MagicCircle
 
         [Inject] private readonly CharacterDatabase _characterDatabase;
 
+        private CinemachineTargetGroup _targetGroup;
+
         private ObjectPool<MagicCircle> _pool;
 
         private void Start()
         {
+            _targetGroup = FindObjectOfType<CinemachineTargetGroup>();
+
             _pool = new ObjectPool<MagicCircle>(
                 () => Instantiate(prefab),
                 magicCircle => magicCircle.gameObject.SetActive(true),
@@ -37,6 +42,8 @@ namespace Battle.CommonObject.MagicCircle
             t.localScale = Vector3.zero;
             t.DOScale(magicCircleParameters.Size, 0.2f);
 
+            _targetGroup.AddMember(t, 1, 0);
+
             var timeCount = 0f;
 
             while (timeCount < data.ChantTime)
@@ -46,6 +53,8 @@ namespace Battle.CommonObject.MagicCircle
 
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: destroyCancellationToken);
             }
+
+            _targetGroup.RemoveMember(t);
 
             UniTask.Void(async delegate
             {

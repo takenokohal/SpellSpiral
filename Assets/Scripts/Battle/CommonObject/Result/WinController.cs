@@ -3,7 +3,9 @@ using Battle.Character.Enemy;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Others;
+using Others.Input;
 using Others.Scene;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,6 +19,7 @@ namespace Battle.CommonObject.Result
     {
         [Inject] private readonly GameLoop _gameLoop;
         [Inject] private readonly AllCharacterManager _allCharacterManager;
+        [Inject] private readonly MyInputManager _myInputManager;
 
         [SerializeField] private ParticleSystem effect;
 
@@ -24,8 +27,7 @@ namespace Battle.CommonObject.Result
 
         //  [SerializeField] private CanvasGroup loseCanvas;
         [SerializeField] private Image whiteOut;
-
-        [SerializeField] private PlayerInput input;
+        [SerializeField] private TMP_Text missionCompleteText;
 
         [SerializeField] private GameObject winCamera;
 
@@ -45,14 +47,15 @@ namespace Battle.CommonObject.Result
 
             winCamera.SetActive(true);
 
-            await UniTask.Delay(1000);
+            await UniTask.Delay(500);
 
 
             var enemy = _allCharacterManager.Boss;
             effect.transform.position = enemy.transform.position;
             effect.Play();
+            enemy.Animator.gameObject.SetActive(false);
 
-            await mainCanvas.DOFade(0, 1);
+            //  await mainCanvas.DOFade(0, 1);
 
             /*
             loseCanvas.gameObject.SetActive(true);
@@ -69,10 +72,19 @@ namespace Battle.CommonObject.Result
             
             */
 
-            whiteOut.gameObject.SetActive(true);
-            await whiteOut.DOFade(1, 3);
+            await UniTask.Delay(1000, cancellationToken: destroyCancellationToken);
 
+            whiteOut.gameObject.SetActive(true);
+            await whiteOut.DOFade(1, 1);
             Time.timeScale = 1;
+
+            missionCompleteText.gameObject.SetActive(true);
+            await missionCompleteText.transform.DOScaleY(0, 0);
+            await missionCompleteText.transform.DOScaleY(1, 0.2f);
+
+            await UniTask.WaitUntil(() => _myInputManager.UiInput.actions.Any(value => value.WasPressedThisFrame()));
+
+            await missionCompleteText.transform.DOScaleY(0, 0.2f);
 
             _mySceneManager.ChangeSceneAsync("Home").Forget();
         }
