@@ -1,4 +1,5 @@
-﻿using Battle.CommonObject.Bullet;
+﻿using Audio;
+using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
 using Others.Utils;
@@ -15,17 +16,42 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         [SerializeField] private int count;
 
+        [SerializeField] private int warpCount;
+        [SerializeField] private ParticleSystem warpEffect;
+        [SerializeField] private float warpDuration;
+        [SerializeField] private float shootDuration;
+
+        [SerializeField] private float recovery;
+
 
         public override DorothyState StateKey => DorothyState.Cutter;
 
+        private void Start()
+        {
+            UniTask.Void(async () =>
+            {
+                await UniTask.WaitWhile(() => !Parent.IsInitialized);
+
+                transform.SetParent(Parent.transform);
+                transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            });
+        }
+
         protected override async UniTask Sequence()
         {
-            for (int i = 0; i < count; i++)
+            for (int j = 0; j < warpCount; j++)
             {
-                Shoot(i).Forget();
+                await Warp();
+
+                for (int i = 0; i < count; i++)
+                {
+                    Shoot(i).Forget();
+                }
+
+                await MyDelay(shootDuration);
             }
 
-            await MyDelay(2);
+            await MyDelay(recovery);
         }
 
         private async UniTaskVoid Shoot(int i)
@@ -48,7 +74,20 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         private Vector2 CalcPos(int i)
         {
-            return (Vector2)Parent.Rigidbody.position + CalcDir(i);
+            return (Vector2)Parent.Rigidbody.position + CalcDir(i) * 0.5f;
+        }
+
+        private async UniTask Warp()
+        {
+            AllAudioManager.PlaySe("Warp");
+            warpEffect.Play();
+            Animator.gameObject.SetActive(false);
+            await MyDelay(warpDuration);
+            Animator.gameObject.SetActive(true);
+
+            Parent.Rigidbody.position = Random.insideUnitCircle * 5;
+            await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
+            warpEffect.Play();
         }
     }
 }

@@ -56,7 +56,7 @@ MonoBehaviour:
   radius: {x: 8, y: 5}
   directionalBullet: {fileID: 1145098096273048919, guid: 7594f2daeeaacdf4cbb87ce733ec41c4,
     type: 3}
-  firstMoveSpeed: 1
+  firstMoveDuration: 0.5
   moveDuration: 5
   shootCoolTime: 0.1
-  bulletSpeed: 5
+  bulletSpeed: 6

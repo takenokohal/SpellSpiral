@@ -55,9 +55,9 @@ MonoBehaviour:
     SerializationNodes: []
   directionalBullet: {fileID: 1145098096273048919, guid: 7594f2daeeaacdf4cbb87ce733ec41c4,
     type: 3}
-  offsetDistance: 1.5
+  offsetDistance: 1
   countPerLoop: 18
-  loopCount: 3
-  duration: 6
-  recovery: 2
-  speed: 3
+  loopCount: 6
+  duration: 3
+  recovery: 1
+  speed: 6

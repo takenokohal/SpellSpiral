@@ -56,8 +56,8 @@ MonoBehaviour:
   directionalBullet: {fileID: 1145098096273048919, guid: 7594f2daeeaacdf4cbb87ce733ec41c4,
     type: 3}
   offsetDistance: 1.2
-  countPerPetal: 6
+  countPerPetal: 12
   petalCount: 6
   duration: 1.2
-  recovery: 1.2
+  recovery: 1
   speed: 3

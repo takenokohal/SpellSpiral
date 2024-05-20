@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Battle.Character.Enemy.Variables.Baltecia;
+using Cysharp.Threading.Tasks;
 using Others;
+using Others.Utils;
 using UniRx;
 
 namespace Battle.Character.Enemy.Variables.Dorothy
@@ -21,9 +25,29 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         private async UniTask Loop()
         {
+            await PlayState(DorothyState.FlowerGarden);
+            var states = new List<DorothyState>()
+            {
+                DorothyState.Cutter,
+                DorothyState.Cyclone,
+                DorothyState.Flower,
+                DorothyState.Rain,
+                DorothyState.Surround,
+                DorothyState.Wave
+            };
             while (!commonCancellationTokenSource.IsCancellationRequested)
             {
-                await PlayState(DorothyState.FlowerGarden);
+                var nextState = states.Where(value => value != CurrentState).GetRandomValue();
+
+                if (HalfLifeCheck())
+                {
+                    _halfLifeSpecialAttacked = true;
+                    nextState = DorothyState.FlowerGarden;
+                }
+
+                LookPlayer();
+
+                await PlayState(nextState);
             }
         }
 

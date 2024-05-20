@@ -48,7 +48,9 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         private Vector2 CalcPos(int i, int j, int k)
         {
-            return (Vector2)Parent.Rigidbody.position + CalcDir(i, j, k) * offsetDistance;
+            var offset = -CalcDir(i, j, k) * 2f;
+            offset *= 1f - (countPerPetal - i-1) / (float)countPerPetal;
+            return (Vector2)Parent.Rigidbody.position + offset;
         }
 
         private Vector2 CalcDir(int i, int j, int k)

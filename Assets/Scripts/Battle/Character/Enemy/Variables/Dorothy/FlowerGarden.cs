@@ -1,6 +1,7 @@
 ﻿using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Others.Utils;
 using UnityEngine;
 
@@ -33,12 +34,15 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         protected override async UniTask Sequence()
         {
+            SpecialCameraSwitcher.SetSwitch(true);
+            await TweenToUniTask(Parent.Rigidbody.DOMove(new Vector3(0, 0), 1f));
             for (int i = 0; i < flowerCount; i++)
             {
                 GenerateFlower().Forget();
                 await MyDelay(duration / flowerCount);
             }
 
+            SpecialCameraSwitcher.SetSwitch(false);
             await MyDelay(recovery);
         }
 

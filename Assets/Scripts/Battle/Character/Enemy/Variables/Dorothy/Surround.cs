@@ -12,7 +12,7 @@ namespace Battle.Character.Enemy.Variables.Dorothy
         [SerializeField] private Vector2 radius;
 
         [SerializeField] private DirectionalBullet directionalBullet;
-        [SerializeField] private float firstMoveSpeed;
+        [SerializeField] private float firstMoveDuration;
 
         [SerializeField] private float moveDuration;
 
@@ -26,9 +26,9 @@ namespace Battle.Character.Enemy.Variables.Dorothy
         protected override async UniTask Sequence()
         {
             _deltaTime = 0;
-            await Parent.Rigidbody.DOMove(new Vector3(0, radius.y), firstMoveSpeed);
+            await Parent.Rigidbody.DOMove(new Vector3(0, radius.y), firstMoveDuration);
             await Move();
-            await MyDelay(2f);
+            await MyDelay(1f);
         }
 
         private async UniTask Move()

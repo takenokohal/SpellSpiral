@@ -1,6 +1,7 @@
 ﻿using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Others.Utils;
 using UnityEngine;
 
@@ -25,6 +26,9 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         protected override async UniTask Sequence()
         {
+            var toPos = (Vector2)Parent.Rigidbody.position +
+                        Vector2Extension.AngleToVector(Random.Range(0, Mathf.PI * 2f) * 5f);
+            await TweenToUniTask(Parent.Rigidbody.DOMove(toPos, 0.5f));
             for (int i = 0; i < loopCount; i++)
             {
                 for (int j = 0; j < countPerLoop; j++)
