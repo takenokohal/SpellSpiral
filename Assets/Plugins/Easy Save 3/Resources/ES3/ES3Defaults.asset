@@ -36,6 +36,7 @@ MonoBehaviour:
     - FastSpringBone
     - FastSpringBone10
     - MToon
+    - sc.posteffects.runtime
     - UniGLTF
     - UniGLTF.Utils
     - UniHumanoid
