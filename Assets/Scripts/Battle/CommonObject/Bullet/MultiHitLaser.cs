@@ -58,6 +58,9 @@ namespace Battle.CommonObject.Bullet
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, destroyCancellationToken);
             }
 
+
+            effect.Stop();
+            effect.Clear();
         }
 
         private async UniTask HitLoop(float activeTime, int hitCount)
@@ -72,10 +75,6 @@ namespace Battle.CommonObject.Bullet
                 attackHitControllerInChildren.gameObject.SetActive(false);
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, destroyCancellationToken);
             }
-            
-            
-            effect.Stop();
-            effect.Clear();
         }
     }
 }

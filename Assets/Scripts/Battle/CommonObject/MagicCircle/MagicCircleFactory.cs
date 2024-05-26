@@ -29,8 +29,7 @@ namespace Battle.CommonObject.MagicCircle
                 magicCircle => magicCircle.gameObject.SetActive(false));
         }
 
-
-        public async UniTask CreateAndWait(MagicCircleParameters magicCircleParameters)
+        public async UniTask<MagicCircle> CreateAndWait(MagicCircleParameters magicCircleParameters)
         {
             AllAudioManager.PlaySe("MagicCircle");
 
@@ -61,6 +60,8 @@ namespace Battle.CommonObject.MagicCircle
                 await t.DOScale(0f, 0.2f);
                 _pool.Release(magicCircle);
             }, cancellationToken: destroyCancellationToken);
+
+            return magicCircle;
         }
     }
 }

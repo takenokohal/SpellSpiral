@@ -5119,7 +5119,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   ps: {fileID: 4277782106833080643}
-  graphic: {fileID: 0}
+  graphic: {fileID: 6976475143688337015}
 --- !u!114 &7024236422470375353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25646,6 +25646,12 @@ PrefabInstance:
 --- !u!4 &5714238360113009761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5159078012444724336, guid: d685ee813b2c6f747945c3d6ed39ef03,
+    type: 3}
+  m_PrefabInstance: {fileID: 636616808022513681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6976475143688337015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1728013695380148634, guid: d685ee813b2c6f747945c3d6ed39ef03,
     type: 3}
   m_PrefabInstance: {fileID: 636616808022513681}
   m_PrefabAsset: {fileID: 0}
