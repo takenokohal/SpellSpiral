@@ -12,6 +12,7 @@ namespace Databases
         [SerializeField] private float moveLerpValue;
         [SerializeField] private float chargingMoveSpeed;
 
+        [SerializeField] private float chantDuration;
 
         [SerializeField] private float stepSpeed;
         [SerializeField] private float stepDuration;
@@ -28,6 +29,8 @@ namespace Databases
         public float AutoManaChargePerSec => autoManaChargePerSec;
         public float QuickManaChargePerSec => quickManaChargePerSec;
         public float MoveSpeed => moveSpeed;
+
+        public float ChantDuration => chantDuration;
 
         public float MoveLerpValue => moveLerpValue;
         public float ChargingMoveSpeed => chargingMoveSpeed;

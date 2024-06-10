@@ -45,6 +45,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                     _halfLifeSpecialAttacked = true;
                     nextState = BalteciaState.MissileCarnival;
                 }
+
                 LookPlayer();
 
                 await PlayState(nextState);

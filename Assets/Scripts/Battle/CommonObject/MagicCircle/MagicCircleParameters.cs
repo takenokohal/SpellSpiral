@@ -21,11 +21,4 @@ namespace Battle.CommonObject.MagicCircle
             Pos = pos;
         }
     }
-
-    public enum MagicCircleType
-    {
-        Bullet,
-        Laser,
-        Summon
-    }
 }

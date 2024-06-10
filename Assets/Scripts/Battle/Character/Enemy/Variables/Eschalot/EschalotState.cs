@@ -2,6 +2,9 @@
 {
     public enum EschalotState
     {
-        ResignBeam
+        ResignBeam,
+        ConvergenceBeam,
+        AreaBeam,
+        DiffusionBeam
     }
 }

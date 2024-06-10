@@ -2,6 +2,7 @@
 using Battle.Attack;
 using Battle.Character.Enemy;
 using Battle.Character.Player;
+using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
 using Databases;
@@ -22,6 +23,7 @@ namespace Battle.Character.Servant
         [Inject] private readonly GameLoop _gameLoop;
         [Inject] private readonly MagicCircleFactory _magicCircleFactory;
         [Inject] private readonly CharacterCamera _characterCamera;
+        [Inject] private readonly ReadyEffectFactory _readyEffectFactory;
 
         public ServantBase CreateAndInject(ServantBase servantPrefab, CharacterBase master, Vector2 pos)
         {
@@ -34,6 +36,7 @@ namespace Battle.Character.Servant
                 _gameLoop,
                 _magicCircleFactory,
                 this,
+                _readyEffectFactory,
                 _characterCamera);
 
             instance.transform.position = pos;

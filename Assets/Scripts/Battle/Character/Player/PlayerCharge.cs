@@ -12,11 +12,10 @@ namespace Battle.Character.Player
 
         [SerializeField] private Color normalEffectColor;
         [SerializeField] private Color buffedEffectColor;
-
-        private static readonly int AnimKey = Animator.StringToHash("Charging");
-
-        private bool Chargeable => !IsPlayerDead &&
-                                   !PlayerParameter.Warping;
+        
+        private bool CantCharge => IsPlayerDead ||
+                                   PlayerParameter.Warping||
+                                   PlayerParameter.SpellChanting;
 
         private SeSource _seSource;
 
@@ -61,7 +60,7 @@ namespace Battle.Character.Player
 
         private void TryStartCharge()
         {
-            if (!Chargeable)
+            if (CantCharge)
                 return;
 
             if (!PlayerCore.PlayerInput.actions["Charge"].IsPressed())
@@ -70,7 +69,8 @@ namespace Battle.Character.Player
             effect.Play();
             _seSource = AllAudioManager.PlaySe("Charge");
             Charging = true;
-            PlayerCore.Animator.SetBool(AnimKey, true);
+            
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Charge);
         }
 
         private void TryEndCharge()
@@ -79,9 +79,10 @@ namespace Battle.Character.Player
                 return;
 
             effect.Stop();
+            effect.Clear();
             _seSource.Stop();
             Charging = false;
-            PlayerCore.Animator.SetBool(AnimKey, false);
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
         }
 
         private void AutoCharge()

@@ -17,6 +17,7 @@ MonoBehaviour:
   moveSpeed: 7
   moveLerpValue: 0.1
   chargingMoveSpeed: 2
+  chantDuration: 0.2
   stepSpeed: 50
   stepDuration: 0.3
   stepDrag: 10

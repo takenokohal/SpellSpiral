@@ -27,10 +27,6 @@ namespace Audio
                 source => source.gameObject.SetActive(false));
         }
 
-        private void Update()
-        {
-            Debug.Log(_sePool.CountActive);
-        }
 
         public SeSource PlaySe(string seName)
         {

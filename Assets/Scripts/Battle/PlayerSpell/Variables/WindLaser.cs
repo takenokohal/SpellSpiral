@@ -18,12 +18,13 @@ namespace Battle.PlayerSpell.Variables
         {
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore,
                 2f, CalcPos));
-            
+
             var tmpPos = CalcPos();
             var tmpRot = PlayerCore.CharacterRotation.IsRight ? 0 : 180f;
-            multiHitLaser.Activate(new MultiHitLaser.Parameter(
-                () => tmpPos, () => tmpRot, duration, hitCount)).Forget();
 
+            multiHitLaser.SetPosition(tmpPos);
+            multiHitLaser.SetRotation(tmpRot);
+            await multiHitLaser.Activate(duration);
 
             await MyDelay(5f);
 

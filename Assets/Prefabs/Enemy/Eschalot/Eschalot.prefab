@@ -4988,6 +4988,8 @@ MonoBehaviour:
   characterKey: Eschalot
   sequencePrefabs:
   - {fileID: 6069687250806843386, guid: d27418ef6a7dc6f42a57d34e3d2be195, type: 3}
+  - {fileID: 7661665873235390737, guid: d2a2d23e5ed32b24ab5ee34dc8cc2297, type: 3}
+  - {fileID: -880579584303491341, guid: 6e3f3e47a63764647a0722f29c577a10, type: 3}
 --- !u!1001 &2258643285409496411
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -61,10 +61,15 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                         var mcp = new MagicCircleParameters(Parent,
                             1f,
                             () => CalcPos(i1, j1));
+
+                        ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(
+                            Parent,
+                            () => CalcPos(i1, j1),
+                            1,
+                            () => CalcBulletDir(i1, j1))).Forget();
                         await MagicCircleFactory.CreateAndWait(mcp);
 
-                        directionalBulletPrefab.CreateFromPrefab(CalcPos(i1, j1),
-                            ((Vector2)PlayerCore.transform.position - CalcPos(i1, j1)).normalized * bulletSpeed);
+                        directionalBulletPrefab.CreateFromPrefab(CalcPos(i1, j1), CalcBulletDir(i1, j1) * bulletSpeed);
                     });
                 }
 
@@ -88,8 +93,16 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             var v = j == 0 ? 1 : -1;
             var offset = Quaternion.Euler(0, 0, 90f * v) * GetDirectionToPlayer() * radius / 2f;
-            return Parent.transform.position + offset * (i * 0.2f) +
-                   (Vector3)GetDirectionToPlayer() * ((i - 2) * 0.1f);
+            return (Vector2)Parent.transform.position +
+                   (Vector2)offset * (i * 0.2f) +
+                   GetDirectionToPlayer() * ((i - 2) * 0.1f)
+                   - GetDirectionToPlayer();
+        }
+
+        private Vector2 CalcBulletDir(int i, int j)
+        {
+            var v = (Vector2)PlayerCore.transform.position - CalcPos(i, j);
+            return v.normalized;
         }
     }
 }

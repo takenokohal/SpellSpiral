@@ -4,7 +4,6 @@ using Battle.Character.Player.Buff;
 using Databases;
 using UniRx;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using VContainer;
 
 namespace Battle.UI
@@ -49,6 +48,7 @@ namespace Battle.UI
         {
             var instance = _children[buffParameter];
             Destroy(instance.gameObject);
+            _children.Remove(buffParameter);
         }
 
         private void FixedUpdate()

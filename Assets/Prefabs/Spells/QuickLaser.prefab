@@ -70,7 +70,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  singleHitLaser: {fileID: 2148453669112619297}
+  singleHitBeam: {fileID: 2148453669112619297}
 --- !u!1 &3568799970475581052
 GameObject:
   m_ObjectHideFlags: 0

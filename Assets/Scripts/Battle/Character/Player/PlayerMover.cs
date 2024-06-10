@@ -9,9 +9,12 @@ namespace Battle.Character.Player
     {
         [Inject] private readonly AllCharacterManager _allCharacterManager;
 
+        /*
         public static int HorizontalAnimKey { get; } = Animator.StringToHash("HorizontalSpeed");
         public static int VerticalAnimKey { get; } = Animator.StringToHash("VerticalSpeed");
         public Vector2 AnimationBlendValue { get; set; }
+        
+        */
 
         protected override void Init()
         {
@@ -27,14 +30,6 @@ namespace Battle.Character.Player
 
             if (PlayerParameter.Warping)
                 return;
-
-            //チャージ中動けないように
-            if (PlayerParameter.QuickCharging)
-            {
-                var rb = PlayerCore.Rigidbody;
-                rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 0.2f);
-                return;
-            }
 
 
             SetRotation();
@@ -67,23 +62,24 @@ namespace Battle.Character.Player
 
             var rb = PlayerCore.Rigidbody;
 
-            var to = new Vector2(input.x * PlayerCore.CharacterRotation.Rotation, input.y);
 
-            AnimationBlendValue =
-                Vector2.Lerp(AnimationBlendValue,
-                    to, 0.1f);
-            PlayerCore.Animator.SetFloat(HorizontalAnimKey, AnimationBlendValue.x);
-            PlayerCore.Animator.SetFloat(VerticalAnimKey, AnimationBlendValue.y);
-
-            /*
+            SetAnimationFloat(input.x);
             var velocity = !PlayerParameter.QuickCharging
                 ? Vector2.Lerp(rb.velocity, input * PlayerConstData.MoveSpeed, PlayerConstData.MoveLerpValue)
                 : input * PlayerConstData.ChargingMoveSpeed;
-                */
 
-            var velocity = Vector2.Lerp(rb.velocity, input * PlayerConstData.MoveSpeed, PlayerConstData.MoveLerpValue);
 
             rb.velocity = velocity;
+        }
+
+        private void SetAnimationFloat(float inputX)
+        {
+            var to = inputX * PlayerCore.CharacterRotation.Rotation;
+
+            var v = WizardAnimationController.HorizontalSpeedValue;
+            v = Mathf.Lerp(v, to, 0.15f);
+
+            WizardAnimationController.HorizontalSpeedValue = v;
         }
 
 

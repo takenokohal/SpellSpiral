@@ -3,6 +3,7 @@ using System.Threading;
 using Audio;
 using Battle.Character.Player;
 using Battle.Character.Servant;
+using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
 using Cysharp.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace Battle.Character.Enemy
             public SpecialCameraSwitcher SpecialCameraSwitcher { get; set; }
 
             public MagicCircleFactory MagicCircleFactory { get; set; }
+            public ReadyEffectFactory ReadyEffectFactory { get; set; }
             
             public ServantFactory ServantFactory { get; set; }
         }
@@ -42,6 +44,8 @@ namespace Battle.Character.Enemy
         protected SpecialCameraSwitcher SpecialCameraSwitcher { get; private set; }
 
         protected MagicCircleFactory MagicCircleFactory { get; private set; }
+        
+        protected ReadyEffectFactory ReadyEffectFactory { get; private set; }
         
         protected ServantFactory ServantFactory { get; private set; }
         
@@ -77,6 +81,7 @@ namespace Battle.Character.Enemy
             SpecialCameraSwitcher = sequenceRequiredComponents.SpecialCameraSwitcher;
 
             MagicCircleFactory = sequenceRequiredComponents.MagicCircleFactory;
+            ReadyEffectFactory = sequenceRequiredComponents.ReadyEffectFactory;
             ServantFactory = sequenceRequiredComponents.ServantFactory;
             
             SequenceCancellationToken = new CancellationTokenSource();

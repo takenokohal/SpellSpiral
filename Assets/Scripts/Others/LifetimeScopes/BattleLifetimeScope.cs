@@ -5,6 +5,7 @@ using Battle.Character.Player;
 using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
 using Battle.Character.Servant;
+using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.CommonObject.Pause;
 using Battle.CommonObject.Result;
@@ -71,6 +72,7 @@ namespace Others.LifetimeScopes
             builder.Register<SpellFactory>(Lifetime.Singleton);
             builder.RegisterComponentInHierarchy<AttackHitEffectFactory>();
             builder.RegisterComponentInHierarchy<MagicCircleFactory>();
+            builder.RegisterComponentInHierarchy<ReadyEffectFactory>();
 
             //Result
             builder.RegisterComponentInHierarchy<LoseController>();

@@ -20,7 +20,8 @@ namespace Battle.Character.Player
 
         public PlayerConstData PlayerConstData => _playerConstData;
 
-        private static readonly int OnDamagedAnimKey = Animator.StringToHash("OnDamaged");
+        public WizardAnimationController WizardAnimationController { get; private set; }
+
 
         public bool IsBattleStarted { get; private set; }
 
@@ -33,6 +34,7 @@ namespace Battle.Character.Player
         {
             base.InitializeFunction();
 
+            WizardAnimationController = new WizardAnimationController(Animator);
 
             OnDeadObservable().Subscribe(_ =>
             {

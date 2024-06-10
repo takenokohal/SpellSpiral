@@ -5,6 +5,7 @@ using Audio;
 using Battle.Attack;
 using Battle.Character.Enemy;
 using Battle.Character.Servant;
+using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
 using Cysharp.Threading.Tasks;
@@ -26,6 +27,8 @@ namespace Battle.Character
         public string CharacterKey => characterKey;
         public Rigidbody Rigidbody { get; private set; }
         public Animator Animator { get; private set; }
+
+        public bool AnimatorIsNull { get; private set; }
         public CharacterRotation CharacterRotation { get; private set; }
 
         public CharacterData CharacterData { get; private set; }
@@ -38,12 +41,11 @@ namespace Battle.Character
         [Inject] protected MagicCircleFactory MagicCircleFactory { get; private set; }
 
         [Inject] protected ServantFactory ServantFactory { get; private set; }
+        [Inject] protected ReadyEffectFactory ReadyEffectFactory { get; private set; }
         [Inject] protected CharacterCamera CharacterCamera { get; private set; }
 
 
         private Vector3 _animatorLocalPosition;
-        private static readonly int OnDamagedAnimKey = Animator.StringToHash("OnDamaged");
-
         private readonly ReactiveProperty<float> _currentLife = new();
 
         public float CurrentLife
@@ -79,6 +81,7 @@ namespace Battle.Character
             GameLoop gameLoop,
             MagicCircleFactory magicCircleFactory,
             ServantFactory servantFactory,
+            ReadyEffectFactory readyEffectFactory,
             CharacterCamera characterCamera)
         {
             AttackHitEffectFactory = attackHitEffectFactory;
@@ -88,6 +91,7 @@ namespace Battle.Character
             GameLoop = gameLoop;
             MagicCircleFactory = magicCircleFactory;
             ServantFactory = servantFactory;
+            ReadyEffectFactory = readyEffectFactory;
             CharacterCamera = characterCamera;
         }
 
@@ -105,6 +109,9 @@ namespace Battle.Character
         {
             Rigidbody = GetComponent<Rigidbody>();
             Animator = GetComponentInChildren<Animator>();
+            if (Animator == null)
+                AnimatorIsNull = true;
+
             CharacterRotation = new CharacterRotation(transform)
             {
                 IsStop = true
@@ -115,7 +122,8 @@ namespace Battle.Character
             CharacterData = CharacterDatabase.Find(characterKey);
 
             AllCharacterManager.RegisterCharacter(this);
-            _animatorLocalPosition = Animator.transform.localPosition;
+
+            _animatorLocalPosition = AnimatorIsNull ? Vector3.zero : Animator.transform.localPosition;
             CurrentLife = CharacterData.Life;
 
             InitializeFunction();
@@ -158,9 +166,12 @@ namespace Battle.Character
             CharacterCamera.ImpulseSource.GenerateImpulse();
             AttackHitEffectFactory.Create(transform.position, transform.rotation).Forget();
 
-            Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
-                .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
-            Animator.SetTrigger(OnDamagedAnimKey);
+            if (!AnimatorIsNull)
+            {
+                Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
+                    .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
+                Animator.Play("OnDamage", 0, 0);
+            }
 
             OnAttackedChild(attackHitController);
         }

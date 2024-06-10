@@ -36,7 +36,12 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 var i1 = i;
                 UniTask.Void(async () =>
                 {
-                    await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => Parent.transform.position + CalcDir(i1)));
+                    ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(Parent,
+                        () => Parent.transform.position + CalcDir(i1),
+                        1,
+                        () => CalcDir(i1))).Forget();
+                    await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent,
+                        1, () => Parent.transform.position + CalcDir(i1)));
 
                     homingBullet.CreateFromPrefab(new HomingBullet.Parameter()
                     {

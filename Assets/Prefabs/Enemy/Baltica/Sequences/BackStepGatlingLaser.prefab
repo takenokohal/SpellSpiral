@@ -4777,7 +4777,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  backStepDrag: 1
+  backStepDrag: 3
   backStepSpeed: 5
   backStepDuration: 0.5
   radius: 3
@@ -9566,7 +9566,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  owner: 1
   attackKey:
     characterKey: Baltecia
     detailKey: 

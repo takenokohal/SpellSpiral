@@ -80,7 +80,8 @@ namespace Battle.Character.Enemy
                         PlayerCore = playerCore,
                         SpecialCameraSwitcher = specialCameraSwitcher,
                         MagicCircleFactory = MagicCircleFactory,
-                        ServantFactory = ServantFactory
+                        ServantFactory = ServantFactory,
+                        ReadyEffectFactory = ReadyEffectFactory
                     }));
             }
         }
@@ -90,6 +91,8 @@ namespace Battle.Character.Enemy
             if (GameLoop.CurrentState != GameLoop.GameEvent.BattleStart)
                 return;
 
+            if (AnimatorIsNull)
+                return;
 
             var to = ToAnimationVelocity.normalized;
             to.x *= CharacterRotation.Rotation;

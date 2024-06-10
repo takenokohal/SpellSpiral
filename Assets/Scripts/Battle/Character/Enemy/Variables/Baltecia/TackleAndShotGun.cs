@@ -114,10 +114,14 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         }
 
         private async UniTaskVoid Shoot(int i, float currentArc)
-        {            Parent.Animator.Play("Attack", 0, 0);
+        {
+            Parent.Animator.Play("Attack", 0, 0);
 
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(Parent, () => CalcPos(i, currentArc), 1,
+                () => CalcDir(i, currentArc))).Forget();
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => CalcPos(i, currentArc)));
+
 
             directionalBulletPrefab.CreateFromPrefab(CalcPos(i, currentArc), CalcDir(i, currentArc) * shootSpeed);
         }

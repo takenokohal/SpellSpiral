@@ -24,10 +24,10 @@ MonoBehaviour:
   currentSavedDeck:
   - FireShoot
   - FireShoot
-  - FireShoot
+  - GatlingShoot
   - FireCracker
   - FireCracker
-  - FireCracker
+  - Rock
   - IceMissile
   - IceMissile
   - IceMissile

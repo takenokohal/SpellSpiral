@@ -1,5 +1,4 @@
-﻿using System;
-using Audio;
+﻿using Audio;
 using Battle.Attack;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -11,70 +10,57 @@ namespace Battle.CommonObject.Bullet
         [SerializeField] private AttackHitController attackHitControllerInChildren;
         [SerializeField] private ParticleSystem effect;
 
-        public class Parameter
+
+        private const float HitCountCoolTime = 0.2f;
+
+        public bool IsActive { get; private set; }
+
+        public void SetPosition(Vector2 pos)
         {
-            public Func<Vector2> Pos { get; }
-            public Func<float> Rotation { get; }
-
-            public int HitCount { get; }
-            public float ActiveTime { get; }
-
-            public Parameter(Func<Vector2> pos, Func<float> rotation, float activeTime, int hitCount)
-            {
-                Pos = pos;
-                Rotation = rotation;
-                ActiveTime = activeTime;
-                HitCount = hitCount;
-            }
-
-            public Parameter(Func<Vector2> pos, Func<Vector2> direction, float activeTime, int hitCount)
-            {
-                Pos = pos;
-                Rotation = delegate
-                {
-                    var dir = direction.Invoke();
-                    var rot = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                    return rot;
-                };
-                ActiveTime = activeTime;
-                HitCount = hitCount;
-            }
+            transform.position = pos;
         }
 
-        public async UniTaskVoid Activate(Parameter parameter)
+        public void SetRotation(float rot)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, rot);
+        }
+
+        public void SetPositionAndRotation(Vector2 pos, float rot)
+        {
+            SetPosition(pos);
+            SetRotation(rot);
+        }
+
+        public async UniTask Activate(float lifeTime)
         {
             effect.Play();
-            HitLoop(parameter.ActiveTime, parameter.HitCount).Forget();
 
-            var timeCount = 0f;
+            IsActive = true;
+            HitLoop().Forget();
 
-            var t = transform;
-            while (timeCount < parameter.ActiveTime)
-            {
-                t.position = parameter.Pos.Invoke();
-                t.rotation = Quaternion.Euler(0, 0, parameter.Rotation.Invoke());
+            await MyDelay(lifeTime);
 
-                timeCount += Time.fixedDeltaTime;
-                await UniTask.Yield(PlayerLoopTiming.FixedUpdate, destroyCancellationToken);
-            }
-
+            IsActive = false;
 
             effect.Stop();
             effect.Clear();
         }
 
-        private async UniTask HitLoop(float activeTime, int hitCount)
+        private async UniTaskVoid HitLoop()
         {
-            var deltaTime = activeTime / hitCount;
-            for (int i = 0; i < hitCount; i++)
+            while (IsActive)
             {
                 attackHitControllerInChildren.gameObject.SetActive(true);
                 AllAudioManager.PlaySe("Laser");
-                await UniTask.Delay((int)(deltaTime * 1000f), delayTiming: PlayerLoopTiming.FixedUpdate,
-                    cancellationToken: destroyCancellationToken);
+                await MyDelay(HitCountCoolTime);
                 attackHitControllerInChildren.gameObject.SetActive(false);
-                await UniTask.Yield(PlayerLoopTiming.FixedUpdate, destroyCancellationToken);
+                await UniTask.Yield();
             }
+        }
+
+        private UniTask MyDelay(float duration)
+        {
+            return UniTask.Delay((int)(1000f * duration), cancellationToken: destroyCancellationToken);
         }
     }
 }

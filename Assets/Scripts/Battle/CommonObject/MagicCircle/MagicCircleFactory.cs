@@ -24,22 +24,21 @@ namespace Battle.CommonObject.MagicCircle
             _targetGroup = FindObjectOfType<CinemachineTargetGroup>();
 
             _pool = new ObjectPool<MagicCircle>(
-                () => Instantiate(prefab),
-                magicCircle => magicCircle.gameObject.SetActive(true),
-                magicCircle => magicCircle.gameObject.SetActive(false));
+                () => Instantiate(prefab));
         }
 
-        public async UniTask<MagicCircle> CreateAndWait(MagicCircleParameters magicCircleParameters)
+
+        public async UniTask CreateAndWait(MagicCircleParameters magicCircleParameters)
         {
             AllAudioManager.PlaySe("MagicCircle");
 
             var magicCircle = _pool.Get();
+            magicCircle.Activate(magicCircleParameters).Forget();
+            
             var data = _characterDatabase.Find(magicCircleParameters.CharacterKey);
             magicCircle.Init(data.MagicCircleSprite);
 
             var t = magicCircle.transform;
-            t.localScale = Vector3.zero;
-            t.DOScale(magicCircleParameters.Size, 0.2f);
 
             _targetGroup.AddMember(t, 1, 0);
 
@@ -55,13 +54,9 @@ namespace Battle.CommonObject.MagicCircle
 
             _targetGroup.RemoveMember(t);
 
-            UniTask.Void(async delegate
-            {
-                await t.DOScale(0f, 0.2f);
-                _pool.Release(magicCircle);
-            }, cancellationToken: destroyCancellationToken);
-
-            return magicCircle;
+            await magicCircle.Close();
+            
+            _pool.Release(magicCircle);
         }
     }
 }

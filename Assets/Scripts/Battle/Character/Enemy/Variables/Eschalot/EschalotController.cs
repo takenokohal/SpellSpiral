@@ -29,7 +29,7 @@ namespace Battle.Character.Enemy.Variables.Eschalot
          
             while (!commonCancellationTokenSource.IsCancellationRequested)
             {
-                var nextState = EschalotState.ResignBeam;
+                var nextState = EschalotState.AreaBeam;
 
                 LookPlayer();
 

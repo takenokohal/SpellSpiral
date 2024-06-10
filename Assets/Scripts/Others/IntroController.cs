@@ -42,10 +42,22 @@ namespace Others
         [SerializeField] private Transform[] walls;
         private static readonly int HorizontalSpeedAnimKey = Animator.StringToHash("HorizontalSpeed");
 
+        [SerializeField] private bool isDebug;
 
         private void Start()
         {
-            IntroStart().Forget();
+            if (isDebug)
+                DebugIntro().Forget();
+            else
+                IntroStart().Forget();
+        }
+
+        private async UniTaskVoid DebugIntro()
+        {
+            PlayerTransform.SetPositionAndRotation(playerTo.position, playerTo.rotation);
+            EnemyTransform.SetPositionAndRotation(enemyTo.position, enemyTo.rotation);
+            await UniTask.Yield(cancellationToken: destroyCancellationToken);
+            _gameLoop.SendEvent(GameLoop.GameEvent.BattleStart);
         }
 
         private async UniTaskVoid IntroStart()

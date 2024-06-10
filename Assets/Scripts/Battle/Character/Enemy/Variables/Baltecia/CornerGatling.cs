@@ -73,6 +73,12 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             var mcp = new MagicCircleParameters(Parent, 1f,
                 () => CalcPos(i, j, dir));
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(
+                Parent,
+                () => CalcPos(i, j, dir),
+                1,
+                () => dir)).Forget();
+
             await MagicCircleFactory.CreateAndWait(mcp);
 
             directionalBullet.CreateFromPrefab(CalcPos(i, j, dir), dir * bulletSpeed);

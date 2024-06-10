@@ -8,18 +8,17 @@ namespace Battle.PlayerSpell.Variables
 {
     public class VerticalThunder : SpellBase
     {
-        [SerializeField] private SingleHitLaser singleHitLaser;
+        [SerializeField] private SingleHitBeam singleHitBeam;
 
         protected override async UniTaskVoid Init()
         {
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore, 1f,
                 CalcPos));
 
-            var pos = CalcPos();
 
-
-            singleHitLaser.Activate(new SingleHitLaser.Parameter(pos,
-                new Vector2(PlayerCore.CharacterRotation.Rotation, 0), 0.2f)).Forget();
+            singleHitBeam.SetDirection(new Vector2(PlayerCore.CharacterRotation.Rotation, 0));
+            singleHitBeam.SetPosition(CalcPos());
+            singleHitBeam.Activate(0.2f).Forget();
 
             await MyDelay(5f);
 

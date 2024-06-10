@@ -91,7 +91,7 @@ MonoBehaviour:
       Data: 1
     - Name: life
       Entry: 3
-      Data: 200
+      Data: 300
     - Name: magicCircleSprite
       Entry: 6
       Data: 

@@ -25,13 +25,16 @@ namespace Battle.Character.Player
         [Inject] private readonly SpellFactory _spellFactory;
         [Inject] private readonly SpellDatabase _spellDatabase;
 
-        private static readonly int AnimKey = Animator.StringToHash("Chant");
-
         private readonly Subject<SpellSlot> _onChantMiss = new();
         public IObservable<SpellSlot> OnChantMiss => _onChantMiss;
 
         private readonly Subject<SpellSlot> _onChantSuccess = new();
         public IObservable<SpellSlot> OnChantSuccess => _onChantSuccess;
+
+        private bool CantChant =>
+            IsPlayerDead ||
+            PlayerParameter.SpellChanting ||
+            PlayerParameter.Warping;
 
         protected override void Init()
         {
@@ -49,6 +52,9 @@ namespace Battle.Character.Player
         private void Update()
         {
             if (!PlayerCore.IsBattleStarted)
+                return;
+
+            if (CantChant)
                 return;
 
             foreach (var spellSlot in EnumUtil<SpellSlot>.GetValues())
@@ -107,17 +113,26 @@ namespace Battle.Character.Player
             switch (spellData.SpellType)
             {
                 case SpellType.Attack:
-                    PlayerCore.Animator.Play("Attack", 0, 0);
-
+                    WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Attack);
                     break;
+
                 case SpellType.Support:
-                    PlayerCore.Animator.Play("Buff", 0, 0);
-
+                    WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Buff);
                     break;
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
+            UniTask.Void(async () =>
+            {
+                PlayerParameter.SpellChanting = true;
+                await MyDelay(PlayerConstData.ChantDuration);
+                PlayerParameter.SpellChanting = false;
+                var isCharged = PlayerCore.PlayerInput.actions["Charge"].IsPressed();
+                if (isCharged)
+                    WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Charge);
+            });
 
             return true;
         }
@@ -128,7 +143,7 @@ namespace Battle.Character.Player
 
             foreach (var buffParameter in dups)
             {
-                await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
+                await MyDelay(0.5f);
                 _spellFactory.Create(spellKey);
 
                 PlayerBuff.BuffParameters.Remove(buffParameter);
