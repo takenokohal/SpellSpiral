@@ -36,11 +36,11 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         protected override async UniTask Sequence()
         {
-            SpecialCameraSwitcher.SetSwitch(true);
+            CameraSwitcher.SetSpecialCameraSwitch(true);
             await Move();
             await Shoot();
             await MyDelay(recoveryTime);
-            SpecialCameraSwitcher.SetSwitch(false);
+            CameraSwitcher.SetSpecialCameraSwitch(false);
         }
 
         private async UniTask Move()

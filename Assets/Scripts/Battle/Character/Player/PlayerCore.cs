@@ -14,7 +14,7 @@ namespace Battle.Character.Player
     public class PlayerCore : CharacterBase
     {
         [Inject] private readonly MyInputManager _myInputManager;
-        public PlayerInput PlayerInput => _myInputManager.BattleInput;
+        public PlayerInput PlayerInput => _myInputManager.PlayerInput;
 
         [Inject] private readonly PlayerConstData _playerConstData;
 
@@ -38,16 +38,16 @@ namespace Battle.Character.Player
 
             OnDeadObservable().Subscribe(_ =>
             {
-                GameLoop.SendEvent(GameLoop.GameEvent.Lose);
+                BattleLoop.SendEvent(BattleEvent.Lose);
                 OnDead();
             }).AddTo(this);
 
-            GameLoop.Event.Where(value => value == GameLoop.GameEvent.Win)
-                .Subscribe(_ => PlayerParameter.Invincible = true).AddTo(this);
+            BattleLoop.Event.Where(value => value == BattleEvent.Win)
+                .Subscribe(_ => PlayerParameter.InvincibleFlag++).AddTo(this);
 
 
-            GameLoop.Event
-                .Where(value => value == GameLoop.GameEvent.BattleStart)
+            BattleLoop.Event
+                .Where(value => value == BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => IsBattleStarted = true);
         }
@@ -88,7 +88,7 @@ namespace Battle.Character.Player
         protected override float CalcDamage(AttackHitController attackHitController)
         {
             var defense = PlayerBuff.BuffCount(BuffKey.DefenseBuff);
-            var damage = (float)AttackDatabase.Find(attackHitController.AttackKey).Damage;
+            var damage = AttackDatabase.Find(attackHitController.AttackKey).Damage;
             for (int i = 0; i < defense; i++)
             {
                 damage *= PlayerConstData.BuffDefenseRatio;

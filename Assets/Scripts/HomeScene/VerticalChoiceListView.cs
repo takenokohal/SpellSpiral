@@ -13,7 +13,7 @@ namespace HomeScene
     public class VerticalChoiceListView : MonoBehaviour
     {
         private MyInputManager _myInputManager;
-        private PlayerInput PlayerInput => _myInputManager.UiInput;
+        private PlayerInput PlayerInput => _myInputManager.PlayerInput;
 
 
         private int _currentIndex;

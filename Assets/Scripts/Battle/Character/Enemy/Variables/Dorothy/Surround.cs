@@ -46,6 +46,8 @@ namespace Battle.Character.Enemy.Variables.Dorothy
                 _deltaTime += dt;
                 shootDeltaTime += dt;
 
+                WizardAnimationController.HorizontalSpeedValue = 1f;
+
                 if (shootDeltaTime > shootCoolTime)
                 {
                     shootDeltaTime = 0f;
@@ -54,14 +56,18 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: destroyCancellationToken);
             }
+
+            WizardAnimationController.HorizontalSpeedValue = 0f;
         }
 
         private async UniTaskVoid Shoot()
         {
             var pos = Parent.Rigidbody.position;
-            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => pos));
+            var dir = -pos.normalized;
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(Parent, () => pos, 1, () => dir)).Forget();
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 0.5f, () => pos));
 
-            directionalBullet.CreateFromPrefab(pos, -pos.normalized * bulletSpeed);
+            directionalBullet.CreateFromPrefab(pos, dir * bulletSpeed);
         }
     }
 }

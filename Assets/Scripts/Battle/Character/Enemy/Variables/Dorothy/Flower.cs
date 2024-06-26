@@ -23,6 +23,8 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         protected override async UniTask Sequence()
         {
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Charge);
+
             for (int i = 0; i < countPerPetal; i++)
             {
                 for (int j = 0; j < petalCount; j++)
@@ -34,13 +36,17 @@ namespace Battle.Character.Enemy.Variables.Dorothy
                 }
 
                 await MyDelay(duration / countPerPetal);
-            }
+            }            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
+
 
             await MyDelay(recovery);
         }
 
         private async UniTaskVoid Shoot(int i, int j, int k)
         {
+            ReadyEffectFactory
+                .ShootCreateAndWait(new ReadyEffectParameter(Parent, () => CalcPos(i, j, k), 0.5f,
+                    () => CalcDir(i, j, k))).Forget();
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => CalcPos(i, j, k)));
             directionalBullet.CreateFromPrefab(CalcPos(i, j, k), CalcDir(i, j, k) * speed);
         }
@@ -49,7 +55,7 @@ namespace Battle.Character.Enemy.Variables.Dorothy
         private Vector2 CalcPos(int i, int j, int k)
         {
             var offset = -CalcDir(i, j, k) * 2f;
-            offset *= 1f - (countPerPetal - i-1) / (float)countPerPetal;
+            offset *= 1f - (countPerPetal - i - 1) / (float)countPerPetal;
             return (Vector2)Parent.Rigidbody.position + offset;
         }
 

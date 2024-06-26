@@ -4,14 +4,14 @@ using UniRx;
 
 namespace Battle.Character.Enemy.Variables.TestSummonMan
 {
-    public class TestManController : BossBase<TestManController.State>
+    public class TestManController : BossControllerBase<TestManController.State>
     {
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
 
-            GameLoop.Event
-                .Where(value => value == GameLoop.GameEvent.BattleStart)
+            BattleLoop.Event
+                .Where(value => value == BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => Loop().Forget())
                 .AddTo(this);

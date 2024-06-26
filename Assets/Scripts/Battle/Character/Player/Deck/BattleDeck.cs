@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DeckEdit.Model;
 using Others;
 using Others.Utils;
 using UniRx;
@@ -14,7 +15,8 @@ namespace Battle.Character.Player.Deck
         [Inject] private readonly IDeckPresenter _deckPresenter;
 
 
-        private readonly List<string> _originDeck = new();
+        private DeckData _originDeck;
+
         private readonly List<string> _currentDeck = new();
 
         private readonly Subject<Unit> _onDraw = new();
@@ -23,8 +25,12 @@ namespace Battle.Character.Player.Deck
 
         public void Init()
         {
-            _originDeck.AddRange(_deckPresenter.LoadDeck());
+            _originDeck = _deckPresenter.LoadDeck();
             ResetDeck();
+            
+            //Debug
+         //   _currentDeck.Insert(0, _originDeck.highlanderSpell);
+
         }
 
 
@@ -35,7 +41,12 @@ namespace Battle.Character.Player.Deck
             spellKey = v;
 
             if (GetCount() <= 0)
+            {
                 ResetDeck();
+
+                _currentDeck.Insert(0, _originDeck.highlanderSpell);
+            }
+
 
             _onDraw.OnNext(Unit.Default);
         }
@@ -43,14 +54,14 @@ namespace Battle.Character.Player.Deck
         private void ResetDeck()
         {
             _currentDeck.Clear();
-            _currentDeck.AddRange(_originDeck.Shuffle());
+            _currentDeck.AddRange(_originDeck.normalSpellDeck.Shuffle());
         }
 
         public int GetCount() => _currentDeck.Count;
 
         public interface IDeckPresenter
         {
-            public IReadOnlyList<string> LoadDeck();
+            public DeckData LoadDeck();
         }
 
         public void Dispose()

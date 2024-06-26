@@ -27,7 +27,9 @@ namespace Battle.PlayerSpell
         protected SpellDatabase SpellDatabase { get; private set; }
         protected SpellData SpellData { get; private set; }
 
-        protected ServantFactory ServantFactory { get; private set; }
+        protected AttackDatabase AttackDatabase { get; private set; }
+
+        protected CharacterFactory CharacterFactory { get; private set; }
 
         protected string CharacterKey => PlayerCore.CharacterKey;
 
@@ -37,16 +39,18 @@ namespace Battle.PlayerSpell
             AllCharacterManager allCharacterManager,
             MagicCircleFactory magicCircleFactory,
             SpellDatabase spellDatabase,
+            AttackDatabase attackDatabase,
             SpellData spellData,
-            ServantFactory servantFactory)
+            CharacterFactory characterFactory)
         {
             var instance = Instantiate(this);
             instance.PlayerCore = playerCore;
             instance.AllCharacterManager = allCharacterManager;
             instance.MagicCircleFactory = magicCircleFactory;
             instance.SpellDatabase = spellDatabase;
+            instance.AttackDatabase = attackDatabase;
             instance.SpellData = spellData;
-            instance.ServantFactory = servantFactory;
+            instance.CharacterFactory = characterFactory;
             instance.Init();
             return instance;
         }

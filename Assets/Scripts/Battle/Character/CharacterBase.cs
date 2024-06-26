@@ -37,12 +37,16 @@ namespace Battle.Character
         [Inject] protected AttackDatabase AttackDatabase { get; private set; }
         [Inject] protected CharacterDatabase CharacterDatabase { get; private set; }
         [Inject] protected AllCharacterManager AllCharacterManager { get; private set; }
-        [Inject] protected GameLoop GameLoop { get; private set; }
+        [Inject] protected BattleLoop BattleLoop { get; private set; }
         [Inject] protected MagicCircleFactory MagicCircleFactory { get; private set; }
 
-        [Inject] protected ServantFactory ServantFactory { get; private set; }
+        [Inject] protected CharacterFactory CharacterFactory { get; private set; }
         [Inject] protected ReadyEffectFactory ReadyEffectFactory { get; private set; }
         [Inject] protected CharacterCamera CharacterCamera { get; private set; }
+        [Inject] protected CameraSwitcher CameraSwitcher { get; private set; }
+
+
+        protected CharacterBase Master { get; private set; }
 
 
         private Vector3 _animatorLocalPosition;
@@ -53,7 +57,7 @@ namespace Battle.Character
             get => _currentLife.Value;
             set
             {
-                _currentLife.Value = value;
+                _currentLife.Value = Mathf.Clamp(value, 0, CharacterData.Life);
                 if (value <= 0)
                     IsDead = true;
             }
@@ -74,25 +78,30 @@ namespace Battle.Character
             _isDead.Where(value => value).AsUnitObservable().TakeUntilDestroy(this);
 
         public void AcquiredInject(
+            CharacterBase master,
             AttackHitEffectFactory attackHitEffectFactory,
             AttackDatabase attackDatabase,
             CharacterDatabase characterDatabase,
             AllCharacterManager allCharacterManager,
-            GameLoop gameLoop,
+            BattleLoop battleLoop,
             MagicCircleFactory magicCircleFactory,
-            ServantFactory servantFactory,
+            CharacterFactory characterFactory,
             ReadyEffectFactory readyEffectFactory,
-            CharacterCamera characterCamera)
+            CharacterCamera characterCamera,
+            CameraSwitcher cameraSwitcher)
         {
+            Master = master;
+            
             AttackHitEffectFactory = attackHitEffectFactory;
             AttackDatabase = attackDatabase;
             CharacterDatabase = characterDatabase;
             AllCharacterManager = allCharacterManager;
-            GameLoop = gameLoop;
+            BattleLoop = battleLoop;
             MagicCircleFactory = magicCircleFactory;
-            ServantFactory = servantFactory;
+            CharacterFactory = characterFactory;
             ReadyEffectFactory = readyEffectFactory;
             CharacterCamera = characterCamera;
+            CameraSwitcher = cameraSwitcher;
         }
 
 
@@ -116,7 +125,8 @@ namespace Battle.Character
             {
                 IsStop = true
             };
-            GameLoop.Event.Where(value => value == GameLoop.GameEvent.BattleStart).Take(1)
+            
+            BattleLoop.Event.Where(value => value == BattleEvent.BattleStart).Take(1)
                 .Subscribe(_ => CharacterRotation.IsStop = false).AddTo(this);
 
             CharacterData = CharacterDatabase.Find(characterKey);

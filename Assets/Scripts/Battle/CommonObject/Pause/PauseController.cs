@@ -16,7 +16,7 @@ namespace Battle.CommonObject.Pause
     public class PauseController : MonoBehaviour
     {
         [Inject] private readonly MyInputManager _myInputManager;
-        private PlayerInput PlayerInput => _myInputManager.UiInput;
+        private PlayerInput PlayerInput => _myInputManager.PlayerInput;
 
         private Choice _currentChoice;
         private bool _isActive;
@@ -61,7 +61,7 @@ namespace Battle.CommonObject.Pause
 
             TryCancelPause();
             MovePointer();
-            TryPressButton();
+            TryPressButton().Forget();
 
             _preInput = PlayerInput.actions["Vertical"].ReadValue<float>();
         }
@@ -72,7 +72,8 @@ namespace Battle.CommonObject.Pause
             Time.timeScale = isActive ? 0 : 1;
 
             await UniTask.Yield();
-            _myInputManager.BattleInput.enabled = isActive;
+           // _myInputManager.BattleInput.enabled = isActive;
+           _myInputManager.PlayerInput.SwitchCurrentActionMap(isActive ? "UI" : "Player");
 
             await canvasGroup.DOFade(isActive ? 1 : 0, 0.1f).SetUpdate(true);
         }
@@ -134,11 +135,12 @@ namespace Battle.CommonObject.Pause
                 case Choice.Home:
                     Time.timeScale = 1;
                     await _mySceneManager.ChangeSceneAsync("Home");
-                    _myInputManager.BattleInput.enabled = true;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            //_myInputManager.BattleInput.enabled = true;
         }
 
         private void UpdateView()

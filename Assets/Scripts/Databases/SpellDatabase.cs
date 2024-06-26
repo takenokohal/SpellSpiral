@@ -37,7 +37,7 @@ namespace Databases
 #if UNITY_EDITOR
 
         [Button]
-        private void Update()
+      public void Update()
         {
             UpdateAsync().Forget();
         }

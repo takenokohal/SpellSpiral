@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Battle.Character;
 using Battle.Character.Enemy;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -17,7 +18,7 @@ namespace Battle.CommonObject.Result
 {
     public class WinController : MonoBehaviour
     {
-        [Inject] private readonly GameLoop _gameLoop;
+        [Inject] private readonly BattleLoop _battleLoop;
         [Inject] private readonly AllCharacterManager _allCharacterManager;
         [Inject] private readonly MyInputManager _myInputManager;
 
@@ -25,7 +26,6 @@ namespace Battle.CommonObject.Result
 
         [SerializeField] private CanvasGroup mainCanvas;
 
-        //  [SerializeField] private CanvasGroup loseCanvas;
         [SerializeField] private Image whiteOut;
         [SerializeField] private TMP_Text missionCompleteText;
 
@@ -35,8 +35,8 @@ namespace Battle.CommonObject.Result
 
         private void Start()
         {
-            _gameLoop.Event
-                .Where(value => value == GameLoop.GameEvent.Win)
+            _battleLoop.Event
+                .Where(value => value == BattleEvent.Win)
                 .Subscribe(_ => OnWin().Forget())
                 .AddTo(this);
         }
@@ -55,23 +55,6 @@ namespace Battle.CommonObject.Result
             effect.Play();
             enemy.Animator.gameObject.SetActive(false);
 
-            //  await mainCanvas.DOFade(0, 1);
-
-            /*
-            loseCanvas.gameObject.SetActive(true);
-
-            loseCanvas.DOFade(0, 0);
-
-            await loseCanvas.DOFade(1, 1f);
-            
-
-            var buttons = input.currentActionMap
-                .Where(value => value.type == InputActionType.Button);
-
-            await UniTask.WaitUntil(() => buttons.Any(value => value.WasPressedThisFrame()));
-            
-            */
-
             await UniTask.Delay(1000, cancellationToken: destroyCancellationToken);
 
             whiteOut.gameObject.SetActive(true);
@@ -82,7 +65,10 @@ namespace Battle.CommonObject.Result
             await missionCompleteText.transform.DOScaleY(0, 0);
             await missionCompleteText.transform.DOScaleY(1, 0.2f);
 
-            await UniTask.WaitUntil(() => _myInputManager.UiInput.actions.Any(value => value.WasPressedThisFrame()));
+
+            _myInputManager.PlayerInput.SwitchCurrentActionMap("UI");
+            await UniTask.WaitUntil(() =>
+                _myInputManager.PlayerInput.actions.Any(value => value.WasPressedThisFrame()));
 
             await missionCompleteText.transform.DOScaleY(0, 0.2f);
 

@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
+using Battle.CutIn;
+using Battle.MyCamera;
 using Battle.PlayerSpell;
 using Cysharp.Threading.Tasks;
 using Databases;
@@ -17,10 +19,12 @@ namespace Battle.Character.Player
     public class PlayerChant : PlayerComponent
     {
         [Inject] private readonly BattleDeck _battleDeck;
+        [Inject] private readonly CameraSwitcher _cameraSwitcher;
 
         private readonly ReactiveDictionary<SpellSlot, string> _currentSpells = new();
+
         public IReadOnlyReactiveDictionary<SpellSlot, string> CurrentSpells => _currentSpells;
-        [ShowInInspector] private IReactiveDictionary<SpellSlot, string> ForInspector => _currentSpells;
+        // [ShowInInspector] private IReactiveDictionary<SpellSlot, string> ForInspector => _currentSpells;
 
         [Inject] private readonly SpellFactory _spellFactory;
         [Inject] private readonly SpellDatabase _spellDatabase;
@@ -30,6 +34,10 @@ namespace Battle.Character.Player
 
         private readonly Subject<SpellSlot> _onChantSuccess = new();
         public IObservable<SpellSlot> OnChantSuccess => _onChantSuccess;
+
+        [SerializeField] private ParticleSystem highlanderEffect;
+
+        [Inject] private readonly CutInController _cutInController;
 
         private bool CantChant =>
             IsPlayerDead ||
@@ -105,10 +113,6 @@ namespace Battle.Character.Player
 
             PlayerParameter.Mana -= manaCost;
 
-            _spellFactory.Create(spellKey);
-
-            TryDuplication(spellKey).Forget();
-
 
             switch (spellData.SpellType)
             {
@@ -120,9 +124,17 @@ namespace Battle.Character.Player
                     WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Buff);
                     break;
 
+
+                case SpellType.Highlander:
+                    ChantHighlander(spellKey).Forget();
+                    return true;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            _spellFactory.Create(spellKey);
+            TryDuplication(spellKey).Forget();
+
 
             UniTask.Void(async () =>
             {
@@ -135,6 +147,37 @@ namespace Battle.Character.Player
             });
 
             return true;
+        }
+
+        private async UniTaskVoid ChantHighlander(string spellKey)
+        {
+            PlayerParameter.SpellChanting = true;
+
+            Time.timeScale = 0;
+
+            await _cutInController.CutIn(PlayerCore.CharacterRotation.IsRight, PlayerCore.Animator.transform);
+            //  PlayerCore.Animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+            //  PlayerCore.Animator.Play("CutIn", 0, 0);
+            //  _cameraSwitcher.SetIgnoreTimeScale(true);
+            //    _cameraSwitcher.SetCutInSwitch(true);
+
+            //  await UniTask.Delay(100, ignoreTimeScale: true, cancellationToken: destroyCancellationToken);
+            //  _cameraSwitcher.SetCutInSwitch(false);
+
+            //  await UniTask.Delay(500, ignoreTimeScale: true, cancellationToken: destroyCancellationToken);
+
+            //  _cameraSwitcher.SetIgnoreTimeScale(false);
+           Time.timeScale = 1;
+            PlayerParameter.SpellChanting = false;
+
+            //    PlayerCore.Animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
+
+            _spellFactory.Create(spellKey);
+
+
+            var isCharged = PlayerCore.PlayerInput.actions["Charge"].IsPressed();
+            if (isCharged)
+                WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Charge);
         }
 
         private async UniTaskVoid TryDuplication(string spellKey)

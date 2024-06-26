@@ -9,13 +9,6 @@ namespace Battle.Character.Player
     {
         [Inject] private readonly AllCharacterManager _allCharacterManager;
 
-        /*
-        public static int HorizontalAnimKey { get; } = Animator.StringToHash("HorizontalSpeed");
-        public static int VerticalAnimKey { get; } = Animator.StringToHash("VerticalSpeed");
-        public Vector2 AnimationBlendValue { get; set; }
-        
-        */
-
         protected override void Init()
         {
         }

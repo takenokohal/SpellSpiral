@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Battle.Character;
 using Cysharp.Threading.Tasks;
+using Databases;
 using DG.Tweening;
 using Others.Input;
 using Others.Scene;
@@ -18,14 +21,18 @@ namespace HomeScene
 
         [Inject] private readonly MySceneManager _mySceneManager;
         [Inject] private readonly MyInputManager _myInputManager;
-        [SerializeField] private List<IconAndTitle.Parameter> parameters;
+        private readonly List<IconAndTitle.Parameter> _parameters = new();
+
+
+        [Inject] private readonly CharacterDatabase _characterDatabase;
+        [SerializeField] private Sprite magicCircleTest;
 
 
         private bool _isOpen;
 
         private readonly Subject<Unit> _onExit = new();
         public IObservable<Unit> OnExit => _onExit.TakeUntilDestroy(this);
-        
+
         public bool IsInitialized { get; private set; }
 
         private void Start()
@@ -33,7 +40,16 @@ namespace HomeScene
             _canvasGroup = GetComponent<CanvasGroup>();
             _verticalChoiceListView = GetComponent<VerticalChoiceListView>();
 
-            _verticalChoiceListView.Initialize(_myInputManager, parameters);
+            _parameters.AddRange(_characterDatabase.CharacterDictionary
+                .Where(value => value.Value.CharacterType == CharacterType.Boss)
+                .Where(value => value.Key != "TrainingCubeMan" && value.Key != "TestMan")
+                .Select(value =>
+                    new IconAndTitle.Parameter()
+                    {
+                        sprite = magicCircleTest,
+                        title = value.Key
+                    }));
+            _verticalChoiceListView.Initialize(_myInputManager, _parameters);
             _verticalChoiceListView.OnSelect.Where(_ => _isOpen).Subscribe(OnSelect).AddTo(this);
 
             _verticalChoiceListView.OnExit.Where(_ => _isOpen).Subscribe(_ => _onExit.OnNext(Unit.Default));
@@ -59,7 +75,7 @@ namespace HomeScene
 
         private void OnSelect(int i)
         {
-            var nextScene = parameters[i].title;
+            var nextScene = _parameters[i].title;
 
             _verticalChoiceListView.enabled = false;
             Close();

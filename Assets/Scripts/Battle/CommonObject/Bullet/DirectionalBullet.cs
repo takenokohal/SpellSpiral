@@ -65,6 +65,7 @@ namespace Battle.CommonObject.Bullet
             AutoKill().Forget();
             if (!pierce)
                 attackHitController.OnAttackHit
+                    .Where(_ => !IsDead)
                     .Subscribe(_ => { Kill().Forget(); });
 
             if (lifeTime > 0f)

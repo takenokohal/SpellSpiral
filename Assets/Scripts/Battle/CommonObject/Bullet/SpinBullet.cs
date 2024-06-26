@@ -16,9 +16,7 @@ namespace Battle.CommonObject.Bullet
 
 
         private Parameter _parameter;
-
-        private float _elapsedTime;
-
+        
         private readonly ReactiveProperty<bool> _isDead = new();
 
         public bool IsDead
@@ -53,13 +51,14 @@ namespace Battle.CommonObject.Bullet
             gameObject.SetActive(true);
             _parameter = parameter;
 
-            _elapsedTime = 0f;
 
             transform.position = _parameter.FirstPos;
             rb.velocity = _parameter.FirstVelocity;
             AutoKill().Forget();
 
-            attackHitController.OnAttackHit.Subscribe(_ => Kill().Forget());
+            attackHitController.OnAttackHit
+                .Where(_ => !IsDead)
+                .Subscribe(_ => Kill().Forget());
         }
 
         private void FixedUpdate()

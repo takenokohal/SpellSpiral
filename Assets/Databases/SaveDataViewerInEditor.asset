@@ -24,10 +24,10 @@ MonoBehaviour:
   currentSavedDeck:
   - FireShoot
   - FireShoot
-  - GatlingShoot
+  - FireShoot
   - FireCracker
   - FireCracker
-  - Rock
+  - FireCracker
   - IceMissile
   - IceMissile
   - IceMissile
@@ -42,3 +42,4 @@ MonoBehaviour:
   - Duplication
   - BuffDefense
   - BuffQuickManaCharge
+  highlanderSpell: ReflectionMirror

@@ -15,7 +15,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 8389639071835513862, guid: cfe44f977dc2e5343a5b85d53afb070c, type: 3}
+    - {fileID: 6338694605121556568, guid: ea6444b3dc47618419a47b99cad67e03, type: 3}
+    - {fileID: 3967026038914620472, guid: dfd640ab1a895ab4399c4b8564207766, type: 3}
+    - {fileID: 1975351335978203660, guid: c60a19c8bd4d6ba40918f6542a646d2f, type: 3}
+    - {fileID: -945058432717580697, guid: 451a1b0428bc9f9469495a91f2fc2286, type: 3}
+    - {fileID: 8674344247247707012, guid: 2a087a6bb570ff242b32a2f6ac7159b6, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -59,7 +65,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 100
+    - Name: characterBase
+      Entry: 10
+      Data: 0
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -91,10 +103,16 @@ MonoBehaviour:
       Data: 1
     - Name: life
       Entry: 3
-      Data: 300
+      Data: 200
+    - Name: characterBase
+      Entry: 10
+      Data: 1
     - Name: magicCircleSprite
       Entry: 6
       Data: 
+    - Name: stageObject
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -125,7 +143,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 5
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -158,7 +182,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 114514
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -191,7 +221,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 114514
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -224,7 +260,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 100
+    - Name: characterBase
+      Entry: 10
+      Data: 3
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -257,7 +299,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 50
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -290,7 +338,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 5
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -323,7 +377,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 5
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -356,7 +416,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 6
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -389,7 +455,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 4
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -422,7 +494,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 4
+    - Name: characterBase
+      Entry: 6
+      Data: 
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -455,7 +533,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 200
+    - Name: characterBase
+      Entry: 10
+      Data: 4
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 
@@ -488,7 +572,13 @@ MonoBehaviour:
     - Name: life
       Entry: 3
       Data: 150
+    - Name: characterBase
+      Entry: 10
+      Data: 5
     - Name: magicCircleSprite
+      Entry: 6
+      Data: 
+    - Name: stageObject
       Entry: 6
       Data: 
     - Name: 

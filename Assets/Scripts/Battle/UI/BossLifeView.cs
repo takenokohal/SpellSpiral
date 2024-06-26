@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Battle.Character;
 using Battle.Character.Enemy;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -32,18 +33,18 @@ namespace Battle.UI
             Init(_allCharacterManager.Boss);
         }
 
-        private void Init(EnemyBase enemyBase)
+        private void Init(BossBase bossBase)
         {
-            var maxLife = enemyBase.CharacterData.Life;
+            var maxLife = bossBase.CharacterData.Life;
             lifeGage.maxValue = maxLife;
             lifeGage.value = maxLife;
 
             redGage.maxValue = maxLife;
             redGage.value = maxLife;
 
-            enemyBase.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
+            bossBase.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
 
-            nameText.text = enemyBase.CharacterData.CharacterKey;
+            nameText.text = bossBase.CharacterData.CharacterKey;
         }
 
         private void OnLifeChange(float value)

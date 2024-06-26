@@ -18,7 +18,7 @@ namespace Battle.Character.Enemy.Variables.Molle
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 5,
                 () => Vector2.zero));
 
-            ServantFactory.CreateAndInject(highButterfly, Parent, Vector2.zero);
+            CharacterFactory.CreateAndInject(highButterfly, Parent, Vector2.zero);
         }
     }
 }

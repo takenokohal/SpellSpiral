@@ -1,4 +1,5 @@
-﻿using Battle.Character.Enemy;
+﻿using Battle.Character;
+using Battle.Character.Enemy;
 using Battle.Character.Player;
 using Battle.Character.Player.Buff;
 using Battle.Character.Servant;
@@ -14,7 +15,8 @@ namespace Battle.PlayerSpell
         [Inject] private readonly AllCharacterManager _allCharacterManager;
         [Inject] private readonly PlayerCore _playerCore;
         [Inject] private readonly MagicCircleFactory _magicCircleFactory;
-        [Inject] private readonly ServantFactory _servantFactory;
+        [Inject] private readonly CharacterFactory _characterFactory;
+        [Inject] private readonly AttackDatabase _attackDatabase;
 
 
         public void Create(string spellKey)
@@ -25,7 +27,8 @@ namespace Battle.PlayerSpell
                 _allCharacterManager,
                 _magicCircleFactory,
                 _spellDatabase,
-                spellData, _servantFactory);
+                _attackDatabase,
+                spellData, _characterFactory);
         }
     }
 }

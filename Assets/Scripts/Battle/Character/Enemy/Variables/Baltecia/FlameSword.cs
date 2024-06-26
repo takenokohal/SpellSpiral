@@ -13,11 +13,10 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
         [SerializeField] private float warpDuration;
 
-        [SerializeField] private ParticleSystem warpEffect;
-
-        // [SerializeField] private float drag;
-        // [SerializeField] private float moveSpeed;
         [SerializeField] private float recovery;
+
+
+        [SerializeField] private CharacterWarpController warpController;
 
         private void Start()
         {
@@ -28,6 +27,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 transform.SetParent(Parent.transform);
                 transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             });
+
+            warpController.Init(Parent.Rigidbody, Parent.WizardAnimationController);
         }
 
         public override BalteciaState StateKey => BalteciaState.FlameSword;
@@ -47,7 +48,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             await Warp();
 
             var offset = GetDirectionToPlayer().x >= 0 ? -1.5f : 1.5f;
-            Parent.Animator.Play("Attack", 0, 0);
+            
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Attack);
 
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 3f,
                 () => Parent.transform.position - new Vector3(offset, 0)));
@@ -61,23 +63,14 @@ namespace Battle.Character.Enemy.Variables.Baltecia
             Parent.ToAnimationVelocity = Vector2.zero;
 
             attackHitController.gameObject.SetActive(false);
-
-            //  rb.drag = 0;
-
+            
             await MyDelay(recovery);
         }
 
         private async UniTask Warp()
         {
-            AllAudioManager.PlaySe("Warp");
-            warpEffect.Play();
-            Animator.gameObject.SetActive(false);
-            await MyDelay(warpDuration);
-            Animator.gameObject.SetActive(true);
-
-            Parent.Rigidbody.position = TargetPos();
-            await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
-            warpEffect.Play();
+            await warpController.PlayPositionWarp(
+                new CharacterWarpController.PositionWarpParameter(TargetPos(), warpDuration));
         }
 
 

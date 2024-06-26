@@ -17,17 +17,19 @@ namespace Battle.Character.Enemy.Variables.Dorothy
         [SerializeField] private int count;
 
         [SerializeField] private int warpCount;
-        [SerializeField] private ParticleSystem warpEffect;
         [SerializeField] private float warpDuration;
+
         [SerializeField] private float shootDuration;
 
         [SerializeField] private float recovery;
 
+        [SerializeField] private CharacterWarpController characterWarpController;
 
         public override DorothyState StateKey => DorothyState.Cutter;
 
         private void Start()
         {
+            characterWarpController.Init(Parent.Rigidbody, Parent.WizardAnimationController);
             UniTask.Void(async () =>
             {
                 await UniTask.WaitWhile(() => !Parent.IsInitialized);
@@ -50,12 +52,19 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
                 await MyDelay(shootDuration);
             }
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
 
             await MyDelay(recovery);
         }
 
         private async UniTaskVoid Shoot(int i)
         {
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Attack);
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(
+                Parent,
+                () => CalcPos(i),
+                0.5f,
+                () => CalcDir(i))).Forget();
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => CalcPos(i)));
 
@@ -79,15 +88,9 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         private async UniTask Warp()
         {
-            AllAudioManager.PlaySe("Warp");
-            warpEffect.Play();
-            Animator.gameObject.SetActive(false);
-            await MyDelay(warpDuration);
-            Animator.gameObject.SetActive(true);
-
-            Parent.Rigidbody.position = Random.insideUnitCircle * 5;
-            await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
-            warpEffect.Play();
+            var pos = Random.insideUnitCircle * 5;
+            await characterWarpController.PlayPositionWarp(
+                new CharacterWarpController.PositionWarpParameter(pos, warpDuration));
         }
     }
 }

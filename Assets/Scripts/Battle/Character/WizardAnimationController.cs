@@ -51,7 +51,6 @@ namespace Battle.Character
             Charge,
             Attack,
             Buff,
-            OnDamage
         }
     }
 }

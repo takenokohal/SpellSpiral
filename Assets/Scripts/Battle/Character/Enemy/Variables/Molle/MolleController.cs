@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Battle.Character.Enemy.Variables.Molle
 {
-    public class MolleController : BossBase<MolleState>
+    public class MolleController : BossControllerBase<MolleState>
     {
         private readonly List<Vector3> _path = new();
         [SerializeField] private float maxX;
@@ -31,8 +31,8 @@ namespace Battle.Character.Enemy.Variables.Molle
             }
 
 
-            GameLoop.Event
-                .Where(value => value == GameLoop.GameEvent.BattleStart)
+            BattleLoop.Event
+                .Where(value => value == BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ =>
                 {

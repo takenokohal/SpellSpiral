@@ -87,7 +87,7 @@ Material:
     - _RimFresnelPower: 100
     - _RimLift: 0.1
     - _RimLightingMix: 1
-    - _ShadingShiftFactor: 0.5
+    - _ShadingShiftFactor: -0.06
     - _ShadingShiftTexScale: 1
     - _ShadingToonyFactor: 1
     - _TransparentWithZWrite: 0
@@ -100,5 +100,5 @@ Material:
     - _MatcapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 1, g: 0.7028302, b: 0.7028302, a: 1}
+    - _ShadeColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

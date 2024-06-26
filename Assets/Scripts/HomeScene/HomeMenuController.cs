@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Others;
+using Others.Dialog;
 using Others.Input;
 using Others.Scene;
 using UniRx;

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Battle.PlayerSpell;
 using Databases;
+using DeckEdit.Model;
 using DeckEdit.SaveData;
 using Others.Utils;
 using Sirenix.OdinInspector;
@@ -15,18 +17,24 @@ namespace Others.SaveData
         [SerializeField, ValueDropdown(nameof(GetStrings)), ListDrawerSettings(ShowPaging = false)]
         private List<string> currentSavedDeck;
 
+        [SerializeField, ValueDropdown(nameof(GetHighlanderStrings))]
+        private string highlanderSpell;
+
+
         [Button]
         private void Load()
         {
             var v = new DeckSaveDataPresenter();
-            currentSavedDeck = v.LoadDeck();
+            var deck = v.LoadDeck();
+            currentSavedDeck = deck.normalSpellDeck;
+            highlanderSpell = deck.highlanderSpell;
         }
 
         [Button]
         private void Save()
         {
             var v = new DeckSaveDataPresenter();
-            v.SaveDeck(currentSavedDeck);
+            v.SaveDeck(new DeckData(currentSavedDeck, highlanderSpell));
         }
 
         [Button]
@@ -59,8 +67,17 @@ namespace Others.SaveData
         private IEnumerable<string> GetStrings()
         {
             var v = SpellDatabase.LoadOnEditor();
-            return v.SpellDictionary.Select(value => value.Key);
+            return v.SpellDictionary.Where(value => value.Value.SpellType != SpellType.Highlander)
+                .Select(value => value.Key);
         }
+
+        private IEnumerable<string> GetHighlanderStrings()
+        {
+            var v = SpellDatabase.LoadOnEditor();
+            return v.SpellDictionary.Where(value => value.Value.SpellType == SpellType.Highlander)
+                .Select(value => value.Key);
+        }
+
 
         [Button]
         private void SetAllTypeSpell()
@@ -74,15 +91,11 @@ namespace Others.SaveData
         [Button]
         private void SetDefault()
         {
-            currentSavedDeck = DefaultDeckData.GetDefaultDeck();
+            var defaultDeck = DefaultDeckData.GetDefaultDeck();
+            currentSavedDeck = defaultDeck.normalSpellDeck;
+            highlanderSpell = defaultDeck.highlanderSpell;
 
             var db = SpellDatabase.LoadOnEditor();
-            foreach (var str in currentSavedDeck)
-            {
-                var data = db.Find(str);
-                Debug.Log(data.SpellBase);
-                Debug.Log(data.SpellIcon);
-            }
         }
 #endif
     }

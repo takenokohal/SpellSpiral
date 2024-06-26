@@ -2,7 +2,7 @@
 
 namespace Battle.Training
 {
-    public class TrainingCubeMan : BossBase<TrainingCubeMan.State>
+    public class TrainingCubeMan : BossControllerBase<TrainingCubeMan.State>
     {
         public enum State
         {

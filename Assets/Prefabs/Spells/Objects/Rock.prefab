@@ -59,7 +59,7 @@ MonoBehaviour:
     SerializationNodes: []
   attackKey:
     characterKey: Player
-    detailKey: IceGem
+    detailKey: Rock
 --- !u!54 &8664111075897988000
 Rigidbody:
   m_ObjectHideFlags: 0

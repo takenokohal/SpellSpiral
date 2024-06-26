@@ -5,6 +5,8 @@
         Fire, 
         Ice,
         Electric,
-        Wood
+        Wood,
+        
+        Highlander
     }
 }

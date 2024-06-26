@@ -73,7 +73,9 @@ namespace Battle.CommonObject.Bullet
             var target = _parameter.Target;
             target.OnDestroyAsObservable().Take(1).TakeUntilDestroy(this).Subscribe(_ => _elapsedTime = 114514);
 
-            attackHitController.OnAttackHit.Subscribe(_ =>
+            attackHitController.OnAttackHit
+                .Where(_ => !IsDead)
+                .Subscribe(_ =>
             {
                 _currentHitCount++;
                 if (_currentHitCount >= hitCount)

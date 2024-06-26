@@ -21,8 +21,9 @@ namespace Battle.Character.Player
 
         public IObservable<float> ManaObservable => _mana;
 
+        public int InvincibleFlag { get; set; }
 
-        public bool Invincible { get; set; }
+        public bool Invincible => InvincibleFlag > 0;
 
         public bool SpellChanting { get; set; }
         public bool QuickCharging { get; set; }

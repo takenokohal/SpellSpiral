@@ -52,7 +52,7 @@ namespace Battle.Character.Enemy.Variables.Molle
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => tmpPos));
 
-            var servant = ServantFactory.CreateAndInject(servantPrefab, Parent, tmpPos);
+            var servant = CharacterFactory.CreateAndInject(servantPrefab, Parent, tmpPos);
         }
     }
 }

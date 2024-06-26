@@ -4,7 +4,8 @@ namespace DeckEdit.Model
 {
     public interface IDeckSaveDataPresenter
     {
-        public List<string> LoadDeck();
-        public void SaveDeck(List<string> deck);
+        public DeckData LoadDeck();
+
+        public void SaveDeck(DeckData deckData);
     }
 }

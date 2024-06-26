@@ -3,6 +3,8 @@
     public enum SpellType
     {
         Attack,
-        Support
+        Support,
+        
+        Highlander
     }
 }

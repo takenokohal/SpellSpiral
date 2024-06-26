@@ -26,7 +26,7 @@ namespace Others
         private async UniTaskVoid WaitPressButton()
         {
             await UniTask.WaitUntil(
-                () => _myInputManager.UiInput.actions.Any(value => value.WasPressedThisFrame()),
+                () => _myInputManager.PlayerInput.actions.Any(value => value.WasPressedThisFrame()),
                 cancellationToken: destroyCancellationToken);
 
             _mySceneManager.ChangeSceneAsync("Home").Forget();

@@ -1,10 +1,13 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using HomeScene;
 using Others;
+using Others.Input;
 using Others.Scene;
 using Others.Utils;
 using TMPro;
+using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -14,41 +17,28 @@ namespace Battle.CommonObject.Result
 {
     public class LoseMenu : MonoBehaviour
     {
-        private PlayerInput _playerInput;
-
-        private Choice _currentChoice;
         private bool _isActive;
-
-        [SerializeField] private IconAndTitle[] iconAndTitles;
-        [SerializeField] private Transform pointer;
-
-        [SerializeField] private Color selectedColor;
-        [SerializeField] private Color unselectedColor;
-
-
+        
         [Inject] private readonly MySceneManager _mySceneManager;
 
-        [Serializable]
-        private class IconAndTitle
-        {
-            public Image icon;
-            public TMP_Text title;
-        }
+        [Inject] private readonly MyInputManager _myInputManager;
+
+        [SerializeField] private VerticalChoiceListView verticalChoiceListView;
+        [SerializeField] private IconAndTitle.Parameter[] parameters;
 
 
         public async UniTaskVoid Activate()
         {
+            verticalChoiceListView.Initialize(_myInputManager, parameters);
             gameObject.SetActive(true);
             await transform.DOScaleY(0, 0);
             await transform.DOScaleY(1, 0.5f);
             _isActive = true;
+            verticalChoiceListView.OnSelect.Where(_ => _isActive).Subscribe(OnSelect).AddTo(this);
         }
 
-        private void Start()
-        {
-            _playerInput = GetComponent<PlayerInput>();
-        }
 
+        /*
         private void Update()
         {
             if (!_isActive)
@@ -62,7 +52,7 @@ namespace Battle.CommonObject.Result
 
         private void MovePointer()
         {
-            var inputAction = _playerInput.actions["Move"];
+            var inputAction = PlayerInput.actions["Move"];
             if (!inputAction.triggered)
                 return;
 
@@ -81,7 +71,7 @@ namespace Battle.CommonObject.Result
 
         private void TryChangeScene()
         {
-            var inputAction = _playerInput.actions["Yes"];
+            var inputAction = PlayerInput.actions["Yes"];
             if (!inputAction.triggered)
                 return;
 
@@ -115,6 +105,20 @@ namespace Battle.CommonObject.Result
             Retry,
             EditDeck,
             Home
+        }
+        */
+
+        private void OnSelect(int i)
+        {
+            var key = parameters[i].title;
+
+            if (key == "Retry")
+            {
+                key = _mySceneManager.CurrentSceneName;
+            }
+
+            verticalChoiceListView.enabled = false;
+            _mySceneManager.ChangeSceneAsync(key).Forget();
         }
     }
 }

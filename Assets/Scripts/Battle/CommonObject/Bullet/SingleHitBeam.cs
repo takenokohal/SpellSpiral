@@ -44,7 +44,7 @@ namespace Battle.CommonObject.Bullet
             SetDirection(direction);
         }
 
-        public async UniTaskVoid Activate(float lifeTime)
+        public async UniTask Activate(float lifeTime)
         {
             attackHitControllerInChildren.gameObject.SetActive(true);
 

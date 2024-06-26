@@ -11,12 +11,11 @@ namespace Test
     {
         [Inject] private readonly IDeckSaveDataPresenter _deckSaveDataPresenter;
 
-        public IReadOnlyList<string> LoadDeck()
+        public DeckData LoadDeck()
         {
             var deck = _deckSaveDataPresenter.LoadDeck();
             return deck;
         }
-
         private IEnumerable<string> GetStrings()
         {
             var v = SpellDatabase.LoadOnEditor().SpellDictionary

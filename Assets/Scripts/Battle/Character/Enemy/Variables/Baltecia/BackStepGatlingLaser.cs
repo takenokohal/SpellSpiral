@@ -18,25 +18,25 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         [SerializeField] private float shootingRecovery;
 
 
-        [SerializeField] private GameObject laser;
+        [SerializeField] private SingleHitBeam singleHitBeam;
+
         [SerializeField] private float recovery;
 
 
         [SerializeField] private DirectionalBullet directionalBulletPrefab;
 
 
-        private void Start()
-        {
-            transform.SetParent(Parent.transform);
-            transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-        }
+        private Vector2 _currentBeamDir;
 
         public override BalteciaState StateKey => BalteciaState.BackStepAndGatlingAndLaser;
 
         protected override async UniTask Sequence()
         {
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
+            WizardAnimationController.HorizontalSpeedValue = -1f;
             //移動
             Parent.Rigidbody.drag = backStepDrag;
+
             Parent.Rigidbody.velocity = -GetDirectionToPlayer() * backStepSpeed;
 
             Parent.ToAnimationVelocity = -GetDirectionToPlayer();
@@ -45,8 +45,7 @@ namespace Battle.Character.Enemy.Variables.Baltecia
 
             Parent.ToAnimationVelocity = Vector2.zero;
 
-            Parent.Animator.Play("Attack", 0, 0);
-
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Attack);
 
             //射撃
             for (int i = 0; i < howManyIn1Side; i++)
@@ -76,26 +75,59 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 await MyDelay(shootingDuration / howManyIn1Side);
             }
 
+            WizardAnimationController.HorizontalSpeedValue = 0f;
+
+
             await MyDelay(shootingRecovery);
 
-            /*
-            Parent.LookPlayer();
 
-            laser.transform.LookAt(PlayerCore.Center);
-            laser.SetActive(true);
-            await MyDelay(1f);
-            laser.SetActive(false);
+            Parent.LookPlayer();
+            await Beam();
+
             await MyDelay(recovery - 1f);
-            */
         }
+
+        private async UniTask Beam()
+        {
+            ReadyEffectFactory
+                .BeamCreateAndWait(new ReadyEffectParameter(Parent, CalcBeamPos, 2, () => _currentBeamDir))
+                .Forget();
+            RotateBeam().Forget();
+            await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 2f, CalcBeamPos));
+            singleHitBeam.Activate(1f).Forget();
+            singleHitBeam.SetPositionAndDirection(CalcBeamPos(), _currentBeamDir);
+        }
+
+        private async UniTaskVoid RotateBeam()
+        {
+            _currentBeamDir = CalcBeamDir();
+            var tmpTime = 0f;
+            while (tmpTime < 1f)
+            {
+                _currentBeamDir = Vector2.Lerp(_currentBeamDir, CalcBeamDir(), 0.2f);
+                tmpTime += Time.fixedDeltaTime;
+                await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: destroyCancellationToken);
+            }
+        }
+
+        private Vector2 CalcBeamPos()
+        {
+            return (Vector2)Parent.Rigidbody.position + CalcBeamDir();
+        }
+
+        private Vector2 CalcBeamDir()
+        {
+            return GetDirectionToPlayer();
+        }
+
 
         private Vector2 CalcPos(int i, int j)
         {
             var v = j == 0 ? 1 : -1;
             var offset = Quaternion.Euler(0, 0, 90f * v) * GetDirectionToPlayer() * radius / 2f;
-            return (Vector2)Parent.transform.position +
+            return (Vector2)Parent.Rigidbody.position +
                    (Vector2)offset * (i * 0.2f) +
-                   GetDirectionToPlayer() * ((i - 2) * 0.1f)
+                   GetDirectionToPlayer() * ((i - 2) * 0.2f)
                    - GetDirectionToPlayer();
         }
 

@@ -17,7 +17,7 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         [SerializeField] private float maxShootCoolTime;
         [SerializeField] private float coolTimeReduceValue;
-        
+
         private float _currentShootCoolTime;
 
         public override DorothyState StateKey => DorothyState.Rain;
@@ -26,6 +26,8 @@ namespace Battle.Character.Enemy.Variables.Dorothy
         {
             _currentShootCoolTime = maxShootCoolTime;
 
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Charge);
+
             for (int i = 0; i < count; i++)
             {
                 Shoot().Forget();
@@ -33,7 +35,9 @@ namespace Battle.Character.Enemy.Variables.Dorothy
                 _currentShootCoolTime *= coolTimeReduceValue;
 
                 await MyDelay(_currentShootCoolTime);
-            }
+            }         
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
+
 
             await MyDelay(3);
         }
@@ -42,9 +46,11 @@ namespace Battle.Character.Enemy.Variables.Dorothy
         {
             var x = Random.Range(-xLength, xLength);
             var pos = new Vector2(x, yPos);
+            var dir = Quaternion.Euler(0, 0, Random.Range(-45f, 45f)) * Vector3.down;
+
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(Parent, () => pos, 0.5f, () => dir)).Forget();
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => pos));
 
-            var dir = Quaternion.Euler(0, 0, Random.Range(-45f, 45f)) * Vector3.down;
 
             directionalBullet.CreateFromPrefab(pos, dir * bulletSpeed);
         }

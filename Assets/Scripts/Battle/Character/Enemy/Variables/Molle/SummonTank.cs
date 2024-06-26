@@ -40,7 +40,7 @@ namespace Battle.Character.Enemy.Variables.Molle
             await MagicCircleFactory.CreateAndWait(
                 new MagicCircleParameters(Parent, 1, () => CalcPos(i)));
 
-            ServantFactory.CreateAndInject(servantPrefab, Parent, CalcPos(i));
+            CharacterFactory.CreateAndInject(servantPrefab, Parent, CalcPos(i));
         }
 
         private Vector2 CalcPos(int i)

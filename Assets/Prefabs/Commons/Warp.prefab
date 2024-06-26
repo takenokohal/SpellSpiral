@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4147432497291316991}
   - component: {fileID: 287199442140590780}
   - component: {fileID: 1979237832400450381}
+  - component: {fileID: 5688040375247839429}
   m_Layer: 7
   m_Name: Warp
   m_TagString: Untagged
@@ -4887,3 +4888,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5688040375247839429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5577559727603249524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d9b18f6dfb43179bfeff2096184b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 287199442140590780}

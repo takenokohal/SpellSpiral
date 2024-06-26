@@ -29,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.neuecc.unirx@284d5c50d3/UnityEngineBridge/UnityUIComponentExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Behaviours/CinemachineSmoothPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Behaviours/CinemachineTargetGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Core/SplineHelpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Impulse/CinemachineImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
@@ -121,10 +122,10 @@
           <line>147</line>
           <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\HomeScene\VerticalChoiceListView.cs" initialLine="147" containingFunctionPresentation="Method 'UpdateView'">
             <startOffsets>
-              <option value="3750" />
+              <option value="3754" />
             </startOffsets>
             <endOffsets>
-              <option value="3795" />
+              <option value="3799" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

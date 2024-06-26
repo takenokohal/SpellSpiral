@@ -8,27 +8,22 @@ namespace Battle.Attack
     public class AttackData
     {
         [SerializeField] private OwnerType ownerType;
-        [SerializeField] private int damage;
-        [SerializeField] private AttackWeight attackWeight;
+        [SerializeField] private float damage;
         [SerializeField] private SpellAttribute attribute;
 
         public AttackData(
             OwnerType ownerType,
-            int damage,
-            AttackWeight attackWeight,
+            float damage,
             SpellAttribute attribute)
         {
             this.ownerType = ownerType;
             this.damage = damage;
-            this.attackWeight = attackWeight;
             this.attribute = attribute;
         }
 
 
         public OwnerType OwnerType => ownerType;
-        public int Damage => damage;
-
-        public AttackWeight AttackWeight => attackWeight;
+        public float Damage => damage;
 
         public SpellAttribute Attribute => attribute;
     }

@@ -34,7 +34,7 @@ namespace Battle.Character.Enemy.Variables.Dorothy
 
         protected override async UniTask Sequence()
         {
-            SpecialCameraSwitcher.SetSwitch(true);
+            CameraSwitcher.SetSpecialCameraSwitch(true);
             await TweenToUniTask(Parent.Rigidbody.DOMove(new Vector3(0, 0), 1f));
             for (int i = 0; i < flowerCount; i++)
             {
@@ -42,7 +42,7 @@ namespace Battle.Character.Enemy.Variables.Dorothy
                 await MyDelay(duration / flowerCount);
             }
 
-            SpecialCameraSwitcher.SetSwitch(false);
+            CameraSwitcher.SetSpecialCameraSwitch(false);
             await MyDelay(recovery);
         }
 

@@ -5,6 +5,7 @@
         TackleAndShotgun,
         BackStepAndGatlingAndLaser,
         CornerGatling3,
+        LongGatling,
 
         FlameSword,
         Explosion,

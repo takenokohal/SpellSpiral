@@ -36,7 +36,7 @@ namespace Databases
         }
 
         [Button]
-        private void Update()
+        public void Update()
         {
             UpdateAsync().Forget();
         }
@@ -84,7 +84,21 @@ namespace Databases
 
                 var life = int.TryParse(cells[4].Trim('"'), out var lifeResult) ? lifeResult : 0;
 
-                var data = new CharacterData(characterKey, characterType, masterName, ownerType, life, null);
+
+                var characterBase =
+                    AssetDatabase.LoadAssetAtPath<CharacterBase>(PathsAndURL.CreateCharacterBasePath(characterKey));
+                var stageObject =
+                    AssetDatabase.LoadAssetAtPath<GameObject>(PathsAndURL.CreateStageObjectPath(characterKey));
+
+                var data = new CharacterData(
+                    characterKey,
+                    characterType,
+                    masterName,
+                    ownerType,
+                    life,
+                    characterBase,
+                    null,
+                    stageObject);
 
                 _characterDictionary.TryAdd(characterKey, data);
             }

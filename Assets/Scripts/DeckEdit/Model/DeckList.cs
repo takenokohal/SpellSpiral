@@ -11,12 +11,15 @@ using VContainer.Unity;
 
 namespace DeckEdit.Model
 {
-    public class DeckList : IInitializable ,IDisposable
+    public class DeckList : IInitializable, IDisposable
     {
         [Inject] private readonly SpellDatabase _spellDatabase;
         [Inject] private readonly IDeckSaveDataPresenter _deckSaveDataPresenter;
         private List<SpellKey> _currentDeckList = new();
         public IReadOnlyList<SpellKey> CurrentDeckList => _currentDeckList;
+
+        public SpellKey CurrentHighlanderSpell { get; private set; }
+
 
         private readonly Subject<SpellKey> _onAdd = new();
         private readonly Subject<SpellKey> _onRemove = new();
@@ -53,7 +56,8 @@ namespace DeckEdit.Model
 
         public void Save()
         {
-            _deckSaveDataPresenter.SaveDeck(_currentDeckList.Select(value => value.Key).ToList());
+            _deckSaveDataPresenter.SaveDeck(new DeckData(_currentDeckList.Select(value => value.Key).ToList(),
+                CurrentHighlanderSpell.Key));
         }
 
         private void Sort()
@@ -71,9 +75,10 @@ namespace DeckEdit.Model
 
         public void Initialize()
         {
-            var saveData = _deckSaveDataPresenter.LoadDeck() ?? new List<string>();
+            var saveData = _deckSaveDataPresenter.LoadDeck();
 
-            _currentDeckList.AddRange(saveData.Select(value => new SpellKey(value)));
+            _currentDeckList.AddRange(saveData.normalSpellDeck.Select(value => new SpellKey(value)));
+            CurrentHighlanderSpell = new SpellKey(saveData.highlanderSpell);
         }
 
         public void Dispose()

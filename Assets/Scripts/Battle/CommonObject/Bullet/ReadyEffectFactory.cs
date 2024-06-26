@@ -8,32 +8,32 @@ namespace Battle.CommonObject.Bullet
 {
     public class ReadyEffectFactory : MonoBehaviour
     {
-        [SerializeField] private ReadyEffect beamEffectPrefab;
-        [SerializeField] private ReadyEffect shootEffectPrefab;
+        [SerializeField] private ParticleSystem beamEffectPrefab;
+        [SerializeField] private ParticleSystem shootEffectPrefab;
 
         [Inject] private readonly CharacterDatabase _characterDatabase;
 
-        private ObjectPool<ReadyEffect> _beamPool;
-        private ObjectPool<ReadyEffect> _shootPool;
+        private ObjectPool<ParticleSystem> _beamPool;
+        private ObjectPool<ParticleSystem> _shootPool;
 
         private void Start()
         {
-            _beamPool = new ObjectPool<ReadyEffect>(
+            _beamPool = new ObjectPool<ParticleSystem>(
                 (() => Instantiate(beamEffectPrefab)),
-                effect => effect.Activate(),
-                effect => effect.Close());
+                effect => effect.gameObject.SetActive(true),
+                effect => effect.gameObject.SetActive(false));
 
-            _shootPool = new ObjectPool<ReadyEffect>(
+            _shootPool = new ObjectPool<ParticleSystem>(
                 (() => Instantiate(shootEffectPrefab)),
-                effect => effect.Activate(),
-                effect => effect.Close());
+                effect => effect.gameObject.SetActive(true),
+                effect => effect.gameObject.SetActive(false));
         }
 
 
-        public async UniTask BeamCreateAndWait(ReadyEffectParameter readyEffectParameter)
+        public async UniTask BeamCreateAndWait(ReadyEffectParameter parameter)
         {
             var effect = _beamPool.Get();
-            var data = _characterDatabase.Find(readyEffectParameter.CharacterKey);
+            var data = _characterDatabase.Find(parameter.CharacterKey);
 
 
             var timeCount = 0f;
@@ -41,8 +41,8 @@ namespace Battle.CommonObject.Bullet
 
             while (timeCount < data.ChantTime)
             {
-                t.position = readyEffectParameter.Position.Invoke();
-                t.rotation = Quaternion.Euler(0, 0, readyEffectParameter.Rotation.Invoke());
+                t.position = parameter.Position.Invoke();
+                t.rotation = Quaternion.Euler(0, 0, parameter.Rotation.Invoke());
                 timeCount += Time.fixedDeltaTime;
 
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: destroyCancellationToken);
@@ -51,10 +51,10 @@ namespace Battle.CommonObject.Bullet
             _beamPool.Release(effect);
         }
 
-        public async UniTask ShootCreateAndWait(ReadyEffectParameter readyEffectParameter)
+        public async UniTask ShootCreateAndWait(ReadyEffectParameter parameter)
         {
             var effect = _shootPool.Get();
-            var data = _characterDatabase.Find(readyEffectParameter.CharacterKey);
+            var data = _characterDatabase.Find(parameter.CharacterKey);
 
 
             var timeCount = 0f;
@@ -62,8 +62,9 @@ namespace Battle.CommonObject.Bullet
 
             while (timeCount < data.ChantTime)
             {
-                t.position = readyEffectParameter.Position.Invoke();
-                t.rotation = Quaternion.Euler(0, 0, readyEffectParameter.Rotation.Invoke());
+                t.position = parameter.Position.Invoke();
+                t.rotation = Quaternion.Euler(0, 0, parameter.Rotation.Invoke());
+                t.localScale = parameter.Size * Vector3.one;
                 timeCount += Time.fixedDeltaTime;
 
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: destroyCancellationToken);

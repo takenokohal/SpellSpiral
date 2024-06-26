@@ -20,38 +20,38 @@ namespace Battle.Character.Enemy
     {
         public class SequenceRequiredComponents
         {
-            public BossBase<T> Parent { get; set; }
-            
+            public BossControllerBase<T> Parent { get; set; }
+
             public PlayerCore PlayerCore { get; set; }
             public AllCharacterManager AllCharacterManager { get; set; }
 
-            public SpecialCameraSwitcher SpecialCameraSwitcher { get; set; }
+            public CameraSwitcher CameraSwitcher { get; set; }
 
             public MagicCircleFactory MagicCircleFactory { get; set; }
             public ReadyEffectFactory ReadyEffectFactory { get; set; }
-            
-            public ServantFactory ServantFactory { get; set; }
+
+            public CharacterFactory CharacterFactory { get; set; }
         }
 
 
-        protected BossBase<T> Parent { get; private set; }
+        protected BossControllerBase<T> Parent { get; private set; }
 
         protected string CharacterKey => Parent.CharacterKey;
         protected PlayerCore PlayerCore { get; private set; }
 
         protected AllCharacterManager AllCharacterManager { get; private set; }
 
-        protected SpecialCameraSwitcher SpecialCameraSwitcher { get; private set; }
+        protected CameraSwitcher CameraSwitcher { get; private set; }
 
         protected MagicCircleFactory MagicCircleFactory { get; private set; }
-        
+
         protected ReadyEffectFactory ReadyEffectFactory { get; private set; }
-        
-        protected ServantFactory ServantFactory { get; private set; }
-        
+
+        protected CharacterFactory CharacterFactory { get; private set; }
+
         public CancellationTokenSource SequenceCancellationToken { get; private set; }
 
-        public Animator Animator => Parent.Animator;
+        public WizardAnimationController WizardAnimationController => Parent.WizardAnimationController;
 
 
         public abstract T StateKey { get; }
@@ -78,12 +78,12 @@ namespace Battle.Character.Enemy
             Parent = sequenceRequiredComponents.Parent;
             PlayerCore = sequenceRequiredComponents.PlayerCore;
             AllCharacterManager = sequenceRequiredComponents.AllCharacterManager;
-            SpecialCameraSwitcher = sequenceRequiredComponents.SpecialCameraSwitcher;
+            CameraSwitcher = sequenceRequiredComponents.CameraSwitcher;
 
             MagicCircleFactory = sequenceRequiredComponents.MagicCircleFactory;
             ReadyEffectFactory = sequenceRequiredComponents.ReadyEffectFactory;
-            ServantFactory = sequenceRequiredComponents.ServantFactory;
-            
+            CharacterFactory = sequenceRequiredComponents.CharacterFactory;
+
             SequenceCancellationToken = new CancellationTokenSource();
 
             gameObject.OnDestroyAsObservable().Subscribe(_ => SequenceCancellationToken?.Cancel());
@@ -117,6 +117,5 @@ namespace Battle.Character.Enemy
             tween.SetUpdate(UpdateType.Fixed);
             return tween.ToUniTask(cancellationToken: SequenceCancellationToken.Token);
         }
-        
     }
 }

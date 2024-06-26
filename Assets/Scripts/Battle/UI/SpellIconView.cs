@@ -31,6 +31,8 @@ namespace Battle.UI
 
         [SerializeField] private TMP_Text deckCount;
 
+        [SerializeField] private Image highlanderEffect;
+        private Tween _highlanderAnimation;
 
         private void Start()
         {
@@ -39,7 +41,19 @@ namespace Battle.UI
                 var data = _spellDatabase.Find(value.NewValue);
 
                 _iconImages[value.Key].sprite = data.SpellIcon;
-             //   _iconBackGround[value.Key].color = data.SpellIconColor;
+                //   _iconBackGround[value.Key].color = data.SpellIconColor;
+
+                if (data.SpellType == SpellType.Highlander)
+                {
+                    HighlanderAnimation(value.Key);
+                }
+
+                if (_spellDatabase.Find(value.OldValue).SpellType == SpellType.Highlander)
+                {
+                    _highlanderAnimation?.Kill();
+                    _highlanderAnimation = null;
+                    highlanderEffect.gameObject.SetActive(false);
+                }
             }).AddTo(this);
 
             _playerChant.CurrentSpells.ObserveAdd().Subscribe(value =>
@@ -47,7 +61,13 @@ namespace Battle.UI
                 var data = _spellDatabase.Find(value.Value);
 
                 _iconImages[value.Key].sprite = data.SpellIcon;
-             //   _iconBackGround[value.Key].color = data.SpellIconColor;
+                //   _iconBackGround[value.Key].color = data.SpellIconColor;
+
+
+                if (data.SpellType == SpellType.Highlander)
+                {
+                    HighlanderAnimation(value.Key);
+                }
             }).AddTo(this);
 
             _playerChant.OnChantSuccess.Subscribe(value =>
@@ -61,10 +81,10 @@ namespace Battle.UI
                     successAnimation.gameObject.SetActive(true);
 
                     successAnimation.transform.localScale = Vector3.one;
-                    successAnimation.transform.DOScale(2.5f, 0.5f);
+                    successAnimation.transform.DOScale(2.5f, 0.5f).SetUpdate(true);
                     successAnimation.DOFade(1, 0);
 
-                    await successAnimation.DOFade(0, 0.5f);
+                    await successAnimation.DOFade(0, 0.5f).SetUpdate(true);
                     successAnimation.gameObject.SetActive(false);
                 });
             }).AddTo(this);
@@ -93,7 +113,24 @@ namespace Battle.UI
                 var img = _iconBackGround[playerChantCurrentSpell.Key];
                 img.color = Color.Lerp(img.color, color, 0.2f);
             }
-            
+        }
+
+        private void HighlanderAnimation(SpellSlot spellSlot)
+        {
+            var backGround = _iconBackGround[spellSlot];
+
+            highlanderEffect.gameObject.SetActive(true);
+
+            var seq = DOTween.Sequence();
+            seq.Append(highlanderEffect.transform.DOScale(2.5f, 0.5f));
+            seq.Join(highlanderEffect.DOFade(0, 0.5f));
+            seq.SetLoops(-1, LoopType.Restart);
+            seq.OnUpdate(() =>
+                highlanderEffect.transform.position = backGround.transform.position);
+            seq.SetUpdate(true);
+            Debug.Log(highlanderEffect);
+
+            _highlanderAnimation = seq;
         }
     }
 }

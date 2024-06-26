@@ -33,6 +33,7 @@ namespace Battle.Character.Enemy.Variables.Dorothy
             {
                 for (int k = 0; k < 2; k++)
                 {
+                    WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Attack);
                     for (int j = 0; j < petalCount; j++)
                     {
                         Shoot(j, k).Forget();
@@ -41,12 +42,16 @@ namespace Battle.Character.Enemy.Variables.Dorothy
                     await MyDelay(duration / loopCount / 2);
                 }
             }
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
+
             await MyDelay(recovery);
-            Parent.Rigidbody.velocity= Vector3.zero;
+            Parent.Rigidbody.velocity = Vector3.zero;
         }
 
         private async UniTaskVoid Shoot(int j, int k)
         {
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(Parent, () => CalcPos(j, k), 0.5f,
+                () => CalcDir(j, k))).Forget();
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => CalcPos(j, k)));
 
             var speed = k == 0 ? bulletHighSpeed : bulletLowSpeed;

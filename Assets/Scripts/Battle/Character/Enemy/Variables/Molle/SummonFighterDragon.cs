@@ -19,7 +19,7 @@ namespace Battle.Character.Enemy.Variables.Molle
                 CalcPos));
             
             
-            var servant = ServantFactory.CreateAndInject(homingServant, Parent, CalcPos());
+            var servant = CharacterFactory.CreateAndInject(homingServant, Parent, CalcPos());
 
             await MyDelay(recoveryTime);
         }

@@ -7,20 +7,16 @@ namespace Battle.Character
     [Serializable]
     public class CharacterData
     {
-        public CharacterData(
-            string characterKey, 
-            CharacterType characterType, 
-            string masterName,
-            OwnerType ownerType,
-            int life,
-            Sprite magicCircleSprite)
+        public CharacterData(string characterKey, CharacterType characterType, string masterName, OwnerType ownerType, int life, CharacterBase characterBase, Sprite magicCircleSprite, GameObject stageObject)
         {
             this.characterKey = characterKey;
             this.characterType = characterType;
             this.masterName = masterName;
             this.ownerType = ownerType;
             this.life = life;
+            this.characterBase = characterBase;
             this.magicCircleSprite = magicCircleSprite;
+            this.stageObject = stageObject;
         }
 
         [SerializeField] private string characterKey;
@@ -41,9 +37,15 @@ namespace Battle.Character
 
         public int Life => life;
 
-        //EditorSetting
+        [SerializeField] private CharacterBase characterBase;
+        public CharacterBase CharacterBase => characterBase;
+
         [SerializeField] private Sprite magicCircleSprite;
         public Sprite MagicCircleSprite => magicCircleSprite;
+
+        [SerializeField] private GameObject stageObject;
+
+        public GameObject StageObject => stageObject;
 
         public float ChantTime => CharacterKey == "Player" ? 0.2f : 1f;
     }

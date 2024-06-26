@@ -6113,9 +6113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b1ae5f2c83475ba6583c4ff37d0074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameters:
-  - sprite: {fileID: 21300000, guid: 4c803ac903b67ed40b52505609425ef5, type: 3}
-    title: Baltecia
+  magicCircleTest: {fileID: 21300000, guid: 2874c1b60ab12444b9b0cc2fec1b1bd3, type: 3}
 --- !u!225 &1447149254
 CanvasGroup:
   m_ObjectHideFlags: 0

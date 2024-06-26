@@ -8,7 +8,7 @@ using UniRx;
 
 namespace Battle.Character.Enemy.Variables.Eschalot
 {
-    public class EschalotController : BossBase<EschalotState>
+    public class EschalotController : BossControllerBase<EschalotState>
     {
         private bool _halfLifeSpecialAttacked;
 
@@ -16,8 +16,8 @@ namespace Battle.Character.Enemy.Variables.Eschalot
         {
             base.InitializeFunction();
 
-            GameLoop.Event
-                .Where(value => value ==GameLoop.GameEvent.BattleStart)
+            BattleLoop.Event
+                .Where(value => value ==BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => Loop().Forget())
                 .AddTo(this);

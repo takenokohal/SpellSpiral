@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Databases;
 using DeckEdit.Model;
 using Others;
+using Others.Dialog;
 using Others.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,7 +15,7 @@ namespace DeckEdit.View
     public class CardPoolCursorView : MonoBehaviour
     {
         [Inject] private readonly MyInputManager _myInputManager;
-        private PlayerInput PlayerInput => _myInputManager.UiInput;
+        private PlayerInput PlayerInput => _myInputManager.PlayerInput;
         [Inject] private readonly CardPoolView _cardPoolView;
         [Inject] private readonly CardPool _cardPool;
         [Inject] private readonly DeckList _deckList;

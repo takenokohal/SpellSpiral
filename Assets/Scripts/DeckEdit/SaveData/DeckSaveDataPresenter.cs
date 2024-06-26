@@ -8,12 +8,12 @@ namespace DeckEdit.SaveData
     {
         private const string SaveDataKey = "Deck";
 
-        public List<string> LoadDeck()
+        public DeckData LoadDeck()
         {
-            var data = EasySaveWrapper.Load<DeckSaveData>(SaveDataKey);
+            var data = EasySaveWrapper.Load<DeckData>(SaveDataKey);
 
             if (data != null)
-                return data.deckData;
+                return data;
 
 
             var list = DefaultDeckData.GetDefaultDeck();
@@ -21,12 +21,9 @@ namespace DeckEdit.SaveData
             return list;
         }
 
-        public void SaveDeck(List<string> deck)
+        public void SaveDeck(DeckData deckData)
         {
-            EasySaveWrapper.Save(SaveDataKey, new DeckSaveData()
-            {
-                deckData = deck
-            });
+            EasySaveWrapper.Save(SaveDataKey, deckData);
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
+using Audio;
 using Battle.Attack;
+using Battle.Character.Player;
 using Battle.Character.Player.Buff;
 using Battle.MyCamera;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Others;
 using UniRx;
 using UniRx.Triggers;
@@ -15,41 +15,43 @@ using VContainer;
 
 namespace Battle.Character.Enemy
 {
-    public abstract class BossBase<T> : EnemyBase where T : Enum
+    public abstract class BossBase : CharacterBase
     {
-        [SerializeField] private List<BossSequenceBase<T>> sequencePrefabs;
-        private readonly Dictionary<T, BossSequenceBase<T>> _sequenceInstances = new();
+        protected PlayerCore PlayerCore => AllCharacterManager.PlayerCore;
 
-        protected T CurrentState { get; private set; }
+
+        public Vector2 ToAnimationVelocity { get; set; }
+
+        public WizardAnimationController WizardAnimationController { get; private set; }
 
         protected readonly CancellationTokenSource commonCancellationTokenSource = new();
 
-        private Vector2 _animationBlendValue;
-        public Vector2 ToAnimationVelocity { get; set; }
-        private readonly int _horizontalAnimKey = Animator.StringToHash("HorizontalSpeed");
-        private readonly int _verticalAnimKey = Animator.StringToHash("VerticalSpeed");
+
+        public Vector2 GetDirectionToPlayer()
+        {
+            return PlayerCore.GetDirectionToPlayer(transform.position);
+        }
 
 
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
 
+            WizardAnimationController = new WizardAnimationController(Animator);
+
+            this.OnDestroyAsObservable().Subscribe(_ => AllCharacterManager.RemoveCharacter(this)).AddTo(this);
+
+
             AllCharacterManager.RegisterBoss(this);
 
             Observable.EveryFixedUpdate().Subscribe(_ => MyFixedUpdate()).AddTo(this);
 
-            CreateSequence();
-            GameLoop.Event
-                .Where(value => value == GameLoop.GameEvent.BattleStart)
+
+            BattleLoop.Event
+                .Where(value => value == BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => { BattleStart().Forget(); })
                 .AddTo(this);
-        }
-
-        protected UniTask PlayState(T nextState)
-        {
-            CurrentState = nextState;
-            return _sequenceInstances[CurrentState].SequenceStart();
         }
 
 
@@ -57,58 +59,40 @@ namespace Battle.Character.Enemy
         {
             await WaitUntilInitialize();
 
-
             gameObject.OnDestroyAsObservable().Subscribe(_ => commonCancellationTokenSource.Cancel());
-
 
             OnDeadObservable().Take(1).Subscribe(_ =>
             {
                 commonCancellationTokenSource.Cancel();
-                GameLoop.SendEvent(GameLoop.GameEvent.Win);
+                BattleLoop.SendEvent(BattleEvent.Win);
             });
-        }
-
-        private void CreateSequence()
-        {
-            foreach (var prefab in sequencePrefabs)
-            {
-                _sequenceInstances.Add(prefab.StateKey, prefab.Construct(
-                    new BossSequenceBase<T>.SequenceRequiredComponents()
-                    {
-                        AllCharacterManager = AllCharacterManager,
-                        Parent = this,
-                        PlayerCore = playerCore,
-                        SpecialCameraSwitcher = specialCameraSwitcher,
-                        MagicCircleFactory = MagicCircleFactory,
-                        ServantFactory = ServantFactory,
-                        ReadyEffectFactory = ReadyEffectFactory
-                    }));
-            }
         }
 
         private void MyFixedUpdate()
         {
-            if (GameLoop.CurrentState != GameLoop.GameEvent.BattleStart)
+            if (BattleLoop.CurrentState != BattleEvent.BattleStart)
                 return;
 
             if (AnimatorIsNull)
                 return;
 
-            var to = ToAnimationVelocity.normalized;
-            to.x *= CharacterRotation.Rotation;
-            _animationBlendValue = Vector2.Lerp(_animationBlendValue, to, 0.2f);
+            WizardAnimationController.HorizontalSpeedValue = Mathf.Lerp(WizardAnimationController.HorizontalSpeedValue,
+                ToAnimationVelocity.x * CharacterRotation.Rotation, 0.2f);
+        }
 
-            Animator.SetFloat(_horizontalAnimKey, _animationBlendValue.x);
-            Animator.SetFloat(_verticalAnimKey, _animationBlendValue.y);
+
+        public void LookPlayer()
+        {
+            CharacterRotation.Rotation = GetDirectionToPlayer().x;
         }
 
         protected override float CalcDamage(AttackHitController attackHitController)
         {
-            var attackBuff = playerCore.PlayerBuff.BuffCount(BuffKey.BuffMultiply);
-            var damage = (float)AttackDatabase.Find(attackHitController.AttackKey).Damage;
+            var attackBuff = PlayerCore.PlayerBuff.BuffCount(BuffKey.BuffMultiply);
+            var damage = AttackDatabase.Find(attackHitController.AttackKey).Damage;
             for (int i = 0; i < attackBuff; i++)
             {
-                damage *= playerCore.PlayerConstData.BuffPowerRatio;
+                damage *= PlayerCore.PlayerConstData.BuffPowerRatio;
             }
 
             return damage;

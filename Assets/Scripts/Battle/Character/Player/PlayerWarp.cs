@@ -43,20 +43,20 @@ namespace Battle.Character.Player
 
         private async UniTask PlayWarp()
         {
-            PlayerParameter.Invincible = true;
+            PlayerParameter.InvincibleFlag++;
             PlayerParameter.Warping = true;
             PlayerParameter.QuickCharging = false;
 
             var dir = GetDirection();
 
-            await characterWarpController.PlayWarp(
-                new CharacterWarpController.WarpParameter(
+            await characterWarpController.PlayVelocityWarp(
+                new CharacterWarpController.VelocityWarpParameter(
                     PlayerConstData.StepDrag,
                     PlayerConstData.StepSpeed * dir,
                     PlayerConstData.StepDuration));
 
 
-            PlayerParameter.Invincible = false;
+            PlayerParameter.InvincibleFlag--;
             PlayerParameter.Warping = false;
         }
     }

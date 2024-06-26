@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Others;
+using Others.Dialog;
 using Others.Input;
 using Others.Scene;
 using UnityEngine.InputSystem;
@@ -12,7 +13,7 @@ namespace DeckEdit.Model
     public class ReturnAndSave : ITickable
     {
         [Inject] private readonly MyInputManager _myInputManager;
-        private PlayerInput PlayerInput => _myInputManager.UiInput;
+        private PlayerInput PlayerInput => _myInputManager.PlayerInput;
         [Inject] private readonly YesNoDialog _yesNoDialog;
         [Inject] private readonly OkDialog _okDialog;
         [Inject] private readonly MySceneManager _mySceneManager;

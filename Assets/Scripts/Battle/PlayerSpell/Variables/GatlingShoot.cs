@@ -20,12 +20,9 @@ namespace Battle.PlayerSpell.Variables
 
         protected override async UniTaskVoid Init()
         {
-            var target = AllCharacterManager.GetEnemyCharacters()
-                .OrderBy(value => value.CurrentLife)
-                .ThenBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
             for (int i = 0; i < howMany; i++)
             {
-                Shoot(target, i).Forget();
+                Shoot(i).Forget();
                 await MyDelay(duration / howMany);
             }
 
@@ -33,18 +30,23 @@ namespace Battle.PlayerSpell.Variables
             Destroy(gameObject);
         }
 
-        private async UniTaskVoid Shoot(CharacterBase target, int i)
+        private async UniTaskVoid Shoot(int i)
         {
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(PlayerCore, 1,
-                () => CalcPos(target, i)));
+                () => CalcPos(i)));
 
-            var pos = (Vector3)CalcPos(target, i);
+            var target = AllCharacterManager.GetEnemyCharacters()
+                .OrderBy(value => value.CurrentLife)
+                .ThenBy(value => Vector3.Distance(value.transform.position, PlayerCore.transform.position)).First();
+
+
+            var pos = (Vector3)CalcPos(i);
 
             var velocity = (target.transform.position - pos).normalized * bulletSpeed;
             directionalBullet.CreateFromPrefab(pos, velocity);
         }
 
-        private Vector2 CalcPos(CharacterBase target, int i)
+        private Vector2 CalcPos(int i)
         {
             var theta = 2 * Mathf.PI / howMany;
             theta *= i;

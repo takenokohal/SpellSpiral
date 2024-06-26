@@ -1,20 +1,17 @@
-﻿using Audio;
+﻿using Battle;
 using Battle.Attack;
-using Battle.Character.Enemy;
+using Battle.Character;
 using Battle.Character.Player;
-using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
 using Battle.Character.Servant;
 using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.CommonObject.Pause;
 using Battle.CommonObject.Result;
+using Battle.CutIn;
 using Battle.MyCamera;
 using Battle.PlayerSpell;
 using Battle.UI;
-using Cysharp.Threading.Tasks;
-using Databases;
-using Others.Scene;
 using Test;
 using UnityEngine;
 using VContainer;
@@ -24,12 +21,12 @@ namespace Others.LifetimeScopes
 {
     public class BattleLifetimeScope : LifetimeScope
     {
-        [SerializeField] private StageObjectHolder stageObjectHolder;
+        //       [SerializeField] private StageObjectHolder stageObjectHolder;
 
         protected override void Configure(IContainerBuilder builder)
         {
-            var sceneManager = Parent.Container.Resolve<MySceneManager>();
-            var stageName = sceneManager.CurrentSceneName;
+            //    var sceneManager = Parent.Container.Resolve<MySceneManager>();
+            //    var stageName = sceneManager.CurrentSceneName;
             /*
             if (sceneManager.CurrentSceneName == "BattleMain")
             {
@@ -41,20 +38,17 @@ namespace Others.LifetimeScopes
             }
             */
 
-            builder.RegisterEntryPoint<BGMPlayer>();
+            //    var stageObject = stageObjectHolder.StageObjects[stageName];
 
-            var stageObject = stageObjectHolder.StageObjects[stageName];
+            Debug.Log("Register Battle");
 
-            builder.RegisterEntryPoint<GameLoop>().AsSelf();
+            //Initialize
+            builder.RegisterComponentInHierarchy<BattleInitializer>();
+            builder.Register<BattleLoop>(Lifetime.Singleton);
 
-
-            builder.RegisterComponentInHierarchy<ServantFactory>();
-
-            //Enemy
+            //Character
+            builder.Register<CharacterFactory>(Lifetime.Singleton);
             builder.Register<AllCharacterManager>(Lifetime.Singleton);
-
-            var enemy = Instantiate(stageObject.Enemy);
-            builder.RegisterComponent(enemy);
 
             //Player
             builder.RegisterComponentInHierarchy<PlayerCore>();
@@ -63,11 +57,12 @@ namespace Others.LifetimeScopes
             builder.RegisterComponentInHierarchy<PlayerCharge>();
 
             //Camera
-            builder.RegisterComponentInHierarchy<SpecialCameraSwitcher>();
+            builder.RegisterComponentInHierarchy<CameraSwitcher>();
             builder.RegisterComponentInHierarchy<CharacterCamera>();
 
-            var bgCam = Instantiate(stageObject.BackGroundCameraRoot);
-            builder.RegisterComponent(bgCam);
+           // var bgCam = Instantiate(stageObject.BackGroundCameraRoot);
+          //  builder.RegisterComponent(bgCam);
+
             //Factory
             builder.Register<SpellFactory>(Lifetime.Singleton);
             builder.RegisterComponentInHierarchy<AttackHitEffectFactory>();
@@ -79,7 +74,7 @@ namespace Others.LifetimeScopes
             builder.RegisterComponentInHierarchy<LoseMenu>();
             builder.RegisterComponentInHierarchy<WinController>();
 
-            
+
             //Deck
             builder.Register<BattleDeck>(Lifetime.Singleton);
             builder.Register<DeckPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -93,6 +88,9 @@ namespace Others.LifetimeScopes
             builder.RegisterComponentInHierarchy<PlayerManaView>();
             builder.RegisterComponentInHierarchy<BossLifeView>();
             builder.RegisterComponentInHierarchy<PlayerBuffView>();
+
+            //CutIn
+            builder.RegisterComponentInHierarchy<CutInController>();
 
             //Intro
             builder.RegisterComponentInHierarchy<IntroController>();

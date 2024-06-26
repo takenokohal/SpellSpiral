@@ -17,11 +17,11 @@ namespace Databases
         [Serializable]
         public class StageObject
         {
-            [SerializeField] private EnemyBase enemy;
+            [SerializeField] private BossBase boss;
             [SerializeField] private BackGroundCameraRoot backGroundCameraRoot;
 
 
-            public EnemyBase Enemy => enemy;
+            public BossBase Boss => boss;
 
             public BackGroundCameraRoot BackGroundCameraRoot => backGroundCameraRoot;
         }

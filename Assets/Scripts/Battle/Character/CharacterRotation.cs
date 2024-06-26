@@ -7,15 +7,16 @@ namespace Battle.Character
     public class CharacterRotation
     {
         private const float RotationDuration = 0.2f;
+        private const float ToRotation = 120f;
+
 
         public bool IsRight { get; set; }
 
 
-        private float _currentAnimatingRot = 90f;
+        private float _currentAnimatingRot;
 
         private readonly Transform _transform;
 
-        private const float ToRotation = 120f;
 
         public bool IsStop { get; set; }
 
@@ -29,6 +30,7 @@ namespace Battle.Character
         public CharacterRotation(Transform transform)
         {
             _transform = transform;
+            _currentAnimatingRot = _transform.eulerAngles.y;
             _transform.FixedUpdateAsObservable().Subscribe(_ =>
                 FixedUpdate()).AddTo(_transform);
         }

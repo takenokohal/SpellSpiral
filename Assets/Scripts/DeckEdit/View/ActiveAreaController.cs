@@ -1,5 +1,6 @@
 ﻿using Audio;
 using Others;
+using Others.Dialog;
 using Others.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,10 +28,10 @@ namespace DeckEdit.View
             if(AnyDialogIsOpen)
                 return;
             
-            if (_myInputManager.UiInput.actions["R"].WasPressedThisFrame())
+            if (_myInputManager.PlayerInput.actions["R"].WasPressedThisFrame())
                 SetArea(false);
 
-            if (_myInputManager.UiInput.actions["L"].WasPressedThisFrame())
+            if (_myInputManager.PlayerInput.actions["L"].WasPressedThisFrame())
                 SetArea(true);
         }
 

@@ -29,6 +29,8 @@ namespace Battle.Character.Enemy.Variables.Dorothy
             var toPos = (Vector2)Parent.Rigidbody.position +
                         Vector2Extension.AngleToVector(Random.Range(0, Mathf.PI * 2f) * 5f);
             await TweenToUniTask(Parent.Rigidbody.DOMove(toPos, 0.5f));
+            
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Charge);
             for (int i = 0; i < loopCount; i++)
             {
                 for (int j = 0; j < countPerLoop; j++)
@@ -37,12 +39,15 @@ namespace Battle.Character.Enemy.Variables.Dorothy
                     await MyDelay(duration / countPerLoop / loopCount);
                 }
             }
+            WizardAnimationController.PlayAnimation(WizardAnimationController.AnimationState.Idle);
 
             await MyDelay(recovery);
         }
 
         private async UniTaskVoid Shoot(int i)
         {
+            ReadyEffectFactory.ShootCreateAndWait(new ReadyEffectParameter(
+                Parent, () => CalcPos(i), 1, () => CalcDir(i))).Forget();
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1, () => CalcPos(i)));
 
             directionalBullet.CreateFromPrefab(CalcPos(i), CalcDir(i) * speed);

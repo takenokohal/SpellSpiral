@@ -7,11 +7,11 @@ namespace Others.Input
 {
     public class MyInputManager : MonoBehaviour
     {
-        [SerializeField] private PlayerInput uiInput;
-        [SerializeField] private PlayerInput battleInput;
+        [SerializeField] private PlayerInput playerInput;
+      //  [SerializeField] private PlayerInput battleInput;
         
-        public PlayerInput UiInput=> uiInput;
-        public PlayerInput BattleInput => battleInput;
+        public PlayerInput PlayerInput=> playerInput;
+   //     public PlayerInput BattleInput => battleInput;
 
     }
 }

@@ -81,11 +81,11 @@ Material:
     - _M_SrcBlend: 1
     - _M_ZWrite: 1
     - _OutlineLightingMix: 1
-    - _OutlineWidth: 0.0159
+    - _OutlineWidth: 0.01
     - _OutlineWidthMode: 2
     - _RenderQueueOffset: 0
-    - _RimFresnelPower: 100
-    - _RimLift: 0.21
+    - _RimFresnelPower: 3
+    - _RimLift: 0
     - _RimLightingMix: 1
     - _ShadingShiftFactor: -0.5
     - _ShadingShiftTexScale: 1
@@ -99,6 +99,6 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _MatcapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
-    - _RimColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    - _RimColor: {r: 0.4033019, g: 0.48929965, b: 0.5, a: 1}
     - _ShadeColor: {r: 1, g: 0.6745283, b: 0.6745283, a: 1}
   m_BuildTextureStacks: []

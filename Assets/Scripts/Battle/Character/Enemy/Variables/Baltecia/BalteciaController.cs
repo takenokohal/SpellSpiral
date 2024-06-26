@@ -7,7 +7,7 @@ using UniRx;
 
 namespace Battle.Character.Enemy.Variables.Baltecia
 {
-    public class BalteciaController : BossBase<BalteciaState>
+    public class BalteciaController : BossControllerBase<BalteciaState>
     {
         private bool _halfLifeSpecialAttacked;
 
@@ -15,8 +15,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
         {
             base.InitializeFunction();
 
-            GameLoop.Event
-                .Where(value => value == GameLoop.GameEvent.BattleStart)
+            BattleLoop.Event
+                .Where(value => value == BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => Loop().Forget())
                 .AddTo(this);
@@ -33,7 +33,8 @@ namespace Battle.Character.Enemy.Variables.Baltecia
                 BalteciaState.CornerGatling3,
                 BalteciaState.FlameSword,
                 BalteciaState.Explosion,
-                BalteciaState.ShortHomingBullet
+                BalteciaState.ShortHomingBullet,
+                BalteciaState.LongGatling
             };
 
             while (!commonCancellationTokenSource.IsCancellationRequested)

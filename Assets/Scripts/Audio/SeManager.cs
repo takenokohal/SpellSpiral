@@ -42,7 +42,6 @@ namespace Audio
             {
                 await UniTask.WaitUntil(() => se.IsFinished, cancellationToken: se.destroyCancellationToken);
 
-                Debug.Log("AAAAA");
                 _sePool.Release(se);
                 _playingSeList.Remove(se);
             });

@@ -14,6 +14,8 @@
         SuperInvisible,
         RaijinStep,
         Acid,
-        BuffMultiply
+        BuffMultiply,
+        GrazeMaster,
+        ReflectionMirror
     }
 }

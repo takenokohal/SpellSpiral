@@ -9,12 +9,10 @@ namespace Battle.Character.Servant
 {
     public class ServantBase : CharacterBase
     {
-        protected CharacterBase Master { get; private set; }
-
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
-            OnDeadObservable().Subscribe(_ => DeadAnimation());
+            OnDeadObservable().Subscribe(_ => DeadAnimation().Forget());
         }
 
         protected UniTask MyDelay(float time)
@@ -26,19 +24,6 @@ namespace Battle.Character.Servant
         protected UniTask TweenToUniTask(Tweener tween)
         {
             return tween.ToUniTask(cancellationToken: destroyCancellationToken);
-        }
-
-
-        public ServantBase CreateFromPrefab(CharacterBase master)
-        {
-            var instance = Instantiate(this);
-            instance.Master = master;
-            instance.Activate();
-            return instance;
-        }
-
-        private void Activate()
-        {
         }
 
         private async UniTaskVoid DeadAnimation()
@@ -63,7 +48,7 @@ namespace Battle.Character.Servant
 
         protected override float CalcDamage(AttackHitController attackHitController)
         {
-            var damage = (float)AttackDatabase.Find(attackHitController.AttackKey).Damage;
+            var damage = AttackDatabase.Find(attackHitController.AttackKey).Damage;
 
             if (GetOwnerType() == OwnerType.Player)
                 return damage;
