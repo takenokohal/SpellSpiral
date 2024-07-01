@@ -30,6 +30,8 @@ namespace Others.Utils
 
         public static string AttackDatabaseSpreadSheetURL => SpreadSheetURL + "AttackData";
 
+        public static string MessageDatabaseSpreadSheetURL => SpreadSheetURL + "MessageData";
+
         public static string SpellDatabaseSpreadSheetURL => SpreadSheetURL + "NormalSpell";
 
         public static string CharacterDatabaseSpreadSheetURL => SpreadSheetURL + "CharacterData";

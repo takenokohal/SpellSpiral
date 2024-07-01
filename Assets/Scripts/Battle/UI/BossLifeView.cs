@@ -18,7 +18,7 @@ namespace Battle.UI
         [SerializeField] private Slider redGage;
 
         [SerializeField] private TMP_Text nameText;
-        
+
         [Inject] private readonly AllCharacterManager _allCharacterManager;
 
 
@@ -44,7 +44,7 @@ namespace Battle.UI
 
             bossBase.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
 
-            nameText.text = bossBase.CharacterData.CharacterKey;
+            nameText.text = bossBase.CharacterData.CharacterNameJp;
         }
 
         private void OnLifeChange(float value)

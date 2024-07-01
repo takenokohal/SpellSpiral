@@ -7,9 +7,13 @@ namespace Battle.Character
     [Serializable]
     public class CharacterData
     {
-        public CharacterData(string characterKey, CharacterType characterType, string masterName, OwnerType ownerType, int life, CharacterBase characterBase, Sprite magicCircleSprite, GameObject stageObject)
+        public CharacterData(string characterKey, string characterNameJp, string characterNameEn,
+            CharacterType characterType, string masterName, OwnerType ownerType, int life, CharacterBase characterBase,
+            Sprite magicCircleSprite, GameObject stageObject)
         {
             this.characterKey = characterKey;
+            this.characterNameJp = characterNameJp;
+            this.characterNameEn = characterNameEn;
             this.characterType = characterType;
             this.masterName = masterName;
             this.ownerType = ownerType;
@@ -22,6 +26,14 @@ namespace Battle.Character
         [SerializeField] private string characterKey;
 
         public string CharacterKey => characterKey;
+
+        [SerializeField] private string characterNameJp;
+
+        public string CharacterNameJp => characterNameJp;
+
+        [SerializeField] private string characterNameEn;
+
+        public string CharacterNameEn => characterNameEn;
 
         [SerializeField] private CharacterType characterType;
         public CharacterType CharacterType => characterType;

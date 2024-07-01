@@ -72,17 +72,20 @@ namespace Databases
                 var cells = row.Split(new[] { ',' });
 
                 var characterKey = cells[0].Trim('"');
-                var characterType = Enum.TryParse<CharacterType>(cells[1].Trim('"'), out var ctResult)
+
+                var nameJp = cells[1].Trim('"');
+                var nameEn = cells[2].Trim('"');
+                var characterType = Enum.TryParse<CharacterType>(cells[3].Trim('"'), out var ctResult)
                     ? ctResult
                     : CharacterType.Player;
 
-                var masterName = cells[2].Trim('"');
+                var masterName = cells[4].Trim('"');
 
-                var ownerType = Enum.TryParse<OwnerType>(cells[3].Trim('"'), out var otResult)
+                var ownerType = Enum.TryParse<OwnerType>(cells[5].Trim('"'), out var otResult)
                     ? otResult
                     : OwnerType.Player;
 
-                var life = int.TryParse(cells[4].Trim('"'), out var lifeResult) ? lifeResult : 0;
+                var life = int.TryParse(cells[6].Trim('"'), out var lifeResult) ? lifeResult : 0;
 
 
                 var characterBase =
@@ -92,6 +95,8 @@ namespace Databases
 
                 var data = new CharacterData(
                     characterKey,
+                    nameJp,
+                    nameEn,
                     characterType,
                     masterName,
                     ownerType,

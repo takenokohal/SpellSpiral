@@ -37,8 +37,10 @@ namespace Battle.Character.Player
             var playerXPos = PlayerCore.transform.position.x;
             if (enemyXPoses.All(value => value - playerXPos <= 0) || enemyXPoses.All(value => value - playerXPos > 0))
             {
-                var enemy = _allCharacterManager.AllCharacters.First();
-                var rot = enemy.transform.position.x - PlayerCore.transform.position.x;
+                var enemyPosFirst = enemyXPoses.First();
+
+                var rot = enemyPosFirst - PlayerCore.transform.position.x;
+                
                 PlayerCore.CharacterRotation.Rotation = rot;
             }
             else

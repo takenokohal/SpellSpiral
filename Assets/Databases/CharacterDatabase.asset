@@ -53,6 +53,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: Player
+    - Name: characterNameJp
+      Entry: 1
+      Data: "\u9ED2\u9B54\u5973\u30E8\u30B7\u30CE"
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 0
@@ -92,6 +98,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: Baltecia
+    - Name: characterNameJp
+      Entry: 1
+      Data: "\u8D64\u306E\u9B54\u5F3E\u5E2B\u30D0\u30EB\u30C6\u30B7\u30A2"
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 1
@@ -131,6 +143,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: BalteciaMiniDragon
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -170,6 +188,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: TrainingCubeMan
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 1
@@ -209,6 +233,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: TestMan
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 1
@@ -248,6 +278,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: Molle
+    - Name: characterNameJp
+      Entry: 1
+      Data: "\u68EE\u306E\u5B88\u308A\u4EBA\u30E2\u30EB\u30EB"
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 1
@@ -287,6 +323,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: HighButterfly
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -326,6 +368,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: ADCDragon
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -365,6 +413,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: TankTanuki
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -404,6 +458,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: FighterSlime
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -443,6 +503,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: AssassinBoar
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -482,6 +548,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: MageSnail
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 2
@@ -521,6 +593,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: Dorothy
+    - Name: characterNameJp
+      Entry: 1
+      Data: "\u5439\u304D\u3059\u3055\u3076\u96E8\u306E\u30C9\u30ED\u30B7\u30FC"
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 1
@@ -560,6 +638,12 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: Eschalot
+    - Name: characterNameJp
+      Entry: 1
+      Data: 
+    - Name: characterNameEn
+      Entry: 1
+      Data: 
     - Name: characterType
       Entry: 3
       Data: 1

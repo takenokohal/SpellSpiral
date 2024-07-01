@@ -49,11 +49,6 @@ namespace Battle
             _battleLoop.SendEvent(BattleEvent.SceneStart);
         }
 
-        private void Update()
-        {
-            Debug.Log(_myInputManager);
-            Debug.Log(_characterDatabase);
-        }
 
         private static IEnumerable<string> BossKeys()
         {

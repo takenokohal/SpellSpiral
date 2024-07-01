@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Others;
+using UnityEditor;
 using UnityEngine;
 
 namespace Databases
@@ -18,6 +19,9 @@ namespace Databases
 
             SpellDatabase.LoadOnEditor().Update();
             Debug.Log("UpdateSpell");
+            
+            MessageDatabase.LoadOnEditor().Update();
+            Debug.Log("UpdateMessage");
         }
     }
 #endif

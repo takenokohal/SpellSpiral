@@ -4,6 +4,7 @@ using DG.Tweening;
 using Others.Input;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
 
 namespace Others.Dialog
@@ -17,21 +18,29 @@ namespace Others.Dialog
         [Inject] private readonly MyInputManager _myInputManager;
 
         private UniTaskCompletionSource<YesNo> _completionSource;
+        [SerializeField] private CanvasGroup parentCanvasGroup;
+
+        [SerializeField] private TMP_Text yesNoText;
+
+        [Inject] private readonly MessageDatabase _messageDatabase;
 
         public bool IsOpen { get; private set; }
 
         private void Start()
         {
-            root.localScale = Vector3.zero;
+            root.localScale = new Vector3(0, 1, 1);
             gameObject.SetActive(false);
+
+            yesNoText.text = _messageDatabase.Find("yes_no_dialog").JpText;
         }
 
         public async UniTask<YesNo> Open(string message)
         {
             gameObject.SetActive(true);
+            parentCanvasGroup.DOFade(1, 0.2f);
             IsOpen = true;
             messageText.text = message;
-            await root.DOScale(1, 0.2f);
+            await root.DOScaleX(1, 0.2f);
             _completionSource = new UniTaskCompletionSource<YesNo>();
 
             var v = await _completionSource.Task;
@@ -39,7 +48,8 @@ namespace Others.Dialog
 
             _completionSource = null;
 
-            await root.DOScale(0, 0.2f);
+            parentCanvasGroup.DOFade(0, 0.2f);
+            await root.DOScaleX(0, 0.2f);
 
             IsOpen = false;
 

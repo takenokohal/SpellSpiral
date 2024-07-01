@@ -3945,11 +3945,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2529037840967117273, guid: cfe44f977dc2e5343a5b85d53afb070c,
         type: 3}
-      propertyPath: characterWarpController
-      value: 
-      objectReference: {fileID: 6026213051734494405}
-    - target: {fileID: 2529037840967117273, guid: cfe44f977dc2e5343a5b85d53afb070c,
-        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 2529037840967117273, guid: cfe44f977dc2e5343a5b85d53afb070c,
@@ -4027,11 +4022,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7566206160978354393, guid: cfe44f977dc2e5343a5b85d53afb070c,
         type: 3}
-    - target: {fileID: 7767934784878187736, guid: cfe44f977dc2e5343a5b85d53afb070c,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 57
-      objectReference: {fileID: 0}
     - target: {fileID: 8389639071835513862, guid: cfe44f977dc2e5343a5b85d53afb070c,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -4041,37 +4031,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8486632668973552267, guid: cfe44f977dc2e5343a5b85d53afb070c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6026213051734494405}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe44f977dc2e5343a5b85d53afb070c, type: 3}
---- !u!1 &6026213051734494404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8486632668973552267, guid: cfe44f977dc2e5343a5b85d53afb070c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6026213051734494403}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6026213051734494405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026213051734494404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d9b18f6dfb43179bfeff2096184b8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 6026213051734494406}
---- !u!198 &6026213051734494406 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4277782106833080643, guid: cfe44f977dc2e5343a5b85d53afb070c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6026213051734494403}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6026213051734494407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 756892227716906327, guid: cfe44f977dc2e5343a5b85d53afb070c,
@@ -5142,9 +5103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3d8e2eab5344aab467e03b758b568a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beamEffectPrefab: {fileID: 7081037502810446527, guid: 0094f48174e70b04fae0e46fb79c9a64,
+  beamEffectPrefab: {fileID: 7760657475332560343, guid: 0094f48174e70b04fae0e46fb79c9a64,
     type: 3}
-  shootEffectPrefab: {fileID: 2539965040266591767, guid: 0340ccc8174a58745b273a6e9b9a76cf,
+  shootEffectPrefab: {fileID: 7506755609439645503, guid: 0340ccc8174a58745b273a6e9b9a76cf,
     type: 3}
 --- !u!4 &8984622959928259981
 Transform:

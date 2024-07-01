@@ -17,6 +17,8 @@ namespace Others.LifetimeScopes
         [SerializeField] private AttackDatabase attackDatabase;
         [SerializeField] private CharacterDatabase characterDatabase;
         [SerializeField] private PlayerConstData playerConstData;
+        [SerializeField] private MessageDatabase messageDatabase;
+        
 
         [SerializeField] private SeManager seManager;
 
@@ -29,13 +31,14 @@ namespace Others.LifetimeScopes
         {
             Debug.Log("RegisterRoot");
 
-            Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+           // Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
 
             builder.RegisterInstance(spellDatabase);
             builder.RegisterInstance(spellColorPalette);
             builder.RegisterInstance(attackDatabase);
             builder.RegisterInstance(characterDatabase);
             builder.RegisterInstance(playerConstData);
+            builder.RegisterInstance(messageDatabase);
 
             builder.Register<DeckSaveDataPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MySceneManager>(Lifetime.Singleton);
