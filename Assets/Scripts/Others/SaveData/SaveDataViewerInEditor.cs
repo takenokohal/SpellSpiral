@@ -2,6 +2,7 @@
 using System.Linq;
 using Battle.PlayerSpell;
 using Databases;
+using DeckEdit;
 using DeckEdit.Model;
 using DeckEdit.SaveData;
 using Others.Utils;

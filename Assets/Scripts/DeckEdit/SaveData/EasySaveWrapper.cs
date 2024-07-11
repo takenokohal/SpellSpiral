@@ -2,7 +2,7 @@
 
 namespace DeckEdit.SaveData
 {
-    public  static class EasySaveWrapper
+    public static class EasySaveWrapper
     {
         public static void Save<T>(string key, T data)
         {
@@ -15,8 +15,8 @@ namespace DeckEdit.SaveData
         {
             if (!ES3.KeyExists(key))
                 return null;
-            
-            
+
+
             var json = ES3.Load<string>(key);
 
             return JsonUtility.FromJson<T>(json);

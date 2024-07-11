@@ -2,6 +2,8 @@
 using System.Linq;
 using Battle.Character.Player.Deck;
 using Databases;
+using DeckEdit;
+using DeckEdit.Controller;
 using DeckEdit.Model;
 using VContainer;
 

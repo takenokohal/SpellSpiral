@@ -34,7 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 10
     - Name: 
       Entry: 7
       Data: 
@@ -155,6 +155,90 @@ MonoBehaviour:
     - Name: jpText
       Entry: 1
       Data: "\u30DF\u30C3\u30B7\u30E7\u30F3\u3092\u958B\u59CB\u3057\u307E\u3059"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: yes_no_dialog
+    - Name: $v
+      Entry: 7
+      Data: 8|Others.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: yes_no_dialog
+    - Name: jpText
+      Entry: 1
+      Data: "A\u3000\u306F\u3044\u3000\u3000B\u3000\u3044\u3044\u3048"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: home_other_desctription
+    - Name: $v
+      Entry: 7
+      Data: 9|Others.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: home_other_desctription
+    - Name: jpText
+      Entry: 1
+      Data: "\u2191\u2193\u3000\u9078\u629E\u3000\u3000A\u3000\u6C7A\u5B9A\u3000\u3000B\u3000\u623B\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: deck_edit_mydeck_desc
+    - Name: $v
+      Entry: 7
+      Data: 10|Others.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: deck_edit_mydeck_desc
+    - Name: jpText
+      Entry: 1
+      Data: "B\u3000\u30C7\u30C3\u30AD\u7DE8\u96C6\u3092\u7D42\u3048\u308B\u3000\u3000A\u3000\u30C7\u30C3\u30AD\u304B\u3089\u53D6\u308A\u9664\u304F\u3000\u3000X\u3000\u5168\u524A\u9664"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: deck_edit_cardpool_desc
+    - Name: $v
+      Entry: 7
+      Data: 11|Others.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: deck_edit_cardpool_desc
+    - Name: jpText
+      Entry: 1
+      Data: "B\u3000\u30C7\u30C3\u30AD\u7DE8\u96C6\u3092\u7D42\u3048\u308B\u3000\u3000A\u3000\u30C7\u30C3\u30AD\u306B\u8FFD\u52A0\u3000\u3000X\u3000\u5168\u524A\u9664"
     - Name: 
       Entry: 8
       Data: 

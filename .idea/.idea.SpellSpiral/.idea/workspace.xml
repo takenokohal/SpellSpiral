@@ -22,6 +22,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/734e2853606f4750b99ae351a5bc1b8627800/5a/41d53214/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78266e6ef69d42759e5eb24bde7e827864a00/71/63d179c4/SerializedMonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18f5482d17338a7bbdeae155929167e4a8be10b5d2e9aed96c2562ed98f34f/System.Collections.ObjectModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DeckEdit/View/DetailView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@cfe509a556/Runtime/Triggers/AsyncTriggerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@cfe509a556/Runtime/UniTaskCompletionSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@cfe509a556/Runtime/UniTaskScheduler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -36,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/jp.hadashikick.vcontainer@af7bd4ecab/Runtime/Annotations/IInitializable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/jp.hadashikick.vcontainer@af7bd4ecab/Runtime/IObjectResolverExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/jp.hadashikick.vcontainer@af7bd4ecab/Runtime/Unity/ContainerBuilderUnityExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/jp.hadashikick.vcontainer@af7bd4ecab/Runtime/Unity/LifetimeScope.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2dD8n5Fm0zoPMzbkgqliIa8MRv1" />

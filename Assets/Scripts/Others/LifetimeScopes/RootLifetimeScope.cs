@@ -1,6 +1,12 @@
 ﻿using Audio;
 using Databases;
+using DeckEdit.Controller;
+using DeckEdit.Model;
 using DeckEdit.SaveData;
+using DeckEdit.View;
+using DeckEdit.View.CardPool;
+using DeckEdit.View.Highlander;
+using DeckEdit.View.MyDeck;
 using Others.Dialog;
 using Others.Input;
 using Others.Scene;
@@ -18,7 +24,7 @@ namespace Others.LifetimeScopes
         [SerializeField] private CharacterDatabase characterDatabase;
         [SerializeField] private PlayerConstData playerConstData;
         [SerializeField] private MessageDatabase messageDatabase;
-        
+
 
         [SerializeField] private SeManager seManager;
 
@@ -26,12 +32,13 @@ namespace Others.LifetimeScopes
         [SerializeField] private YesNoDialog yesNoDialog;
         [SerializeField] private OkDialog okDialog;
         [SerializeField] private MyInputManager myInputManager;
-        
+
+
         protected override void Configure(IContainerBuilder builder)
         {
             Debug.Log("RegisterRoot");
 
-           // Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+            // Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
 
             builder.RegisterInstance(spellDatabase);
             builder.RegisterInstance(spellColorPalette);
@@ -44,7 +51,7 @@ namespace Others.LifetimeScopes
             builder.Register<MySceneManager>(Lifetime.Singleton);
 
             builder.RegisterEntryPoint<AllAudioManager>();
-            
+
             InstantiateDontDestroyRegister(sceneFadePanelView, builder);
             InstantiateDontDestroyRegister(yesNoDialog, builder);
             InstantiateDontDestroyRegister(okDialog, builder);

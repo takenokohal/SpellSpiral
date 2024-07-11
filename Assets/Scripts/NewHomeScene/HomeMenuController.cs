@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using DeckEdit.Controller;
 using DG.Tweening;
 using Others;
 using Others.Input;
@@ -36,7 +38,6 @@ namespace NewHomeScene
 
         [SerializeField] private CanvasGroup parentCanvasGroup;
 
-
         private void Start()
         {
             _homeStateController.StateObservable.Subscribe(OnStateChange).AddTo(this);
@@ -53,7 +54,10 @@ namespace NewHomeScene
         {
             if (_homeStateController.CurrentState != HomeStateController.HomeState.MainMenu)
                 return;
-            
+
+            if (DeckEditActiveController.IsActive)
+                return;
+
             MoveFunc();
             ClickFunc();
         }
@@ -61,7 +65,7 @@ namespace NewHomeScene
         private void ClickFunc()
         {
             var v = PlayerInput.actions["Yes"].WasPressedThisFrame();
-            if(!v)
+            if (!v)
                 return;
 
             switch (CurrentType)
@@ -70,6 +74,7 @@ namespace NewHomeScene
                     _homeStateController.CurrentState = HomeStateController.HomeState.MissionSelect;
                     break;
                 case HomeMenuType.DeckEdit:
+                    DeckEditActiveController.StartDeckEdit().Forget();
                     break;
                 case HomeMenuType.Training:
                     break;

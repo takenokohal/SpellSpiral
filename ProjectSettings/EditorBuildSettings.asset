@@ -10,28 +10,16 @@ EditorBuildSettings:
     guid: 2a088e273c379fc4a827d404321b0c98
   - enabled: 1
     path: Assets/Scenes/Home.unity
-    guid: 66a2f792b34307b49a0ce5dadc7934a5
+    guid: 0b861c78afa82394faa4540c25fc415c
   - enabled: 1
     path: Assets/Scenes/BattleMain.unity
     guid: 0cee4561f7d3aaf49ba52998502513a0
   - enabled: 1
-    path: Assets/Scenes/EditDeck.unity
-    guid: 57a539a4e95b7974dbb6c78852c60590
-  - enabled: 1
-    path: Assets/Scenes/Stage1.unity
-    guid: 800e845991cf6e845a4b71efa2f048c6
-  - enabled: 1
     path: Assets/Scenes/Training.unity
     guid: 88e1fac0e875b674fac98e39cf12fb10
   - enabled: 1
-    path: Assets/Scenes/Baltecia.unity
-    guid: 7e707a3b4ddde4b4bb5a342c6afcd27d
-  - enabled: 1
-    path: Assets/Scenes/Molle.unity
-    guid: 34dbcacf23cacfc4989c27ba7c667243
-  - enabled: 1
-    path: Assets/Scenes/Dorothy.unity
-    guid: 60cc8cf48139dec478c5845665a993cf
+    path: Assets/Scenes/DeckEdit.unity
+    guid: a47672d4bf5085541b1ef4f246388c55
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

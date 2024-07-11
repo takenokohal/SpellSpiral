@@ -64,3 +64,5 @@ MonoBehaviour:
     type: 3}
   myInputManager: {fileID: 4717391911517415728, guid: 33407c4f21250d44b907049bc4899ccc,
     type: 3}
+  deckEditActiveController: {fileID: 2488933265237765551, guid: df9c8e2097f21e246a5dbbfd6baaad89,
+    type: 3}

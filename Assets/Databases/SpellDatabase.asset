@@ -81,7 +81,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 38
+      Data: 40
     - Name: 
       Entry: 7
       Data: 
@@ -1719,7 +1719,7 @@ MonoBehaviour:
       Data: "\u30EA\u30D5\u30EC\u30AF\u30B7\u30E7\u30F3\u30DF\u30E9\u30FC"
     - Name: manaCost
       Entry: 3
-      Data: 10
+      Data: 0
     - Name: spellAttribute
       Entry: 3
       Data: 4
@@ -1752,10 +1752,100 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: 
+      Data: TestHighlander1
     - Name: $v
       Entry: 7
       Data: 39|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: TestHighlander1
+    - Name: name
+      Entry: 1
+      Data: "\u30CF\u30A4\u30E9\u30F3\u30C0\u30FC\u30C6\u30B9\u30C81"
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 4
+    - Name: spellType
+      Entry: 3
+      Data: 2
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: videoClip
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: TestHighlander2
+    - Name: $v
+      Entry: 7
+      Data: 40|Battle.PlayerSpell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: TestHighlander2
+    - Name: name
+      Entry: 1
+      Data: "\u30CF\u30A4\u30E9\u30F3\u30C0\u30FC\u30C6\u30B9\u30C82"
+    - Name: manaCost
+      Entry: 3
+      Data: 0
+    - Name: spellAttribute
+      Entry: 3
+      Data: 4
+    - Name: spellType
+      Entry: 3
+      Data: 2
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: videoClip
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 41|Battle.PlayerSpell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: 
@@ -1767,10 +1857,10 @@ MonoBehaviour:
       Data: 0
     - Name: spellAttribute
       Entry: 3
-      Data: 4
+      Data: 0
     - Name: spellType
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: effectDuration
       Entry: 4
       Data: 0

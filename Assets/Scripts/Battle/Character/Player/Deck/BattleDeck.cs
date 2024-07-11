@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DeckEdit;
 using DeckEdit.Model;
 using Others;
 using Others.Utils;

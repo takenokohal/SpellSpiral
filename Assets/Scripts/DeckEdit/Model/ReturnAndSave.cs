@@ -17,7 +17,7 @@ namespace DeckEdit.Model
         [Inject] private readonly YesNoDialog _yesNoDialog;
         [Inject] private readonly OkDialog _okDialog;
         [Inject] private readonly MySceneManager _mySceneManager;
-        [Inject] private readonly DeckList _deckList;
+        [Inject] private readonly MyDeckModel _myDeckModel;
 
         public void Tick()
         {
@@ -31,7 +31,7 @@ namespace DeckEdit.Model
                 return;
 
 
-            if (_deckList.IsFilled)
+            if (_myDeckModel.IsFilled)
                 DialogCheck().Forget();
             else
             {
@@ -48,7 +48,7 @@ namespace DeckEdit.Model
                 case YesNoDialog.YesNo.Yes:
                     var nextScene = _mySceneManager.PrevSceneName ?? "Home";
                     _mySceneManager.ChangeSceneAsync(nextScene).Forget();
-                    _deckList.Save();
+                 //   _myDeckModel.Save();
 
                     break;
                 case YesNoDialog.YesNo.No:
