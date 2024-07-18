@@ -14,12 +14,12 @@ namespace DeckEdit.Controller
         {
     //        _cardPool.Init();
             
-            InitMyDeck();
+          //  InitMyDeck();
         }
 
         private void InitMyDeck()
         {
-            _myDeckModel.SetDeckData(_deckSaveDataPresenter.LoadDeck());
+           // _myDeckModel.SetDeckData(_deckSaveDataPresenter.LoadDeck());
         }
     }
 }

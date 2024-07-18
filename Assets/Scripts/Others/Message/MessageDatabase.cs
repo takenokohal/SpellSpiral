@@ -5,11 +5,12 @@ using Cysharp.Threading.Tasks;
 using Others.Utils;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Others
+namespace Others.Message
 {
     [CreateAssetMenu(menuName = "Create MessageDatabase", fileName = "MessageDatabase", order = 0)]
     public class MessageDatabase : SerializedScriptableObject
@@ -18,15 +19,20 @@ namespace Others
         public class MessageData
         {
             [SerializeField] private string messageKey;
-            [SerializeField] private string jpText;
+
+            [OdinSerialize] private Dictionary<SystemLanguage, string> _translatedTexts;
 
             public string MessageKey => messageKey;
-            public string JpText => jpText;
 
-            public MessageData(string messageKey, string jpText)
+            public string GetText(SystemLanguage language)
+            {
+                return _translatedTexts[language];
+            }
+
+            public MessageData(string messageKey, Dictionary<SystemLanguage, string> translatedTexts)
             {
                 this.messageKey = messageKey;
-                this.jpText = jpText;
+                _translatedTexts = translatedTexts;
             }
         }
 
@@ -68,6 +74,8 @@ namespace Others
             }
 
             req.Dispose();
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
         }
 
         private void Parse(string csv)
@@ -82,8 +90,15 @@ namespace Others
 
                 var messageKey = cells[0].Trim('"');
                 var jpText = cells[1].Trim('"');
+                var enText = cells[2].Trim('"');
 
-                _messages.TryAdd(messageKey, new MessageData(messageKey, jpText));
+                var dic = new Dictionary<SystemLanguage, string>
+                {
+                    { SystemLanguage.Japanese, jpText },
+                    { SystemLanguage.English, enText }
+                };
+
+                _messages.TryAdd(messageKey, new MessageData(messageKey, dic));
             }
         }
 #endif

@@ -60,6 +60,8 @@ namespace Databases
             }
 
             req.Dispose();
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
         }
 
         private void Parse(string csv)

@@ -1,4 +1,5 @@
 ﻿using Audio;
+using Config;
 using Databases;
 using DeckEdit.Controller;
 using DeckEdit.Model;
@@ -9,6 +10,7 @@ using DeckEdit.View.Highlander;
 using DeckEdit.View.MyDeck;
 using Others.Dialog;
 using Others.Input;
+using Others.Message;
 using Others.Scene;
 using UnityEngine;
 using VContainer;
@@ -49,6 +51,9 @@ namespace Others.LifetimeScopes
 
             builder.Register<DeckSaveDataPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MySceneManager>(Lifetime.Singleton);
+            builder.Register<MessageManager>(Lifetime.Singleton);
+
+            builder.Register<ConfigController>(Lifetime.Singleton);
 
             builder.RegisterEntryPoint<AllAudioManager>();
 

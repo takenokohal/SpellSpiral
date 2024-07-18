@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Others.Input;
+using Others.Message;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +23,9 @@ namespace Others.Dialog
 
         [SerializeField] private TMP_Text yesNoText;
 
-        [Inject] private readonly MessageDatabase _messageDatabase;
+        [Inject] private readonly MessageManager _messageManager;
+        
+        
 
         public bool IsOpen { get; private set; }
 
@@ -31,7 +34,7 @@ namespace Others.Dialog
             root.localScale = new Vector3(0, 1, 1);
             gameObject.SetActive(false);
 
-            yesNoText.text = _messageDatabase.Find("yes_no_dialog").JpText;
+        //    yesNoText.text = _messageDatabase.Find("yes_no_dialog").JpText;
         }
 
         public async UniTask<YesNo> Open(string message)

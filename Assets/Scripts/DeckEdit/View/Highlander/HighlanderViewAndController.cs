@@ -42,6 +42,8 @@ namespace DeckEdit.View.Highlander
         private float _preInputX;
         private float _preInputY;
         private const float Threshold = 0.5f;
+        
+        
 
         private void Start()
         {
@@ -74,6 +76,7 @@ namespace DeckEdit.View.Highlander
                 .Where(value => value.Value.SpellAttribute == SpellAttribute.Highlander)
                 .Select(value => value.Value.SpellKey)
                 .ToList();
+            
 
             var index = list.FindIndex(s => s == spellKey.Key);
             var leftKey = list[Repeat(index - 1, list.Count)];

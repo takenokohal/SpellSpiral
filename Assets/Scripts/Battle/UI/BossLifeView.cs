@@ -3,6 +3,7 @@ using Battle.Character;
 using Battle.Character.Enemy;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Others.Message;
 using Sirenix.OdinInspector;
 using TMPro;
 using UniRx;
@@ -21,6 +22,7 @@ namespace Battle.UI
 
         [Inject] private readonly AllCharacterManager _allCharacterManager;
 
+        [Inject] private readonly MessageManager _messageManager;
 
         [SerializeField] private float redGageStopTime;
         [SerializeField] private float redGageMoveDuration;
@@ -44,7 +46,7 @@ namespace Battle.UI
 
             bossBase.CurrentLifeObservable.Subscribe(OnLifeChange).AddTo(this);
 
-            nameText.text = bossBase.CharacterData.CharacterNameJp;
+            nameText.text = _messageManager.GetCharacterName(bossBase.CharacterKey);
         }
 
         private void OnLifeChange(float value)

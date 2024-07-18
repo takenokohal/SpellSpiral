@@ -6,6 +6,7 @@ using DeckEdit.Controller;
 using DG.Tweening;
 using Others;
 using Others.Input;
+using Others.Message;
 using Others.Utils;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -30,7 +31,7 @@ namespace NewHomeScene
         private float _preInput;
         private const float Threshold = 0.5f;
 
-        [Inject] private readonly MessageDatabase _messageDatabase;
+        [Inject] private readonly MessageManager _messageManager;
 
         [SerializeField] private TMP_Text descriptionText;
 
@@ -41,7 +42,12 @@ namespace NewHomeScene
         private void Start()
         {
             _homeStateController.StateObservable.Subscribe(OnStateChange).AddTo(this);
-            SetValue(0);
+
+            UniTask.Void(async () =>
+            {
+                await UniTask.WaitUntil(() => _messageManager.IsInitialized);
+                SetValue(0);
+            });
         }
 
         private void OnStateChange(HomeStateController.HomeState homeState)
@@ -139,7 +145,8 @@ namespace NewHomeScene
                 HomeMenuType.System => "home_system_description",
                 _ => throw new ArgumentOutOfRangeException()
             };
-            descriptionText.text = _messageDatabase.Find(messageKey).JpText;
+
+            descriptionText.text = _messageManager.GetMessage(messageKey);
         }
     }
 }

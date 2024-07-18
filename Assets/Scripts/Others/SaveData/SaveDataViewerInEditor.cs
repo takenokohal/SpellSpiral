@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Battle.PlayerSpell;
+using Config;
 using Databases;
 using DeckEdit;
 using DeckEdit.Model;
@@ -97,6 +98,22 @@ namespace Others.SaveData
             highlanderSpell = defaultDeck.highlanderSpell;
 
             var db = SpellDatabase.LoadOnEditor();
+        }
+
+        [SerializeField] private ConfigData configSaveData;
+        [Button]
+        private void LoadConfig()
+        {
+            var v = new ConfigController();
+            configSaveData = v.CurrentConfigData;
+        }
+
+        [Button]
+        private void SaveConfig()
+        {
+            var v = new ConfigController();
+            v.CurrentConfigData = configSaveData;
+            v.Save();
         }
 #endif
     }

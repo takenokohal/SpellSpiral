@@ -58,7 +58,7 @@ namespace Battle.Character.Enemy
 
         public void CancelSequence()
         {
-            SequenceCancellationToken.Cancel();
+            SequenceCancellationToken?.Cancel();
 
             SequenceCancellationToken = new CancellationTokenSource();
         }
@@ -86,7 +86,7 @@ namespace Battle.Character.Enemy
 
             SequenceCancellationToken = new CancellationTokenSource();
 
-            gameObject.OnDestroyAsObservable().Subscribe(_ => SequenceCancellationToken?.Cancel());
+            gameObject.OnDestroyAsObservable().Subscribe(_ => CancelSequence());
 
             gameObject.SetActive(true);
 

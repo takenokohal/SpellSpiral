@@ -5,6 +5,7 @@ using DeckEdit.View;
 using DeckEdit.View.CardPool;
 using DeckEdit.View.Highlander;
 using DeckEdit.View.MyDeck;
+using Others.Message;
 using UnityEngine.InputSystem;
 using VContainer;
 using VContainer.Unity;
@@ -38,6 +39,8 @@ namespace DeckEdit.Others
             builder.RegisterComponentInHierarchy<HighlanderAnimation>();
 
             builder.RegisterComponentInHierarchy<DetailView>();
+
+            builder.RegisterEntryPoint<MessageTranslatorInSceneStart>();
         }
     }
 }

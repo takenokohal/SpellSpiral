@@ -1,4 +1,5 @@
-﻿using VContainer;
+﻿using Others.Message;
+using VContainer;
 using VContainer.Unity;
 
 namespace NewHomeScene
@@ -13,6 +14,8 @@ namespace NewHomeScene
             
             builder.RegisterComponentInHierarchy<HomeMenuController>();
             builder.RegisterComponentInHierarchy<MissionSelectController>();
+
+            builder.RegisterEntryPoint<MessageTranslatorInSceneStart>();
         }
     }
 }

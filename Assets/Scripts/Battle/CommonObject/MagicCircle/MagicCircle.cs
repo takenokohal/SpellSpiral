@@ -18,7 +18,7 @@ namespace Battle.CommonObject.MagicCircle
 
         public async UniTask Activate(MagicCircleParameters magicCircleParameters)
         {
-            transform.localScale= Vector3.zero;
+            transform.localScale = Vector3.zero;
             gameObject.SetActive(true);
             await TweenToUniTask(transform.DOScale(magicCircleParameters.Size, 0.2f));
         }
@@ -31,7 +31,9 @@ namespace Battle.CommonObject.MagicCircle
 
         private UniTask TweenToUniTask(Tween tween)
         {
-            return tween.ToUniTask(cancellationToken: destroyCancellationToken);
+            return tween.ToUniTask(
+                tweenCancelBehaviour: TweenCancelBehaviour.KillAndCancelAwait,
+                cancellationToken: destroyCancellationToken);
         }
     }
 }

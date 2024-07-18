@@ -7,7 +7,6 @@ namespace DeckEdit.SaveData
         public static void Save<T>(string key, T data)
         {
             var json = JsonUtility.ToJson(data);
-            Debug.Log(json);
             ES3.Save(key, json);
         }
 

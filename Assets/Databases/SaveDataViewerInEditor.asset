@@ -43,3 +43,5 @@ MonoBehaviour:
   - BuffDefense
   - BuffQuickManaCharge
   highlanderSpell: ReflectionMirror
+  configSaveData:
+    language: 10

@@ -37,7 +37,7 @@ namespace Databases
 #if UNITY_EDITOR
 
         [Button]
-      public void Update()
+        public void Update()
         {
             UpdateAsync().Forget();
         }
@@ -61,6 +61,8 @@ namespace Databases
             }
 
             req.Dispose();
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
         }
 
         private void Parse(string csv)
@@ -74,34 +76,45 @@ namespace Databases
                 var cells = row.Split(new[] { ',' });
 
                 var spellKey = cells[1].Trim('"');
-                var spellName = cells[2].Trim('"');
-                var cost = int.TryParse(cells[3].Trim('"'), out var costResult) ? costResult : 0;
-                var attribute = Enum.TryParse<SpellAttribute>(cells[4].Trim('"'), out var attributeResult)
+                var spellNameJp = cells[2].Trim('"');
+                var spellNameEn = cells[3].Trim('"');
+                var nameDic = new Dictionary<SystemLanguage, string>()
+                {
+                    { SystemLanguage.Japanese, spellNameJp },
+                    { SystemLanguage.English, spellNameEn }
+                };
+
+                var cost = int.TryParse(cells[4].Trim('"'), out var costResult) ? costResult : 0;
+                var attribute = Enum.TryParse<SpellAttribute>(cells[5].Trim('"'), out var attributeResult)
                     ? attributeResult
                     : SpellAttribute.Fire;
 
-                var spellType = Enum.TryParse<SpellType>(cells[5].Trim('"'), out var typeResult)
+                var spellType = Enum.TryParse<SpellType>(cells[6].Trim('"'), out var typeResult)
                     ? typeResult
                     : SpellType.Attack;
 
-                var duration = float.TryParse(cells[6].Trim('"'), out var durationResult) ? durationResult : 0;
-                var desc = cells[7].Trim('"');
+                var duration = float.TryParse(cells[7].Trim('"'), out var durationResult) ? durationResult : 0;
+                var descJp = cells[8].Trim('"');
+                var descEn = cells[9].Trim('"');
+                var descDic = new Dictionary<SystemLanguage, string>()
+                {
+                    { SystemLanguage.Japanese, descJp },
+                    { SystemLanguage.English, descEn }
+                };
 
                 var spellBase = AssetDatabase.LoadAssetAtPath<SpellBase>(PathsAndURL.CreateSpellBasePath(spellKey));
                 var spellIcon = AssetDatabase.LoadAssetAtPath<Sprite>(PathsAndURL.CreateSpellIconPath(spellKey));
-                var video = AssetDatabase.LoadAssetAtPath<VideoClip>(PathsAndURL.CreateVideoPath(spellKey));
 
                 var data = new SpellData(
                     spellKey,
-                    spellName,
+                    nameDic,
                     cost,
                     attribute,
                     spellType,
                     duration,
-                    desc,
+                    descDic,
                     spellBase,
-                    spellIcon,
-                    video
+                    spellIcon
                 );
                 _spellDictionary.TryAdd(spellKey, data);
             }

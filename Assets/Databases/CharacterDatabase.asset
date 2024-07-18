@@ -53,11 +53,55 @@ MonoBehaviour:
     - Name: characterKey
       Entry: 1
       Data: Player
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.EnumEqualityComparer`1[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: "\u9ED2\u9B54\u5973\u30E8\u30B7\u30CE"
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -94,15 +138,49 @@ MonoBehaviour:
       Data: Baltecia
     - Name: $v
       Entry: 7
-      Data: 3|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 5|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: Baltecia
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: "\u8D64\u306E\u9B54\u5F3E\u5E2B\u30D0\u30EB\u30C6\u30B7\u30A2"
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: Baltecia the Witch of Red Bullet
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -139,15 +217,49 @@ MonoBehaviour:
       Data: BalteciaMiniDragon
     - Name: $v
       Entry: 7
-      Data: 4|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 7|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: BalteciaMiniDragon
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 8|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -184,15 +296,49 @@ MonoBehaviour:
       Data: TrainingCubeMan
     - Name: $v
       Entry: 7
-      Data: 5|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 9|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: TrainingCubeMan
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 10|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -229,15 +375,49 @@ MonoBehaviour:
       Data: TestMan
     - Name: $v
       Entry: 7
-      Data: 6|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 11|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: TestMan
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 12|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -274,15 +454,49 @@ MonoBehaviour:
       Data: Molle
     - Name: $v
       Entry: 7
-      Data: 7|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 13|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: Molle
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 14|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: "\u68EE\u306E\u5B88\u308A\u4EBA\u30E2\u30EB\u30EB"
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -319,15 +533,49 @@ MonoBehaviour:
       Data: HighButterfly
     - Name: $v
       Entry: 7
-      Data: 8|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 15|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: HighButterfly
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 16|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -364,15 +612,49 @@ MonoBehaviour:
       Data: ADCDragon
     - Name: $v
       Entry: 7
-      Data: 9|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 17|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: ADCDragon
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 18|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -409,15 +691,49 @@ MonoBehaviour:
       Data: TankTanuki
     - Name: $v
       Entry: 7
-      Data: 10|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 19|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: TankTanuki
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 20|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -454,15 +770,49 @@ MonoBehaviour:
       Data: FighterSlime
     - Name: $v
       Entry: 7
-      Data: 11|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 21|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: FighterSlime
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 22|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -499,15 +849,49 @@ MonoBehaviour:
       Data: AssassinBoar
     - Name: $v
       Entry: 7
-      Data: 12|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 23|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: AssassinBoar
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 24|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -544,15 +928,49 @@ MonoBehaviour:
       Data: MageSnail
     - Name: $v
       Entry: 7
-      Data: 13|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 25|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: MageSnail
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 26|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -589,15 +1007,49 @@ MonoBehaviour:
       Data: Dorothy
     - Name: $v
       Entry: 7
-      Data: 14|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 27|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: Dorothy
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 28|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: "\u5439\u304D\u3059\u3055\u3076\u96E8\u306E\u30C9\u30ED\u30B7\u30FC"
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: Dolothy the Witch of Raging Rain
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3
@@ -634,15 +1086,49 @@ MonoBehaviour:
       Data: Eschalot
     - Name: $v
       Entry: 7
-      Data: 15|Battle.Character.CharacterData, Assembly-CSharp
+      Data: 29|Battle.Character.CharacterData, Assembly-CSharp
     - Name: characterKey
       Entry: 1
       Data: Eschalot
-    - Name: characterNameJp
+    - Name: _characterNames
+      Entry: 7
+      Data: 30|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
       Entry: 1
       Data: 
-    - Name: characterNameEn
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
       Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: characterType
       Entry: 3

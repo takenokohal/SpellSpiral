@@ -1,6 +1,7 @@
 ﻿using Battle.PlayerSpell;
 using Databases;
 using DeckEdit.Model;
+using Others.Message;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace DeckEdit.View
     {
         [Inject] private readonly CurrentSelectedSpell _currentSelectedSpell;
         [Inject] private readonly SpellColorPalette _spellColorPalette;
+
+        [Inject] private readonly MessageManager _messageManager;
 
         [SerializeField] private Image spellIconImage;
         [SerializeField] private Image spellColorImage;
@@ -33,10 +36,10 @@ namespace DeckEdit.View
             spellIconImage.sprite = spellData.SpellIcon;
             spellColorImage.color = _spellColorPalette.GetColor(spellData.SpellAttribute);
 
-            spellNameText.text = spellData.SpellName;
+            spellNameText.text = _messageManager.GetSpellName(spellData.SpellKey);
             manaCostText.text = "Cost " + spellData.ManaCost;
 
-            descriptionText.text = spellData.SpellDescription;
+            descriptionText.text = _messageManager.GetSpellDescription(spellData.SpellKey);
         }
     }
 }

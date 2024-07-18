@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Databases;
+using DeckEdit.Controller;
 using UniRx;
+using UnityEngine;
 using VContainer;
 
 namespace DeckEdit.Model
@@ -10,6 +12,7 @@ namespace DeckEdit.Model
     public class MyDeckModel : IDisposable
     {
         [Inject] private readonly SpellDatabase _spellDatabase;
+        [Inject] private readonly IDeckSaveDataPresenter _deckSaveDataPresenter;
         private List<SpellKey> _currentDeckList = new();
         public IReadOnlyList<SpellKey> CurrentDeckList => _currentDeckList;
 
@@ -22,7 +25,7 @@ namespace DeckEdit.Model
             set => _currentHighlanderSpell.Value = value;
         }
 
-        public IObservable<SpellKey> HighlanderObservable => _currentHighlanderSpell;
+        public IObservable<SpellKey> HighlanderObservable => _currentHighlanderSpell.Where(value => value != null);
 
 
         public const int MaxCount = 20;
@@ -32,6 +35,7 @@ namespace DeckEdit.Model
 
         public bool IsFilled => CurrentDeckList.Count >= MaxCount;
 
+        public bool IsChanged { get; private set; }
 
         public void Add(SpellKey spellKey)
         {
@@ -45,6 +49,7 @@ namespace DeckEdit.Model
             Sort();
 
             _onUpdate.OnNext(Unit.Default);
+            IsChanged = true;
         }
 
         public void Remove(SpellKey spellKey)
@@ -52,11 +57,13 @@ namespace DeckEdit.Model
             _currentDeckList.Remove(spellKey);
 
             _onUpdate.OnNext(Unit.Default);
+            IsChanged = true;
         }
 
         public void Clear()
         {
             _currentDeckList.Clear();
+            IsChanged = true;
         }
 
         public void SetDeckData(DeckData deckData)
@@ -72,13 +79,13 @@ namespace DeckEdit.Model
             _onUpdate.OnNext(Unit.Default);
         }
 
-        /*
+
         public void Save()
         {
             _deckSaveDataPresenter.SaveDeck(new DeckData(_currentDeckList.Select(value => value.Key).ToList(),
                 CurrentHighlanderSpell.Key));
+            IsChanged = false;
         }
-        */
 
         private void Sort()
         {

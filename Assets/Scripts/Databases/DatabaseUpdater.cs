@@ -1,4 +1,5 @@
 ﻿using Others;
+using Others.Message;
 using UnityEditor;
 using UnityEngine;
 
@@ -22,6 +23,8 @@ namespace Databases
             
             MessageDatabase.LoadOnEditor().Update();
             Debug.Log("UpdateMessage");
+            
+            AssetDatabase.SaveAssets();
         }
     }
 #endif

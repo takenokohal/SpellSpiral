@@ -9,6 +9,7 @@ using DG.Tweening;
 using Others;
 using Others.Dialog;
 using Others.Input;
+using Others.Message;
 using Others.Scene;
 using UniRx;
 using UnityEngine;
@@ -43,7 +44,7 @@ namespace NewHomeScene
         [SerializeField] private CanvasGroup parentCanvasGroup;
 
         [Inject] private readonly YesNoDialog _yesNoDialog;
-        [Inject] private readonly MessageDatabase _messageDatabase;
+        [Inject] private readonly MessageManager _messageManager;
 
         [Inject] private readonly MySceneManager _mySceneManager;
 
@@ -79,7 +80,7 @@ namespace NewHomeScene
             {
                 var instance = Instantiate(missionSelectItemOrigin, itemParent);
                 instance.Init(characterData);
-                instance.Text = characterData.CharacterNameJp;
+                instance.Text = _messageManager.GetCharacterName(characterData.CharacterKey);
                 instance.gameObject.SetActive(true);
 
                 _missionSelectItemInstances.Add(instance);
@@ -122,8 +123,8 @@ namespace NewHomeScene
 
         private async UniTaskVoid TryMissionStart()
         {
-            var message = _messageDatabase.Find("mission_start_yes_no");
-            var result = await _yesNoDialog.Open(message.JpText);
+            var message = _messageManager.GetMessage("mission_start_yes_no");
+            var result = await _yesNoDialog.Open(message);
             if (result == YesNoDialog.YesNo.No)
                 return;
 

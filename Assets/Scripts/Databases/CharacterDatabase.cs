@@ -59,6 +59,8 @@ namespace Databases
             }
 
             req.Dispose();
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
         }
 
         private void Parse(string csv)
@@ -75,6 +77,13 @@ namespace Databases
 
                 var nameJp = cells[1].Trim('"');
                 var nameEn = cells[2].Trim('"');
+
+                var names = new Dictionary<SystemLanguage, string>()
+                {
+                    { SystemLanguage.Japanese, nameJp },
+                    { SystemLanguage.English, nameEn }
+                };
+
                 var characterType = Enum.TryParse<CharacterType>(cells[3].Trim('"'), out var ctResult)
                     ? ctResult
                     : CharacterType.Player;
@@ -93,17 +102,8 @@ namespace Databases
                 var stageObject =
                     AssetDatabase.LoadAssetAtPath<GameObject>(PathsAndURL.CreateStageObjectPath(characterKey));
 
-                var data = new CharacterData(
-                    characterKey,
-                    nameJp,
-                    nameEn,
-                    characterType,
-                    masterName,
-                    ownerType,
-                    life,
-                    characterBase,
-                    null,
-                    stageObject);
+                var data = new CharacterData(characterKey, names, characterType, masterName, ownerType, life,
+                    characterBase, null, stageObject);
 
                 _characterDictionary.TryAdd(characterKey, data);
             }

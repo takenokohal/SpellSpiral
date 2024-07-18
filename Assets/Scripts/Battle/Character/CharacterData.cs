@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Battle.Attack;
+using Sirenix.Serialization;
 using UnityEngine;
 
 namespace Battle.Character
@@ -7,13 +9,12 @@ namespace Battle.Character
     [Serializable]
     public class CharacterData
     {
-        public CharacterData(string characterKey, string characterNameJp, string characterNameEn,
+        public CharacterData(string characterKey, Dictionary<SystemLanguage, string> characterNames,
             CharacterType characterType, string masterName, OwnerType ownerType, int life, CharacterBase characterBase,
             Sprite magicCircleSprite, GameObject stageObject)
         {
             this.characterKey = characterKey;
-            this.characterNameJp = characterNameJp;
-            this.characterNameEn = characterNameEn;
+            _characterNames = characterNames;
             this.characterType = characterType;
             this.masterName = masterName;
             this.ownerType = ownerType;
@@ -27,13 +28,9 @@ namespace Battle.Character
 
         public string CharacterKey => characterKey;
 
-        [SerializeField] private string characterNameJp;
+        [OdinSerialize] private Dictionary<SystemLanguage, string> _characterNames;
 
-        public string CharacterNameJp => characterNameJp;
-
-        [SerializeField] private string characterNameEn;
-
-        public string CharacterNameEn => characterNameEn;
+        public IReadOnlyDictionary<SystemLanguage, string> CharacterNames => _characterNames;
 
         [SerializeField] private CharacterType characterType;
         public CharacterType CharacterType => characterType;

@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using Databases;
 using Others;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -11,7 +13,9 @@ namespace Battle.PlayerSpell
     public class SpellData
     {
         [SerializeField] private string spellKey;
-        [SerializeField] private string name;
+
+        [OdinSerialize] private Dictionary<SystemLanguage, string> _names;
+        public string GetName(SystemLanguage language) => _names[language];
         [SerializeField] private int manaCost;
 
         [SerializeField, GUIColor(nameof(GetColor))]
@@ -19,36 +23,32 @@ namespace Battle.PlayerSpell
 
         [SerializeField] private SpellType spellType;
         [SerializeField] private float effectDuration;
-        [SerializeField] private string description;
+        [OdinSerialize] private Dictionary<SystemLanguage, string> _descriptions;
+        public string GetDescription(SystemLanguage systemLanguage) => _descriptions[systemLanguage];
 
         [SerializeField] private SpellBase spellBase;
         [SerializeField] private Sprite spellIcon;
 
-        [SerializeField] private VideoClip videoClip;
-
 
         public bool IsNotImp() => spellBase == null || spellIcon == null;
 
-        public SpellData(string spellKey, string name, int manaCost, SpellAttribute spellAttribute,
-            SpellType spellType, float effectDuration, string description, SpellBase spellBase, Sprite spellIcon,
-            VideoClip videoClip)
+        public SpellData(string spellKey, Dictionary<SystemLanguage, string> names, int manaCost,
+            SpellAttribute spellAttribute, SpellType spellType, float effectDuration,
+            Dictionary<SystemLanguage, string> descriptions, SpellBase spellBase, Sprite spellIcon)
         {
             this.spellKey = spellKey;
-            this.name = name;
+            _names = names;
             this.manaCost = manaCost;
             this.spellAttribute = spellAttribute;
             this.spellType = spellType;
             this.effectDuration = effectDuration;
-            this.description = description;
+            _descriptions = descriptions;
             this.spellBase = spellBase;
             this.spellIcon = spellIcon;
-            this.videoClip = videoClip;
         }
 
         public string SpellKey => spellKey;
-
-        public string SpellName => name;
-
+        
         public SpellBase SpellBase => spellBase;
 
         public Sprite SpellIcon => spellIcon;
@@ -60,11 +60,7 @@ namespace Battle.PlayerSpell
         public SpellType SpellType => spellType;
 
         public float EffectDuration => effectDuration;
-
-        public string SpellDescription => description;
-
-        public VideoClip VideoClip => videoClip;
-
+        
         private Color GetColor()
         {
             return SpellColorPalette.LoadOnEditor().GetColor(spellAttribute);

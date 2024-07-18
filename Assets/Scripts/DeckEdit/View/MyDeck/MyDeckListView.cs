@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Databases;
 using DeckEdit.Model;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -17,8 +16,6 @@ namespace DeckEdit.View.MyDeck
 
         private readonly SpellIconView[] _iconViewInstances = new SpellIconView[MyDeckModel.MaxCount];
         public IReadOnlyList<SpellIconView> IconViewInstances => _iconViewInstances;
-
-        [SerializeField] private SpellIconView highlanderIcon;
 
 
         public bool IsInitialized { get; private set; }
@@ -36,13 +33,6 @@ namespace DeckEdit.View.MyDeck
                 var instance = Instantiate(spellIconViewPrefab, contentsParent);
                 _iconViewInstances[i] = instance;
             }
-        }
-
-        public void UpdateHighlander(SpellKey spellKey)
-        {
-            var data = _spellDatabase.Find(spellKey.Key);
-            highlanderIcon.SetIcon(data.SpellIcon);
-            highlanderIcon.SetColor(_spellColorPalette.GetColor(data.SpellAttribute));
         }
 
         public void OnUpdate(IReadOnlyList<SpellKey> spellKeys)

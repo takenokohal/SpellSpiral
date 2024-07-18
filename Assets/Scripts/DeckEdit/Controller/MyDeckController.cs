@@ -34,7 +34,7 @@ namespace DeckEdit.Controller
         [Inject] private readonly DeckEditStateModel _deckEditStateModel;
 
         [Inject] private readonly IDeckSaveDataPresenter _saveDataPresenter;
-        
+
         public void Initialize()
         {
             _deckEditStateModel.StateObservable.Subscribe(value =>
@@ -65,7 +65,6 @@ namespace DeckEdit.Controller
 
         public void Tick()
         {
-
             if (_deckEditStateModel.CurrentState != DeckEditState.MyDeck)
                 return;
 

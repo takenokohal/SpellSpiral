@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using VContainer;
 
-namespace Others
+namespace Others.Dialog
 {
     public class OkDialog : MonoBehaviour
     {
