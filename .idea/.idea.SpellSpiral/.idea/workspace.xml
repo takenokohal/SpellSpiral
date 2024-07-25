@@ -117,23 +117,4 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/HomeScene/VerticalChoiceListView.cs</url>
-          <line>147</line>
-          <properties documentPath="C:\Users\taken\Documents\UnityProjects\SpellSpiral\Assets\Scripts\HomeScene\VerticalChoiceListView.cs" initialLine="147" containingFunctionPresentation="Method 'UpdateView'">
-            <startOffsets>
-              <option value="3754" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3799" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>

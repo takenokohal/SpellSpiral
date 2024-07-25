@@ -1,7 +1,7 @@
-﻿using Battle.PlayerSpell;
-using Databases;
+﻿using Databases;
 using DeckEdit.Model;
 using Others.Message;
+using Spell;
 using TMPro;
 using UniRx;
 using UnityEngine;

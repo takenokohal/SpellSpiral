@@ -5,6 +5,7 @@ using DeckEdit.Model;
 using DG.Tweening;
 using Others;
 using Others.Input;
+using Spell;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;

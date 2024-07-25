@@ -9,7 +9,7 @@ namespace Battle.Character.Enemy.Variables.Molle
     {
         public override MolleState StateKey => MolleState.SummonHighButterfly;
 
-        [SerializeField] private HighButterfly highButterfly;
+        [SerializeField] private string highButterfly;
 
         protected override async UniTask Sequence()
         {

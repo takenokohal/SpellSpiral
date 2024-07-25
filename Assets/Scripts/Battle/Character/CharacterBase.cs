@@ -8,23 +8,24 @@ using Battle.Character.Servant;
 using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
+using Battle.System.Main;
 using Cysharp.Threading.Tasks;
 using Databases;
 using DG.Tweening;
 using Others;
+using Others.Utils;
 using Sirenix.OdinInspector;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 using VContainer;
+using Random = UnityEngine.Random;
 
 namespace Battle.Character
 {
     public abstract class CharacterBase : SerializedMonoBehaviour, IAttackHittable
     {
-        [SerializeField, ValueDropdown(nameof(GetCharacterKeys))]
-        private string characterKey;
-
-        public string CharacterKey => characterKey;
+        public string CharacterKey => CharacterData.CharacterKey;
         public Rigidbody Rigidbody { get; private set; }
         public Animator Animator { get; private set; }
 
@@ -44,6 +45,8 @@ namespace Battle.Character
         [Inject] protected ReadyEffectFactory ReadyEffectFactory { get; private set; }
         [Inject] protected CharacterCamera CharacterCamera { get; private set; }
         [Inject] protected CameraSwitcher CameraSwitcher { get; private set; }
+
+        [Inject] protected ConstValues ConstValues { get; private set; }
 
 
         protected CharacterBase Master { get; private set; }
@@ -88,10 +91,11 @@ namespace Battle.Character
             CharacterFactory characterFactory,
             ReadyEffectFactory readyEffectFactory,
             CharacterCamera characterCamera,
-            CameraSwitcher cameraSwitcher)
+            CameraSwitcher cameraSwitcher,
+            ConstValues constValues)
         {
             Master = master;
-            
+
             AttackHitEffectFactory = attackHitEffectFactory;
             AttackDatabase = attackDatabase;
             CharacterDatabase = characterDatabase;
@@ -102,6 +106,12 @@ namespace Battle.Character
             ReadyEffectFactory = readyEffectFactory;
             CharacterCamera = characterCamera;
             CameraSwitcher = cameraSwitcher;
+            ConstValues = constValues;
+        }
+
+        public void InitCharacterData(string key)
+        {
+            CharacterData = CharacterDatabase.Find(key);
         }
 
 
@@ -125,18 +135,26 @@ namespace Battle.Character
             {
                 IsStop = true
             };
-            
+
             BattleLoop.Event.Where(value => value == BattleEvent.BattleStart).Take(1)
                 .Subscribe(_ => CharacterRotation.IsStop = false).AddTo(this);
-
-            CharacterData = CharacterDatabase.Find(characterKey);
 
             AllCharacterManager.RegisterCharacter(this);
 
             _animatorLocalPosition = AnimatorIsNull ? Vector3.zero : Animator.transform.localPosition;
-            CurrentLife = CharacterData.Life;
 
             InitializeFunction();
+
+            CurrentLife = CharacterData.Life;
+
+
+            this.FixedUpdateAsObservable().Subscribe(_ =>
+            {
+                if (AnimatorIsNull)
+                    return;
+                Animator.transform.localPosition
+                    = Vector3.Lerp(Animator.transform.localPosition, Vector3.zero, 0.2f);
+            }).AddTo(this);
 
             IsInitialized = true;
         }
@@ -169,17 +187,26 @@ namespace Battle.Character
             var attackData = AttackDatabase.Find(attackHitController.AttackKey);
             if (attackData != null)
             {
-                CurrentLife -= CalcDamage(attackHitController);
+                var damage = CalcDamage(attackHitController);
+                CurrentLife -= damage;
+                var pos = (attackHitController.transform.position + Rigidbody.position) / 2f;
+
+                CharacterCamera.Impulse(damage);
+                AllAudioManager.PlaySe("Hit");
+                AttackHitEffectFactory.Create(
+                    attackData.Attribute,
+                    damage,
+                    pos,
+                    Rigidbody.rotation).Forget();
             }
 
-            AllAudioManager.PlaySe("Hit");
-            CharacterCamera.ImpulseSource.GenerateImpulse();
-            AttackHitEffectFactory.Create(transform.position, transform.rotation).Forget();
 
             if (!AnimatorIsNull)
             {
-                Animator.transform.DOShakePosition(0.1f, 0.1f, 2)
-                    .OnComplete(() => Animator.transform.localPosition = _animatorLocalPosition);
+                var offset = 0.05f;
+                Animator.transform.localPosition =
+                    Vector2Extension.AngleToVector(Random.Range(0f, Mathf.PI * 2f) * offset);
+
                 Animator.Play("OnDamage", 0, 0);
             }
 
@@ -191,6 +218,7 @@ namespace Battle.Character
         protected virtual void OnAttackedChild(AttackHitController attackHitController)
         {
         }
+
 
         public OwnerType GetOwnerType()
         {

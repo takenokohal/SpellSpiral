@@ -19,9 +19,11 @@ namespace DeckEdit.View.MyDeck
         [SerializeField] private int xLength;
         [SerializeField] private int yLength;
 
-        [Inject] private readonly OkDialog _okDialog;
-        [Inject] private readonly YesNoDialog _yesNoDialog;
-        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+        //   [Inject] private readonly OkDialog _okDialog;
+        //     [Inject] private readonly YesNoDialog _yesNoDialog;
+        //   private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+
+        [Inject] private readonly ChoiceDialog _choiceDialog;
         public Vector2Int CurrentPos { get; private set; }
         [Inject] private readonly MyDeckModel _myDeckModel;
         [Inject] private readonly DeckEditStateModel _deckEditStateModel;
@@ -58,7 +60,7 @@ namespace DeckEdit.View.MyDeck
             if (!_isActive)
                 return;
 
-            if (AnyDialogIsOpen)
+            if (_choiceDialog.IsOpen)
                 return;
 
             ManageMove();
@@ -89,7 +91,7 @@ namespace DeckEdit.View.MyDeck
 
             var length = GetCurrentDeckLength();
             var outOfLength = PosToIndex(nextPos) >= length;
-            outOfLength |= nextPos.x >= xLength ;
+            outOfLength |= nextPos.x >= xLength;
             outOfLength |= nextPos.x < 0;
             outOfLength |= nextPos.y >= yLength;
             outOfLength |= nextPos.y < 0;
@@ -99,7 +101,7 @@ namespace DeckEdit.View.MyDeck
             {
                 if (inputX == 1)
                     _deckEditStateModel.CurrentState = DeckEditState.CardPool;
-                
+
                 return;
             }
 

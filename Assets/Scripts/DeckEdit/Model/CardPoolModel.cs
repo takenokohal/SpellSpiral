@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Databases;
 using Others;
+using Spell;
 using UniRx;
 using UnityEngine;
 using VContainer;

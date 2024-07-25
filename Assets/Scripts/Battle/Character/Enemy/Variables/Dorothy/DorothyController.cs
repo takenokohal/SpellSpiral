@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Battle.Character.Enemy.Variables.Baltecia;
+using Battle.System.Main;
 using Cysharp.Threading.Tasks;
 using Others;
 using Others.Utils;

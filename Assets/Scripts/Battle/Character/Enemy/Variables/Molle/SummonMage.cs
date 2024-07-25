@@ -8,7 +8,7 @@ namespace Battle.Character.Enemy.Variables.Molle
 {
     public class SummonMage : BossSequenceBase<MolleState>
     {
-        [SerializeField] private ServantBase servantPrefab;
+        [SerializeField] private string servantPrefab;
 
         [SerializeField] private Vector2 corner;
 

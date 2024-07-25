@@ -23,10 +23,12 @@ namespace DeckEdit.Controller
         [Inject] private readonly CardPoolModel _cardPoolModel;
 
         [Inject] private readonly SpellDatabase _spellDatabase;
-        [Inject] private readonly OkDialog _okDialog;
-        [Inject] private readonly YesNoDialog _yesNoDialog;
+        //      [Inject] private readonly OkDialog _okDialog;
+        //   [Inject] private readonly YesNoDialog _yesNoDialog;
 
-        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+        //   private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+
+        [Inject] private readonly ChoiceDialog _choiceDialog;
 
         [Inject] private readonly CardPoolCursorView _cardPoolCursorView;
         [Inject] private readonly CardPoolListView _cardPoolListView;
@@ -65,7 +67,7 @@ namespace DeckEdit.Controller
             if (_deckEditStateModel.CurrentState != DeckEditState.CardPool)
                 return;
 
-            if (AnyDialogIsOpen)
+            if (_choiceDialog.IsOpen)
                 return;
 
             ManageClick();

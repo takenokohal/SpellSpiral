@@ -1,13 +1,7 @@
 ﻿using Audio;
 using Config;
 using Databases;
-using DeckEdit.Controller;
-using DeckEdit.Model;
 using DeckEdit.SaveData;
-using DeckEdit.View;
-using DeckEdit.View.CardPool;
-using DeckEdit.View.Highlander;
-using DeckEdit.View.MyDeck;
 using Others.Dialog;
 using Others.Input;
 using Others.Message;
@@ -26,13 +20,16 @@ namespace Others.LifetimeScopes
         [SerializeField] private CharacterDatabase characterDatabase;
         [SerializeField] private PlayerConstData playerConstData;
         [SerializeField] private MessageDatabase messageDatabase;
-
+        [SerializeField] private ConstValues constValues;
+        
 
         [SerializeField] private SeManager seManager;
 
         [SerializeField] private SceneFadePanelView sceneFadePanelView;
-        [SerializeField] private YesNoDialog yesNoDialog;
-        [SerializeField] private OkDialog okDialog;
+       // [SerializeField] private YesNoDialog yesNoDialog;
+       // [SerializeField] private OkDialog okDialog;
+        [SerializeField] private ChoiceDialog choiceDialog;
+        
         [SerializeField] private MyInputManager myInputManager;
 
 
@@ -48,6 +45,7 @@ namespace Others.LifetimeScopes
             builder.RegisterInstance(characterDatabase);
             builder.RegisterInstance(playerConstData);
             builder.RegisterInstance(messageDatabase);
+            builder.RegisterInstance(constValues);
 
             builder.Register<DeckSaveDataPresenter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MySceneManager>(Lifetime.Singleton);
@@ -58,8 +56,9 @@ namespace Others.LifetimeScopes
             builder.RegisterEntryPoint<AllAudioManager>();
 
             InstantiateDontDestroyRegister(sceneFadePanelView, builder);
-            InstantiateDontDestroyRegister(yesNoDialog, builder);
-            InstantiateDontDestroyRegister(okDialog, builder);
+   //         InstantiateDontDestroyRegister(yesNoDialog, builder);
+         //   InstantiateDontDestroyRegister(okDialog, builder);
+            InstantiateDontDestroyRegister(choiceDialog, builder);
 
             InstantiateDontDestroyRegister(seManager, builder);
             InstantiateDontDestroyRegister(myInputManager, builder);

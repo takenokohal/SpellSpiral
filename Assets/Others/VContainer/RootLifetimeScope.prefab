@@ -54,6 +54,7 @@ MonoBehaviour:
   characterDatabase: {fileID: 11400000, guid: 5283d8522c66a8a4fa6340a044fdfecd, type: 2}
   playerConstData: {fileID: 11400000, guid: c9627ccae04c7044182290bbc8b1904e, type: 2}
   messageDatabase: {fileID: 11400000, guid: 7a383fc9a3019324a9664e6d0e2fd4e7, type: 2}
+  constValues: {fileID: 11400000, guid: 246dd0edc431fbd46a73224d0bef860a, type: 2}
   seManager: {fileID: 8668005862352214212, guid: b78547fd5245dcd4d9e639e0f5995338,
     type: 3}
   sceneFadePanelView: {fileID: 6080814512602597102, guid: b599d48483d48264fb50304d39b710fc,
@@ -62,7 +63,7 @@ MonoBehaviour:
     type: 3}
   okDialog: {fileID: 1142365694622216976, guid: fe1eb44b876445643a5603131cb2acce,
     type: 3}
-  myInputManager: {fileID: 4717391911517415728, guid: 33407c4f21250d44b907049bc4899ccc,
+  choiceDialog: {fileID: 3196468476467936291, guid: b808865364354294abf5ca07c4995ed7,
     type: 3}
-  deckEditActiveController: {fileID: 2488933265237765551, guid: df9c8e2097f21e246a5dbbfd6baaad89,
+  myInputManager: {fileID: 4717391911517415728, guid: 33407c4f21250d44b907049bc4899ccc,
     type: 3}

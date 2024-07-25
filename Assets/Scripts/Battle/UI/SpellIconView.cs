@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using Battle.Character.Player;
 using Battle.Character.Player.Deck;
-using Battle.PlayerSpell;
 using Cysharp.Threading.Tasks;
 using Databases;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Spell;
 using TMPro;
 using UniRx;
 using UnityEngine;

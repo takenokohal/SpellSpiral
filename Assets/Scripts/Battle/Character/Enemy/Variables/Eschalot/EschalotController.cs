@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Battle.Character.Enemy.Variables.Dorothy;
+using Battle.System.Main;
 using Cysharp.Threading.Tasks;
-using Others;
 using Others.Utils;
 using UniRx;
 
@@ -17,7 +16,7 @@ namespace Battle.Character.Enemy.Variables.Eschalot
             base.InitializeFunction();
 
             BattleLoop.Event
-                .Where(value => value ==BattleEvent.BattleStart)
+                .Where(value => value == BattleEvent.BattleStart)
                 .Take(1)
                 .Subscribe(_ => Loop().Forget())
                 .AddTo(this);
@@ -25,12 +24,19 @@ namespace Battle.Character.Enemy.Variables.Eschalot
 
         private async UniTask Loop()
         {
-         //   await PlayState(DorothyState.FlowerGarden);
-         
+            //   await PlayState(DorothyState.FlowerGarden);
+
+            var states = new List<EschalotState>
+            {
+                EschalotState.AreaBeam,
+                EschalotState.ConvergenceBeam,
+                EschalotState.DiffusionBeam
+            };
             while (!commonCancellationTokenSource.IsCancellationRequested)
             {
-                var nextState = EschalotState.AreaBeam;
+                var nextState = states.Where(value => value != CurrentState).GetRandomValue();
 
+                nextState = EschalotState.DiffusionBeam;
                 LookPlayer();
 
                 await PlayState(nextState);
@@ -41,6 +47,5 @@ namespace Battle.Character.Enemy.Variables.Eschalot
         {
             return CurrentLife <= CharacterData.Life / 2f && !_halfLifeSpecialAttacked;
         }
-        
     }
 }

@@ -34,7 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 15
+      Data: 20
     - Name: 
       Entry: 7
       Data: 
@@ -572,16 +572,307 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: yes
+      Data: deck_edit_return
     - Name: $v
       Entry: 7
       Data: 21|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
     - Name: messageKey
       Entry: 1
-      Data: yes
+      Data: deck_edit_return
     - Name: _translatedTexts
       Entry: 7
       Data: 22|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30C7\u30C3\u30AD\u7DE8\u96C6\u3092\u7D42\u4E86\u3057\u307E\u3059\u304B\uFF1F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Do you want to finish editing the deck?
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: deck_edit_return_no_filled
+    - Name: $v
+      Entry: 7
+      Data: 23|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: deck_edit_return_no_filled
+    - Name: _translatedTexts
+      Entry: 7
+      Data: 24|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30C7\u30C3\u30AD\u679A\u6570\u304C20\u679A\u4EE5\u4E0B\u3067\u3059\u3002\u30C7\u30C3\u30AD\u7DE8\u96C6\u3092\u7D42\u4E86\u3057\u307E\u3059\u304B\uFF1F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: The number of cards in the deck is 20 or less. Do you want to finish
+        editing the deck?
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: deck_edit_return_save
+    - Name: $v
+      Entry: 7
+      Data: 25|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: deck_edit_return_save
+    - Name: _translatedTexts
+      Entry: 7
+      Data: 26|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4FDD\u5B58\u3057\u3066\u7D42\u4E86"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: save and exit
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: deck_edit_return_discard
+    - Name: $v
+      Entry: 7
+      Data: 27|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: deck_edit_return_discard
+    - Name: _translatedTexts
+      Entry: 7
+      Data: 28|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u5909\u66F4\u3092\u7834\u68C4\u3057\u3066\u7D42\u4E86"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Discard changes and exit
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: deck_edit_return_cancel
+    - Name: $v
+      Entry: 7
+      Data: 29|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: deck_edit_return_cancel
+    - Name: _translatedTexts
+      Entry: 7
+      Data: 30|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30AD\u30E3\u30F3\u30BB\u30EB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: cancel
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: yes
+    - Name: $v
+      Entry: 7
+      Data: 31|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+    - Name: messageKey
+      Entry: 1
+      Data: yes
+    - Name: _translatedTexts
+      Entry: 7
+      Data: 32|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -633,13 +924,13 @@ MonoBehaviour:
       Data: no
     - Name: $v
       Entry: 7
-      Data: 23|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+      Data: 33|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
     - Name: messageKey
       Entry: 1
       Data: no
     - Name: _translatedTexts
       Entry: 7
-      Data: 24|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 34|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -691,13 +982,13 @@ MonoBehaviour:
       Data: deck_edit_mana_cost
     - Name: $v
       Entry: 7
-      Data: 25|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+      Data: 35|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
     - Name: messageKey
       Entry: 1
       Data: deck_edit_mana_cost
     - Name: _translatedTexts
       Entry: 7
-      Data: 26|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 36|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -749,13 +1040,13 @@ MonoBehaviour:
       Data: my_deck
     - Name: $v
       Entry: 7
-      Data: 27|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+      Data: 37|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
     - Name: messageKey
       Entry: 1
       Data: my_deck
     - Name: _translatedTexts
       Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 38|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -807,13 +1098,13 @@ MonoBehaviour:
       Data: spell_list
     - Name: $v
       Entry: 7
-      Data: 29|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+      Data: 39|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
     - Name: messageKey
       Entry: 1
       Data: spell_list
     - Name: _translatedTexts
       Entry: 7
-      Data: 30|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 40|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -862,16 +1153,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: character_name_baltecia
+      Data: start_training
     - Name: $v
       Entry: 7
-      Data: 31|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
+      Data: 41|Others.Message.MessageDatabase+MessageData, Assembly-CSharp
     - Name: messageKey
       Entry: 1
-      Data: character_name_baltecia
+      Data: start_training
     - Name: _translatedTexts
       Entry: 7
-      Data: 32|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 42|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -887,7 +1178,7 @@ MonoBehaviour:
       Data: 22
     - Name: $v
       Entry: 1
-      Data: 
+      Data: "\u30C8\u30EC\u30FC\u30CB\u30F3\u30B0\u3092\u958B\u59CB\u3057\u307E\u3059"
     - Name: 
       Entry: 8
       Data: 
@@ -899,7 +1190,7 @@ MonoBehaviour:
       Data: 10
     - Name: $v
       Entry: 1
-      Data: 
+      Data: start training
     - Name: 
       Entry: 8
       Data: 

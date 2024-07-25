@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using Cysharp.Threading.Tasks;
 using Others;
 using Others.Dialog;
@@ -14,8 +14,10 @@ namespace DeckEdit.Model
     {
         [Inject] private readonly MyInputManager _myInputManager;
         private PlayerInput PlayerInput => _myInputManager.PlayerInput;
-        [Inject] private readonly YesNoDialog _yesNoDialog;
-        [Inject] private readonly OkDialog _okDialog;
+     //   [Inject] private readonly YesNoDialog _yesNoDialog;
+    //    [Inject] private readonly OkDialog _okDialog;
+    
+    
         [Inject] private readonly MySceneManager _mySceneManager;
         [Inject] private readonly MyDeckModel _myDeckModel;
 
@@ -58,4 +60,4 @@ namespace DeckEdit.Model
             }
         }
     }
-}
+}*/

@@ -21,10 +21,12 @@ namespace DeckEdit.View.CardPool
 
         [SerializeField] private int xLength;
 
-        [Inject] private readonly OkDialog _okDialog;
-        [Inject] private readonly YesNoDialog _yesNoDialog;
+        //  [Inject] private readonly OkDialog _okDialog;
+        //     [Inject] private readonly YesNoDialog _yesNoDialog;
         [Inject] private readonly DeckEditStateModel _deckEditStateModel;
-        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+        //  private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+
+        [Inject] private readonly ChoiceDialog _choiceDialog;
         public Vector2Int CurrentPos { get; private set; }
 
         public int CurrentIndex
@@ -50,7 +52,7 @@ namespace DeckEdit.View.CardPool
             if (!_isActive)
                 return;
 
-            if (AnyDialogIsOpen)
+            if (_choiceDialog.IsOpen)
                 return;
 
             ManageMove();

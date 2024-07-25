@@ -1,6 +1,5 @@
 ﻿using System;
 using Battle.Character;
-using Battle.PlayerSpell;
 using UnityEngine;
 
 namespace Battle.CommonObject.MagicCircle

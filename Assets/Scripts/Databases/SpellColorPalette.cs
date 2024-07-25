@@ -2,6 +2,7 @@
 using Others;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Spell;
 using UnityEditor;
 using UnityEngine;
 

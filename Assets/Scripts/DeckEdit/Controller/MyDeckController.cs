@@ -25,9 +25,11 @@ namespace DeckEdit.Controller
         [Inject] private readonly MyDeckModel _myDeckModel;
         [Inject] private readonly SpellDatabase _spellDatabase;
 
-        [Inject] private readonly OkDialog _okDialog;
-        [Inject] private readonly YesNoDialog _yesNoDialog;
-        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+        //    [Inject] private readonly OkDialog _okDialog;
+        //    [Inject] private readonly YesNoDialog _yesNoDialog;
+        //    private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+
+        [Inject] private readonly ChoiceDialog _choiceDialog;
 
         [Inject] private readonly MyDeckCursorView _myDeckCursorView;
         [Inject] private readonly MyDeckListView _myDeckListView;
@@ -68,7 +70,7 @@ namespace DeckEdit.Controller
             if (_deckEditStateModel.CurrentState != DeckEditState.MyDeck)
                 return;
 
-            if (AnyDialogIsOpen)
+            if (_choiceDialog.IsOpen)
                 return;
 
             ManageClick();

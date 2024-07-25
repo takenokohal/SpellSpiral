@@ -2,14 +2,14 @@ using System;
 using System.Linq;
 using Battle.Character.Player.Buff;
 using Battle.Character.Player.Deck;
-using Battle.CutIn;
 using Battle.MyCamera;
-using Battle.PlayerSpell;
+using Battle.System.CutIn;
 using Cysharp.Threading.Tasks;
 using Databases;
 using Others;
 using Others.Utils;
 using Sirenix.OdinInspector;
+using Spell;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -24,7 +24,6 @@ namespace Battle.Character.Player
         private readonly ReactiveDictionary<SpellSlot, string> _currentSpells = new();
 
         public IReadOnlyReactiveDictionary<SpellSlot, string> CurrentSpells => _currentSpells;
-        // [ShowInInspector] private IReactiveDictionary<SpellSlot, string> ForInspector => _currentSpells;
 
         [Inject] private readonly SpellFactory _spellFactory;
         [Inject] private readonly SpellDatabase _spellDatabase;

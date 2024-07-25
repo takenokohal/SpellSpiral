@@ -5,6 +5,6 @@
         ResignBeam,
         ConvergenceBeam,
         AreaBeam,
-        DiffusionBeam
+        DiffusionBeam,
     }
 }

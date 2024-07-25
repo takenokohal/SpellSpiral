@@ -17,22 +17,26 @@ namespace DeckEdit.Controller
 
         [Inject] private readonly MyDeckModel _myDeckModel;
 
-        [Inject] private readonly YesNoDialog _yesNoDialog;
+        [Inject] private readonly ChoiceDialog _choiceDialog;
         [Inject] private readonly IDeckSaveDataPresenter _deckSaveDataPresenter;
 
         [SerializeField] private CanvasGroup canvasGroup;
 
+        private static UniTaskCompletionSource _uniTaskCompletionSource;
 
         public static bool IsActive { get; private set; }
 
         public static async UniTask StartDeckEdit()
         {
-            IsActive = true;
             await SceneManager.LoadSceneAsync("DeckEdit", LoadSceneMode.Additive);
+            _uniTaskCompletionSource = new UniTaskCompletionSource();
+            await _uniTaskCompletionSource.Task;
         }
 
         private void Start()
         {
+            IsActive = true;
+
             canvasGroup.alpha = 0;
             canvasGroup.DOFade(1, 0.5f);
         }
@@ -44,33 +48,73 @@ namespace DeckEdit.Controller
                 return;
             }
 
+            if (_choiceDialog.IsOpen)
+                return;
+
             if (_myInputManager.PlayerInput.actions["No"].WasPressedThisFrame())
-                TryFinish().Forget();
+                TryFinish();
         }
 
-        private async UniTaskVoid TryFinish()
+        private void TryFinish()
         {
             var isFilled = _myDeckModel.IsFilled;
+            //デッキ枚数足りない
             if (!isFilled)
             {
-                var result = await _yesNoDialog.Open("デッキ枚数が足りません。変更を破棄して終了しますか？");
-                switch (result)
-                {
-                    case YesNoDialog.YesNo.Yes:
-                        Close().Forget();
-                        break;
-                    case YesNoDialog.YesNo.No:
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                FinishDialogNoFilled().Forget();
             }
             else
             {
-                _deckSaveDataPresenter.SaveDeck(new DeckData(
-                    _myDeckModel.CurrentDeckList.Select(value => value.Key).ToList(),
-                    _myDeckModel.CurrentHighlanderSpell.Key));
-                Close().Forget();
+                FinishDialogFilled().Forget();
+            }
+        }
+
+        private async UniTask FinishDialogNoFilled()
+        {
+            var result = await _choiceDialog.StartDialog(
+                new ChoiceDialogData("deck_edit_return_no_filled", new[]
+                {
+                    "deck_edit_return_discard",
+                    "deck_edit_return_cancel",
+                }));
+            switch (result)
+            {
+                case 0:
+                    Close().Forget();
+                    break;
+                case 1:
+                case -1:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private async UniTask FinishDialogFilled()
+        {
+            var result = await _choiceDialog.StartDialog(
+                new ChoiceDialogData("deck_edit_return", new[]
+                {
+                    "deck_edit_return_save",
+                    "deck_edit_return_discard",
+                    "deck_edit_return_cancel",
+                }));
+            switch (result)
+            {
+                case 0:
+                    _deckSaveDataPresenter.SaveDeck(new DeckData(
+                        _myDeckModel.CurrentDeckList.Select(value => value.Key).ToList(),
+                        _myDeckModel.CurrentHighlanderSpell.Key));
+                    Close().Forget();
+                    break;
+                case 1:
+                    Close().Forget();
+                    break;
+                case 2:
+                case -1:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -80,6 +124,8 @@ namespace DeckEdit.Controller
 
             await canvasGroup.DOFade(0, 0.2f);
             await SceneManager.UnloadSceneAsync("DeckEdit");
+
+            _uniTaskCompletionSource.TrySetResult();
         }
     }
 }

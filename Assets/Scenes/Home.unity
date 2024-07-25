@@ -236,6 +236,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1308657120 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3684651744740693244, guid: 8c33e18ba5086c14cb14ed22abe840d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466324791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1323343851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,6 +5383,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7442765500165572507, guid: 8c33e18ba5086c14cb14ed22abe840d8,
+        type: 3}
+      propertyPath: missionArts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442765500165572507, guid: 8c33e18ba5086c14cb14ed22abe840d8,
+        type: 3}
+      propertyPath: missionArts.Array.data[4]
+      value: 
+      objectReference: {fileID: 1308657120}
     - target: {fileID: 7843029789019094052, guid: 8c33e18ba5086c14cb14ed22abe840d8,
         type: 3}
       propertyPath: m_Name

@@ -9,7 +9,7 @@ namespace Battle.Character.Enemy.Variables.Molle
     {
         public override MolleState StateKey => MolleState.SummonFighter;
 
-        [SerializeField] private HomingServant homingServant;
+        [SerializeField] private string homingServant;
 
         [SerializeField] private float recoveryTime;
 

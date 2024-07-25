@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Battle.PlayerSpell;
 using Cysharp.Threading.Tasks;
 using Others;
 using Others.Utils;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Spell;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;

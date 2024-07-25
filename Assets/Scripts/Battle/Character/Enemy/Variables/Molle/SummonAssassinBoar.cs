@@ -9,7 +9,7 @@ namespace Battle.Character.Enemy.Variables.Molle
 {
     public class SummonAssassinBoar : BossSequenceBase<MolleState>
     {
-        [SerializeField] private AssassinServant boarPrefab;
+        [SerializeField] private string boarKey;
         [SerializeField] private float moveDuration;
 
         [SerializeField] private int count;
@@ -64,7 +64,7 @@ namespace Battle.Character.Enemy.Variables.Molle
             await MagicCircleFactory.CreateAndWait(new MagicCircleParameters(Parent, 1,
                 () => tmpPos));
 
-            CharacterFactory.CreateAndInject(boarPrefab, Parent, tmpPos);
+            CharacterFactory.CreateAndInject(boarKey, Parent, tmpPos);
         }
 
         private Vector2 CalcPos(int i)

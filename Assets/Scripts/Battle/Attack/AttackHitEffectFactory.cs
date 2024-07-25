@@ -1,24 +1,32 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using Spell;
 using UnityEngine;
 using UnityEngine.Pool;
 
 namespace Battle.Attack
 {
-    public class AttackHitEffectFactory : MonoBehaviour
+    public class AttackHitEffectFactory : SerializedMonoBehaviour
     {
-        [SerializeField] private ParticleSystem effectPrefab;
-
-        private ObjectPool<ParticleSystem> _objectPool;
+        [OdinSerialize] private Dictionary<SpellAttribute, ParticleSystem> _effects = new();
+        private Dictionary<SpellAttribute, ObjectPool<ParticleSystem>> _pools = new();
 
         [SerializeField] private ParticleSystem servantDeadEffectPrefab;
         private ObjectPool<ParticleSystem> _deadEffectPool;
 
         private void Start()
         {
-            _objectPool = new ObjectPool<ParticleSystem>(
-                () => Instantiate(effectPrefab),
-                target => target.gameObject.SetActive(true),
-                target => target.gameObject.SetActive(false));
+            foreach (var keyValuePair in _effects)
+            {
+                var key = keyValuePair.Key;
+                var prefab = keyValuePair.Value;
+                _pools.Add(key, new ObjectPool<ParticleSystem>(
+                    () => Instantiate(prefab),
+                    target => target.gameObject.SetActive(true),
+                    target => target.gameObject.SetActive(false)));
+            }
 
             _deadEffectPool = new ObjectPool<ParticleSystem>(
                 () => Instantiate(servantDeadEffectPrefab),
@@ -27,16 +35,21 @@ namespace Battle.Attack
         }
 
 
-        public async UniTaskVoid Create(Vector3 position, Quaternion rotation)
+        public async UniTaskVoid Create(
+            SpellAttribute spellAttribute,
+            float damage,
+            Vector3 position,
+            Quaternion rotation)
         {
-            var v = _objectPool.Get();
+            var v = _pools[spellAttribute].Get();
             var t = v.transform;
             t.position = position;
             t.rotation = rotation;
+            t.localScale = Vector3.one * (1f + damage / 100f);
 
             await UniTask.Delay(5000, cancellationToken: destroyCancellationToken);
 
-            _objectPool.Release(v);
+            _pools[spellAttribute].Release(v);
         }
 
         public async UniTaskVoid CreateDeadEffect(Vector3 position, Quaternion rotation, float size)

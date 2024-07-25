@@ -7,6 +7,7 @@ using Others;
 using Others.Utils;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Spell;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;

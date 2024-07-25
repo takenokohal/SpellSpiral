@@ -2,6 +2,7 @@
 using Battle.CommonObject.Bullet;
 using Battle.CommonObject.MagicCircle;
 using Battle.MyCamera;
+using Battle.System.Main;
 using Databases;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -20,10 +21,13 @@ namespace Battle.Character.Servant
         [Inject] private readonly CharacterCamera _characterCamera;
         [Inject] private readonly ReadyEffectFactory _readyEffectFactory;
         [Inject] private readonly CameraSwitcher _cameraSwitcher;
+        [Inject] private readonly ConstValues _constValues;
 
-        public CharacterBase CreateAndInject(CharacterBase characterPrefab, CharacterBase master, Vector2 pos)
+        public CharacterBase CreateAndInject(string characterKey, CharacterBase master, Vector2 pos)
         {
+            var characterPrefab = _characterDatabase.Find(characterKey).CharacterBase;
             var instance = Object.Instantiate(characterPrefab, pos, Quaternion.identity);
+         
             instance.AcquiredInject(
                 master,
                 _attackHitEffectFactory,
@@ -35,7 +39,10 @@ namespace Battle.Character.Servant
                 this,
                 _readyEffectFactory,
                 _characterCamera,
-                _cameraSwitcher);
+                _cameraSwitcher,
+                 _constValues);
+            instance.InitCharacterData(characterKey);
+
 
             instance.transform.position = pos;
 

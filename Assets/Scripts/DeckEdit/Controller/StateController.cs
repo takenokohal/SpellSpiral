@@ -1,4 +1,4 @@
-﻿using Audio;
+﻿/*using Audio;
 using DeckEdit.Model;
 using DeckEdit.View;
 using DeckEdit.View.CardPool;
@@ -18,15 +18,15 @@ namespace DeckEdit.Controller
         [Inject] private readonly MyInputManager _myInputManager;
         private PlayerInput PlayerInput => _myInputManager.PlayerInput;
 
-        [Inject] private readonly OkDialog _okDialog;
-        [Inject] private readonly YesNoDialog _yesNoDialog;
+            //    [Inject] private readonly OkDialog _okDialog;
+        //[Inject] private readonly YesNoDialog _yesNoDialog;
 
         [Inject] private readonly DeckEditStateModel _stateModel;
 
         [Inject] private readonly MyDeckCursorView _myDeckCursorView;
         [Inject] private readonly CardPoolCursorView _cardPoolCursorView;
 
-        private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
+      //  private bool AnyDialogIsOpen => _okDialog.IsOpen || _yesNoDialog.IsOpen;
 
 
         private void SetArea(bool isDeck)
@@ -41,4 +41,4 @@ namespace DeckEdit.Controller
       //      SetArea(true);
         }
     }
-}
+}*/

@@ -1,5 +1,7 @@
 ﻿using System;
+using Databases;
 using Others;
+using Spell;
 using UnityEngine;
 
 namespace Battle.Attack

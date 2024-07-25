@@ -20,25 +20,15 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e71c2b9294711b14d9f0930e74d97264, type: 3}
     - {fileID: 4689855619822940728, guid: dd6d9817207d39749adb3fd15642acf7, type: 3}
     - {fileID: 21300000, guid: b3c0a1760ea2ab24b8b17c70e82b7dca, type: 3}
-    - {fileID: 4047645741896833891, guid: 97cfe99312f36154992d3ba74b49b6a7, type: 3}
-    - {fileID: 21300000, guid: 3954febeb65ffa549823b3a809ae0ddc, type: 3}
-    - {fileID: 5053310292412947563, guid: 0f525662ec9a55742a88475bf8e0ba2e, type: 3}
-    - {fileID: 21300000, guid: 3388c727be156e24ebf5b0db36ce656f, type: 3}
-    - {fileID: 7719843552145132806, guid: 3bd50f831b493f8448f806b5bfcb2f96, type: 3}
-    - {fileID: 21300000, guid: a56a08f9ef2cc044a8446f35ce11574a, type: 3}
-    - {fileID: 1811864090832986915, guid: 037f963cb892f1f479872b004926fab5, type: 3}
-    - {fileID: 21300000, guid: ebda9cef77364904f997ff1007e387a5, type: 3}
-    - {fileID: 6720694445727759868, guid: 933a2a8088e525d44b73617e4e4f2ad3, type: 3}
-    - {fileID: 21300000, guid: 4ea42cc2fd08f7346b8807a5df2505e0, type: 3}
     - {fileID: 3745427717357840417, guid: 4d31a1a77e9b91445bedb3c224588671, type: 3}
     - {fileID: 21300000, guid: 55aec9f3c85eeef4b9818031d224b2f3, type: 3}
-    - {fileID: 21300000, guid: 1dabb119a91000f4abbe8fb60ececf62, type: 3}
     - {fileID: 5369092306956731075, guid: 97aa7a038add9ab4f9192384d0e23d93, type: 3}
     - {fileID: 21300000, guid: c0ff9f823253fea4796b1705b4102cf8, type: 3}
-    - {fileID: 8206060808602779304, guid: fe7442ab46a660647bc937b9b84c23fc, type: 3}
-    - {fileID: 21300000, guid: 1417c04c04063b04e90d31482bf4cdb8, type: 3}
-    - {fileID: 2318348214226591015, guid: d805bf9593d0e1d40990f677cbed62f7, type: 3}
-    - {fileID: 21300000, guid: 6c70bddd6d6a1d443a9a38b4c8551f7f, type: 3}
+    - {fileID: 7236124037966821928, guid: 21272bd567651cb4b9c1e2832fb83aa2, type: 3}
+    - {fileID: 21300000, guid: 1be05a3478e5d1a4abdc8879143bcb3e, type: 3}
+    - {fileID: 5053310292412947563, guid: 0f525662ec9a55742a88475bf8e0ba2e, type: 3}
+    - {fileID: 21300000, guid: 3388c727be156e24ebf5b0db36ce656f, type: 3}
+    - {fileID: 21300000, guid: 1dabb119a91000f4abbe8fb60ececf62, type: 3}
     - {fileID: 1756749843081072415, guid: 908a88348d70edc4d8cd665f48bc6313, type: 3}
     - {fileID: 21300000, guid: f10fd619e4f899140afd64789f13a0e0, type: 3}
     - {fileID: 3317572528348825291, guid: a05bea7c065e0064692afb3ca9fafece, type: 3}
@@ -48,17 +38,27 @@ MonoBehaviour:
     - {fileID: 5214873802397676660, guid: db4e06974b61fb248a8ef633b22cfdf7, type: 3}
     - {fileID: 21300000, guid: 958bbee8bc01f0c4cb96771b5987a039, type: 3}
     - {fileID: 2748363094476559069, guid: 9423d619277e4ff49927dbd9c35fc9d6, type: 3}
+    - {fileID: 21300000, guid: d9bb9634f03a6a54bb4cdd1b9b6c9de3, type: 3}
+    - {fileID: 4047645741896833891, guid: 97cfe99312f36154992d3ba74b49b6a7, type: 3}
+    - {fileID: 21300000, guid: 3954febeb65ffa549823b3a809ae0ddc, type: 3}
     - {fileID: 2748363094476559069, guid: df143485737b4d346a9faef05e61d278, type: 3}
     - {fileID: 21300000, guid: 20e54d3813cccb74791f1d79a8163eea, type: 3}
     - {fileID: 7236124037966821928, guid: 15c4a41158e8a874dae06a8b4162af0f, type: 3}
     - {fileID: 21300000, guid: a575fa6cb1b76d74f806ef4c21ed3d22, type: 3}
-    - {fileID: 7236124037966821928, guid: 21272bd567651cb4b9c1e2832fb83aa2, type: 3}
-    - {fileID: 21300000, guid: 1be05a3478e5d1a4abdc8879143bcb3e, type: 3}
     - {fileID: 3326721902030060157, guid: a5db7619eacf20546add7d0baec16b5b, type: 3}
     - {fileID: 21300000, guid: 52c7e09b66abf4c44a1dfcaff7ff3bb6, type: 3}
+    - {fileID: 7719843552145132806, guid: 3bd50f831b493f8448f806b5bfcb2f96, type: 3}
+    - {fileID: 21300000, guid: a56a08f9ef2cc044a8446f35ce11574a, type: 3}
+    - {fileID: 1811864090832986915, guid: 037f963cb892f1f479872b004926fab5, type: 3}
+    - {fileID: 21300000, guid: ebda9cef77364904f997ff1007e387a5, type: 3}
+    - {fileID: 6720694445727759868, guid: 933a2a8088e525d44b73617e4e4f2ad3, type: 3}
+    - {fileID: 21300000, guid: 4ea42cc2fd08f7346b8807a5df2505e0, type: 3}
+    - {fileID: 8206060808602779304, guid: fe7442ab46a660647bc937b9b84c23fc, type: 3}
+    - {fileID: 21300000, guid: 1417c04c04063b04e90d31482bf4cdb8, type: 3}
+    - {fileID: 2318348214226591015, guid: d805bf9593d0e1d40990f677cbed62f7, type: 3}
+    - {fileID: 21300000, guid: 6c70bddd6d6a1d443a9a38b4c8551f7f, type: 3}
     - {fileID: 7236124037966821928, guid: c086c00c74caa1144bfe5124d7425414, type: 3}
     - {fileID: 21300000, guid: a210f8c828ba77e44a3d0ab667f80a88, type: 3}
-    - {fileID: 21300000, guid: d9bb9634f03a6a54bb4cdd1b9b6c9de3, type: 3}
     - {fileID: 1723452433570984814, guid: 8ea9da2040b92474088ba84595372d4a, type: 3}
     - {fileID: 21300000, guid: 48fd641c34edec1498d61df83420a0ae, type: 3}
     - {fileID: 1157704261837792169, guid: 927c0e79e2feb0649890f8ae21e68c6a, type: 3}
@@ -70,7 +70,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _spellDictionary
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Battle.PlayerSpell.SpellData,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Spell.SpellData,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
@@ -90,7 +90,7 @@ MonoBehaviour:
       Data: FireShoot
     - Name: $v
       Entry: 7
-      Data: 2|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 2|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: FireShoot
@@ -216,7 +216,7 @@ MonoBehaviour:
       Data: FireCracker
     - Name: $v
       Entry: 7
-      Data: 6|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 6|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: FireCracker
@@ -329,712 +329,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: IceMissile
+      Data: Explosion
     - Name: $v
       Entry: 7
-      Data: 9|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 9|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
-      Data: IceMissile
+      Data: Explosion
     - Name: _names
       Entry: 7
       Data: 10|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30A2\u30A4\u30B9\u30DF\u30B5\u30A4\u30EB"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: IceMissile
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 30
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 11|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30DB\u30FC\u30DF\u30F3\u30B0\u5F3E\u30924\u767A\u767A\u5C04\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Fires 4 homing bullets.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 4
-    - Name: spellIcon
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: FlowerCyclone
-    - Name: $v
-      Entry: 7
-      Data: 12|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: FlowerCyclone
-    - Name: _names
-      Entry: 7
-      Data: 13|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30B5\u30A4\u30AF\u30ED\u30F3"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: FlowerCyclone
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 30
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 14|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u81EA\u6A5F\u5468\u308A\u306B\u65CB\u56DE\u3059\u308B\u5F3E\u3092\u914D\u7F6E\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Place bullets that circle around your aircraft.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 6
-    - Name: spellIcon
-      Entry: 10
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: ThunderSword
-    - Name: $v
-      Entry: 7
-      Data: 15|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: ThunderSword
-    - Name: _names
-      Entry: 7
-      Data: 16|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30B5\u30F3\u30C0\u30FC\u30BD\u30FC\u30C9"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: ThunderSword
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 30
-    - Name: spellAttribute
-      Entry: 3
-      Data: 2
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 17|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u672A\u5B9A"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: to be decided
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: QuickLaser
-    - Name: $v
-      Entry: 7
-      Data: 18|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: QuickLaser
-    - Name: _names
-      Entry: 7
-      Data: 19|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30AF\u30A4\u30C3\u30AF\u30EC\u30FC\u30B6\u30FC"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: QuickLaser
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 2
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 20|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u524D\u65B9\u306B\u5358\u767A\u30D2\u30C3\u30C8\u3059\u308B\u30D3\u30FC\u30E0\u3092\u653E\u3064\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Fires a beam that hits in front of you.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 8
-    - Name: spellIcon
-      Entry: 10
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: HeavyLaser
-    - Name: $v
-      Entry: 7
-      Data: 21|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: HeavyLaser
-    - Name: _names
-      Entry: 7
-      Data: 22|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30D8\u30F4\u30A3\u30EC\u30FC\u30B6\u30FC"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: HeavyLaser
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 35
-    - Name: spellAttribute
-      Entry: 3
-      Data: 2
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 23|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u524D\u65B9\u306B\u591A\u6BB5\u30D2\u30C3\u30C8\u3059\u308B\u30D3\u30FC\u30E0\u3092\u653E\u3064\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Fires a beam that hits the front in multiple stages.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 10
-    - Name: spellIcon
-      Entry: 10
-      Data: 11
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: Thunder
-    - Name: $v
-      Entry: 7
-      Data: 24|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: Thunder
-    - Name: _names
-      Entry: 7
-      Data: 25|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u96F7\u6483"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Thunder
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 35
-    - Name: spellAttribute
-      Entry: 3
-      Data: 2
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 26|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u81EA\u6A5F\u306E\u4F4D\u7F6E\u306B\u7E26\u306B\u9577\u3044\u96F7\u3092\u843D\u3068\u3059\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Drops a vertical bolt of lightning at your aircraft's location.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 12
-    - Name: spellIcon
-      Entry: 10
-      Data: 13
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: Explosion
-    - Name: $v
-      Entry: 7
-      Data: 27|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: Explosion
-    - Name: _names
-      Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1086,7 +390,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 29|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 11|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1126,126 +430,10 @@ MonoBehaviour:
       Data: 
     - Name: spellBase
       Entry: 10
-      Data: 14
+      Data: 4
     - Name: spellIcon
       Entry: 10
-      Data: 15
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: FlowerBarrage
-    - Name: $v
-      Entry: 7
-      Data: 30|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: FlowerBarrage
-    - Name: _names
-      Entry: 7
-      Data: 31|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u82B1\u5439\u96EA"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: FlowerBarrage
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 50
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 32|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u672A\u5B9A"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: to be decided
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 10
-      Data: 16
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -1260,13 +448,13 @@ MonoBehaviour:
       Data: GatlingShoot
     - Name: $v
       Entry: 7
-      Data: 33|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 12|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: GatlingShoot
     - Name: _names
       Entry: 7
-      Data: 34|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 13|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1318,7 +506,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 35|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 14|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1358,6 +546,818 @@ MonoBehaviour:
       Data: 
     - Name: spellBase
       Entry: 10
+      Data: 6
+    - Name: spellIcon
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SummonADCDragon
+    - Name: $v
+      Entry: 7
+      Data: 15|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SummonADCDragon
+    - Name: _names
+      Entry: 7
+      Data: 16|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30DF\u30CB\u30C9\u30E9\u30B4\u30F3\u306E\u53EC\u559A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: SummonADCDragon
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 10
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 17|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u5468\u308A\u3092\u5468\u56DE\u3059\u308B\u30DF\u30CB\u30C9\u30E9\u30B4\u30F3\u3092\u53EC\u559A\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Summons a mini dragon that orbits around the player.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BuffAttack
+    - Name: $v
+      Entry: 7
+      Data: 18|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BuffAttack
+    - Name: _names
+      Entry: 7
+      Data: 19|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u653B\u6483\u5F37\u5316"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: BuffAttack
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 0
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 10
+    - Name: _descriptions
+      Entry: 7
+      Data: 20|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u4E0E\u3048\u308B\u30C0\u30E1\u30FC\u30B8\u304C\u5897\u3048\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Increases damage dealt for a certain period of time.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 8
+    - Name: spellIcon
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FlowerCyclone
+    - Name: $v
+      Entry: 7
+      Data: 21|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FlowerCyclone
+    - Name: _names
+      Entry: 7
+      Data: 22|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30B5\u30A4\u30AF\u30ED\u30F3"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: FlowerCyclone
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 23|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u81EA\u6A5F\u5468\u308A\u306B\u65CB\u56DE\u3059\u308B\u5F3E\u3092\u914D\u7F6E\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Place bullets that circle around your aircraft.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 10
+    - Name: spellIcon
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FlowerBarrage
+    - Name: $v
+      Entry: 7
+      Data: 24|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: FlowerBarrage
+    - Name: _names
+      Entry: 7
+      Data: 25|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u82B1\u5439\u96EA"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: FlowerBarrage
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 26|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u672A\u5B9A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: to be decided
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: WallShot
+    - Name: $v
+      Entry: 7
+      Data: 27|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: WallShot
+    - Name: _names
+      Entry: 7
+      Data: 28|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30A6\u30A9\u30FC\u30EB\u30B7\u30E7\u30C3\u30C8"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: WallShot
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 29|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u672A\u5B9A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: to be decided
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 13
+    - Name: spellIcon
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SmallHeal
+    - Name: $v
+      Entry: 7
+      Data: 30|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SmallHeal
+    - Name: _names
+      Entry: 7
+      Data: 31|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u5C0F\u56DE\u5FA9"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: SmallHeal
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 32|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4F53\u529B\u3092\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Recovers some physical strength.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 15
+    - Name: spellIcon
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: MidHeal
+    - Name: $v
+      Entry: 7
+      Data: 33|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: MidHeal
+    - Name: _names
+      Entry: 7
+      Data: 34|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E2D\u56DE\u5FA9"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: MidHeal
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 35|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4F53\u529B\u3092\u56DE\u5FA9\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Recover your physical strength.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
       Data: 17
     - Name: spellIcon
       Entry: 10
@@ -1373,16 +1373,1757 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
+      Data: BigHeal
+    - Name: $v
+      Entry: 7
+      Data: 36|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BigHeal
+    - Name: _names
+      Entry: 7
+      Data: 37|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u5927\u56DE\u5FA9"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: BigHeal
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 40
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 38|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4F53\u529B\u3092\u5927\u304D\u304F\u56DE\u5FA9\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Greatly recovers physical strength.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 19
+    - Name: spellIcon
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: AutoHeal
+    - Name: $v
+      Entry: 7
+      Data: 39|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: AutoHeal
+    - Name: _names
+      Entry: 7
+      Data: 40|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u81EA\u52D5\u56DE\u5FA9"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: AutoHeal
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 10
+    - Name: _descriptions
+      Entry: 7
+      Data: 41|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u4F53\u529B\u304C\u81EA\u52D5\u3067\u5C11\u91CF\u56DE\u5FA9\u3057\u7D9A\u3051\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: A small amount of physical strength will continue to recover automatically
+        for a certain period of time.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 21
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SummonTank
+    - Name: $v
+      Entry: 7
+      Data: 42|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SummonTank
+    - Name: _names
+      Entry: 7
+      Data: 43|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30BF\u30CC\u30AD\u306E\u53EC\u559A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: SummonTank
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 10
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 44|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30BF\u30CC\u30AD\u30925\u4F53\u53EC\u559A\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Summon 5 raccoon dogs.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Poison
+    - Name: $v
+      Entry: 7
+      Data: 45|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Poison
+    - Name: _names
+      Entry: 7
+      Data: 46|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u6BD2\u4ED8\u4E0E"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Poison
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 3
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 15
+    - Name: _descriptions
+      Entry: 7
+      Data: 47|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u5EA6\u306B\u8FFD\u52A0\u3067\u6BD2\u653B\u6483\u304C\u767A\u751F\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Each time you deal damage for a certain period of time
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IceMissile
+    - Name: $v
+      Entry: 7
+      Data: 48|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: IceMissile
+    - Name: _names
+      Entry: 7
+      Data: 49|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30A2\u30A4\u30B9\u30DF\u30B5\u30A4\u30EB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: IceMissile
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 50|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30DB\u30FC\u30DF\u30F3\u30B0\u5F3E\u30924\u767A\u767A\u5C04\u3059\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Fires 4 homing bullets.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 23
+    - Name: spellIcon
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SnowBall
+    - Name: $v
+      Entry: 7
+      Data: 51|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SnowBall
+    - Name: _names
+      Entry: 7
+      Data: 52|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30B9\u30CE\u30FC\u30DC\u30FC\u30EB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: SnowBall
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 25
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 53|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u6575\u306E\u5F3E\u3092\u5438\u53CE\u3059\u308B\u5F3E\u3092\u653E\u3064\u3002\u5438\u53CE\u3059\u308B\u307B\u3069\u5927\u304D\u304F\u306A\u308A\u5A01\u529B\u304C\u4E0A\u304C\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Fires a bullet that absorbs enemy bullets. The more it is absorbed
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ManaFullCharge
+    - Name: $v
+      Entry: 7
+      Data: 54|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: ManaFullCharge
+    - Name: _names
+      Entry: 7
+      Data: 55|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30DE\u30CA\u30D5\u30EB\u30C1\u30E3\u30FC\u30B8"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: ManaFullCharge
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 56|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30DE\u30CA\u3092\u6700\u5927\u307E\u3067\u56DE\u5FA9\u3059\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Recover mana to maximum
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: BuffQuickManaCharge
+    - Name: $v
+      Entry: 7
+      Data: 57|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: BuffQuickManaCharge
+    - Name: _names
+      Entry: 7
+      Data: 58|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30DE\u30CA\u56DE\u5FA9\u5F37\u5316"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: BuffQuickManaCharge
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 15
+    - Name: _descriptions
+      Entry: 7
+      Data: 59|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u30DE\u30CA\u6025\u901F\u56DE\u5FA9\u306E\u56DE\u5FA9\u91CF\u304C\u5897\u3048\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Increases the amount of rapid mana recovery for a certain period of time.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 25
+    - Name: spellIcon
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ReduceCost
+    - Name: $v
+      Entry: 7
+      Data: 60|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: ReduceCost
+    - Name: _names
+      Entry: 7
+      Data: 61|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30DE\u30CA\u6D88\u8CBB\u8EFD\u6E1B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: ReduceCost
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 3
+    - Name: _descriptions
+      Entry: 7
+      Data: 62|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u30DE\u30CA\u306E\u6D88\u8CBB\u91CF\u3092\u6E1B\u3089\u3059\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Reduces mana consumption for a certain period of time.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 27
+    - Name: spellIcon
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SuperInvicible
+    - Name: $v
+      Entry: 7
+      Data: 63|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: SuperInvicible
+    - Name: _names
+      Entry: 7
+      Data: 64|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u7121\u6575\u4ED8\u4E0E"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: SuperInvicible
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 50
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: 5
+    - Name: _descriptions
+      Entry: 7
+      Data: 65|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u5B9A\u6642\u9593\u653B\u6483\u3092\u53D7\u3051\u306A\u304F\u306A\u308B\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: You will not be attacked for a certain period of time.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Duplication
+    - Name: $v
+      Entry: 7
+      Data: 66|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Duplication
+    - Name: _names
+      Entry: 7
+      Data: 67|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u8907\u88FD"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Duplication
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 1
+    - Name: spellType
+      Entry: 3
+      Data: 1
+    - Name: effectDuration
+      Entry: 4
+      Data: -1
+    - Name: _descriptions
+      Entry: 7
+      Data: 68|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u6B21\u306B\u767A\u52D5\u3059\u308B\u9B54\u6CD5\u3092\u3082\u3046\u4E00\u5EA6\u7D9A\u3051\u3066\u767A\u52D5\u3059\u308B\u3002\uFF08\u30DE\u30CA\u30B3\u30B9\u30C8\u306F\u6D88\u8CBB\u3057\u306A\u3044\uFF09"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Activate the next spell again in succession. (Does not consume mana cost)
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 29
+    - Name: spellIcon
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ThunderSword
+    - Name: $v
+      Entry: 7
+      Data: 69|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: ThunderSword
+    - Name: _names
+      Entry: 7
+      Data: 70|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30B5\u30F3\u30C0\u30FC\u30BD\u30FC\u30C9"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: ThunderSword
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 30
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 71|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u672A\u5B9A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: to be decided
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 6
+      Data: 
+    - Name: spellIcon
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: QuickLaser
+    - Name: $v
+      Entry: 7
+      Data: 72|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: QuickLaser
+    - Name: _names
+      Entry: 7
+      Data: 73|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30AF\u30A4\u30C3\u30AF\u30EC\u30FC\u30B6\u30FC"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: QuickLaser
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 20
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 74|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u524D\u65B9\u306B\u5358\u767A\u30D2\u30C3\u30C8\u3059\u308B\u30D3\u30FC\u30E0\u3092\u653E\u3064\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Fires a beam that hits in front of you.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 31
+    - Name: spellIcon
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: HeavyLaser
+    - Name: $v
+      Entry: 7
+      Data: 75|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: HeavyLaser
+    - Name: _names
+      Entry: 7
+      Data: 76|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u30D8\u30F4\u30A3\u30EC\u30FC\u30B6\u30FC"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: HeavyLaser
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 35
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 77|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u524D\u65B9\u306B\u591A\u6BB5\u30D2\u30C3\u30C8\u3059\u308B\u30D3\u30FC\u30E0\u3092\u653E\u3064\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Fires a beam that hits the front in multiple stages.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 33
+    - Name: spellIcon
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Thunder
+    - Name: $v
+      Entry: 7
+      Data: 78|Spell.SpellData, Assembly-CSharp
+    - Name: spellKey
+      Entry: 1
+      Data: Thunder
+    - Name: _names
+      Entry: 7
+      Data: 79|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u96F7\u6483"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Thunder
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: manaCost
+      Entry: 3
+      Data: 35
+    - Name: spellAttribute
+      Entry: 3
+      Data: 2
+    - Name: spellType
+      Entry: 3
+      Data: 0
+    - Name: effectDuration
+      Entry: 4
+      Data: 0
+    - Name: _descriptions
+      Entry: 7
+      Data: 80|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 1
+      Data: "\u81EA\u6A5F\u306E\u4F4D\u7F6E\u306B\u7E26\u306B\u9577\u3044\u96F7\u3092\u843D\u3068\u3059\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 1
+      Data: Drops a vertical bolt of lightning at your aircraft's location.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spellBase
+      Entry: 10
+      Data: 35
+    - Name: spellIcon
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
       Data: Rock
     - Name: $v
       Entry: 7
-      Data: 36|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 81|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: Rock
     - Name: _names
       Entry: 7
-      Data: 37|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 82|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1434,7 +3175,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 38|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 83|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1474,10 +3215,10 @@ MonoBehaviour:
       Data: 
     - Name: spellBase
       Entry: 10
-      Data: 19
+      Data: 37
     - Name: spellIcon
       Entry: 10
-      Data: 20
+      Data: 38
     - Name: 
       Entry: 8
       Data: 
@@ -1492,13 +3233,13 @@ MonoBehaviour:
       Data: SpinLaser
     - Name: $v
       Entry: 7
-      Data: 39|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 84|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: SpinLaser
     - Name: _names
       Entry: 7
-      Data: 40|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 85|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1550,7 +3291,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 41|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 86|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1608,13 +3349,13 @@ MonoBehaviour:
       Data: Saw
     - Name: $v
       Entry: 7
-      Data: 42|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 87|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: Saw
     - Name: _names
       Entry: 7
-      Data: 43|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 88|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1666,7 +3407,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 44|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 89|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -1706,939 +3447,10 @@ MonoBehaviour:
       Data: 
     - Name: spellBase
       Entry: 10
-      Data: 21
+      Data: 39
     - Name: spellIcon
       Entry: 10
-      Data: 22
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: SnowBall
-    - Name: $v
-      Entry: 7
-      Data: 45|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: SnowBall
-    - Name: _names
-      Entry: 7
-      Data: 46|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30B9\u30CE\u30FC\u30DC\u30FC\u30EB"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: SnowBall
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 25
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 47|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u6575\u306E\u5F3E\u3092\u5438\u53CE\u3059\u308B\u5F3E\u3092\u653E\u3064\u3002\u5438\u53CE\u3059\u308B\u307B\u3069\u5927\u304D\u304F\u306A\u308A\u5A01\u529B\u304C\u4E0A\u304C\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Fires a bullet that absorbs enemy bullets. The more it is absorbed
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: WallShot
-    - Name: $v
-      Entry: 7
-      Data: 48|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: WallShot
-    - Name: _names
-      Entry: 7
-      Data: 49|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30A6\u30A9\u30FC\u30EB\u30B7\u30E7\u30C3\u30C8"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: WallShot
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 50|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u672A\u5B9A"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: to be decided
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 23
-    - Name: spellIcon
-      Entry: 10
-      Data: 24
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: SmallHeal
-    - Name: $v
-      Entry: 7
-      Data: 51|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: SmallHeal
-    - Name: _names
-      Entry: 7
-      Data: 52|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u5C0F\u56DE\u5FA9"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: SmallHeal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 53|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4F53\u529B\u3092\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Recovers some physical strength.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 25
-    - Name: spellIcon
-      Entry: 10
-      Data: 26
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: MidHeal
-    - Name: $v
-      Entry: 7
-      Data: 54|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: MidHeal
-    - Name: _names
-      Entry: 7
-      Data: 55|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E2D\u56DE\u5FA9"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: MidHeal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 30
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 56|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4F53\u529B\u3092\u56DE\u5FA9\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Recover your physical strength.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 27
-    - Name: spellIcon
-      Entry: 10
-      Data: 28
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: BigHeal
-    - Name: $v
-      Entry: 7
-      Data: 57|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: BigHeal
-    - Name: _names
-      Entry: 7
-      Data: 58|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u5927\u56DE\u5FA9"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: BigHeal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
       Data: 40
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 59|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4F53\u529B\u3092\u5927\u304D\u304F\u56DE\u5FA9\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Greatly recovers physical strength.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 29
-    - Name: spellIcon
-      Entry: 10
-      Data: 30
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: AutoHeal
-    - Name: $v
-      Entry: 7
-      Data: 60|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: AutoHeal
-    - Name: _names
-      Entry: 7
-      Data: 61|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u81EA\u52D5\u56DE\u5FA9"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: AutoHeal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 30
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 10
-    - Name: _descriptions
-      Entry: 7
-      Data: 62|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E00\u5B9A\u6642\u9593\u4F53\u529B\u304C\u81EA\u52D5\u3067\u5C11\u91CF\u56DE\u5FA9\u3057\u7D9A\u3051\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: A small amount of physical strength will automatically continue to recover
-        for a certain period of time.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 31
-    - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: SummonADCDragon
-    - Name: $v
-      Entry: 7
-      Data: 63|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: SummonADCDragon
-    - Name: _names
-      Entry: 7
-      Data: 64|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30DF\u30CB\u30C9\u30E9\u30B4\u30F3\u306E\u53EC\u559A"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: SummonADCDragon
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 10
-    - Name: spellAttribute
-      Entry: 3
-      Data: 0
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 65|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u5468\u308A\u3092\u5468\u56DE\u3059\u308B\u30DF\u30CB\u30C9\u30E9\u30B4\u30F3\u3092\u53EC\u559A\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Summons a mini dragon that orbits around the player.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: SummonTank
-    - Name: $v
-      Entry: 7
-      Data: 66|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: SummonTank
-    - Name: _names
-      Entry: 7
-      Data: 67|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30BF\u30CC\u30AD\u306E\u53EC\u559A"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: SummonTank
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 10
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 0
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 68|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30BF\u30CC\u30AD\u30925\u4F53\u53EC\u559A\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Summon 5 raccoon dogs.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2653,13 +3465,13 @@ MonoBehaviour:
       Data: BulletDelete
     - Name: $v
       Entry: 7
-      Data: 69|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 90|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: BulletDelete
     - Name: _names
       Entry: 7
-      Data: 70|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 91|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -2711,7 +3523,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 71|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 92|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -2766,132 +3578,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: ManaFullCharge
-    - Name: $v
-      Entry: 7
-      Data: 72|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: ManaFullCharge
-    - Name: _names
-      Entry: 7
-      Data: 73|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30DE\u30CA\u30D5\u30EB\u30C1\u30E3\u30FC\u30B8"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: ManaFullCharge
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 50
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: 0
-    - Name: _descriptions
-      Entry: 7
-      Data: 74|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30DE\u30CA\u3092\u6700\u5927\u307E\u3067\u56DE\u5FA9\u3059\u308B"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Recover mana to maximum
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
       Data: Vanish
     - Name: $v
       Entry: 7
-      Data: 75|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 93|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: Vanish
     - Name: _names
       Entry: 7
-      Data: 76|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 94|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -2943,7 +3639,7 @@ MonoBehaviour:
       Data: 0
     - Name: _descriptions
       Entry: 7
-      Data: 77|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 95|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -2998,364 +3694,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: BuffQuickManaCharge
-    - Name: $v
-      Entry: 7
-      Data: 78|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: BuffQuickManaCharge
-    - Name: _names
-      Entry: 7
-      Data: 79|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30DE\u30CA\u56DE\u5FA9\u5F37\u5316"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: BuffQuickManaCharge
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 30
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: 15
-    - Name: _descriptions
-      Entry: 7
-      Data: 80|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E00\u5B9A\u6642\u9593\u30DE\u30CA\u6025\u901F\u56DE\u5FA9\u306E\u56DE\u5FA9\u91CF\u304C\u5897\u3048\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Increases the amount of rapid mana recovery for a certain period of time.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 32
-    - Name: spellIcon
-      Entry: 10
-      Data: 33
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: ReduceCost
-    - Name: $v
-      Entry: 7
-      Data: 81|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: ReduceCost
-    - Name: _names
-      Entry: 7
-      Data: 82|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u30DE\u30CA\u6D88\u8CBB\u8EFD\u6E1B"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: ReduceCost
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: 3
-    - Name: _descriptions
-      Entry: 7
-      Data: 83|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E00\u5B9A\u6642\u9593\u30DE\u30CA\u306E\u6D88\u8CBB\u91CF\u3092\u6E1B\u3089\u3059\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Reduces mana consumption for a certain period of time.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 34
-    - Name: spellIcon
-      Entry: 10
-      Data: 35
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: SuperInvicible
-    - Name: $v
-      Entry: 7
-      Data: 84|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: SuperInvicible
-    - Name: _names
-      Entry: 7
-      Data: 85|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u7121\u6575\u4ED8\u4E0E"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: SuperInvicible
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 50
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: 5
-    - Name: _descriptions
-      Entry: 7
-      Data: 86|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E00\u5B9A\u6642\u9593\u653B\u6483\u3092\u53D7\u3051\u306A\u304F\u306A\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: You will not be attacked for a certain period of time.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
-    - Name: spellIcon
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
       Data: RaijinStep
     - Name: $v
       Entry: 7
-      Data: 87|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 96|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: RaijinStep
     - Name: _names
       Entry: 7
-      Data: 88|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 97|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -3407,7 +3755,7 @@ MonoBehaviour:
       Data: 20
     - Name: _descriptions
       Entry: 7
-      Data: 89|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 98|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -3466,13 +3814,13 @@ MonoBehaviour:
       Data: HappyAssist
     - Name: $v
       Entry: 7
-      Data: 90|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 99|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: HappyAssist
     - Name: _names
       Entry: 7
-      Data: 91|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 100|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -3524,7 +3872,7 @@ MonoBehaviour:
       Data: 10
     - Name: _descriptions
       Entry: 7
-      Data: 92|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 101|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -3579,248 +3927,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: BuffAttack
-    - Name: $v
-      Entry: 7
-      Data: 93|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: BuffAttack
-    - Name: _names
-      Entry: 7
-      Data: 94|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u653B\u6483\u5F37\u5316"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: BuffAttack
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 0
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: 10
-    - Name: _descriptions
-      Entry: 7
-      Data: 95|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E00\u5B9A\u6642\u9593\u4E0E\u3048\u308B\u30C0\u30E1\u30FC\u30B8\u304C\u5897\u3048\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Increases damage dealt for a certain period of time.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 36
-    - Name: spellIcon
-      Entry: 10
-      Data: 37
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: Duplication
-    - Name: $v
-      Entry: 7
-      Data: 96|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: Duplication
-    - Name: _names
-      Entry: 7
-      Data: 97|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u8907\u88FD"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Duplication
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 1
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: -1
-    - Name: _descriptions
-      Entry: 7
-      Data: 98|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u6B21\u306B\u767A\u52D5\u3059\u308B\u9B54\u6CD5\u3092\u3082\u3046\u4E00\u5EA6\u7D9A\u3051\u3066\u767A\u52D5\u3059\u308B\u3002\uFF08\u30DE\u30CA\u30B3\u30B9\u30C8\u306F\u6D88\u8CBB\u3057\u306A\u3044\uFF09"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Activate the next spell again in succession. (Does not consume mana cost)
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 10
-      Data: 38
-    - Name: spellIcon
-      Entry: 10
-      Data: 39
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
       Data: BuffDefense
     - Name: $v
       Entry: 7
-      Data: 99|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 102|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: BuffDefense
     - Name: _names
       Entry: 7
-      Data: 100|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 103|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -3872,7 +3988,7 @@ MonoBehaviour:
       Data: 10
     - Name: _descriptions
       Entry: 7
-      Data: 101|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
+      Data: 104|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
         UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
@@ -3912,123 +4028,7 @@ MonoBehaviour:
       Data: 
     - Name: spellBase
       Entry: 10
-      Data: 40
-    - Name: spellIcon
-      Entry: 10
       Data: 41
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: Poison
-    - Name: $v
-      Entry: 7
-      Data: 102|Battle.PlayerSpell.SpellData, Assembly-CSharp
-    - Name: spellKey
-      Entry: 1
-      Data: Poison
-    - Name: _names
-      Entry: 7
-      Data: 103|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u6BD2\u4ED8\u4E0E"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Poison
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: manaCost
-      Entry: 3
-      Data: 20
-    - Name: spellAttribute
-      Entry: 3
-      Data: 3
-    - Name: spellType
-      Entry: 3
-      Data: 1
-    - Name: effectDuration
-      Entry: 4
-      Data: 15
-    - Name: _descriptions
-      Entry: 7
-      Data: 104|System.Collections.Generic.Dictionary`2[[UnityEngine.SystemLanguage,
-        UnityEngine.CoreModule],[System.String, mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 4
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 22
-    - Name: $v
-      Entry: 1
-      Data: "\u4E00\u5B9A\u6642\u9593\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u5EA6\u306B\u8FFD\u52A0\u3067\u6BD2\u653B\u6483\u304C\u767A\u751F\u3059\u308B\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 1
-      Data: Each time you deal damage for a certain period of time
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spellBase
-      Entry: 6
-      Data: 
     - Name: spellIcon
       Entry: 10
       Data: 42
@@ -4046,7 +4046,7 @@ MonoBehaviour:
       Data: GrazeMaster
     - Name: $v
       Entry: 7
-      Data: 105|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 105|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: GrazeMaster
@@ -4162,7 +4162,7 @@ MonoBehaviour:
       Data: AbsorptionBeam
     - Name: $v
       Entry: 7
-      Data: 108|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 108|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: AbsorptionBeam
@@ -4279,7 +4279,7 @@ MonoBehaviour:
       Data: ReflectionMirror
     - Name: $v
       Entry: 7
-      Data: 111|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 111|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: ReflectionMirror
@@ -4396,7 +4396,7 @@ MonoBehaviour:
       Data: TestHighlander1
     - Name: $v
       Entry: 7
-      Data: 114|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 114|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: TestHighlander1
@@ -4512,7 +4512,7 @@ MonoBehaviour:
       Data: TestHighlander2
     - Name: $v
       Entry: 7
-      Data: 117|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 117|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: TestHighlander2
@@ -4628,7 +4628,7 @@ MonoBehaviour:
       Data: 
     - Name: $v
       Entry: 7
-      Data: 120|Battle.PlayerSpell.SpellData, Assembly-CSharp
+      Data: 120|Spell.SpellData, Assembly-CSharp
     - Name: spellKey
       Entry: 1
       Data: 

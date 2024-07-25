@@ -1,5 +1,6 @@
 ﻿using Battle.Attack;
 using Battle.Character.Player.Buff;
+using Battle.System.Main;
 using Cinemachine;
 using Databases;
 using Others;
@@ -33,6 +34,8 @@ namespace Battle.Character.Player
         protected override void InitializeFunction()
         {
             base.InitializeFunction();
+
+            InitCharacterData("Player");
 
             WizardAnimationController = new WizardAnimationController(Animator);
 

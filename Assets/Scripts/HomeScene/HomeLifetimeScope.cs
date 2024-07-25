@@ -1,4 +1,5 @@
-﻿using VContainer;
+﻿using Others.Message;
+using VContainer;
 using VContainer.Unity;
 
 namespace HomeScene
@@ -7,9 +8,14 @@ namespace HomeScene
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterEntryPoint<HomeStateChangeController>();
-            builder.RegisterComponentInHierarchy<MissionController>();
+            base.Configure(builder);
+
+            builder.Register<HomeStateController>(Lifetime.Singleton);
+            
             builder.RegisterComponentInHierarchy<HomeMenuController>();
+            builder.RegisterComponentInHierarchy<MissionSelectController>();
+
+            builder.RegisterEntryPoint<MessageTranslatorInSceneStart>();
         }
     }
 }

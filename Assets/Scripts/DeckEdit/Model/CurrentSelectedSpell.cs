@@ -1,5 +1,5 @@
 ﻿using System;
-using Battle.PlayerSpell;
+using Spell;
 using UniRx;
 
 namespace DeckEdit.Model
