@@ -31,7 +31,7 @@ namespace Battle.CommonObject.Bullet
             Func<Vector2> direction)
         {
             Position = position;
-            Rotation = () => Mathf.Atan2(direction().y, direction().x)* Mathf.Rad2Deg;
+            Rotation = () => Mathf.Atan2(direction().y, direction().x) * Mathf.Rad2Deg;
             Size = size;
             CharacterKey = characterBase.CharacterKey;
         }

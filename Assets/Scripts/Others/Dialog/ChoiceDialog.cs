@@ -131,9 +131,9 @@ namespace Others.Dialog
         private void UpdateView()
         {
             var y = _choiceInstances[_currentIndex].transform.position.y;
-            var pos = cursor.transform.position;
+            var pos = cursor.position;
 
-            cursor.transform.position = new Vector3(pos.x, y, pos.z);
+            cursor.position = new Vector3(pos.x, y, pos.z);
         }
 
         private void TryMove()

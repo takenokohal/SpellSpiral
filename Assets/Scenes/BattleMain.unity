@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36a26a65f934cce86302158f0b4b756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializedStageKey: Training
+  serializedStageKey: Eschalot
 --- !u!4 &1677706834
 Transform:
   m_ObjectHideFlags: 0
@@ -4560,14 +4560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399256e25dd34f3f8c6f00884478dfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalChoiceListView: {fileID: 7671527778469842733}
-  parameters:
-  - sprite: {fileID: 21300000, guid: 3be94796adb604845ac03dfe6339a341, type: 3}
-    title: Retry
-  - sprite: {fileID: 21300000, guid: a6c53037ba86042459f30f68e81fade8, type: 3}
-    title: EditDeck
-  - sprite: {fileID: 21300000, guid: 4aaa4e2e9057fea48994972db0965592, type: 3}
-    title: Home
 --- !u!114 &7671527778469842733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4580,12 +4572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54eccbbe5ad44c9fb14fa7f895c45cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconAndTitlePrefab: {fileID: 6343535746675058061, guid: 670b3de0ed6704446b888a06bf96ee4f,
-    type: 3}
-  parent: {fileID: 1728824169}
-  pointer: {fileID: 7258665722297570111}
-  selectedColor: {r: 0, g: 0, b: 0, a: 1}
-  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &7685686448554441431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4390626228029492924, guid: 1a76d3ae5177f174e806578fb16e3f9a,

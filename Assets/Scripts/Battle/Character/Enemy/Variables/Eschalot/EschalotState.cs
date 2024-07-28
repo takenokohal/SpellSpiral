@@ -2,9 +2,16 @@
 {
     public enum EschalotState
     {
+        Scramble,
+
         ResignBeam,
-        ConvergenceBeam,
-        AreaBeam,
-        DiffusionBeam,
+        WarpConvergenceBeam,
+        WarpHorizontalHeavyBeam,
+        Shoot,
+        DiffusionBeamAndWaveShoot,
+
+        AreaBeamAndCircleShoot,
+
+        CrossThunder,
     }
 }

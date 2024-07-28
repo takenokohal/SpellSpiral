@@ -51,9 +51,9 @@ namespace Battle.Character
 
         protected CharacterBase Master { get; private set; }
 
-
-        private Vector3 _animatorLocalPosition;
+        private Vector3 _animatorOffset;
         private readonly ReactiveProperty<float> _currentLife = new();
+
 
         public float CurrentLife
         {
@@ -141,7 +141,7 @@ namespace Battle.Character
 
             AllCharacterManager.RegisterCharacter(this);
 
-            _animatorLocalPosition = AnimatorIsNull ? Vector3.zero : Animator.transform.localPosition;
+            _animatorOffset = AnimatorIsNull ? Vector3.zero : Animator.transform.localPosition;
 
             InitializeFunction();
 
@@ -153,7 +153,7 @@ namespace Battle.Character
                 if (AnimatorIsNull)
                     return;
                 Animator.transform.localPosition
-                    = Vector3.Lerp(Animator.transform.localPosition, Vector3.zero, 0.2f);
+                    = Vector3.Lerp(Animator.transform.localPosition, _animatorOffset, 0.2f);
             }).AddTo(this);
 
             IsInitialized = true;
@@ -189,7 +189,7 @@ namespace Battle.Character
             {
                 var damage = CalcDamage(attackHitController);
                 CurrentLife -= damage;
-                var pos = (attackHitController.transform.position + Rigidbody.position) / 2f;
+                var pos = Rigidbody.position;
 
                 CharacterCamera.Impulse(damage);
                 AllAudioManager.PlaySe("Hit");

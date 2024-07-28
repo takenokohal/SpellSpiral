@@ -13,6 +13,8 @@ namespace Battle.Character
         private Rigidbody _rigidbody;
         private WizardAnimationController _wizardAnimationController;
 
+        private bool _isInitialized;
+
         public class VelocityWarpParameter
         {
             public float Drag { get; }
@@ -45,10 +47,16 @@ namespace Battle.Character
         {
             _rigidbody = rb;
             _wizardAnimationController = wizardAnimationController;
+
+            transform.SetParent(_rigidbody.transform);
+            transform.localPosition= Vector3.zero;
+            _isInitialized = true;
         }
 
         public async UniTask PlayVelocityWarp(VelocityWarpParameter velocityWarpParameter)
         {
+            if (!_isInitialized)
+                Debug.LogError("NotInit");
             ps.Play();
             AllAudioManager.PlaySe("Warp");
             _rigidbody.drag = velocityWarpParameter.Drag;
@@ -73,6 +81,10 @@ namespace Battle.Character
 
         public async UniTask PlayPositionWarp(PositionWarpParameter positionWarpParameter)
         {
+            if (!_isInitialized)
+                Debug.LogError("NotInit");
+
+
             ps.Play();
             AllAudioManager.PlaySe("Warp");
 
@@ -84,6 +96,8 @@ namespace Battle.Character
 
             _wizardAnimationController.SetGraphicVisible(true);
             ps.Play();
+
+            await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
         }
 
         private UniTask MyDelay(float duration) =>

@@ -23,13 +23,17 @@ namespace Battle.Character.Player
 
         protected bool IsBattleStarted => PlayerCore.IsBattleStarted;
 
-        private async void Start()
+        private void Start()
         {
-            PlayerCore = GetComponent<PlayerCore>();
-            await PlayerCore.WaitUntilInitialize();
-            Init();
+            UniTask.Void(async () =>
+            {
+                PlayerCore = GetComponent<PlayerCore>();
 
-            IsInitialized = true;
+                await PlayerCore.WaitUntilInitialize();
+                Init();
+
+                IsInitialized = true;
+            });
         }
 
         protected abstract void Init();

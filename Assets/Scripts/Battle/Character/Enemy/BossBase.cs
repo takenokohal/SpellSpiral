@@ -30,7 +30,7 @@ namespace Battle.Character.Enemy
 
         public Vector2 GetDirectionToPlayer()
         {
-            return PlayerCore.GetDirectionToPlayer(transform.position);
+            return PlayerCore.GetDirectionToPlayer(Rigidbody.position);
         }
 
 

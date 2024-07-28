@@ -43,6 +43,7 @@ namespace Battle.CommonObject.Bullet
             {
                 t.position = parameter.Position.Invoke();
                 t.rotation = Quaternion.Euler(0, 0, parameter.Rotation.Invoke());
+                t.localScale = new Vector3(1, parameter.Size, 1);
                 timeCount += Time.fixedDeltaTime;
 
                 await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: destroyCancellationToken);

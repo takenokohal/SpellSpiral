@@ -54,11 +54,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  beamCount: 10
+  beamCount: 7
   beamOrigin: {fileID: 5489594229267916906}
-  maxRotateSpeed: 35
-  minRotateSpeed: 50
-  duration: 10
+  maxRotateSpeed: 50
+  minRotateSpeed: 70
+  duration: 5
+  posRadius: 3
 --- !u!1 &3672414850139923047
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,8 +163,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   attackKey:
-    characterKey: Baltecia
-    detailKey: Cube
+    characterKey: Eshalot
+    detailKey: ShortBeam
 --- !u!65 &3111580460741379048
 BoxCollider:
   m_ObjectHideFlags: 0

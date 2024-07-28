@@ -28,15 +28,17 @@ namespace Battle.Character.Enemy.Variables.Eschalot
 
             var states = new List<EschalotState>
             {
-                EschalotState.AreaBeam,
-                EschalotState.ConvergenceBeam,
-                EschalotState.DiffusionBeam
+                //    EschalotState.AreaBeamAndCircleShoot,
+                EschalotState.WarpConvergenceBeam,
+                EschalotState.DiffusionBeamAndWaveShoot,
+                EschalotState.WarpHorizontalHeavyBeam,
+                EschalotState.ResignBeam
             };
             while (!commonCancellationTokenSource.IsCancellationRequested)
             {
                 var nextState = states.Where(value => value != CurrentState).GetRandomValue();
 
-                nextState = EschalotState.DiffusionBeam;
+                nextState = EschalotState.Shoot;
                 LookPlayer();
 
                 await PlayState(nextState);

@@ -80,7 +80,7 @@ namespace Battle.Character.Player
 
         public Vector2 GetDirectionToPlayer(Vector2 from)
         {
-            return ((Vector2)transform.position - from).normalized;
+            return ((Vector2)Rigidbody.position - from).normalized;
         }
 
         protected override bool ChickHitChild(AttackHitController attackHitController)

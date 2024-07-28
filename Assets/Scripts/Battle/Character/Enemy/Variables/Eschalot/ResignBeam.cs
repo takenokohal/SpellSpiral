@@ -18,12 +18,16 @@ namespace Battle.Character.Enemy.Variables.Eschalot
 
         [SerializeField] private float duration;
 
+
+        [SerializeField] private float posRadius;
+
         private readonly List<SingleHitBeam> _beams = new();
         private float[] _currentRotations;
 
         private bool _rotating;
 
         public override EschalotState StateKey => EschalotState.ResignBeam;
+
 
         private void Start()
         {
@@ -37,7 +41,9 @@ namespace Battle.Character.Enemy.Variables.Eschalot
 
         protected override async UniTask Sequence()
         {
-            await TweenToUniTask(Parent.Rigidbody.DOMove(Vector3.zero, 1f));
+            var r = Random.Range(0f, Mathf.PI * 2f);
+            var toPos = Vector2Extension.AngleToVector(r) * posRadius;
+            await TweenToUniTask(Parent.Rigidbody.DOMove(toPos, 1f));
 
             _rotating = true;
             for (int i = 0; i < beamCount; i++)

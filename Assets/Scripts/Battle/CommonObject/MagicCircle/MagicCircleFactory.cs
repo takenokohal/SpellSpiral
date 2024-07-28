@@ -34,7 +34,7 @@ namespace Battle.CommonObject.MagicCircle
 
             var magicCircle = _pool.Get();
             magicCircle.Activate(magicCircleParameters).Forget();
-            
+
             var data = _characterDatabase.Find(magicCircleParameters.CharacterKey);
             magicCircle.Init(data.MagicCircleSprite);
 
@@ -54,9 +54,12 @@ namespace Battle.CommonObject.MagicCircle
 
             _targetGroup.RemoveMember(t);
 
-            await magicCircle.Close();
-            
-            _pool.Release(magicCircle);
+            UniTask.Void(async () =>
+            {
+                await magicCircle.Close();
+
+                _pool.Release(magicCircle);
+            });
         }
     }
 }
