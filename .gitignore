@@ -60,6 +60,8 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
+//add
+*.mp4
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -75,5 +77,4 @@ crashlytics-build.properties
 /[Bb]uilded/
 
 # Environment Ignore Test
-/[Aa]ssets/Models/Origin/Envirornment/_DLNK/
 /[Aa]ssets/Effects/Origin/Mirza Beig/
